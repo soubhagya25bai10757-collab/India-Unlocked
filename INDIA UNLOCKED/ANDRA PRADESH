@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andhra Pradesh — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0D47A1;--teal:#00695C;--gold:#C8960A;--chili:#C62828;--cream:#fdf5e6;--deep:#060810;--border:rgba(13,71,161,0.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(6,8,16,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--blue);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,245,230,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,245,230,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--blue);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,16,.18) 0%,rgba(6,8,16,.04) 38%,rgba(6,8,16,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(200,150,10,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2rem,7.5vw,7rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,245,230,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(13,71,161,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,245,230,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(13,71,161,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,245,230,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(13,71,161,.1);border:1px solid rgba(13,71,161,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(13,71,161,.18);border-color:rgba(13,71,161,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,150,10,.55);background:rgba(200,150,10,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,245,230,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--blue);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(13,71,161,.65);}
+.dsearch::placeholder{color:rgba(253,245,230,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(13,71,161,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(13,71,161,.08);}
+.dacc:hover{border-color:rgba(13,71,161,.42);background:rgba(13,71,161,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(13,71,161,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(13,71,161,.35);background:rgba(13,71,161,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,245,230,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--blue);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(13,71,161,.2);border:1px solid rgba(13,71,161,.38);color:rgba(253,245,230,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,150,10,.2);border:1px solid rgba(200,150,10,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(13,71,161,.09);border:1.5px solid rgba(13,71,161,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(13,71,161,.55);box-shadow:0 18px 54px rgba(13,71,161,.15);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--blue),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,245,230,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(13,71,161,.22);border:1px solid rgba(13,71,161,.42);color:#a0c8ff;}
+.fb-fr{background:rgba(0,105,92,.2);border:1px solid rgba(0,105,92,.38);color:#80ffd4;}
+.fb-free{background:rgba(200,150,10,.18);border:1px solid rgba(200,150,10,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(0,105,92,.14);border:1px solid rgba(0,105,92,.3);}
+.donts{background:rgba(198,40,40,.12);border:1px solid rgba(198,40,40,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#80ffd4;}.donts .dd-title{color:#ffb0b0;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(128,255,212,.78);}.donts .dd-list li{color:rgba(255,176,176,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(13,71,161,.1);border:1.5px solid rgba(13,71,161,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(13,71,161,.52);background:rgba(13,71,161,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,245,230,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,245,230,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(13,71,161,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,245,230,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,245,230,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">ANDHRA PRADESH</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-te" onclick="setLang('te')">తెలుగు</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#128722;</span>
+    <div class="hero-name" id="heroName">Andhra Pradesh</div>
+    <div class="hero-native" id="heroNative">ఆంధ్ర ప్రదేశ్</div>
+    <div class="hero-tag" id="heroTag">Land of Rivers, Spice, Temples & the Telugu Civilisation</div>
+    <div class="tribar"><div style="background:#0D47A1"></div><div style="background:#C8960A"></div><div style="background:#00695C"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Andhra Pradesh</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Rice Bowl of India</em></h2>
+  <p class="sec-body" id="aboutBody">Andhra Pradesh — the Land of Telugu People — is one of the Indian subcontinent's oldest continuous civilizations. The Telugu language, with a literary tradition stretching back over 1,000 years, is the third most spoken language in India and the 15th most spoken on earth. The state occupies the fertile delta of the Krishna and Godavari rivers — two of India's greatest sacred rivers — which together create one of the most productive agricultural landscapes in Asia. This is the Rice Bowl of India: the delta's emerald paddy fields stretch to every horizon, flooded mirror-lakes under monsoon skies. The Satavahana Empire, which once ruled all of central India, made Andhra Pradesh its cultural heartland. The Buddhist civilization that flourished here — at Amaravati, Nagarjunakonda and Guntupalle — was one of the greatest in Asia: the Amaravati School of sculpture, dating to the 1st century BC, produced stone carvings of a sensuous grace that influenced Buddhist art across Southeast Asia. The Vijayanagara Empire's cultural reach extended deep into Andhra; the Eastern Chalukyas of Vengi, the Kakatiyas and the Nayakas all built extraordinary temple traditions that endure in the Tirumala-Tirupati complex — the world's most visited religious site, receiving 60,000–100,000 pilgrims daily. Tirupati's Venkateswara temple is the wealthiest religious institution on earth. Andhra Pradesh's cuisine is among India's boldest — the fiery Andhra curries using Guntur chilies (the world's most traded chili variety) are renowned globally. The state's Kuchipudi classical dance, the Kondapalli toy craft, Kalamkari textile painting and the Bobbili veena represent living traditions of extraordinary refinement. Amaravati — AP's new capital being built on the Krishna riverfront — is one of the world's most ambitious planned city projects. With 975 km of coastline (India's second longest), diverse tribal cultures in the Eastern Ghats, and the sacred rivers connecting everything, Andhra Pradesh is where ancient rivers and ancient prayers have never stopped flowing.</p>
+</section>
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Andhra Pradesh</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">AP has three seasons: hot summer (March–May), monsoon (June–September — both southwest and northeast) and a pleasant winter (October–February). October to February is ideal — Tirupati is best in winter, the coastal temples are cool, the deltas are green from monsoon and the Godavari pushkar festival cycle falls in this window.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 26 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Andhra Pradesh</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Andhra Pradesh's 26 districts span three geographic zones: the coastal Andhra plains along the Bay of Bengal, the Rayalaseema plateau in the south and the Uttarandhra hills in the north. Each carries a distinct Telugu cultural identity.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="జిల్లా వెతకండి / Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred, Historical &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Andhra Pradesh</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Andhra Pradesh</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Telugu Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Andhra Pradesh</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+<footer>
+  <span class="fe">&#128591;</span>
+  <div class="ft" id="footerT">JAI ANDHRA PRADESH — NANDI AWARD WINNER</div>
+  <div class="fs" id="footerS">AP Foundation Day — November 1 &middot; 1956</div>
+</footer>
+<audio id="bgm" loop preload="auto"><source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg"></audio>
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(5,25,75);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(8,35,50);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(0,45,35);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22280%22 fill=%22rgba(13,71,161,0.25)%22/%3E%3Ccircle cx=%221040%22 cy=%22340%22 r=%22300%22 fill=%22rgba(0,105,92,0.18)%22/%3E%3Ccircle cx=%22590%22 cy=%22700%22 r=%22210%22 fill=%22rgba(200,150,10,0.15)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+{name:"Visakhapatnam",region:"Uttarandhra",known:"Port City, Steel Plant, Araku Valley, INS Vizag",heritage:["Simhachalam Temple","INS Kursura Submarine Museum","Borra Caves","Araku Valley Coffee"],languages:["Telugu","Urdu","Odia"],bestMonths:"Oct-Mar",avgTemp:"18-38°C"},
+{name:"Tirupati",region:"Rayalaseema",known:"Tirumala Venkateswara — World's Most Visited Temple",heritage:["Tirumala Venkateswara Temple","Sri Venkateswara Museum","Chandragiri Fort","Sri Kalahasthi Temple"],languages:["Telugu","Tamil","Kannada"],bestMonths:"Oct-Feb",avgTemp:"16-38°C"},
+{name:"Vijayawada",region:"Coastal Andhra",known:"Business Capital, Krishna River, Kanaka Durga Temple",heritage:["Kanaka Durga Temple","Prakasam Barrage","Undavalli Caves","Victoria Museum"],languages:["Telugu","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Guntur",region:"Coastal Andhra",known:"Chili Capital of World, Amaravati Stupa Heritage",heritage:["Amaravati Buddhist Stupa","Nagarjuna Sagar Nearby","Kondaveedu Fort","Undavalli Caves"],languages:["Telugu","Urdu"],bestMonths:"Oct-Mar",avgTemp:"18-44°C"},
+{name:"Krishna",region:"Coastal Andhra",known:"Krishna Delta, Rice Bowl, Machilipatnam Textiles",heritage:["Machilipatnam Kalamkari","Krishna River Delta","Kondapalli Fort","Hemachandra Buddhist Site"],languages:["Telugu","Urdu"],bestMonths:"Oct-Mar",avgTemp:"18-42°C"},
+{name:"East Godavari",region:"Coastal Andhra",known:"Godavari Pushkaram, Konaseema, Maredumilli Forest",heritage:["Godavari River Delta","Maredumilli Eco Park","Annavaram Temple","Draksharamam Bhimeswara Temple"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"18-40°C"},
+{name:"West Godavari",region:"Coastal Andhra",known:"Rice Bowl, Eluru Sarees, Godavari Backwaters",heritage:["Eluru Saree Weavers","Godavari Backwaters","Palakolu Heritage","Tadepalligudem Sites"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"18-42°C"},
+{name:"Kurnool",region:"Rayalaseema",known:"Nallamala Forest, Srisailam Dam, Belum Caves",heritage:["Srisailam Mallikarjuna Jyotirlinga","Belum Caves (2nd longest AP)","Yaganti Shiva Temple","Nallamala Tiger Reserve Buffer"],languages:["Telugu","Urdu","Kannada"],bestMonths:"Oct-Mar",avgTemp:"14-44°C"},
+{name:"Kadapa (YSR District)",region:"Rayalaseema",known:"Gandikota — Grand Canyon of India, Iron Ore",heritage:["Gandikota Fort — Penna River Gorge","Siddhavateswara Temple Vontimitta","Ontimitta Kodandarama Temple"],languages:["Telugu","Urdu"],bestMonths:"Oct-Mar",avgTemp:"16-44°C"},
+{name:"Anantapur",region:"Rayalaseema",known:"Puttaparthi Sai Baba Ashram, Lepakshi Temple",heritage:["Lepakshi Veerabhadra Temple","Puttaparthi Prashanti Nilayam","Gooty Fort","Thimmamma Marrimanu Giant Banyan"],languages:["Telugu","Kannada","Urdu"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Nellore",region:"Coastal Andhra",known:"Pulicat Lake Bird Sanctuary, Aquaculture Capital",heritage:["Pulicat Lake Bird Sanctuary","Nellore Rangasthalam","Sri Ranganathaswamy Temple Nellore"],languages:["Telugu","Tamil","Urdu"],bestMonths:"Oct-Mar",avgTemp:"20-40°C"},
+{name:"Prakasam",region:"Coastal Andhra",known:"Gundlakamma River, Kanigiri Fort, Ongole Cattle",heritage:["Gundlakamma River","Kanigiri Fort","Potireddipadu Head Regulator","Ongole Breed Heritage"],languages:["Telugu","Urdu"],bestMonths:"Oct-Mar",avgTemp:"18-42°C"},
+{name:"Srikakulam",region:"Uttarandhra",known:"Srikurmam Temple, Arasavalli Sun Temple, Tribal",heritage:["Srikurmam Kurmanadha Temple","Arasavalli Suryanarayana Temple","Narasannapet Heritage"],languages:["Telugu","Odia"],bestMonths:"Oct-Mar",avgTemp:"18-38°C"},
+{name:"Vizianagaram",region:"Uttarandhra",known:"Vizianagaram Fort, Royal Heritage, Folk Arts",heritage:["Vizianagaram Fort","Pusapati Royal Heritage","Gurjanapeta Crafts"],languages:["Telugu","Odia"],bestMonths:"Oct-Mar",avgTemp:"18-38°C"},
+{name:"Alluri Sitharama Raju (ASR)",region:"Uttarandhra",known:"Tribal Heartland, Rampa Rebellion Heritage, Forests",heritage:["Tribal Heritage — Koya & Kondh","Rampa Rebellion Sites","Eastern Ghats Forest"],languages:["Telugu","Odia","Koya","Kondh"],bestMonths:"Oct-Mar",avgTemp:"16-38°C"},
+{name:"Kakinada",region:"Coastal Andhra",known:"Coringa Mangrove, Offshore Oil, Hope Island",heritage:["Coringa Wildlife Sanctuary (Mangroves)","Hope Island","Offshore Oil Heritage"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"20-38°C"},
+{name:"Konaseema (Amalapuram)",region:"Coastal Andhra",known:"Venice of Andhra, Coconut Groves, Delta Islands",heritage:["Godavari Delta Backwaters","Coconut Island Culture","Delta Temple Circuit"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"20-38°C"},
+{name:"Eluru",region:"Coastal Andhra",known:"Eluru Sarees, Cotton Textiles, Kolleru Lake",heritage:["Kolleru Wildlife Sanctuary","Eluru Saree Heritage","Pedavegi Heritage"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"18-42°C"},
+{name:"NTR District (Vijayawada area)",region:"Coastal Andhra",known:"Krishna River, Amaravati New Capital Region",heritage:["Amaravati Capital City","Krishna River Heritage","Buddhist Heritage Zone"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Palnadu",region:"Coastal Andhra",known:"Palnadu War Heritage, Macherla, Agriculture",heritage:["Macherla Caves","Amaralingeswara Temple","Palnadu Battle Heritage"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"18-44°C"},
+{name:"Bapatla",region:"Coastal Andhra",known:"Chirala Beach, Textile Industry, Coastal Temples",heritage:["Chirala Beach","Coastal Temple Circuit","Textile Heritage"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"20-38°C"},
+{name:"Sri Satya Sai (Puttaparthi)",region:"Rayalaseema",known:"Sai Baba Ashram, Puttaparthi Spiritual Heritage",heritage:["Prashanti Nilayam Ashram","Sai Baba Heritage","Lepakshi Nearby"],languages:["Telugu","Kannada"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Nandyal",region:"Rayalaseema",known:"Belum Caves, Srisailam Edge, Agriculture",heritage:["Belum Caves","Nallamala Forest Edge","Orvakal Rock Garden"],languages:["Telugu","Urdu"],bestMonths:"Oct-Mar",avgTemp:"14-44°C"},
+{name:"Sri Balaji (Tirupati area)",region:"Rayalaseema",known:"Tirumala Hills, Chandragiri, Srikalahasti",heritage:["Tirumala Seven Hills","Chandragiri Fort","Sri Kalahasthi Vayu Linga","Kanipakam Vinayaka Temple"],languages:["Telugu","Tamil"],bestMonths:"Oct-Feb",avgTemp:"16-38°C"},
+{name:"Anakapalli",region:"Uttarandhra",known:"Paper Mill Heritage, Jawaharlal Nehru Thermal",heritage:["Anakapalli Heritage","Eastern Ghats Foothills","Thermal Plant Heritage"],languages:["Telugu","Odia"],bestMonths:"Oct-Mar",avgTemp:"18-38°C"},
+{name:"Manyam (Parvathipuram)",region:"Uttarandhra",known:"Tribal Heartland, Alluri Sitharama Raju Heritage",heritage:["Alluri Sitharama Raju Memorial","Tribal Villages Koya/Kondh","Eastern Ghats Wilderness"],languages:["Telugu","Koya","Odia"],bestMonths:"Oct-Mar",avgTemp:"16-38°C"}
+];
+
+const placesData=[
+{emoji:"🛕",name:"Tirumala Venkateswara Temple",location:"Tirupati, Chittoor District",desc:"The world's most visited religious site and wealthiest temple — 60,000 to 100,000 pilgrims climb the seven sacred hills to the Venkateswara (Balaji) shrine every single day. The temple's annual income exceeds Rs.3,000 crore. The pre-dawn darshan in the crush of devoted humanity, the thundering of the bells, the aroma of camphor and the sight of the golden vimana tower are overwhelming. A pilgrimage that transforms the devotee.",fee:["Free (Special darshan paid)"]},
+{emoji:"🏺",name:"Amaravati Buddhist Stupa",location:"Guntur District",desc:"One of the greatest Buddhist monuments in India — the Great Stupa of Amaravati (3rd century BC to 3rd century AD) was the largest stupa in ancient India. Though the original stupa was dismantled, its extraordinary sculptural panels are now in the British Museum and the Chennai Museum. The site's Amaravati Museum preserves the civilizational memory of one of ancient Asia's greatest Buddhist kingdoms.",fee:["Rs.25 Indians","Rs.300 Foreigners"]},
+{emoji:"🏔️",name:"Araku Valley & Borra Caves",location:"Visakhapatnam District",desc:"A breathtaking highland valley at 900 meters in the Eastern Ghats — terraced coffee and pepper plantations, tribal Kondh and Bagata villages, waterfalls and the extraordinary Borra Caves (10 million-year-old limestone caverns, 80 meters deep, with stalactites and stalagmites of cathedral scale). The Araku Valley Express train journey through 58 tunnels and 84 bridges is one of India's most scenic rail trips.",fee:["Borra Caves: Paid"]},
+{emoji:"🕌",name:"Lepakshi Temple Complex",location:"Anantapur District",desc:"A 16th-century Vijayanagara temple of extraordinary grace — the Veerabhadra Temple at Lepakshi has a hanging pillar (one of 70 columns) that does not rest on the ground and a colossal monolithic Nandi (sacred bull) — the largest in India. The ceiling paintings in the natya mantapa (dance hall) are among the finest examples of Vijayanagara fresco art, covering 8,000 sq ft in vibrant red, black and green.",fee:["Rs.15 Indians","Rs.200 Foreigners"]},
+{emoji:"🏰",name:"Gandikota — Grand Canyon of India",location:"Kadapa District",desc:"The Penna river cuts through the Erramala Hills creating a dramatic 2 km gorge overlooked by the ruins of the 13th-century Gandikota Fort. The canyon at sunrise — the river glinting in the gorge below, the ancient fort walls above, the Rayalaseema plateau stretching away — is one of South India's most spectacular natural scenes. Almost entirely undiscovered by mass tourism.",fee:["Free"]},
+{emoji:"🌊",name:"Godavari River — Papikondalu Gorge",location:"East Godavari-West Godavari",desc:"The Godavari — the Dakshin Ganga — cuts through the Eastern Ghats creating the spectacular Papikondalu gorge before spreading into the world's second-largest river delta. Boat journeys through the gorge pass forested hills, tribal villages and the meeting points of ancient pilgrimage routes. The Godavari Pushkaram (every 12 years) draws millions to its banks for the most sacred bathing festival in AP.",fee:["Boat charges apply"]},
+{emoji:"🐯",name:"Nagarjunasagar-Srisailam Tiger Reserve",location:"Kurnool-Guntur-Nalgonda",desc:"India's largest tiger reserve — 3,568 sq km of forest across two states, named for the ancient Buddhist site of Nagarjunakonda and the Srisailam Mallikarjuna Jyotirlinga. The reserve shelters tigers, leopards, wild dogs and the endemic slender loris in the Nallamala forest. The Krishna river gorge within the reserve is dramatically beautiful.",fee:["Paid"]},
+{emoji:"🌺",name:"Sri Kalahasthi — Vayu Linga",location:"Chittoor District",desc:"One of the Pancha Bhuta Stalas — the five temples representing the five elements. Srikalahasthi is the Vayu (wind/air) linga. The spider, snake and elephant who performed puja to the self-manifested Shivalinga are sculpted in gold at the entrance. The Rahu-Ketu puja performed here is unique in India — thousands come specifically for this astrological remedy.",fee:["Free"]},
+{emoji:"🗿",name:"Undavalli Rock-Cut Caves",location:"Vijayawada, Krishna District",desc:"4th–5th century Buddhist and Hindu rock-cut caves carved from a single sandstone hill on the Krishna riverbank — 4 stories of chambers containing a colossal reclining Vishnu carved from a single rock. The setting — the river below, the rising hills — and the quality of the carvings make Undavalli one of AP's most beautiful and underappreciated monuments.",fee:["Rs.15 Indians","Rs.200 Foreigners"]},
+{emoji:"🦅",name:"Pulicat Lake — Second Largest Brackish Lake",location:"Nellore-Sriharikota Border",desc:"India's second-largest brackish water lake and the winter home of thousands of flamingos, pelicans, painted storks and migratory ducks. Sriharikota — the satellite launch center — lies on the strip of land separating Pulicat from the sea. Fishing communities have lived around this lake for centuries; their catamaran boats and ancient fishing techniques create a timeless coastal scene.",fee:["Free"]}
+];
+
+const artsData=[
+{emoji:"💃",name:"Kuchipudi Classical Dance",location:"Kuchipudi Village, Krishna District",desc:"One of India's eight classical dance forms — originating in the village of Kuchipudi in Krishna district, where Brahmin men performed exclusively for centuries. Characterized by fast-paced footwork, fluid body movements and expressive mime (abhinaya). The Tarangam — performed on a brass plate while balancing a pot of water on the head — is a uniquely Kuchipudi virtuoso technique. UNESCO recognized, globally performed."},
+{emoji:"🖼️",name:"Kalamkari — Pen Drawing on Cloth",location:"Srikalahasthi and Machilipatnam",desc:"An ancient craft of painting stories on cloth using a bamboo pen (kalam) dipped in natural dyes. Two distinct traditions: Srikalahasthi's freehand Kalamkari depicting temple stories, and Machilipatnam's block-printed geometric patterns. Both use only natural dyes — pomegranate, indigo, turmeric, iron rust. UNESCO-recognized GI-tagged craft now internationally exhibited as a major textile art."},
+{emoji:"🪆",name:"Kondapalli Toys",location:"Kondapalli, Krishna District",desc:"Brightly painted wooden toys carved from softwood (tella poniki) in the village of Kondapalli — deities, animals, village scene figures and mythological characters painted in bold primary colors. A 400-year-old GI-tagged craft tradition where every family is a specialist. The distinctive stylization — elongated, flowing forms with characteristic color combinations — is immediately recognizable."},
+{emoji:"🎵",name:"Carnatic Music — AP's Classical Tradition",location:"Statewide",desc:"Andhra Pradesh is the homeland of several Carnatic music composers of the highest rank. Annamacharya (1408–1503) of Tirupati composed over 32,000 keertanas dedicated to Venkateswara — the greatest corpus of devotional music by a single composer in the world. Tyagaraja spent his life in AP. The Telugu language's natural musicality — all words ending in vowels — made it the ideal vehicle for Carnatic composition."},
+{emoji:"🧵",name:"Pochampally Ikat & Dharmavaram Silk",location:"Pochampally (now Telangana edge) and Dharmavaram",desc:"Dharmavaram silk sarees — woven in Anantapur district with pure zari borders and rich jewel-colored silk — are among India's most prized bridal sarees. The weavers of Dharmavaram have been producing these for the Tirupati temple and royal courts for centuries. GI-tagged. The town is considered South India's silk capital after Kanchipuram."},
+{emoji:"🎭",name:"Burra Katha & Harikatha",location:"Statewide",desc:"Burra Katha — an extraordinary narrative folk performance where a lead performer and two assistants sing, mime and narrate stories of Telugu heroes, social issues and mythology to village audiences. The lead performer wears a turban and plays a burra (clay pot drum). Harikatha — devotional storytelling with music — has been practiced for centuries as a vehicle for both religious teaching and social commentary."}
+];
+
+const traditionsData=[
+{emoji:"🌊",name:"Godavari Pushkaram",location:"Rajahmundry and Godavari Banks",desc:"The holiest bathing festival of Andhra Pradesh — held every 12 years when Jupiter enters Leo. The Godavari Pushkaram of 2015 drew 80 million pilgrims to Rajahmundry in 12 days — one of the largest human gatherings on earth. Devotees bathe at specific ghats, perform ancestral rites (pitru tarpan) and visit the string of temples along the river's sacred route through the Eastern Ghats."},
+{emoji:"🎊",name:"Ugadi — Telugu New Year",location:"Statewide — March/April",desc:"The most important festival of the Telugu calendar — the new year celebrated with the preparation of Ugadi Pachadi, a dish deliberately combining six tastes (sweet, sour, bitter, salty, hot and astringent) symbolizing life's varied experiences. New clothes, the reading of Panchanga (almanac) predictions, mango leaf toranas at every entrance and temple visits mark a day of profound domestic meaning."},
+{emoji:"🛕",name:"Brahmotsavam — Tirumala",location:"Tirumala, Tirupati — September/October",desc:"The annual nine-day Brahmotsavam at Tirumala is the largest temple festival in South India — the Venkateswara deity is taken on different vahanams (vehicles) each day, from Garuda to Elephant to Horse. On the final day, the Rathotsavam (chariot festival) draws hundreds of thousands. The illuminated golden vimana reflected in the holy tank at night is one of AP's most sublime sights."},
+{emoji:"🌸",name:"Sankranti — AP's Biggest Festival",location:"Statewide — January 13-15",desc:"The Telugu harvest festival — three days of celebration including Bhogi (burning old possessions), Sankranti (kite flying, sun worship, sesame sweets) and Kanuma (cattle worship). In coastal AP, the Gobbemmalu tradition — girls decorating doorsteps with intricate cow dung patterns for five days — is an art form of extraordinary folk vitality. Cockfighting (banned) was traditionally associated with this festival."},
+{emoji:"🎭",name:"Kuchipudi Dance Festival",location:"Kuchipudi Village, Krishna District",desc:"The annual festival at the birthplace of Kuchipudi classical dance — performed by hereditary Brahmin families who have practiced the art for 400 years. The all-night performances of Bhamakalapam (the story of Satyabhama, played by a man in female role) and other classical pieces are performed in the village square under the stars, exactly as they have been for centuries."},
+{emoji:"🪔",name:"Vijayadashami at Vijayawada",location:"Vijayawada — October",desc:"Dussehra at Vijayawada's Kanaka Durga Temple is one of AP's most spectacular religious events. The goddess receives special alankaram (adornment) on each of the nine Navratri nights, drawing enormous crowds. The Maha Navami procession is spectacular. Vijayawada itself — the City of Victory — derives its name from the goddess, making Dussehra here a homecoming of cosmic significance."}
+];
+
+const cuisinesData=[
+{emoji:"🌶️",name:"Andhra Spice — The Hottest Cuisine in India",region:"Statewide — Guntur Chili Heritage",desc:"Andhra Pradesh produces the Guntur chili — the world's most traded chili variety, used in cuisines from South Korea to Morocco. AP cooking uses chili not just for heat but for color, aroma and depth. The state's curries are among the hottest in the world by design — not carelessness. Andhra spice culture is a philosophy: the fire clears the palate and makes the body feel alive."},
+{emoji:"🍛",name:"Andhra Biryani",region:"Hyderabad-influenced, Statewide",desc:"Andhra biryani differs from Hyderabadi in its use of more whole spices, mirchi ka salan and a firmer, more distinct rice-and-meat layering. The Guntur variant uses more chili in the marination. The coastal variants use prawns and fish. The Rayalaseema version is drier and fiercer. Each region of AP has its own biryani character — sharing the technique but expressing a distinct Telugu heat identity."},
+{emoji:"🫕",name:"Pesarattu & Upma",region:"Coastal Andhra",desc:"The quintessential AP breakfast combination — whole green moong dal ground into a crispy crepe (pesarattu) and served with a mound of upma stuffed inside plus ginger chutney alongside. The pesarattu is fiercely green, tangy from fermentation and protein-rich. A dish of extraordinary nutritional density that has sustained coastal Telugu families for generations. Eaten at every tiffin center in AP."},
+{emoji:"🍲",name:"Gongura Chicken & Mutton",region:"Coastal Andhra — Statewide",desc:"Gongura (Kenaf / roselle leaves) — the defining souring ingredient of Telugu cuisine — cooked with chicken or mutton creates the state's most beloved and distinctive non-vegetarian preparation. The leaves' tartness cuts through the fat of the meat and creates a depth of flavor impossible to replicate. Gongura chutney is on every AP table; Gongura mutton is the dish every Telugu person in the diaspora most misses."},
+{emoji:"🥘",name:"Pappu (Dal) & Charu (Rasam)",region:"Statewide — Daily Food",desc:"The Telugu daily meal is built on pappu (lentil dal) and charu (pepper-tamarind rasam). Each district has its own pappu — tomato pappu, gongura pappu, raw mango pappu, greens pappu. Each meal begins with hot rice mixed with pappu and ghee; charu is drunk as a digestive. These seemingly simple preparations — each district's version distinct — represent the highest expression of Telugu home cooking."},
+{emoji:"🍘",name:"Boorelu & Pootharekulu",region:"Festival Foods — Coastal AP",desc:"Boorelu — deep-fried sweet dumplings of rice flour filled with chana dal and jaggery paste — are the quintessential AP festival sweet, made for weddings and Sankranti. Pootharekulu — extraordinarily thin sheets of rice starch, dry as parchment paper, filled with powdered sugar and dry fruits — are an Atreyapuram specialty unique in Indian confectionery. The technique of making Pootharekulu sheets is one of the most delicate in Indian sweets."},
+{emoji:"🌿",name:"Avakaya — AP Mango Pickle",region:"Statewide — GI Tagged",desc:"The most celebrated mango pickle in India — raw mango pieces marinated with Guntur chili powder, mustard seeds, salt and sesame oil in ceramic jars and aged for weeks. AP families make avakaya in enormous batches every May when raw mangoes arrive. Every Telugu household has its own avakaya recipe passed down through generations. The smell of avakaya being prepared fills entire neighborhoods in early summer."},
+{emoji:"🥗",name:"Natu Kodi Pulusu & Seafood",region:"Coastal Andhra",desc:"Country chicken (natu kodi) slow-cooked in a tangy tamarind-based pulusu (sour gravy) with coconut and whole spices — the quintessential rural Andhra Sunday meal. Coastal AP's seafood — prawn pickle (royyala vepudu), crab curry, Kakinada crab fry and Machilipatnam fish preparations — represent some of South India's finest coastal cooking. The Bay of Bengal delivers extraordinary freshness."},
+{emoji:"☕",name:"Araku Coffee",region:"Araku Valley, Visakhapatnam",desc:"One of India's finest specialty coffees — shade-grown by tribal farmers in the Eastern Ghats at 900–1,100 meters. Araku coffee won first prize at the Paris Coffee Championship in 2021. The tribal farming communities (Kondh, Koya, Bagata) grow it without chemicals using traditional methods. Smooth, chocolatey and lightly acidic — Araku is now served in premium coffee shops from Paris to Tokyo."},
+{emoji:"🍬",name:"Pala Kova & Bandara Laddu",region:"Tirupati-Vijayawada",desc:"Tirupati Laddu — the sacred prasadam of Venkateswara Temple — is arguably the most famous sweet in India. Made from besan, ghee, sugar and cashews by the thousands daily, it is distributed to every pilgrim. Pala Kova (concentrated milk sweet from Vijayawada), Kakinada Kaja (layered milk pastry) and Badam Halwa from Kurnool complete AP's sweet tradition, which like everything else in this state runs rich and intense."}
+];
+
+const weatherData=[
+{month:"January",avgTemp:"16-28°C",weather:"Cool Winter",details:"Perfect across AP. Tirupati is coolest — ideal for unhurried darshan. Araku Valley in misty winter is magical. Coastal temples comfortable. Lepakshi frescoes in clear winter light. Best overall month.",best:true},
+{month:"February",avgTemp:"18-32°C",weather:"Pleasant",details:"Kuchipudi Dance Festival in Krishna district. Araku coffee estates in flower. Nagarjunasagar-Srisailam excellent for wildlife. Eastern Ghats trekking season peak. Godavari river clear and calm.",best:true},
+{month:"March",avgTemp:"22-36°C",weather:"Warm",details:"Ugadi — Telugu New Year. Holi celebrated with AP flair. Last comfortable month before heat. Sankranti's kite strings still in the air. Mango season beginning. Good for heritage travel before April heat."},
+{month:"April",avgTemp:"26-40°C",weather:"Hot",details:"Summer building. Tirupati very hot but temple never stops. Coastal breeze makes Visakhapatnam tolerable. Inland districts — Kurnool, Anantapur — very hot. Mango season at peak. Avakaya pickling begins."},
+{month:"May",avgTemp:"28-44°C",weather:"Very Hot",details:"Peak summer. Rayalaseema districts exceed 44°C. Recommended only if visiting coastal areas. Araku Valley a refuge. Raw mango season — Guntur's avakaya production fills the air."},
+{month:"June",avgTemp:"26-38°C",weather:"Monsoon Arrives",details:"Southwest monsoon breaks over the Western Ghats and reaches AP. Dramatic relief from heat. Eastern Ghats begin to green. Coastal AP rainfall begins. Araku Valley transforms to vivid green.",best:true},
+{month:"July",avgTemp:"24-32°C",weather:"Monsoon",details:"Heavy rains across AP. Krishna and Godavari rivers rising. Delta flooding occasional. Forest reserves lush. Papikondalu gorge dramatic. Not ideal for temples but forest and river experiences extraordinary."},
+{month:"August",avgTemp:"24-32°C",weather:"Deep Monsoon",details:"Southwest monsoon continues; northeast monsoon preparing. Godavari in spate. Coastal flooding occasional. The delta emerald-green. Kondaveedu and other hillforts dramatically misty."},
+{month:"September",avgTemp:"24-34°C",weather:"Late Monsoon",details:"Brahmotsavam at Tirumala — the year's biggest temple festival. Navratri begins. Northeast monsoon approaching. AP's second monsoon (unique in India) begins in October. Transitional but full of events.",best:true},
+{month:"October",avgTemp:"22-32°C",weather:"Northeast Monsoon",details:"AP receives its second monsoon from the northeast — making October-November wetter than June-July for some districts. Vijayadashami spectacular at Vijayawada. Delta landscape at maximum greenness.",best:true},
+{month:"November",avgTemp:"18-28°C",weather:"Post-Monsoon",details:"AP Foundation Day November 1. Northeast monsoon tapering. Coastal AP still receiving some rain. Tirupati comfortable. Lepakshi and Gandikota ideal. Wildlife sanctuaries at their best. Excellent month.",best:true},
+{month:"December",avgTemp:"16-26°C",weather:"Early Winter",details:"Cool and clear. Araku Valley in its finest season. Tirupati winter darshan. Papikondalu boat journeys serene. Coastal temples in clear light. Borra Caves accessible. Best overall conditions.",best:true}
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Book Tirupati darshan online in advance</li><li>Try avakaya with curd rice</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Underestimate Andhra spice levels</li><li>Rush the Lepakshi ceiling paintings</li></ul></div>
+    </div>
+  </div></div>`;
+});
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Andhra Pradesh",heroNative:"ఆంధ్ర ప్రదేశ్",heroTag:"Land of Rivers, Spice, Temples & the Telugu Civilisation",scrollLbl:"SCROLL TO EXPLORE",qw:"&#127777; Weather",qd:"&#128205; Districts",qp:"&#127963; Places",qa:"&#127912; Arts",qt:"&#129345; Traditions",qc:"&#127374; Cuisines",lAbout:"About Andhra Pradesh",aboutTitle:"The Rice Bowl of India",aboutBody:"Andhra Pradesh is the land of Telugu people — a civilization with a 1,000-year literary tradition and 80 million speakers. The Tirumala Venkateswara Temple receives 100,000 pilgrims daily and is the world's wealthiest religious institution. The Amaravati Buddhist Stupa pioneered sculptural traditions that influenced all of Southeast Asia. Annamacharya composed 32,000 devotional songs at Tirupati — the largest musical corpus by one composer ever. The Godavari and Krishna deltas are India's rice bowl. Araku coffee won Paris 2021. Andhra cuisine is India's hottest and most beloved.",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Andhra Pradesh",weatherNote:"October to February is ideal — Tirupati is best in winter, the coastal temples are cool and the Godavari pushkar festival cycle falls in this window.",lDist:"All 26 Districts",distTitle:"Every District of Andhra Pradesh",distNote:"AP's 26 districts span three zones: Coastal Andhra plains, Rayalaseema plateau and Uttarandhra hills — each with its own Telugu cultural identity.",distSearch:"Search districts...",lPlaces:"Sacred, Historical & Natural Wonders",placesTitle:"Wonders of Andhra Pradesh",lArts:"Arts, Crafts & Heritage",artsTitle:"Living Traditions of Andhra Pradesh",lTrad:"Festivals & Celebrations",tradTitle:"Soul of Telugu Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Andhra Pradesh",footerT:"JAI ANDHRA PRADESH — Telugu TALLI KI JAI",footerS:"AP Foundation Day — November 1 · 1956"},
+  hi:{heroName:"आंध्र प्रदेश",heroNative:"ఆంధ్ర ప్రదేశ్",heroTag:"नदियों, मसाले, मंदिरों और तेलुगु सभ्यता की भूमि",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",qw:"&#127777; मौसम",qd:"&#128205; जिले",qp:"&#127963; स्थल",qa:"&#127912; कलाएं",qt:"&#129345; परंपराएं",qc:"&#127374; व्यंजन",lAbout:"आंध्र प्रदेश के बारे में",aboutTitle:"भारत का चावल का कटोरा",aboutBody:"आंध्र प्रदेश तेलुगु लोगों की भूमि है — 1,000 साल की साहित्यिक परंपरा वाली सभ्यता। तिरुमाला वेंकटेश्वर मंदिर प्रतिदिन 1 लाख तीर्थयात्रियों को प्राप्त करता है और दुनिया का सबसे धनी धार्मिक संस्थान है। अन्नमाचार्य ने तिरुपति में 32,000 भक्तिपद रचे। अमरावती बौद्ध स्तूप ने दक्षिण-पूर्व एशिया की मूर्तिकला परंपराओं को प्रभावित किया। कृष्णा और गोदावरी डेल्टा भारत का चावल का कटोरा है।",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"आंध्र प्रदेश कब जाएं",weatherNote:"अक्टूबर से फरवरी आदर्श है — तिरुपति सर्दियों में सबसे अच्छा है और गोदावरी पुष्करम इसी अवधि में आता है।",lDist:"सभी 26 जिले",distTitle:"आंध्र प्रदेश के हर जिले",distNote:"आंध्र प्रदेश के 26 जिले तीन क्षेत्रों में फैले हैं: तटीय आंध्र मैदान, रायलसीमा पठार और उत्तरांध्र पहाड़ियां।",distSearch:"जिले खोजें...",lPlaces:"पवित्र, ऐतिहासिक और प्राकृतिक चमत्कार",placesTitle:"आंध्र प्रदेश के चमत्कार",lArts:"कला, शिल्प और विरासत",artsTitle:"आंध्र प्रदेश की जीवंत परंपराएं",lTrad:"त्योहार और उत्सव",tradTitle:"तेलुगु संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"आंध्र प्रदेश का स्वाद",footerT:"జై ఆంధ్ర ప్రదేశ్ — తెలుగు తల్లికి జై",footerS:"ఆంధ్ర ప్రదేశ్ స్థాపన దినం — నవంబర్ 1 · 1956"},
+  te:{heroName:"ఆంధ్ర ప్రదేశ్",heroNative:"ఆంధ్ర ప్రదేశ్",heroTag:"నదులు, మసాలా, గుడులు మరియు తెలుగు నాగరికత",scrollLbl:"అన్వేషించడానికి స్క్రోల్ చేయండి",qw:"&#127777; వాతావరణం",qd:"&#128205; జిల్లాలు",qp:"&#127963; స్థలాలు",qa:"&#127912; కళలు",qt:"&#129345; సంప్రదాయాలు",qc:"&#127374; వంటకాలు",lAbout:"ఆంధ్ర ప్రదేశ్ గురించి",aboutTitle:"భారతదేశపు వరి పొట్ట",aboutBody:"ఆంధ్ర ప్రదేశ్ తెలుగు ప్రజల నేల — 1,000 సంవత్సరాల సాహిత్య సంప్రదాయం ఉన్న నాగరికత. తిరుమల వేంకటేశ్వర దేవాలయం రోజూ 1 లక్ష మంది భక్తులను స్వీకరిస్తుంది మరియు ప్రపంచంలో అత్యంత ధనవంతమైన మత సంస్థ. అన్నమాచార్య 32,000 కీర్తనలు రచించారు. అమరావతి బౌద్ధ స్తూపం ఆగ్నేయాసియా శిల్పకళను ప్రభావితం చేసింది. కృష్ణా-గోదావరి డెల్టా భారత వరి పొట్ట.",lWeather:"వాతావరణం మరియు ఉత్తమ సమయం",weatherTitle:"ఆంధ్ర ప్రదేశ్‌కు ఎప్పుడు వెళ్లాలి",weatherNote:"అక్టోబర్ నుండి ఫిబ్రవరి ఆదర్శం — తిరుపతి శీతాకాలంలో అత్యుత్తమంగా ఉంటుంది.",lDist:"అన్ని 26 జిల్లాలు",distTitle:"ఆంధ్ర ప్రదేశ్‌లోని ప్రతి జిల్లా",distNote:"ఆంధ్ర ప్రదేశ్‌లోని 26 జిల్లాలు మూడు ప్రాంతాలలో విస్తరించి ఉన్నాయి: తీర ఆంధ్ర మైదానాలు, రాయలసీమ పీఠభూమి మరియు ఉత్తరాంధ్ర కొండలు.",distSearch:"జిల్లా వెతకండి...",lPlaces:"పవిత్ర, చారిత్రక మరియు ప్రకృతి అద్భుతాలు",placesTitle:"ఆంధ్ర ప్రదేశ్ అద్భుతాలు",lArts:"కళలు, చేతివృత్తులు మరియు వారసత్వం",artsTitle:"ఆంధ్ర ప్రదేశ్ జీవంత సంప్రదాయాలు",lTrad:"పండుగలు మరియు వేడుకలు",tradTitle:"తెలుగు సంస్కృతి ఆత్మ",lCuisines:"వంటకాల వారసత్వం",cuisinesTitle:"ఆంధ్ర ప్రదేశ్ రుచులు",footerT:"జై ఆంధ్ర ప్రదేశ్ — తెలుగు తల్లికి జై",footerS:"ఆంధ్ర ప్రదేశ్ స్థాపన దినం — నవంబర్ 1 · 1956"}
+};
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc','lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote','lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'].forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.textContent=t[k];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
