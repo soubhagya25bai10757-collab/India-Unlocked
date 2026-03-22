@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uttar Pradesh — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#C8410B;--gold:#B8860B;--purple:#5B2D8E;--green:#1B6B3A;--parchment:#FDF6E3;--warm:#F5E6C8;--ink:#1A1208;--muted:#6B5B45;--border:rgba(200,65,11,0.2);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FDF6E3;color:#1A1208;font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(253,246,227,0.97);backdrop-filter:blur(10px);border-bottom:2px solid rgba(200,65,11,0.2);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--saffron);background:transparent;color:var(--saffron);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--saffron);color:white;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.72rem;letter-spacing:.15em;color:var(--saffron);font-weight:700;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 13px;border-radius:18px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-family:"Poppins",sans-serif;font-size:.55rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--saffron);color:white;border-color:var(--saffron);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--saffron);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn:hover{background:var(--saffron);color:white;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#2D0A5E 0%,#7B1F0A 45%,#1B4D2E 100%);}
+.hero-pattern{position:absolute;inset:0;opacity:0.06;background-image:repeating-linear-gradient(45deg,#FFD700 0,#FFD700 1px,transparent 0,transparent 50%);background-size:20px 20px;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,transparent 50%,rgba(0,0,0,0.65) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2.5rem,5vw,4rem);display:block;margin-bottom:.4rem;}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.8rem,8vw,7rem);color:#FFFFFF;letter-spacing:.02em;line-height:1;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
+.hero-native{font-size:clamp(1.2rem,3vw,2.2rem);color:#FFD700;font-style:italic;letter-spacing:.1em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.85rem,1.8vw,1.1rem);color:rgba(255,255,255,0.88);font-style:italic;letter-spacing:.08em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:3px;overflow:hidden;margin:1.2rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:3px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:7px 17px;border-radius:22px;border:1.5px solid rgba(255,255,255,0.4);background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);color:rgba(255,255,255,0.92);font-size:.64rem;letter-spacing:.05em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--saffron);border-color:var(--saffron);color:white;}
+.sarrow-wrap{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,0.45);font-weight:600;}
+.sarrow{width:2px;height:28px;background:linear-gradient(180deg,rgba(255,165,0,0.9),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:2px solid rgba(200,65,11,0.1);}
+section:nth-child(odd){background:#FDF6E3;}
+section:nth-child(even){background:#F8F0D8;}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.6rem;letter-spacing:.5em;color:var(--saffron);text-transform:uppercase;margin-bottom:.6rem;display:block;font-weight:700;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.5rem,3.5vw,2.5rem);color:var(--ink);margin-bottom:.9rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--saffron);font-style:italic;}
+.sec-body{font-size:clamp(1rem,1.6vw,1.12rem);color:var(--muted);line-height:1.9;letter-spacing:.01em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:22px;}
+.wcard{background:white;border:1.5px solid rgba(200,65,11,0.15);border-radius:14px;padding:16px;transition:all .3s;position:relative;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.wcard:hover{border-color:var(--saffron);transform:translateY(-3px);box-shadow:0 6px 20px rgba(200,65,11,0.12);}
+.wcard.best{border-color:var(--saffron);border-width:2px;background:#FFF8EE;}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--saffron);margin-bottom:4px;font-weight:700;}
+.wt{font-size:1.4rem;color:var(--ink);font-weight:600;margin-bottom:5px;}
+.wd{font-size:.76rem;color:var(--muted);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--saffron);color:white;font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:700;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:white;border:1.5px solid rgba(200,65,11,0.3);border-radius:28px;color:var(--ink);font-family:"Crimson Text",serif;font-size:1.05rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:var(--saffron);}
+.dsearch::placeholder{color:var(--muted);}
+.dist-accordion{display:flex;flex-direction:column;gap:10px;}
+.dacc{border:1.5px solid rgba(200,65,11,0.16);border-radius:14px;overflow:hidden;transition:all .3s;background:white;}
+.dacc:hover{border-color:var(--saffron);box-shadow:0 3px 12px rgba(200,65,11,0.1);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;transition:background .3s;user-select:none;}
+.dacc-hdr:hover{background:#FFF4E8;}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--ink);letter-spacing:.04em;font-weight:600;}
+.dacc-region{font-size:.74rem;color:var(--saffron);letter-spacing:.07em;margin-top:3px;font-weight:500;}
+.dacc-arrow{color:var(--saffron);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:700;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3000px;}
+.dacc-inner{padding:0 20px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.dinfo-card{background:#FFF8F0;border:1px solid rgba(200,65,11,0.12);border-radius:10px;padding:14px;}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.12em;color:var(--saffron);text-transform:uppercase;margin-bottom:9px;font-weight:700;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.dinfo-list li{font-size:.82rem;color:var(--muted);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--saffron);flex-shrink:0;font-size:.55rem;margin-top:3px;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.lchip{padding:3px 10px;border-radius:10px;background:rgba(200,65,11,0.1);border:1px solid rgba(200,65,11,0.22);color:var(--saffron);font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:600;}
+.best-month-tag{margin-top:10px;font-size:.8rem;color:var(--green);font-weight:700;font-family:"Poppins",sans-serif;}
+.temp-row{margin-top:6px;}
+.temp-badge{display:inline-block;padding:3px 10px;border-radius:8px;font-size:.7rem;background:rgba(91,45,142,0.08);border:1px solid rgba(91,45,142,0.25);color:var(--purple);font-family:"Poppins",sans-serif;font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:22px;}
+.pcard{background:white;border:1.5px solid rgba(200,65,11,0.16);border-radius:16px;overflow:hidden;transition:all .35s;box-shadow:0 2px 10px rgba(0,0,0,0.06);}
+.pcard:hover{transform:translateY(-5px);border-color:var(--saffron);box-shadow:0 12px 35px rgba(200,65,11,0.14);}
+.pcard-acc{height:5px;background:linear-gradient(90deg,var(--saffron),var(--gold),var(--purple));}
+.pcard-body{padding:20px;}
+.pi{font-size:2.2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.85rem;color:var(--ink);letter-spacing:.04em;margin-bottom:4px;font-weight:700;}
+.pl{font-size:.7rem;color:var(--saffron);letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px;font-weight:600;}
+.pd{font-size:.82rem;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.68rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:600;}
+.fb-in{background:rgba(91,45,142,0.1);border:1.5px solid rgba(91,45,142,0.28);color:var(--purple);}
+.fb-fr{background:rgba(200,65,11,0.08);border:1.5px solid rgba(200,65,11,0.28);color:var(--saffron);}
+.fb-free{background:rgba(27,107,58,0.1);border:1.5px solid rgba(27,107,58,0.28);color:var(--green);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+.dos,.donts{border-radius:9px;padding:10px 11px;}
+.dos{background:rgba(27,107,58,0.07);border:1px solid rgba(27,107,58,0.18);}
+.donts{background:rgba(200,65,11,0.06);border:1px solid rgba(200,65,11,0.18);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.07em;margin-bottom:5px;font-weight:700;}
+.dos .dd-title{color:var(--green);}.donts .dd-title{color:var(--saffron);}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:5px;}
+.dos .dd-list li{color:var(--green);}.donts .dd-list li{color:var(--saffron);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:22px;}
+.acard{background:white;border:1.5px solid rgba(200,65,11,0.14);border-radius:14px;padding:22px;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.acard:hover{transform:translateY(-4px);border-color:var(--saffron);box-shadow:0 8px 25px rgba(200,65,11,0.11);}
+.ae{font-size:2.2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--ink);letter-spacing:.06em;margin-bottom:7px;font-weight:700;}
+.ad{font-size:.8rem;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(200,65,11,0.08);border:1px solid rgba(200,65,11,0.18);color:var(--saffron);font-family:"Poppins",sans-serif;font-size:.7rem;font-weight:600;}
+footer{text-align:center;padding:50px 20px 40px;border-top:2px solid rgba(200,65,11,0.12);background:#F5E6C8;}
+footer .fe{font-size:2.5rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.4em;color:var(--muted);font-weight:700;}
+footer .fs{margin-top:10px;font-size:.88rem;color:var(--muted);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:40px 4vw 30px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title">UTTAR PRADESH</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-aw" onclick="setLang('aw')">अवधी</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🕌</span>
+    <div class="hero-name" id="heroName">Uttar Pradesh</div>
+    <div class="hero-native" id="heroNative">उत्तर प्रदेश</div>
+    <div class="hero-tag" id="heroTag">Land of Ram, Krishna, Taj Mahal &amp; the Holy Ganga</div>
+    <div class="tribar">
+      <div style="background:#FF6600"></div>
+      <div style="background:#FFD700"></div>
+      <div style="background:#1B6B3A"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap">
+    <span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span>
+    <div class="sarrow"></div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Uttar Pradesh</span>
+  <h2 class="sec-title" id="aboutTitle">Heart of <em>Bharat's Soul</em></h2>
+  <p class="sec-body" id="aboutBody">Uttar Pradesh is not merely a state — it is the living archive of India's entire civilizational memory. From the ghats of Varanasi where Shiva is said to reside, to the birthplace of Lord Ram at Ayodhya and Lord Krishna at Mathura, UP holds more sacred geography per square kilometre than anywhere else on earth. The Taj Mahal at Agra — a UNESCO World Heritage Site and one of the Seven Wonders of the World — draws visitors from every nation. Prayagraj hosts the Kumbh Mela, the largest peaceful gathering of human beings in recorded history, where over 50 million pilgrims converge at the Triveni Sangam. Lucknow's Nawabi culture of tehzeeb, Benares's ghats alive with Sanskrit chants at dawn, Agra's Mughal magnificence and Vrindavan's Krishna devotion create a tapestry of culture unmatched anywhere in the world. With 75 districts, 240 million people and 5,000 years of continuous history, Uttar Pradesh is where India's past lives and its future is written.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Uttar Pradesh</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">UP has three seasons: blazing summer (April–June), monsoon (July–September) and a glorious cool winter (October–March). October to March is the golden window — the Taj Mahal glows in winter mist, Varanasi's ghats are at their most atmospheric and the entire pilgrim circuit is perfectly accessible.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 75 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Uttar Pradesh</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">UP's 75 districts span the Gangetic plains from the Himalayan terai in the north to the Vindhya ranges in the south. Each carries layers of mythology, history and living culture unique to its corner of this ancient land.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred, Historical &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Uttar Pradesh</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Uttar Pradesh</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>UP's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Uttar Pradesh</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY UTTAR PRADESH</div>
+  <div class="fs" id="footerS">UP Foundation Day — January 24 · 1950</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+const districtData=[{name:"Agra",region:"Braj Region",known:"Taj Mahal, Mughal Heritage, Red Fort",heritage:["Taj Mahal","Agra Fort","Fatehpur Sikri","Mehtab Bagh"],languages:["Hindi","Urdu","Braj Bhasha"],bestMonths:"Oct–Mar",avgTemp:"4–43°C"},{name:"Lucknow",region:"Awadh Region",known:"Nawabi Culture, Chikankari, Biryani",heritage:["Bara Imambara","Chota Imambara","Residency Ruins","Hazratganj"],languages:["Hindi","Urdu","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"5–42°C"},{name:"Varanasi",region:"Purvanchal",known:"Holiest City, Ganga Ghats, Silk",heritage:["Dashashwamedh Ghat","Kashi Vishwanath","Sarnath","Manikarnika Ghat"],languages:["Hindi","Bhojpuri","Sanskrit"],bestMonths:"Oct–Mar",avgTemp:"8–42°C"},{name:"Ayodhya",region:"Faizabad Division",known:"Birthplace of Lord Ram, Ram Mandir",heritage:["Ram Janmabhoomi","Hanuman Garhi","Kanak Bhawan","Saryu Ghat"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"6–42°C"},{name:"Mathura",region:"Braj Region",known:"Birthplace of Lord Krishna, Holi",heritage:["Krishna Janmabhoomi","Dwarkadhish Temple","Vrindavan","Govardhan Hill"],languages:["Hindi","Braj Bhasha"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Prayagraj",region:"Central UP",known:"Kumbh Mela, Triveni Sangam",heritage:["Triveni Sangam","Allahabad Fort","Anand Bhavan","Khusro Bagh"],languages:["Hindi","Urdu","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"6–44°C"},{name:"Vrindavan",region:"Braj Region",known:"Krishna Devotion, 5000+ Temples",heritage:["Banke Bihari Temple","ISKCON Vrindavan","Prem Mandir","Nidhivan"],languages:["Hindi","Braj Bhasha"],bestMonths:"Oct–Feb",avgTemp:"4–44°C"},{name:"Fatehpur Sikri",region:"Agra Division",known:"Mughal Ghost City, UNESCO Heritage",heritage:["Buland Darwaza","Jodha Bai Palace","Panch Mahal","Salim Chishti Dargah"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"4–43°C"},{name:"Gorakhpur",region:"Purvanchal",known:"Gorakhnath Temple, Gita Press",heritage:["Gorakhnath Temple","Gita Press","Ramgarh Lake","Veer Bahadur Museum"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"6–40°C"},{name:"Meerut",region:"Western UP",known:"1857 Revolt Origin, Sports Industry",heritage:["Shaheed Smarak","Suraj Kund","St. John's Church"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Aligarh",region:"Western UP",known:"Aligarh Muslim University, Locks",heritage:["AMU Campus","Aligarh Fort","Dor Fort","Jama Masjid"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–44°C"},{name:"Kanpur",region:"Central UP",known:"Leather Capital, IIT Kanpur",heritage:["Jain Glass Temple","Allen Forest Zoo","Memorial Church"],languages:["Hindi","Urdu","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Jhansi",region:"Bundelkhand",known:"Rani Lakshmibai, 1857 Revolution",heritage:["Jhansi Fort","Rani Mahal","Government Museum"],languages:["Hindi","Bundeli"],bestMonths:"Oct–Mar",avgTemp:"4–46°C"},{name:"Chitrakoot",region:"Bundelkhand",known:"Ram Vanvas Site, Mandakini River",heritage:["Kamadgiri Temple","Ramghat","Sphatik Shila"],languages:["Hindi","Bundeli","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"6–44°C"},{name:"Mirzapur",region:"Vindhya Region",known:"Vindhyachal Temple, Carpets",heritage:["Vindhyachal Devi Temple","Chunar Fort","Son Bhandra Waterfalls"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–44°C"},{name:"Sonbhadra",region:"Vindhya Region",known:"Tribal Heritage, Rihand Dam",heritage:["Vijay Garh Fort","Agori Fort","Mukkha Waterfalls"],languages:["Hindi","Gondi","Oraon"],bestMonths:"Oct–Mar",avgTemp:"8–44°C"},{name:"Dudhwa",region:"Terai Region",known:"Dudhwa National Park, Tiger Reserve",heritage:["Dudhwa Tiger Reserve","Swamp Deer Habitat","Tharu Villages"],languages:["Hindi","Tharu","Awadhi"],bestMonths:"Nov–Apr",avgTemp:"6–38°C"},{name:"Pilibhit",region:"Terai Region",known:"Tiger Reserve, Sharda River",heritage:["Pilibhit Tiger Reserve","Sharda River","Jamia Mosque"],languages:["Hindi","Urdu"],bestMonths:"Nov–Mar",avgTemp:"4–40°C"},{name:"Bahraich",region:"Terai Region",known:"Katarniaghat Wildlife Sanctuary",heritage:["Katarniaghat Sanctuary","Dargah Syed Salar Masud"],languages:["Hindi","Awadhi","Urdu"],bestMonths:"Nov–Mar",avgTemp:"6–42°C"},{name:"Kushinagar",region:"Purvanchal",known:"Buddha's Mahaparinirvana Site",heritage:["Mahaparinirvana Temple","Ramabhar Stupa","Wat Thai Temple"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"6–40°C"},{name:"Bareilly",region:"Rohilkhand",known:"Furniture City, Nath Temple Circuit",heritage:["Alakhnath Temple","Trivati Nath Temple","Dhopeshwar Nath"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Moradabad",region:"Rohilkhand",known:"Brass City, Peetal Nagar",heritage:["Jama Masjid","Brass Craft Workshops","Ramganga River"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Rampur",region:"Rohilkhand",known:"Raza Library, Nawab Heritage",heritage:["Raza Library","Rampur Fort","Collectorate Museum"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Shahjahanpur",region:"Rohilkhand",known:"Ram Prasad Bismil's Birthplace",heritage:["Ram Prasad Bismil Memorial","Garha Mandir","Kali Bari"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–44°C"},{name:"Ghaziabad",region:"NCR Region",known:"Industrial Hub, Gateway to UP",heritage:["Raj Nagar","Hindon River Sites"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"4–42°C"},{name:"Noida / Gautam Buddh Nagar",region:"NCR Region",known:"IT Hub, Buddha International Circuit",heritage:["Buddha International Circuit","Night Safari","ISKCON Noida"],languages:["Hindi","English","Urdu"],bestMonths:"Oct–Mar",avgTemp:"4–42°C"},{name:"Saharanpur",region:"Western UP",known:"Woodcraft Capital, Botanical Gardens",heritage:["Botanical Gardens","Wood Carving Workshops","Shivalik Hills"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Bhadohi",region:"Purvanchal",known:"Carpet Capital of India",heritage:["Carpet Weaving Clusters","Craft Villages","Ganga Ghats"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–44°C"},{name:"Jaunpur",region:"Purvanchal",known:"Sharqi Dynasty, Atala Mosque",heritage:["Atala Mosque","Shahi Bridge","Shahi Qila","Jami Mosque"],languages:["Hindi","Urdu","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–44°C"},{name:"Ghazipur",region:"Purvanchal",known:"Lord Cornwallis Tomb, Opium Heritage",heritage:["Lord Cornwallis Tomb","Opium Factory","Ganga Ghats"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–42°C"},{name:"Ballia",region:"Purvanchal",known:"Mangal Pandey's Birthplace",heritage:["Mangal Pandey Memorial","Dadri Fair","Siyaram Saran Ghat"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–42°C"},{name:"Azamgarh",region:"Purvanchal",known:"Literary Heritage, Black Pottery",heritage:["Durgasthan Temple","Azamgarh Museum","Bharthari Talab"],languages:["Hindi","Bhojpuri","Urdu"],bestMonths:"Oct–Mar",avgTemp:"8–42°C"},{name:"Chandauli",region:"Purvanchal",known:"Chandra Prabha Sanctuary, Waterfalls",heritage:["Naugarh Sanctuary","Chandra Prabha Wildlife","Son River"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–44°C"},{name:"Banda",region:"Bundelkhand",known:"Ken River, Kalinjar Fort",heritage:["Ken River","Kalinjar Fort","Mark Khapar Devi"],languages:["Hindi","Bundeli"],bestMonths:"Oct–Mar",avgTemp:"6–46°C"},{name:"Hamirpur",region:"Bundelkhand",known:"Betwa-Yamuna Confluence",heritage:["Betwa River","Hamirpur Fort","Granite Quarries"],languages:["Hindi","Bundeli"],bestMonths:"Oct–Mar",avgTemp:"6–46°C"},{name:"Mahoba",region:"Bundelkhand",known:"Chandela Dynasty, Ancient Tanks",heritage:["Chandela Heritage","Rahila Sagar","Madan Sagar"],languages:["Hindi","Bundeli"],bestMonths:"Oct–Mar",avgTemp:"6–46°C"},{name:"Lalitpur",region:"Bundelkhand",known:"Devgarh Jain Temples",heritage:["Devgarh Jain Temples","Betwa Source","Nainagir Jain Temples"],languages:["Hindi","Bundeli"],bestMonths:"Oct–Mar",avgTemp:"4–46°C"},{name:"Sitapur",region:"Awadh Region",known:"Naimisharanya Sacred Forest",heritage:["Naimisharanya","Chakratirtha Kund","Hanumat Dham"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–42°C"},{name:"Shravasti",region:"Terai Region",known:"Buddha's Teaching Site, Jetavana",heritage:["Jetavana Monastery","Saheth-Maheth","Angulimala Stupa"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–40°C"},{name:"Kannauj",region:"Central UP",known:"Attar & Perfume Capital",heritage:["Attar Industry","Ancient Fort Sites","Lak Bahosi Sanctuary"],languages:["Hindi","Urdu","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Etawah",region:"Central UP",known:"Chambal Ravines, Lion Safari",heritage:["Chambal Safari","Etawah Lion Safari","Yamuna Ravines"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Firozabad",region:"Agra Division",known:"Glass & Bangle Capital of India",heritage:["Glass Bangle Industry","Tundla Junction"],languages:["Hindi","Urdu","Braj Bhasha"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Rae Bareli",region:"Central UP",known:"Rail Coach Factory, Ganga Banks",heritage:["Dalmau Fort","Ganga Ghats","Rail Coach Factory"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Faizabad",region:"Awadh Region",known:"Historic Awadhi Capital, Guptar Ghat",heritage:["Gulab Bari","Moti Mahal","Saryu Ghat","Guptar Ghat"],languages:["Hindi","Awadhi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"6–42°C"},{name:"Barabanki",region:"Awadh Region",known:"Deva Sharif Dargah",heritage:["Deva Sharif Dargah","Ram Nath Temple","Ghaghra River"],languages:["Hindi","Awadhi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Sultanpur",region:"Awadh Region",known:"Sultanpur National Park",heritage:["Sultanpur National Park","Gomti River","Durga Temple"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Pratapgarh",region:"Purvanchal",known:"Belha Devi Temple, Amla Capital",heritage:["Belha Devi Temple","Sai River","Pratapgarh Fort"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"6–44°C"},{name:"Lakhimpur Kheri",region:"Terai Region",known:"Dudhwa Buffer Zone, Sugar Belt",heritage:["Dudhwa Tiger Buffer","Okhla Barrage","Fern Forest"],languages:["Hindi","Awadhi","Tharu"],bestMonths:"Nov–Mar",avgTemp:"4–40°C"},{name:"Gonda",region:"Awadh Region",known:"Sravasti Nearby, Ghaghara River",heritage:["Sravasti Buddhist Site","Ghaghara Ghats"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–42°C"},{name:"Unnao",region:"Central UP",known:"Leather Industry, Ganga Heritage",heritage:["Dewan Ji Temple","Shukla Tirth","Ganga Ghats"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Mainpuri",region:"Agra Division",known:"Soron Pilgrimage, Mustard Oil",heritage:["Mainpuri Fort","Soron Shukartirth"],languages:["Hindi","Braj Bhasha"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Muzaffarnagar",region:"Western UP",known:"Sugar Belt, Ganga Canal",heritage:["Khatauli Temple","Ganga Canal"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–44°C"},{name:"Bijnor",region:"Western UP",known:"Ganges-Ramganga Doab, Najibabad Fort",heritage:["Mandawar Fort","Najibabad Fort","Ganga Sites"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Amroha",region:"Western UP",known:"Mango City, Historical Mosques",heritage:["Historical Mosques","Mango Orchards"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–42°C"},{name:"Bulandshahr",region:"Western UP",known:"Narora Ganga Ghat, Sugar Industry",heritage:["Narora Ganga Ghat","Ahar Fort"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–44°C"},{name:"Sant Ravidas Nagar",region:"Purvanchal",known:"Sant Ravidas Birthplace, Carpets",heritage:["Sant Ravidas Birth Place","Ganga Heritage"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct–Mar",avgTemp:"8–44°C"},{name:"Hardoi",region:"Awadh Region",known:"Naimisharanya Route, Agriculture",heritage:["Sandila Fort","Bilgram Sharif"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Balrampur",region:"Terai Region",known:"Rapti River, Forest District",heritage:["Tulsipur Devi Temple","Rapti River"],languages:["Hindi","Awadhi","Tharu"],bestMonths:"Oct–Mar",avgTemp:"4–40°C"},{name:"Jalaun",region:"Bundelkhand",known:"Orai City, Betwa River Heritage",heritage:["Betwa River","Orai Museum"],languages:["Hindi","Bundeli"],bestMonths:"Oct–Mar",avgTemp:"6–46°C"},{name:"Ambedkar Nagar",region:"Purvanchal",known:"Dr. Ambedkar Heritage, Textiles",heritage:["Akbarpur Museum","Ghaghra River"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"6–42°C"},{name:"Amethi",region:"Awadh Region",known:"Panchganga Ghat, Political Heritage",heritage:["Panchganga Ghat","Local Temples"],languages:["Hindi","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–42°C"},{name:"Etah",region:"Western UP",known:"Jalesar Brass Works, Rural Heritage",heritage:["Jalesar Brass Craft","Kali Nadi"],languages:["Hindi","Braj Bhasha"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Farrukhabad",region:"Central UP",known:"Potato Hub, Nawab Heritage",heritage:["Pateshwari Devi Temple","Ganga Ghats"],languages:["Hindi","Urdu","Awadhi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Auraiya",region:"Central UP",known:"Yamuna Ravines, Petroleum Hub",heritage:["Yamuna Ghats","Bidhuna Temple"],languages:["Hindi"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"},{name:"Shamli",region:"Western UP",known:"Border District, Textile Hub",heritage:["Historical Sites","Yamuna Floodplains"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"2–44°C"},{name:"Hapur",region:"NCR Region",known:"Commercial Hub, Pilkhuwa Textile",heritage:["Pilkhuwa Textile","Garh Ganga"],languages:["Hindi","Urdu"],bestMonths:"Oct–Mar",avgTemp:"4–42°C"},{name:"Kasganj",region:"Agra Division",known:"Soron Pilgrimage, Ganga Banks",heritage:["Ganga Ghats","Soron Pilgrimage"],languages:["Hindi","Urdu","Braj Bhasha"],bestMonths:"Oct–Mar",avgTemp:"4–44°C"}];
+
+const placesData=[{emoji:"🕌",name:"Taj Mahal",location:"Agra",desc:"The world's greatest monument to love, built by Shah Jahan for Mumtaz Mahal (1631–1648). UNESCO World Heritage Site and one of the Seven Wonders of the World. At dawn the marble turns rose-pink; at dusk amber; under full moon it becomes ethereal silver.",fee:["₹50 Indians","₹1100 Foreigners"]},{emoji:"🛕",name:"Kashi Vishwanath Temple",location:"Varanasi",desc:"One of the twelve sacred Jyotirlingas of Shiva and among Hinduism's holiest sites. Located in Varanasi's 3,000-year-old lanes. The Kashi Vishwanath Corridor (2021) connects it directly to the Ganges ghats.",fee:["Free"]},{emoji:"🌊",name:"Dashashwamedh Ghat & Ganga Aarti",location:"Varanasi",desc:"The main ghat of Varanasi where priests perform the spectacular Ganga Aarti every evening at sunset. 10,000 pilgrims gather on stone steps as flames rise over the Ganges — one of earth's most moving spectacles.",fee:["Free"]},{emoji:"🏰",name:"Agra Fort",location:"Agra",desc:"Massive 16th-century Mughal fort built by Akbar. Shah Jahan spent his final 8 years imprisoned here — gazing at the Taj Mahal across the Yamuna. UNESCO World Heritage Site with palaces, mosques and audience halls.",fee:["₹35 Indians","₹550 Foreigners"]},{emoji:"🌸",name:"Ram Mandir — Ram Janmabhoomi",location:"Ayodhya",desc:"The newly consecrated Ram Mandir at the precise birthplace of Lord Ram. The grand Nagara-style temple was consecrated in January 2024 after a 500-year civilizational journey and is among the largest temples built in modern India.",fee:["Free"]},{emoji:"🏛️",name:"Fatehpur Sikri",location:"Agra District",desc:"Akbar's magnificent red sandstone capital, built in 1571 and abandoned after 14 years. The Buland Darwaza is Asia's largest gateway. A perfectly preserved UNESCO World Heritage ghost city of Mughal ambition.",fee:["₹35 Indians","₹550 Foreigners"]},{emoji:"🪷",name:"Triveni Sangam — Kumbh Mela",location:"Prayagraj",desc:"Sacred confluence of Ganga, Yamuna and the mythical Saraswati rivers. Site of the Kumbh Mela — the largest peaceful human gathering on earth. Over 50 million pilgrims attend the Maha Kumbh held every 12 years.",fee:["Free"]},{emoji:"🔔",name:"Krishna Janmabhoomi & Vrindavan",location:"Mathura",desc:"The prison cell where Lord Krishna was born 5,000 years ago. The Mathura-Vrindavan circuit encompasses 5,000+ temples. Vrindavan's Banke Bihari Temple, ISKCON and Prem Mandir draw millions of devotees annually.",fee:["Free"]},{emoji:"🐅",name:"Dudhwa National Park",location:"Lakhimpur Kheri",desc:"UP's premier wildlife sanctuary on the Nepal border. Home to Bengal tigers, barasingha (UP's state animal), Indian rhinoceros and 400+ bird species. Sal forests and terai grasslands create extraordinary biodiversity.",fee:["Paid"]},{emoji:"🏺",name:"Sarnath — Buddha's First Sermon",location:"Varanasi District",desc:"Where the Buddha gave his first sermon after attaining enlightenment. The 5th-century Dhamek Stupa marks the exact spot. Sarnath Museum houses the Lion Capital of Ashoka — the national emblem of India.",fee:["Paid"]}];
+
+const artsData=[{emoji:"🧵",name:"Banarasi Silk Weaving",location:"Varanasi",desc:"The most prized silk in India — interwoven with real gold (zari) and silver threads into brocade patterns. GI-tagged with 1,200 years of history. Banarasi sarees are worn at weddings across India and woven on handlooms in Varanasi's ancient lanes."},{emoji:"🪡",name:"Chikankari Embroidery",location:"Lucknow",desc:"Delicate white-on-white shadow embroidery on cotton and chiffon, perfected in the Nawabi courts of Awadh. 36 distinct stitches, each with a specific name. A single saree can take 3–6 months. Lucknow's most globally recognized cultural export."},{emoji:"🏺",name:"Blue Pottery of Khurja",location:"Khurja, Bulandshahr",desc:"Distinctive turquoise-blue glazed pottery using quartz, not clay. Persian origins brought by the Mughals. Khurja is the Pottery City of India producing 40% of India's ceramic tableware. A GI-protected heritage craft."},{emoji:"🪘",name:"Kathak Dance",location:"Lucknow & Varanasi",desc:"One of India's eight classical dance forms, born in UP's temples and refined in Nawabi courts. Known for lightning-fast spins (chakkar), intricate footwork (tatkar) and expressive storytelling (abhinaya). Two gharanas — Lucknow and Varanasi."},{emoji:"🔩",name:"Brass Craft of Moradabad",location:"Moradabad",desc:"Moradabad — Brass City — produces 85% of India's brass handicraft exports. Intricate engravings on vases, lamps and decorative items sent to 100+ countries. Over 1 million artisans employed in this GI-protected heritage craft."},{emoji:"🪞",name:"Agra Marble Inlay",location:"Agra",desc:"The same pietra dura technique used in the Taj Mahal, practiced by descendants of Mughal-era craftsmen. Semi-precious stones — lapis lazuli, malachite, carnelian — set into white marble in floral patterns. Every piece is a miniature Taj Mahal."}];
+
+const traditionsData=[{emoji:"🔥",name:"Ganga Aarti, Varanasi",location:"Dashashwamedh Ghat, Varanasi",desc:"Every evening at sunset, five priests perform an elaborate fire worship with massive camphor-lit lamps, conch shells and Vedic chanting. The ritual has continued unbroken for centuries. Best witnessed from a boat on the Ganges at dusk."},{emoji:"🌸",name:"Braj Holi — Lathmar Holi",location:"Mathura, Vrindavan & Barsana",desc:"The Braj region celebrates Holi for 40 days in its most ancient form. Lathmar Holi at Barsana sees women joyfully beat men with sticks. Phoolon ki Holi at Vrindavan is a riot of rose petals. Holi here predates recorded history."},{emoji:"🪔",name:"Dev Deepawali",location:"Varanasi",desc:"On Kartik Purnima (15 days after Diwali), all 84 ghats of Varanasi are illuminated with over one million earthen lamps. Gods are said to descend to bathe in the Ganges. The reflection of a million flames on the river is India's most breathtaking spectacle."},{emoji:"🎭",name:"Ram Leela",location:"Ramnagar (Varanasi) & Ayodhya",desc:"Month-long dramatic re-enactment of the Ramayana during Navratri. Ramnagar's Ram Leela — patronized by the Maharaja of Varanasi — is UNESCO Intangible Cultural Heritage, performed across 25 km with 100,000 nightly spectators."},{emoji:"🕌",name:"Kumbh Mela",location:"Prayagraj",desc:"The world's largest religious gathering, held every 12 years at Triveni Sangam. Over 50 million pilgrims attend the Maha Kumbh. Naga Sadhus march in procession to bathe on the most auspicious dates. The greatest spectacle of human faith."},{emoji:"🎊",name:"Lucknow Mahotsav",location:"Lucknow",desc:"Annual multi-day festival celebrating the Nawabi heritage of Awadh. Classical music, Kathak performances, ghazal evenings, Awadhi cuisine and chikankari exhibitions. A celebration of tehzeeb — the refined Lucknowi culture of courteous elegance."}];
+
+const cuisinesData=[{emoji:"🍛",name:"Awadhi Dum Biryani",region:"Lucknow — Nawabi Legacy",desc:"The original dum biryani — meat and rice slow-cooked in a sealed pot with saffron, kewra and whole spices. The Nawabs of Awadh elevated biryani to high art. Lucknow's version is subtler and more fragrant, each grain of rice perfectly separate."},{emoji:"🫕",name:"Galouti Kebab",region:"Lucknow",desc:"Invented for a toothless Nawab who could no longer chew. 160 spices ground into meat so tender it dissolves on the tongue. Served on wafer-thin ulte tawa paratha. The most delicate kebab ever created by any culinary tradition."},{emoji:"🫓",name:"Bedai & Jalebi",region:"Agra & Western UP",desc:"The quintessential UP breakfast. Bedai — crisp puris stuffed with spiced urad dal — with spicy aloo sabzi and syrupy orange jalebis. The combination at Agra's Deviram's has been a morning ritual since the Mughal era."},{emoji:"🥣",name:"Kachori Sabzi",region:"Varanasi & Statewide",desc:"Varanasi's iconic street breakfast — crisp kachoris with spiced dal, two differently seasoned aloo sabzis and green chutney. Eaten on stone steps beside ancient temples at dawn. The taste is inseparable from the experience of Kashi."},{emoji:"🍮",name:"Rabri & Malaiyo",region:"Varanasi & Mathura",desc:"Rabri — thickened milk simmered into rich layers. Malaiyo — a winter-only cloud-like dessert from churned milk foam, garnished with saffron and pistachios. Available only in Varanasi from October to February."},{emoji:"🍬",name:"Petha of Agra",region:"Agra",desc:"White ash gourd preserved in sugar syrup until translucent and crystalline. A GI-tagged confection unique to Agra. Agra's Panchi Petha has been making it since 1860 in safed, angoori and kesar variants."},{emoji:"🧆",name:"Awadhi Tehri & Pulao",region:"Awadh Region",desc:"Fragrant vegetarian pulao with potatoes and whole spices, cooked dum style with saffron and ghee. Tehri was the vegetarian biryani of the Nawabs' Hindu courtiers. A deeply comforting dish of extraordinary elegance."},{emoji:"🥛",name:"Mathura Peda & Vrindavan Khurchan",region:"Mathura–Vrindavan",desc:"Mathura's peda — dense milk sweets made for 400 years as prasad for Lord Krishna. Vrindavan's khurchan is scraped condensed milk with cardamom. Every Braj temple distributes these as divine offering."},{emoji:"🌿",name:"Chaat — Samosa & Aloo Tikki",region:"Statewide",desc:"UP invented India's chaat culture. Varanasi's tamatar chaat, Lucknow's basket chaat, Agra's dalmoth — each city has its signature. The samosa in its modern form was perfected in UP's bazaars. No state has done more to shape India's street food."},{emoji:"🫙",name:"Baati Chokha",region:"Bundelkhand Region",desc:"In UP's Bundelkhand region, baked wheat baati with roasted vegetable chokha and ghee is the staple. Hearty, smoky and deeply satisfying — shaped by the rocky Vindhya landscape and warrior Bundela culture."},{emoji:"🫖",name:"Imarti & Makkhan Malai",region:"Lucknow & Statewide",desc:"Imarti — a swirling orange sweet deeper and more complex than jalebi. Makkhan malai — airy whipped cream dessert available only in winter mornings in Varanasi. Both emblematic of UP's Mughal-era sweet-making tradition."},{emoji:"🍙",name:"Anarsa",region:"Festival Sweet — Eastern UP",desc:"Rice flour sweets rolled in poppy seeds and deep-fried. A Diwali season specialty. The crispy poppy seed coating with soft rice interior is a unique texture found in this ancient belt of the Ganga plains."}];
+
+const weatherData=[{month:"January",avgTemp:"4–20°C",weather:"Peak Winter",details:"Foggy mornings over the Ganges. Taj Mahal at its most magical in winter haze. Varanasi dawn aarti in the cold is transcendent. Carry warm layers.",best:true},{month:"February",avgTemp:"8–24°C",weather:"Pleasant Winter",details:"Mustard fields bloom golden. Perfect for Agra, Varanasi and Lucknow. Holi preparations begin in Braj. Ideal photography weather.",best:true},{month:"March",avgTemp:"14–32°C",weather:"Spring",details:"Braj Holi in full glory at Mathura and Vrindavan. Ram Navami in Ayodhya draws millions. Still comfortable early in the month.",best:true},{month:"April",avgTemp:"20–38°C",weather:"Warm",details:"Summer arriving. Visit early in the month. Mango season begins — Dussehri and Langra orchards come alive. Avoid midday outdoors."},{month:"May",avgTemp:"26–44°C",weather:"Very Hot",details:"Peak summer. Temperatures cross 44°C in western UP. Not recommended for general tourism. Dawn and dusk visits only if necessary."},{month:"June",avgTemp:"28–44°C",weather:"Pre-Monsoon",details:"Scorching heat with dust storms (andhi). Monsoon arrives late June. Loo winds in afternoons. Only pilgrims with purpose travel now."},{month:"July",avgTemp:"26–34°C",weather:"Monsoon",details:"Monsoon transforms parched plains into lush green. Ganges rises dramatically. Sawan Kanwar Yatra sees millions carry Ganga water to Shiva temples."},{month:"August",avgTemp:"25–32°C",weather:"Monsoon",details:"Heavy rains. Floods possible in eastern UP. Janmashtami at Mathura-Vrindavan is extraordinary — millions attend. Roads can be challenging."},{month:"September",avgTemp:"24–34°C",weather:"Late Monsoon",details:"Rains reducing. Navratri preparations begin. Ram Leela season opens. The state slowly awakens for the great festival season ahead."},{month:"October",avgTemp:"16–32°C",weather:"Autumn",details:"Navratri, Dussehra and Diwali. Ram Leela at Ramnagar. Dev Deepawali preparations at Varanasi. Perfect weather. The whole state in festival mode.",best:true},{month:"November",avgTemp:"10–26°C",weather:"Early Winter",details:"Dev Deepawali — a million lamps on Varanasi's ghats. Perfect temperatures everywhere. Best overall month. Mathura in post-Diwali glow.",best:true},{month:"December",avgTemp:"5–22°C",weather:"Winter",details:"Cool and clear. Winter fog builds toward month end. Taj Mahal in early winter light is extraordinary. Christmas at Lucknow's colonial churches."}];
+
+// Render weather
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">${w.best?'<span class="best-tag">BEST TIME</span>':''}<div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div></div>`;});
+
+// Render districts
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';
+  el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`<div class="dacc-hdr" onclick="toggleAcc(${idx})"><div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div><div class="dacc-arrow">⌄</div></div><div class="dacc-body"><div class="dacc-inner"><div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div><div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div><div class="dinfo-card"><div class="dinfo-title">Languages</div><div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div><div class="best-month-tag">✦ Best: ${d.bestMonths}</div><div class="temp-row"><span class="temp-badge">${d.avgTemp}</span></div></div></div></div>`;
+  accordion.appendChild(el);
+});
+
+// Render places
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  const fees=Array.isArray(p.fee)?p.fee:[p.fee];
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body"><span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div><div class="pd">${p.desc}</div><div class="fee-row">${fees.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.includes('1100')||f.includes('550')?'fb-fr':'fb-in'}">${f}</span>`).join('')}</div><div class="dos-donts"><div class="dos"><div class="dd-title">✓ DO</div><ul class="dd-list"><li>Carry valid ID for entry</li><li>Visit Taj at sunrise</li></ul></div><div class="donts"><div class="dd-title">✗ DON'T</div><ul class="dd-list"><li>Carry food inside monuments</li><li>Photograph inside temples</li></ul></div></div></div></div>`;
+});
+
+// Render arts / traditions / cuisines
+function renderGrid(id,data){
+  const g=document.getElementById(id);
+  data.forEach(i=>{g.innerHTML+=`<div class="acard"><span class="ae">${i.emoji}</span><div class="at">${i.name}</div><div class="ad">${i.desc}</div><div class="art-fee"><span>${i.location||i.region}</span></div></div>`;});
+}
+renderGrid('artGrid',artsData);
+renderGrid('tradGrid',traditionsData);
+renderGrid('cuisinesGrid',cuisinesData);
+
+// Accordion
+let openIdx=null;
+function toggleAcc(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openIdx!==null&&openIdx!==idx)all[openIdx].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openIdx=all[idx].classList.contains('open')?idx:null;
+}
+
+function filterDistricts(q){
+  document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});
+}
+
+function toggleMusic(){
+  const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');
+  if(a.paused){a.play();b.textContent='🔇';}else{a.pause();b.textContent='🎵';}
+}
+
+// Fade in
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Translations
+const T={
+  en:{heroTag:"Land of Ram, Krishna, Taj Mahal & the Holy Ganga",scrollLbl:"SCROLL TO EXPLORE",lAbout:"About Uttar Pradesh",aboutTitle:"Heart of Bharat's Soul",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Uttar Pradesh",lDist:"All 75 Districts",distTitle:"Every District of Uttar Pradesh",lPlaces:"Sacred, Historical & Natural Wonders",placesTitle:"Wonders of Uttar Pradesh",lArts:"Arts, Crafts & Heritage",artsTitle:"Living Traditions of Uttar Pradesh",lTrad:"Festivals & Celebrations",tradTitle:"Soul of UP's Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Uttar Pradesh",footerT:"JAY UTTAR PRADESH",footerS:"UP Foundation Day — January 24 · 1950",distSearch:"Search districts..."},
+  hi:{heroTag:"राम, कृष्ण, ताज महल और पवित्र गंगा की भूमि",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",lAbout:"उत्तर प्रदेश के बारे में",aboutTitle:"भारत की आत्मा का केंद्र",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"उत्तर प्रदेश कब जाएं",lDist:"सभी 75 जिले",distTitle:"उत्तर प्रदेश के हर जिले",lPlaces:"पवित्र, ऐतिहासिक और प्राकृतिक चमत्कार",placesTitle:"उत्तर प्रदेश के चमत्कार",lArts:"कला, शिल्प और विरासत",artsTitle:"उत्तर प्रदेश की जीवंत परंपराएं",lTrad:"त्योहार और उत्सव",tradTitle:"उत्तर प्रदेश की संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"उत्तर प्रदेश का स्वाद",footerT:"जय उत्तर प्रदेश",footerS:"उत्तर प्रदेश स्थापना दिवस — 24 जनवरी · 1950",distSearch:"जिले खोजें..."},
+  aw:{heroTag:"राम, कृष्ण, ताज महल अउर पुनीत गंगा की धरती",scrollLbl:"देखे खातिर स्क्रॉल करौ",lAbout:"उत्तर प्रदेस के बारे में",aboutTitle:"भारत की आत्मा क केंद्र",lWeather:"मौसम अउर सबसे अच्छा समय",weatherTitle:"उत्तर प्रदेस कब जाओ",lDist:"सभी 75 जिला",distTitle:"उत्तर प्रदेस के हर जिला",lPlaces:"पुनीत, ऐतिहासिक अउर कुदरती अजूबा",placesTitle:"उत्तर प्रदेस के अजूबा",lArts:"कला अउर विरासत",artsTitle:"उत्तर प्रदेस की जीवंत परंपरा",lTrad:"तिहुआर अउर उत्सव",tradTitle:"उत्तर प्रदेस की संस्कृति की आत्मा",lCuisines:"खाने की विरासत",cuisinesTitle:"उत्तर प्रदेस का स्वाद",footerT:"जय उत्तर प्रदेस",footerS:"उत्तर प्रदेस स्थापना दिवस — 24 जनवरी · 1950",distSearch:"जिला खोजौ..."}
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=T[lang];
+  Object.keys(t).forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t[id];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
