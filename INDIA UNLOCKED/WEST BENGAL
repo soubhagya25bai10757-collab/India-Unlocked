@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>West Bengal — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#B71C1C;--mustard:#D4A017;--teal:#00695C;--indigo:#283593;--cream:#fdf5e4;--deep:#07050a;--card:#ffffff0d;--border:rgba(183,28,28,0.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(7,5,10,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--mustard);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--red);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,245,228,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,245,228,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--red);color:#fff;border-color:var(--red);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--mustard);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--red);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,5,10,.18) 0%,rgba(7,5,10,.04) 38%,rgba(7,5,10,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(212,160,23,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2rem,7.5vw,7rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--mustard);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,245,228,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(183,28,28,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,245,228,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--red);color:#fff;border-color:var(--red);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--mustard),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(183,28,28,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--mustard);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--mustard);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,245,228,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(183,28,28,.1);border:1px solid rgba(183,28,28,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(183,28,28,.18);border-color:rgba(183,28,28,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(212,160,23,.55);background:rgba(212,160,23,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--mustard);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,245,228,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--red);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(183,28,28,.65);}
+.dsearch::placeholder{color:rgba(253,245,228,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(183,28,28,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(183,28,28,.08);}
+.dacc:hover{border-color:rgba(183,28,28,.42);background:rgba(183,28,28,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(183,28,28,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--mustard);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--mustard);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(183,28,28,.35);background:rgba(183,28,28,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--mustard);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,245,228,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--red);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(183,28,28,.2);border:1px solid rgba(183,28,28,.38);color:rgba(253,245,228,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(212,160,23,.2);border:1px solid rgba(212,160,23,.42);color:var(--mustard);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--mustard);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(183,28,28,.09);border:1.5px solid rgba(183,28,28,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(183,28,28,.55);box-shadow:0 18px 54px rgba(183,28,28,.14);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--red),var(--mustard));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--mustard);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,245,228,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(183,28,28,.22);border:1px solid rgba(183,28,28,.42);color:#ffb8b8;}
+.fb-fr{background:rgba(40,53,147,.2);border:1px solid rgba(40,53,147,.38);color:#b8caff;}
+.fb-free{background:rgba(212,160,23,.18);border:1px solid rgba(212,160,23,.38);color:var(--mustard);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(0,105,92,.14);border:1px solid rgba(0,105,92,.3);}
+.donts{background:rgba(183,28,28,.12);border:1px solid rgba(183,28,28,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#80ffd4;}.donts .dd-title{color:#ffb8b8;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(128,255,212,.78);}.donts .dd-list li{color:rgba(255,184,184,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(183,28,28,.1);border:1.5px solid rgba(183,28,28,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(183,28,28,.52);background:rgba(183,28,28,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,245,228,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,245,228,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(183,28,28,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,245,228,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,245,228,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">WEST BENGAL</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-bn" onclick="setLang('bn')">বাংলা</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🌺</span>
+    <div class="hero-name" id="heroName">West Bengal</div>
+    <div class="hero-native" id="heroNative">পশ্চিমবঙ্গ</div>
+    <div class="hero-tag" id="heroTag">Land of Tagore, Durga Puja, Sundarbans & Sweet Revolution</div>
+    <div class="tribar">
+      <div style="background:#B71C1C"></div>
+      <div style="background:#D4A017"></div>
+      <div style="background:#00695C"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🥁 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap">
+    <span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span>
+    <div class="sarrow"></div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About West Bengal</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Cultural Conscience of India</em></h2>
+  <p class="sec-body" id="aboutBody">West Bengal is India's intellectual and artistic nerve center — a state that has given the world Rabindranath Tagore (Asia's first Nobel laureate), Satyajit Ray (one of cinema's greatest directors), Swami Vivekananda, Sri Ramakrishna, Subhas Chandra Bose, Amartya Sen and a tradition of philosophical and creative thought that has shaped modern India more profoundly than any other region. Kolkata — the City of Joy — was the capital of British India for 138 years and remains the subcontinent's most layered metropolis: a city of crumbling colonial palaces and cutting-edge theatre, of tram rides through book markets and all-night adda (intellectual conversation), of the world's finest fish preparations and the global headquarters of the sweet-making art. The state stretches with extraordinary geographic variety: from the Himalayan peaks and tea gardens of Darjeeling in the north — where the world's finest tea grows at 7,000 feet — through the industrial Gangetic plains, to the Sundarbans in the south — the world's largest mangrove forest and last home of the Bengal tiger. The Sundarbans is a UNESCO World Heritage Site of 10,000 sq km where tigers swim between islands and the tides shape daily life for fishing communities. West Bengal's Durga Puja is the world's largest art festival — 35,000 pandals across the state transform every neighbourhood into a gallery of extraordinary sculpture and lighting design, attracting UNESCO Intangible Cultural Heritage status in 2021. The state produced the Bengal Renaissance — a 19th-century flowering of literature, music, painting, theatre, philosophy and social reform that redefined what India could think and be. Kolkata's street food, its mishti (sweets), its Baul mystic singers, its Jatra theatre, its Pattachitra scrolls and its Kantha embroidery are each world-class traditions. West Bengal is India thinking deeply, feeling intensely, eating magnificently and celebrating without restraint.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>West Bengal</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">West Bengal has four seasons: winter (Nov–Feb), spring (Mar–Apr), monsoon (May–Oct) and a brief autumn. October to March is ideal — Durga Puja transforms every city in October, Darjeeling tea is harvested in spring, and Kolkata's cultural season peaks in winter. The Sundarbans is best visited November to March.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 23 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>West Bengal</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">West Bengal's 23 districts stretch from the Himalayan heights of Darjeeling and Kalimpong through the tea belt, Gangetic plains and delta to the Sundarbans mangroves. Each carries its own geography, culture and story.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Natural, Historical &amp; Cultural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>West Bengal</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>West Bengal</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Bengali Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>West Bengal</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JOY BANGLA — AMAR SHONAR BANGLA</div>
+  <div class="fs" id="footerS">West Bengal Foundation Day — November 1 · 1956</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+// Deep Bengali red + mustard gold + mangrove teal — the palette of Durga Puja and the Sundarbans
+document.getElementById('heroBg').style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(80,8,8);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(45,12,5);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(0,45,38);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22180%22 cy=%22200%22 r=%22270%22 fill=%22rgba(183,28,28,0.22)%22/%3E%3Ccircle cx=%221040%22 cy=%22330%22 r=%22300%22 fill=%22rgba(0,105,92,0.18)%22/%3E%3Ccircle cx=%22590%22 cy=%22690%22 r=%22200%22 fill=%22rgba(212,160,23,0.14)%22/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Kolkata",region:"South Bengal",known:"City of Joy, Colonial Capital, Cultural Heart",heritage:["Victoria Memorial","Howrah Bridge","Kalighat Temple","Indian Museum","Park Street"],languages:["Bengali","Hindi","English","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Darjeeling",region:"North Bengal Hills",known:"Queen of Hills, World's Finest Tea, Toy Train",heritage:["Tiger Hill Sunrise","Darjeeling Himalayan Railway (UNESCO)","Happy Valley Tea Estate","Peace Pagoda"],languages:["Nepali","Bengali","Hindi","English","Tibetan"],bestMonths:"Mar-May, Oct-Dec",avgTemp:"2-22°C"},
+  {name:"Kalimpong",region:"North Bengal Hills",known:"Flower Market, Buddhist Monasteries, Handicrafts",heritage:["Zang Dhok Palri Monastery","Durpin Monastery","Morgan House","Cactus Nurseries"],languages:["Nepali","Bengali","Tibetan","Lepcha","Hindi"],bestMonths:"Oct-May",avgTemp:"4-28°C"},
+  {name:"Jalpaiguri",region:"North Bengal Terai",known:"Dooars Forest, Jaldapara, Tea Gardens",heritage:["Jaldapara National Park","Gorumara National Park","Coronation Bridge","Chapramari Wildlife"],languages:["Bengali","Hindi","Nepali","Bodo","Rabha"],bestMonths:"Oct-Mar",avgTemp:"6-36°C"},
+  {name:"Alipurduar",region:"North Bengal Terai",known:"Buxa Tiger Reserve, Dooars Gateway, Bhutan Border",heritage:["Buxa Tiger Reserve","Buxa Fort","Rajabhatkhawa Forest","Jayanti River"],languages:["Bengali","Hindi","Nepali","Bodo"],bestMonths:"Oct-Mar",avgTemp:"8-36°C"},
+  {name:"Cooch Behar",region:"North Bengal Plains",known:"Royal Palace, Madan Mohan Temple, Rashmela",heritage:["Cooch Behar Palace (Victor Jubilee Palace)","Madan Mohan Temple","Sagar Dighi","Banipur Forest"],languages:["Bengali","Hindi","Rajbanshi"],bestMonths:"Oct-Mar",avgTemp:"8-36°C"},
+  {name:"Malda",region:"North Bengal Plains",known:"Gaur-Pandua Ruins, Fazli Mango, Silk Heritage",heritage:["Gaur Sultanate Ruins","Pandua Monuments","Gour City Archaeological Site","Adina Mosque"],languages:["Bengali","Hindi","Urdu","Santali"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Murshidabad",region:"Central Bengal",known:"Nawab Capital, Hazarduari Palace, Silk City",heritage:["Hazarduari Palace","Katra Mosque","Imambara","Siraj-ud-Daula's Tomb","Plassey Battlefield"],languages:["Bengali","Urdu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+  {name:"Nadia",region:"Central Bengal",known:"Navadvip — Birthplace of Chaitanya, Shantipur Silk",heritage:["Navadvip Dhama","Mayapur ISKCON","Shantipur Weaving","Krishnanagar Royal Palace"],languages:["Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"North 24 Parganas",region:"South Bengal",known:"Sundarbans Edge, Barasat, Industrial Belt",heritage:["Sundarbans Buffer Zone","Barrackpore Cantonment","Panihati Ghat","Gandhi Ghat"],languages:["Bengali","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-38°C"},
+  {name:"South 24 Parganas",region:"South Bengal",known:"Sundarbans — UNESCO, Bengal Tiger, Delta",heritage:["Sundarbans National Park (UNESCO)","Sagar Island","Bakkhali Beach","Mangrove Forest"],languages:["Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-38°C"},
+  {name:"Howrah",region:"South Bengal",known:"Steel Bridge, Botanical Garden, Industrial Heritage",heritage:["Howrah Bridge","Shibpur Botanical Garden","Belur Math","Santragachi Lake"],languages:["Bengali","Hindi","Odia"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Hooghly",region:"Central Bengal",known:"Dakshineswar, Bandel Church, Imambara",heritage:["Dakshineswar Kali Temple","Bandel Church (1599)","Hooghly Imambara","Chinsurah Dutch Heritage"],languages:["Bengali","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Purba Bardhaman",region:"Central Bengal",known:"Burdwan Royal Heritage, Mishtanna — Mishti Capital",heritage:["Curzon Gate","108 Shiva Temples Naba Kailash","Damodar River","Gali Goli Mishti Shop Heritage"],languages:["Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+  {name:"Paschim Bardhaman",region:"Central Bengal",known:"Asansol Coal Belt, Durgapur Steel, Industrial City",heritage:["Asansol Heritage Sites","Durgapur Barrage","Maithon Dam","Chittaranjan Rail Heritage"],languages:["Bengali","Hindi","Santali","Urdu"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Birbhum",region:"Central Bengal",known:"Santiniketan — Tagore's Visva Bharati, Baul Country",heritage:["Visva Bharati University","Tarapith Temple","Santal Villages","Joydeb Kenduli Mela"],languages:["Bengali","Hindi","Santali","Santhali"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+  {name:"Bankura",region:"West Bengal",known:"Bishnupur Terracotta Temples, Baluchari Saree",heritage:["Bishnupur Terracotta Temple Complex","Mukutmanipur Dam","Susunia Hill","Bankura Horse"],languages:["Bengali","Hindi","Santali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Purulia",region:"West Bengal",known:"Chhau Dance, Ajodhya Hills, Tribal Country",heritage:["Ajodhya Hills","Matha Temple","Baranti Lake","Chhau Dance Villages"],languages:["Bengali","Hindi","Santali","Kurukh"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Jhargram",region:"West Bengal",known:"Sal Forest, Tribal Heritage, Kanak Durga Temple",heritage:["Jhargram Palace","Chilkigarh Kanak Durga Temple","Jhilimili Forest","Belpahari"],languages:["Bengali","Hindi","Santali","Lodha"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Paschim Medinipur",region:"West Bengal",known:"Midnapore Heritage, Dantan, Freedom Movement",heritage:["Medinapur Heritage","Kharagpur Railway Colony","Junput Beach","Debra"],languages:["Bengali","Hindi","Odia"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+  {name:"Purba Medinipur",region:"South Bengal",known:"Digha Beach, Tajpur, Shankarpur, Contai",heritage:["Digha Beach","Tajpur Sea Beach","Shankarpur Fishing Village","Bishalakshmi Temple"],languages:["Bengali","Hindi","Odia"],bestMonths:"Oct-Mar",avgTemp:"10-38°C"},
+  {name:"Uttar Dinajpur",region:"North Bengal Plains",known:"Dalkhola, Raiganj Wildlife, Border Region",heritage:["Raiganj Wildlife Sanctuary","Dalkhola Fort","Islampur Heritage"],languages:["Bengali","Hindi","Urdu","Rajbanshi"],bestMonths:"Oct-Mar",avgTemp:"6-38°C"},
+  {name:"Dakshin Dinajpur",region:"North Bengal Plains",known:"Balurghat, Tapan Garh, Cultural Plains",heritage:["Tapan Heritage","Balurghat Urban Heritage","Atreyee River","Local Temple Circuit"],languages:["Bengali","Hindi","Santali","Rajbanshi"],bestMonths:"Oct-Mar",avgTemp:"6-38°C"}
+];
+
+const placesData = [
+  {emoji:"🐅",name:"Sundarbans — UNESCO World Heritage",location:"South 24 Parganas",desc:"The world's largest mangrove forest — 10,000 sq km of tidal creeks, mudflats and forested islands shared between India and Bangladesh. The last stronghold of the Bengal tiger — the only tigers in the world that swim. A UNESCO World Heritage Site and Biosphere Reserve. The local fishing communities worship the forest goddess Bonbibi. Boat journeys through the Sundarbans are among India's most extraordinary natural experiences.",fee:["Paid"]},
+  {emoji:"🌺",name:"Victoria Memorial",location:"Kolkata",desc:"The grandest monument of the British Empire in India — a massive white Makrana marble palace built 1906–1921 to commemorate Queen Victoria. Now a museum of extraordinary colonial-era art, portraits, sculptures and historical exhibits. The surrounding gardens are Kolkata's finest. At night, floodlit in the mist off the Hooghly, it looks like a marble mirage.",fee:["₹30 Indians","₹500 Foreigners"]},
+  {emoji:"🚂",name:"Darjeeling Himalayan Railway",location:"Darjeeling",desc:"UNESCO World Heritage Site — the 'Toy Train' that climbs from New Jalpaiguri at 100 meters to Darjeeling at 2,134 meters on a narrow-gauge track of extraordinary engineering. Built in 1881, the steam-powered locomotive loops, spirals and zigzags through tea gardens, mountain villages and cloud forest. One of the world's great railway journeys.",fee:["Paid"]},
+  {emoji:"🏛️",name:"Bishnupur Terracotta Temple Complex",location:"Bankura District",desc:"A cluster of 17th-century temples built entirely from local terracotta — no stone, no marble. The Malla kings of Bishnupur created an architectural tradition unique in India: the Pancha Ratna, Ek Ratna and Rasmancha temples covered in terracotta panels depicting scenes from the Ramayana and Mahabharata with extraordinary folk vitality. A UNESCO tentative site.",fee:["Paid"]},
+  {emoji:"📚",name:"Shantiniketan — Visva Bharati",location:"Birbhum District",desc:"Rabindranath Tagore's open-air university — founded in 1901 on the principle that education should happen under trees, in nature, without walls. Visva Bharati is now a central university. The Poush Mela fair, the Basanta Utsav (Holi), the Baul music gatherings and the extraordinary Tagore museum (Uttarayan) make Shantiniketan a living monument to Bengal's greatest mind.",fee:["Paid (Museum)"]},
+  {emoji:"🕉️",name:"Dakshineswar Kali Temple & Belur Math",location:"Hooghly / Howrah",desc:"Dakshineswar — the riverside temple where Sri Ramakrishna had his divine visions — and Belur Math — the global headquarters of Ramakrishna Mission built by Swami Vivekananda — face each other across the Hooghly river. Both are places of profound spiritual atmosphere. The architecture of Belur Math combines Hindu, Islamic and Christian motifs in a revolutionary design.",fee:["Free"]},
+  {emoji:"🏰",name:"Hazarduari Palace",location:"Murshidabad",desc:"The 'Palace of a Thousand Doors' — built in 1837 by the last independent Nawab of Bengal. 114 rooms, 1,000 doors (900 real, 100 false), an extraordinary collection of Nawabi arms, portraits, manuscripts and the personal effects of Siraj-ud-Daula. The surrounding Murshidabad complex — Imambara, Katra Mosque, Siraj's tomb — makes this a day of living history.",fee:["Paid"]},
+  {emoji:"🌊",name:"Digha & Tajpur Beaches",location:"Purba Medinipur",desc:"The Bay of Bengal coastline of Medinipur offers West Bengal's finest beaches. Digha has been a seaside resort since the 1920s. Tajpur and Shankarpur are quieter, wilder strands where fishing boats come in at dawn and the catch is sold on the beach. The red crabs of Shankarpur and the sea horizon at golden hour are unforgettable.",fee:["Free"]},
+  {emoji:"🦅",name:"Jaldapara & Gorumara National Parks",location:"Jalpaiguri-Alipurduar",desc:"The Dooars — the gateway to Bhutan — contains two extraordinary wildlife sanctuaries. Jaldapara protects the largest population of Indian one-horned rhinoceroses outside Kaziranga. Gorumara shelters rhinos, elephants, gaur and leopards in riverine grassland. The sal and teak forests here are among the most biodiverse in the Eastern Himalayan foothills.",fee:["Paid"]},
+  {emoji:"🏺",name:"Gaur & Pandua — Sultanate Ruins",location:"Malda District",desc:"The ruins of Gaur — once one of the largest cities in medieval Asia, capital of the Bengal Sultanate — spread across 32 sq km of paddy fields. The Adina Mosque (1364 AD) is the largest mosque ever built in India. The nearby Pandua complex contains equally remarkable 14th-century Islamic architecture, barely visited and hauntingly preserved in jungle.",fee:["Free"]}
+];
+
+const artsData = [
+  {emoji:"🖼️",name:"Durga Puja Pandal Art",location:"Kolkata & All Bengal",desc:"The world's largest annual art festival — 35,000 pandals across West Bengal reimagined every year as extraordinary installations of sculpture, architecture and light. Kolkata's theme pandals are designed by leading artists with budgets of millions, drawing millions of visitors in five days. UNESCO Intangible Cultural Heritage since 2021. The pandal 'competition' drives artistic innovation of extraordinary ambition."},
+  {emoji:"🎨",name:"Pattachitra Scroll Painting",location:"Medinipur & Birbhum",desc:"Bengal's ancient tradition of narrative scroll painting (Patua art) — long scrolls of cloth or paper painted with scenes from Hindu mythology and current events, carried door to door by the Patua community who sing the story as they unroll the scroll. The tradition is 3,000 years old. Contemporary Patua artists have adapted it to document disasters, elections and social issues."},
+  {emoji:"🧵",name:"Kantha Embroidery & Baluchari Saree",location:"Statewide",desc:"Kantha — running stitch embroidery on layered old saris — is one of Bengal's most beautiful textile traditions. Traditionally made by women stitching together worn fabric into quilts and garments, modern Kantha has become internationally exhibited. The Baluchari saree from Bishnupur has zari-woven panels depicting Mughal court scenes — each saree a narrative artwork."},
+  {emoji:"🎵",name:"Baul Music",location:"Birbhum, Nadia & Statewide",desc:"The mystical folk music of Bengal's Baul community — wandering minstrels who sing of divine love, the body as a vessel for the divine and the unity of all religions. UNESCO Intangible Cultural Heritage. Baul songs are performed with the ektara (single-string drone), duggi (small drum) and dotara. Rabindranath Tagore was profoundly influenced by Baul philosophy and music."},
+  {emoji:"🎭",name:"Jatra Folk Theatre",location:"Statewide",desc:"Bengal's most popular folk theatre form — elaborate, all-night dramatic performances on circular stages with flamboyant costumes, melodramatic acting and songs. Jatra troupes tour rural Bengal for 9 months of the year. The themes range from mythology to contemporary politics. At its peak in the 1970s–80s, a single Jatra star could fill 50,000-seat outdoor venues."},
+  {emoji:"🐴",name:"Bankura Horse & Dokra Craft",location:"Bankura & Birbhum",desc:"The terracotta Bankura horse — elongated neck, stylized form, exuding quiet dignity — is one of India's most iconic folk art objects. Used in village worship, it has become a symbol of West Bengal. Dokra (lost-wax metal casting) by tribal communities of Bankura and Birbhum produces brass figurines, jewelry and ritual objects of extraordinary folk power."}
+];
+
+const traditionsData = [
+  {emoji:"🌺",name:"Durga Puja",location:"Statewide — October",desc:"West Bengal's supreme festival — five days when the entire state transforms into one enormous celebration. The Goddess Durga returns to her parental home for four days, then departs on Bijoya Dashami in a procession to the river. In Kolkata, 35,000 community pandals become competing works of art, drawing 8 million visitors to the city. UNESCO Intangible Cultural Heritage since 2021. Nothing in India compares to it in scale, creativity and emotional intensity."},
+  {emoji:"🌸",name:"Pohela Boishakh — Bengali New Year",location:"Statewide — April 14/15",desc:"The Bengali New Year — celebrated with white-and-red dressed Bengalis thronging parks, markets and cultural programs. Kolkata's Rabindra Sarobar and the Maidan fill with music and food. Businesses reopen with Haalkhata (new account book) ceremonies. In Murshidabad and the Muslim-majority districts, it is shared as a secular new year by all communities. The sweet shops do their best business of the year."},
+  {emoji:"🎊",name:"Eid ul-Fitr in Kolkata",location:"Kolkata & Murshidabad",desc:"Kolkata's Muslim heritage makes Eid one of the city's grandest celebrations. The Nakhoda Mosque on Rabindra Sarani is filled to overflowing. Murshidabad — with its deep Nawabi heritage — celebrates with particular grandeur, including illumination of Hazarduari Palace and public feasts. The food of Kolkata's Eid — biryani, haleem, semai and sheer korma — is among the city's finest."},
+  {emoji:"📖",name:"Tagore Jayanti & Rabindra Sangeet",location:"Statewide — May 8 (25 Boishakh)",desc:"The birth anniversary of Rabindranath Tagore is a state-wide cultural day — every school, college and cultural organization performs Rabindra Sangeet (Tagore's songs). Shantiniketan marks it with all-night music and dance. Tagore wrote 2,232 songs (the Gitabitan) that form the bedrock of Bengali cultural life — every Bengali knows dozens by heart."},
+  {emoji:"🎉",name:"Poush Mela — Santiniketan Fair",location:"Santiniketan — December",desc:"The winter fair at Santiniketan — established by Tagore — draws craftspeople, Baul singers, weavers, potters and food vendors from across Bengal and beyond. Three days of extraordinary cultural performance in the open air of Tagore's university campus. The Baul singing that continues through the night is among the finest musical experiences in India."},
+  {emoji:"🪔",name:"Kali Puja & Dipannita",location:"Statewide — Diwali Night",desc:"While most of India celebrates Diwali on this night, Bengal celebrates Kali Puja — worshipping the fierce black goddess Kali. Enormous Kali idols are installed in pandals across the state. The image of Kali — tongue out, standing on Shiva, wearing a garland of skulls — is terrifying and sublime. The illumination is as spectacular as Durga Puja. Bengal's most distinctively its own festival."}
+];
+
+const cuisinesData = [
+  {emoji:"🐟",name:"Ilish (Hilsa) — Bengal's Sacred Fish",location:"Statewide — Monsoon Special",desc:"The Hilsa — iridescent, bony, intoxicatingly flavored — is Bengal's most beloved fish and a cultural obsession. Eaten steamed in mustard (bhapa ilish), cooked in mustard sauce (shorshe ilish), in light turmeric-mustard curry (ilish jhol), smoked, or simply fried with green chili. The first ilish of the monsoon season is celebrated. A Bengali will travel hours for a good ilish."},
+  {emoji:"🍬",name:"Mishti — Bengali Sweets",location:"Statewide",desc:"Bengal's greatest gift to the world's palate — a tradition of milk-based confectionery unmatched anywhere. Roshogolla (soft white cheese balls in sugar syrup — GI tagged to West Bengal), Sandesh (fresh paneer pressed with sugar and flavoring), Mishti Doi (caramelized sweetened yogurt in earthen pots), Pantua, Langcha, Chomchom — each district has its own specialty. The sweet shop (mishti-r dokan) is the true community center of Bengali life."},
+  {emoji:"🍛",name:"Maacher Jhol — Fish Curry",location:"Statewide",desc:"The everyday soul food of Bengal — whole pieces of fish (rohu, katla, bhetki, pabda) cooked in a light golden broth of turmeric, cumin, mustard oil and green chili. The jhol is neither too thick nor too thin — a precise balance unique to Bengali cooking. Eaten with plain boiled rice and a squeeze of lime. The simplest and most satisfying dish in the Bengali repertoire."},
+  {emoji:"🌿",name:"Shukto — Bitter Vegetable Medley",location:"Statewide",desc:"The quintessential Bengali first course — a semi-dry vegetable dish deliberately made bitter with neem leaves, bitter gourd and other seasonal vegetables in a milk and panch phoron (five-spice) base. Eaten at the start of a meal to prepare the palate and aid digestion. A dish of extraordinary philosophical sophistication — the Bengali belief that life begins with bitterness before turning sweet."},
+  {emoji:"🥘",name:"Kosha Mangsho",location:"Statewide",desc:"Slow-cooked goat mutton — fried onions, yogurt, whole spices and the meat cooked (kosha = reduced, concentrated) until the oil separates and the masala clings to every piece. The definitive Bengali Sunday lunch dish. Eaten with luchi (puffed fried bread) or paratha. At Kolkata's Golbari restaurant in Shyambazar, the kosha mangsho has been feeding Bengalis since 1918."},
+  {emoji:"🫓",name:"Kochuri & Alur Dom",location:"Kolkata — Street Breakfast",desc:"Kolkata's non-negotiable Sunday morning breakfast — radhaballabhi (flaky puffed bread stuffed with spiced dal), or koraishutir kochuri (stuffed with green peas), served with alur dom (potato in a complex spiced gravy) and cholar dal. The combination is eaten at Kolkata's iconic para (neighbourhood) sweet shops from dawn. A transcendent experience of simplicity."},
+  {emoji:"🦐",name:"Chingri Malaikari — Prawn Coconut Curry",location:"South Bengal & Kolkata",desc:"The dish that defines Bengali culinary ambition — large tiger prawns or river prawns cooked in a fragrant sauce of coconut milk, onion, ginger and gentle spices. The name 'malai' may derive from Malay — a memory of Bengal's ancient maritime trade. Eaten with steamed rice, each prawn yielding its coconut-scented flesh to an almost ceremonial quiet."},
+  {emoji:"☕",name:"Darjeeling Tea — First Flush",location:"Darjeeling Tea Gardens",desc:"The most prized tea in the world — grown at 4,000–7,000 feet on south-facing slopes of the Himalayas, harvested first in spring (First Flush, March–April). The muscatel notes of Darjeeling tea — a grape-like floral complexity — occur nowhere else in the world due to the specific elevation, soil and the feeding of the green leafhopper insect. A cup of good Darjeeling First Flush is one of the world's finest beverage experiences."},
+  {emoji:"🍚",name:"Panta Bhat & Pakhala",location:"Rural Bengal — Summer",desc:"Leftover rice soaked overnight in water — eaten the next morning cold with mustard oil, raw onion, green chili and salt. A probiotic, cooling summer staple. The first dish of Pohela Boishakh (Bengali New Year) in many rural homes. A food of poverty transformed by culture into a symbol of Bengali rootedness. Fashionable now among urban Bengalis as a statement of identity."},
+  {emoji:"🌶️",name:"Kolkata Street Food — Phuchka & Kathi Roll",location:"Kolkata",desc:"Kolkata's phuchka — thin crisp shells filled with spiced tamarind water — is sharper, more complex and more beloved than Mumbai's pani puri. The Kathi Roll — egg-wrapped skewered meat in a paratha — was invented at Nizam's restaurant in 1932 and is now a global street food. Kolkata's street food vocabulary — ghugni, jhalmuri, telebhaja — is among the richest in India."},
+  {emoji:"🫕",name:"Mustard — The Soul Spice",location:"Statewide",desc:"Mustard oil and mustard paste are the defining flavors of Bengali cuisine. Everything is fried in mustard oil — its pungent, nutty heat is irreplaceable. Mustard paste (shorshe) cooked with fish, chicken, vegetables creates a flavor profile found only in Bengal. The panch phoron (five-spice: fenugreek, nigella, cumin, mustard, fennel) added to tempering is Bengali cooking's signature chord."}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"10-24°C",weather:"Cool Winter",details:"Kolkata's finest month — clear skies, cool evenings, the cultural season at full swing. Darjeeling cold and magical in snow. Sundarbans boat safaris excellent. Birbhum's Poush Mela just ended; Shantiniketan peaceful.",best:true},
+  {month:"February",avgTemp:"12-28°C",weather:"Pleasant",details:"Spring approaching. Saraswati Puja celebrated — students worship the goddess of learning. Darjeeling tea estates preparing for First Flush. Bishnupur temples in golden morning light. Mustard fields blooming across North Bengal.",best:true},
+  {month:"March",avgTemp:"18-34°C",weather:"Warm Spring",details:"Holi celebrated as Dol Utsav in Shantiniketan — a flower and color festival unique to Bengal. Darjeeling First Flush tea harvest begins. Basanta Utsav (spring festival) at Visva Bharati. Warmth arriving.",best:true},
+  {month:"April",avgTemp:"22-38°C",weather:"Hot",details:"Pohela Boishakh — Bengali New Year on April 14/15 — the state's most joyous secular celebration. Darjeeling First Flush at its finest. Heat building in the plains. Coastal beaches at Digha still pleasant."},
+  {month:"May",avgTemp:"26-40°C",weather:"Pre-Monsoon",details:"Tagore Jayanti (25th Boishakh) celebrated with all-night music. Pre-monsoon storms (Kalboisakhi — nor'westers) sweep Kolkata with dramatic thunder. Mangoes arriving. Not ideal for sightseeing in the plains."},
+  {month:"June",avgTemp:"28-36°C",weather:"Monsoon Arrives",details:"Monsoon breaks — the Sundarbans comes alive. Darjeeling Second Flush tea harvest begins. Kolkata rains make the city atmospheric. Ganges in spate. Hilsa season beginning — the fish arrive with the monsoon."},
+  {month:"July",avgTemp:"26-32°C",weather:"Monsoon",details:"Peak hilsa season — the most prized ilish arrive in Bengali markets. Heavy rains. Kolkata's streets flood but the city remains alive. Darjeeling clouds wrap the hills. Not recommended for outdoor tourism.",best:true},
+  {month:"August",avgTemp:"26-32°C",weather:"Deep Monsoon",details:"Raksha Bandhan and Independence Day. Kolkata rains. The Ganges and Damodar rivers in full flood. Hilsa still running. Darjeeling's monsoon mist creates an otherworldly atmosphere in the tea gardens."},
+  {month:"September",avgTemp:"26-34°C",weather:"Late Monsoon",details:"Durga Puja preparations begin — idol makers in Kumartuli (Kolkata's potters' quarter) work day and night. Mahalaya — the dawn broadcast of Birendra Krishna Bhadra's Mahishasur Mardini — wakes all Bengal at 4am. Excitement builds."},
+  {month:"October",avgTemp:"20-32°C",weather:"Autumn",details:"Durga Puja — the greatest cultural festival in India. Five days when all of Bengal shuts down and celebrates. Then Lakshmi Puja, Kali Puja and Diwali in quick succession. The entire month is one continuous festival. Perfect weather.",best:true},
+  {month:"November",avgTemp:"14-28°C",weather:"Early Winter",details:"Jagaddhatri Puja in Chandannagar. Cultural season opens in Kolkata — theatre, music, literary festivals. Sundarbans tiger safari season opens. Tea gardens of Darjeeling in autumn gold. Superb across the state.",best:true},
+  {month:"December",avgTemp:"10-24°C",weather:"Winter",details:"Kolkata's Christmas — Park Street illuminated, carols at St. Paul's Cathedral. Poush Mela at Shantiniketan. Darjeeling cold and clear. Fog on the Ganges at dawn. The literary festival season. The best month.",best:true}
+];
+
+// Populate weather
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  wGrid.innerHTML += `<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div>
+    <div class="wt">${w.avgTemp}</div>
+    <div class="wd">${w.details}</div>
+  </div>`;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const el = document.createElement('div');
+  el.className = 'dacc';
+  el.dataset.name = d.name.toLowerCase();
+  el.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list"><li>${d.known}</li></ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+        </div>
+      </div>
+    </div>`;
+  accordion.appendChild(el);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `<div class="pcard">
+    <div class="pcard-acc"></div>
+    <div class="pcard-body">
+      <span class="pi">${p.emoji}</span>
+      <div class="pn">${p.name}</div>
+      <div class="pl">${p.location}</div>
+      <div class="pd">${p.desc}</div>
+      <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+      <div class="dos-donts">
+        <div class="dos"><div class="dd-title">✓ DO</div><ul class="dd-list"><li>Try mishti from local sweet shops</li><li>Book Sundarbans boat trips in advance</li></ul></div>
+        <div class="donts"><div class="dd-title">✗ DON'T</div><ul class="dd-list"><li>Rush Durga Puja pandal visits</li><li>Skip the dawn Darjeeling sunrise</li></ul></div>
+      </div>
+    </div>
+  </div>`;
+});
+
+// Populate arts, traditions, cuisines
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId, i) => {
+  const datasets = [artsData, traditionsData, cuisinesData];
+  const grid = document.getElementById(gridId);
+  datasets[i].forEach(item => {
+    grid.innerHTML += `<div class="acard">
+      <span class="ae">${item.emoji}</span>
+      <div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+
+// Accordion
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const all = document.querySelectorAll('.dacc');
+  if(openAccordion !== null && openAccordion !== idx) all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion = all[idx].classList.contains('open') ? idx : null;
+}
+function filterDistricts(q) {
+  document.querySelectorAll('.dacc').forEach(a => {
+    a.style.display = a.dataset.name.includes(q.toLowerCase()) ? '' : 'none';
+  });
+}
+function toggleMusic() {
+  const a = document.getElementById('bgm'), b = document.getElementById('musicBtn');
+  if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  en:{
+    heroName:"West Bengal", heroNative:"পশ্চিমবঙ্গ",
+    heroTag:"Land of Tagore, Durga Puja, Sundarbans & Sweet Revolution",
+    scrollLbl:"SCROLL TO EXPLORE",
+    qw:"🌡️ Weather",qd:"📍 Districts",qp:"🏛️ Places",qa:"🎨 Arts",qt:"🥁 Traditions",qc:"🍲 Cuisines",
+    lAbout:"About West Bengal", aboutTitle:"The Cultural Conscience of India",
+    aboutBody:"West Bengal is India's intellectual and artistic nerve center — the birthplace of Rabindranath Tagore, Satyajit Ray, Swami Vivekananda and Subhas Chandra Bose. Kolkata, capital of British India for 138 years, remains the subcontinent's most layered metropolis. The Sundarbans is the world's largest mangrove forest. Durga Puja is a UNESCO Intangible Cultural Heritage and the world's largest art festival. Darjeeling grows the world's finest tea. West Bengal is India thinking deeply, feeling intensely and celebrating without restraint.",
+    lWeather:"Climate & Best Time", weatherTitle:"When to Visit West Bengal",
+    weatherNote:"October to March is ideal — Durga Puja transforms every city in October, Darjeeling tea is harvested in spring, and Kolkata's cultural season peaks in winter.",
+    lDist:"All 23 Districts", distTitle:"Every District of West Bengal",
+    distNote:"West Bengal's 23 districts stretch from Himalayan Darjeeling through tea belts and Gangetic plains to the Sundarbans delta — each with its own geography, culture and story.",
+    distSearch:"Search districts...",
+    lPlaces:"Natural, Historical & Cultural Wonders", placesTitle:"Wonders of West Bengal",
+    lArts:"Arts, Crafts & Heritage", artsTitle:"Living Traditions of West Bengal",
+    lTrad:"Festivals & Celebrations", tradTitle:"Soul of Bengali Culture",
+    lCuisines:"Culinary Heritage", cuisinesTitle:"Flavors of West Bengal",
+    footerT:"JOY BANGLA — AMAR SHONAR BANGLA", footerS:"West Bengal Foundation Day — November 1 · 1956"
+  },
+  hi:{
+    heroName:"पश्चिम बंगाल", heroNative:"পশ্চিমবঙ্গ",
+    heroTag:"टैगोर, दुर्गा पूजा, सुंदरबन और मिठाई क्रांति की भूमि",
+    scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",
+    qw:"🌡️ मौसम",qd:"📍 जिले",qp:"🏛️ स्थल",qa:"🎨 कलाएं",qt:"🥁 परंपराएं",qc:"🍲 व्यंजन",
+    lAbout:"पश्चिम बंगाल के बारे में", aboutTitle:"भारत की सांस्कृतिक चेतना",
+    aboutBody:"पश्चिम बंगाल भारत का बौद्धिक और कलात्मक केंद्र है — रवींद्रनाथ टैगोर, सत्यजित रे, स्वामी विवेकानंद और सुभाष चंद्र बोस की जन्मभूमि। कोलकाता, 138 वर्षों तक ब्रिटिश भारत की राजधानी, आज भी उपमहाद्वीप का सबसे समृद्ध महानगर है। सुंदरबन विश्व का सबसे बड़ा मैंग्रोव वन है। दुर्गा पूजा यूनेस्को की अमूर्त सांस्कृतिक विरासत और दुनिया का सबसे बड़ा कला महोत्सव है।",
+    lWeather:"जलवायु और सर्वोत्तम समय", weatherTitle:"पश्चिम बंगाल कब जाएं",
+    weatherNote:"अक्टूबर से मार्च आदर्श है — दुर्गा पूजा अक्टूबर में हर शहर को बदल देती है, दार्जिलिंग की चाय वसंत में काटी जाती है और कोलकाता का सांस्कृतिक सीजन सर्दियों में चरम पर होता है।",
+    lDist:"सभी 23 जिले", distTitle:"पश्चिम बंगाल के हर जिले",
+    distNote:"पश्चिम बंगाल के 23 जिले हिमालयी दार्जिलिंग से लेकर गंगा के मैदानों और सुंदरबन डेल्टा तक फैले हैं।",
+    distSearch:"जिले खोजें...",
+    lPlaces:"प्राकृतिक, ऐतिहासिक और सांस्कृतिक चमत्कार", placesTitle:"पश्चिम बंगाल के चमत्कार",
+    lArts:"कला, शिल्प और विरासत", artsTitle:"पश्चिम बंगाल की जीवंत परंपराएं",
+    lTrad:"त्योहार और उत्सव", tradTitle:"बांग्लाली संस्कृति की आत्मा",
+    lCuisines:"पाक विरासत", cuisinesTitle:"पश्चिम बंगाल का स्वाद",
+    footerT:"জয় বাংলা — আমার সোনার বাংলা", footerS:"पश्चिम बंगाल स्थापना दिवस — 1 नवंबर · 1956"
+  },
+  bn:{
+    heroName:"পশ্চিমবঙ্গ", heroNative:"পশ্চিমবঙ্গ",
+    heroTag:"রবীন্দ্রনাথ, দুর্গাপূজা, সুন্দরবন ও মিষ্টির দেশ",
+    scrollLbl:"অন্বেষণ করতে স্ক্রোল করুন",
+    qw:"🌡️ আবহাওয়া",qd:"📍 জেলা",qp:"🏛️ স্থান",qa:"🎨 শিল্পকলা",qt:"🥁 উৎসব",qc:"🍲 রান্না",
+    lAbout:"পশ্চিমবঙ্গ সম্পর্কে", aboutTitle:"ভারতের সাংস্কৃতিক বিবেক",
+    aboutBody:"পশ্চিমবঙ্গ ভারতের বৌদ্ধিক ও শিল্পকলার কেন্দ্র — রবীন্দ্রনাথ ঠাকুর, সত্যজিৎ রায়, স্বামী বিবেকানন্দ এবং সুভাষচন্দ্র বসুর জন্মভূমি। কলকাতা, ১৩৮ বছর ব্রিটিশ ভারতের রাজধানী, আজও উপমহাদেশের সবচেয়ে স্তরযুক্ত মহানগর। সুন্দরবন বিশ্বের বৃহত্তম ম্যানগ্রোভ বন। দুর্গাপূজা ইউনেস্কোর অস্পষ্ট সাংস্কৃতিক ঐতিহ্য এবং বিশ্বের বৃহত্তম শিল্প উৎসব।",
+    lWeather:"আবহাওয়া ও সেরা সময়", weatherTitle:"পশ্চিমবঙ্গ কখন যাবেন",
+    weatherNote:"অক্টোবর থেকে মার্চ আদর্শ — দুর্গাপূজা অক্টোবরে প্রতিটি শহর বদলে দেয়, দার্জিলিং চা বসন্তে সংগ্রহ করা হয় এবং কলকাতার সাংস্কৃতিক মৌসুম শীতে চরমে পৌঁছায়।",
+    lDist:"সমস্ত ২৩টি জেলা", distTitle:"পশ্চিমবঙ্গের প্রতিটি জেলা",
+    distNote:"পশ্চিমবঙ্গের ২৩টি জেলা হিমালয়ের দার্জিলিং থেকে গাঙ্গেয় সমভূমি এবং সুন্দরবন ব-দ্বীপ পর্যন্ত বিস্তৃত।",
+    distSearch:"জেলা খুঁজুন...",
+    lPlaces:"প্রাকৃতিক, ঐতিহাসিক ও সাংস্কৃতিক বিস্ময়", placesTitle:"পশ্চিমবঙ্গের বিস্ময়",
+    lArts:"শিল্পকলা, হস্তশিল্প ও ঐতিহ্য", artsTitle:"পশ্চিমবঙ্গের জীবন্ত ঐতিহ্য",
+    lTrad:"উৎসব ও উদযাপন", tradTitle:"বাঙালি সংস্কৃতির আত্মা",
+    lCuisines:"রন্ধন ঐতিহ্য", cuisinesTitle:"পশ্চিমবঙ্গের স্বাদ",
+    footerT:"জয় বাংলা — আমার সোনার বাংলা", footerS:"পশ্চিমবঙ্গ প্রতিষ্ঠা দিবস — ১ নভেম্বর · ১৯৫৬"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t = translations[lang];
+  const keys = ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc',
+    'lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote',
+    'lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle',
+    'lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'];
+  keys.forEach(k => {
+    const el = document.getElementById(k);
+    if(el && t[k]) el.textContent = t[k];
+  });
+  document.getElementById('distSearch').placeholder = t.distSearch;
+}
+</script>
+</body>
+</html>
