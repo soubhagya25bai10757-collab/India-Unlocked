@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jharkhand — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1B5E20;--copper:#B5451B;--gold:#C8960C;--sky:#1565C0;--cream:#f4f0e2;--deep:#050805;--card:#ffffff0d;--border:rgba(27,94,32,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(5,8,5,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--forest);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(244,240,226,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(244,240,226,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--forest);color:#fff;border-color:var(--forest);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--forest);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,5,.18) 0%,rgba(5,8,5,.04) 38%,rgba(5,8,5,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(200,150,12,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.6rem,8.5vw,7.8rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(244,240,226,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(27,94,32,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(244,240,226,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--forest);color:#fff;border-color:var(--forest);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(27,94,32,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(244,240,226,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(27,94,32,.12);border:1px solid rgba(27,94,32,.3);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(27,94,32,.2);border-color:rgba(27,94,32,.52);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,150,12,.55);background:rgba(200,150,12,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(244,240,226,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--copper);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(27,94,32,.65);}
+.dsearch::placeholder{color:rgba(244,240,226,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(27,94,32,.26);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(27,94,32,.08);}
+.dacc:hover{border-color:rgba(27,94,32,.44);background:rgba(27,94,32,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(27,94,32,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(27,94,32,.35);background:rgba(27,94,32,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(244,240,226,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--copper);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(27,94,32,.2);border:1px solid rgba(27,94,32,.38);color:rgba(244,240,226,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,150,12,.2);border:1px solid rgba(200,150,12,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(27,94,32,.09);border:1.5px solid rgba(27,94,32,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(27,94,32,.55);box-shadow:0 18px 54px rgba(27,94,32,.16);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--forest),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(244,240,226,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(27,94,32,.22);border:1px solid rgba(27,94,32,.42);color:#a8ffc0;}
+.fb-fr{background:rgba(181,69,27,.2);border:1px solid rgba(181,69,27,.38);color:#ffc4a8;}
+.fb-free{background:rgba(200,150,12,.18);border:1px solid rgba(200,150,12,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(27,94,32,.15);border:1px solid rgba(27,94,32,.32);}
+.donts{background:rgba(181,69,27,.12);border:1px solid rgba(181,69,27,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a8ffc0;}.donts .dd-title{color:#ffc4a8;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(168,255,192,.78);}.donts .dd-list li{color:rgba(255,196,168,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(27,94,32,.1);border:1.5px solid rgba(27,94,32,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(27,94,32,.52);background:rgba(27,94,32,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(244,240,226,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(244,240,226,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(27,94,32,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(244,240,226,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(244,240,226,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">JHARKHAND</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-sa" onclick="setLang('sa')">संताली</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🌳</span>
+    <div class="hero-name" id="heroName">Jharkhand</div>
+    <div class="hero-native" id="heroNative">झारखण्ड</div>
+    <div class="hero-tag" id="heroTag">Land of Forests, Waterfalls, Minerals & Tribal Heartbeat</div>
+    <div class="tribar">
+      <div style="background:#1B5E20"></div>
+      <div style="background:#C8960C"></div>
+      <div style="background:#B5451B"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🥁 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap">
+    <span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span>
+    <div class="sarrow"></div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Jharkhand</span>
+  <h2 class="sec-title" id="aboutTitle">Soul of <em>Vananchal</em></h2>
+  <p class="sec-body" id="aboutBody">Jharkhand — literally "the land of forests" (jhar = forest, khand = land) — emerged as India's 28th state on November 15, 2000, carved from the southern half of Bihar after a century-long tribal struggle for self-determination. This is one of the most resource-rich pieces of land on earth: sitting atop vast reserves of coal, iron ore, copper, uranium, mica and dozens of other minerals that have fueled India's industrial economy for generations. Yet beneath these mineral riches lies a civilization far older and far more complex — the Adivasi (first peoples) of Jharkhand, whose tribes — Santali, Munda, Ho, Oraon, Kharia, Birhor and dozens more — have inhabited these Chota Nagpur Plateau forests since before recorded history. The Santali people gave the world one of the most extraordinary things in human linguistic history: the Ol Chiki script — an entirely original alphabet, created by scholar Pandit Raghunath Murmu in 1925, designed specifically for the Santali language's phonetics. It is one of the very few writing systems ever deliberately invented for a people who previously had none. Jharkhand's landscape is of extraordinary beauty: the Chota Nagpur Plateau — a billion-year-old Precambrian shield — covered in sal and mahua forests, scored by dozens of rivers tumbling over ancient granite in spectacular waterfalls. Hundru, Jonha, Dassam, Hirni and the roaring Lodh Falls are among the finest in India. The state's sacred geography — Deoghar's Baidyanath Jyotirlinga, Parasnath Hill (Sammed Shikharji), one of Jainism's holiest pilgrimage sites — draws millions of devotees annually. Jharkhand gave India Dhoni, Birsa Munda and a culture that celebrates the forest as mother, not resource.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Jharkhand</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Jharkhand has three seasons: hot summer (March–June), monsoon (July–September) and a beautiful cool winter (October–February). October to March is ideal — the Chota Nagpur forests glow in golden light, waterfalls run full from monsoon, the Sarhul and Karma festivals fill villages with flowers and drums and wildlife is most easily spotted.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 24 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Jharkhand</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Jharkhand's 24 districts spread across the Chota Nagpur Plateau and the Santhal Parganas — from the steel city of Jamshedpur in the east to the pilgrim city of Deoghar in the north. Each carries layers of tribal culture, industrial heritage and forested wilderness.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred, Natural &amp; Historical Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Jharkhand</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Tribal Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Jharkhand</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Tribal Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Jharkhandi Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Jharkhand</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY JHARKHAND — JOHAR</div>
+  <div class="fs" id="footerS">Jharkhand Sthapna Diwas — November 15 · 2000</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+// Deep forest green + copper earth — Chota Nagpur Plateau palette
+document.getElementById('heroBg').style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(12,42,14);stop-opacity:1%27/%3E%3Cstop offset=%2750%25%27 style=%27stop-color:rgb(22,58,18);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(75,28,8);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22180%22 cy=%22220%22 r=%22260%22 fill=%22rgba(27,94,32,0.28)%22/%3E%3Ccircle cx=%221020%22 cy=%22350%22 r=%22300%22 fill=%22rgba(181,69,27,0.2)%22/%3E%3Ccircle cx=%22580%22 cy=%22680%22 r=%22210%22 fill=%22rgba(200,150,12,0.15)%22/%3E%3Crect x=%220%22 y=%22730%22 width=%221200%22 height=%2270%22 fill=%22rgba(27,94,32,0.12)%22/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Ranchi",region:"Chota Nagpur",known:"State Capital, Hundru Falls, Hockey City",heritage:["Hundru Falls","Jonha Falls","Rock Garden","Tagore Hill","Jagannath Temple"],languages:["Hindi","Nagpuri","Mundari","English"],bestMonths:"Oct-Mar",avgTemp:"6-40°C"},
+  {name:"East Singhbhum (Jamshedpur)",region:"Kolhan Division",known:"Steel City, Tata Heritage, Dalma Wildlife",heritage:["Tata Steel Plant Heritage","Jubilee Park","Dalma Wildlife Sanctuary","Dimna Lake"],languages:["Hindi","Bengali","Odia","Ho","Santali"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+  {name:"West Singhbhum (Chaibasa)",region:"Kolhan Division",known:"Iron Ore Belt, Ho Tribe, Kiriburu",heritage:["Kiriburu Iron Ore Hills","Saranda Forest","Ho Tribal Villages","Koina River"],languages:["Ho","Hindi","Odia","Mundari"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+  {name:"Dhanbad",region:"Santhal Parganas",known:"Coal Capital of India, Topchanchi Lake",heritage:["Topchanchi Lake","Dhanbad Coal Museum","Panchet Dam","Maithon Dam"],languages:["Hindi","Bengali","Santali","Nagpuri"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Bokaro",region:"Chota Nagpur",known:"Steel City, City Lake, Sector Parks",heritage:["Bokaro Steel City Heritage","City Park","Jawaharlal Nehru Biological Park","Garga Dam"],languages:["Hindi","Nagpuri","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Deoghar",region:"Santhal Parganas",known:"Baidyanath Jyotirlinga, Sawan Shravan Pilgrimage",heritage:["Baidyanath Temple (Jyotirlinga)","Basukinath Temple","Trikuta Hills","Nandan Pahar"],languages:["Hindi","Santali","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Dumka",region:"Santhal Parganas",known:"Santhal Heartland, Masanjore Dam, Tribal Capital",heritage:["Masanjore (Canada Dam)","Basukinath Temple (nearby)","Santhal Cultural Sites","Mayurakshi River"],languages:["Santali","Hindi","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Giridih",region:"Santhal Parganas",known:"Parasnath Hill — Jain Pilgrimage, Usri Falls",heritage:["Sammed Shikharji (Parasnath)","Usri Falls","Giridih Mica Mines","Khandoli Park"],languages:["Hindi","Santali","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+  {name:"Hazaribagh",region:"Chota Nagpur",known:"Hazaribagh Wildlife Sanctuary, Tiger Reserve",heritage:["Hazaribagh Wildlife Sanctuary","Canary Hill","Rajderwa Dam","Konar River"],languages:["Hindi","Nagpuri","Kurukh"],bestMonths:"Oct-Mar",avgTemp:"4-42°C"},
+  {name:"Koderma",region:"Chota Nagpur",known:"Mica Capital of World, Industrial Heritage",heritage:["Mica Mine Heritage","Tilaiya Dam","Chordaha Falls"],languages:["Hindi","Nagpuri"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+  {name:"Chatra",region:"Chota Nagpur",known:"Tamas River, Waterfalls, Forest",heritage:["Tamas River Gorge","Kolhua Pahar","Tamar Forest Trails"],languages:["Hindi","Nagpuri","Oraon"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+  {name:"Palamu",region:"Palamu Division",known:"Betla National Park, Tiger Reserve, Palamau Fort",heritage:["Betla Tiger Reserve","Palamau Fort (Kechki)","Burhagharwa Waterfall","Netarhat Plateau"],languages:["Hindi","Nagpuri","Oraon"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Latehar",region:"Palamu Division",known:"Netarhat — Queen of Chotanagpur, Mahuadanr Wolf Sanctuary",heritage:["Netarhat Hill Station","Mahuadanr Wolf Sanctuary","Lodh Falls","Betla Forest Buffer"],languages:["Hindi","Nagpuri","Oraon"],bestMonths:"Oct-Mar",avgTemp:"4-42°C"},
+  {name:"Garhwa",region:"Palamu Division",known:"Son River Valley, Border District, Forests",heritage:["Son River Gorge","Chhipadohar","Forest Reserve"],languages:["Hindi","Nagpuri"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Gumla",region:"Chota Nagpur",known:"Nagfeni Waterfall, Uranium Mines, Oraon Heritage",heritage:["Palkot Wildlife Sanctuary","Nagfeni Falls","Uranium Mines","Oraon Tribal Villages"],languages:["Kurukh (Oraon)","Hindi","Mundari"],bestMonths:"Oct-Mar",avgTemp:"6-40°C"},
+  {name:"Simdega",region:"Chota Nagpur",known:"Christian Tribal Heritage, Keolajhari River",heritage:["Keolajhari Waterfalls","Tribal Church Heritage","Dense Sal Forests"],languages:["Hindi","Kurukh","Ho","Mundari"],bestMonths:"Oct-Mar",avgTemp:"6-40°C"},
+  {name:"Khunti",region:"Chota Nagpur",known:"Birsa Munda Birthplace, Munda Tribal Homeland",heritage:["Birsa Munda Birthplace Ulihatu","Munda Tribal Villages","Karo River","Pandaruk Sacred Site"],languages:["Mundari","Hindi","Nagpuri"],bestMonths:"Oct-Mar",avgTemp:"6-40°C"},
+  {name:"Seraikela-Kharsawan",region:"Kolhan Division",known:"Chhau Dance Birthplace, Royal Heritage, SAIL Plants",heritage:["Chhau Dance Heritage","Seraikela Palace Museum","Kharsawan Martyrdom Site"],languages:["Hindi","Odia","Ho","Bengali"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+  {name:"Saraikela",region:"Kolhan Division",known:"Chhau Dance Royal Patronage, Border Region",heritage:["Chhau Dance Academy","Royal Heritage Sites","Kharkai River"],languages:["Hindi","Odia","Ho"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+  {name:"Ramgarh",region:"Chota Nagpur",known:"Coal Belt, Rajrappa Temple, Damodar River",heritage:["Rajrappa Chinnamasta Temple","Damodar River","Patratu Valley","Bhera Waterfall"],languages:["Hindi","Nagpuri","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+  {name:"Jamtara",region:"Santhal Parganas",known:"Brajadiha Waterfall, Santhal Heritage",heritage:["Brajadiha Waterfall","Mayurakshi River","Santhal Cultural Sites"],languages:["Santali","Hindi","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Sahebganj",region:"Santhal Parganas",known:"Ganga River, Rajmahal Hills, Fossil Park",heritage:["Rajmahal Hills Fossil Park","Ganga Ghats","Udhwa Lake Bird Sanctuary"],languages:["Santali","Hindi","Bengali","Paharia"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Pakur",region:"Santhal Parganas",known:"Stone Quarry Heritage, Border District, Santhal Culture",heritage:["Santhal Villages","Bansloi River","Stone Quarry Heritage"],languages:["Santali","Hindi","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+  {name:"Godda",region:"Santhal Parganas",known:"Thermal Power, Santhal Heritage, Forest",heritage:["Godda Forest Reserve","Santhal Cultural Sites","Tridhara Waterfall"],languages:["Santali","Hindi","Bengali"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"}
+];
+
+const placesData = [
+  {emoji:"⛩️",name:"Baidyanath Temple (Jyotirlinga)",location:"Deoghar",desc:"One of the twelve Jyotirlingas of Shiva — among Hinduism's most sacred. The Baidyanath temple complex in Deoghar contains 22 temples within its compound. During Shravan (July–August), the Kanwar Yatra brings millions of devotees who carry Ganga water from Sultanganj on foot — 105 km — to perform abhishek. The world's largest annual pilgrimage walk.",fee:["Free"]},
+  {emoji:"⛰️",name:"Sammed Shikharji (Parasnath Hill)",location:"Giridih District",desc:"The holiest pilgrimage site in Jainism — 20 of the 24 Jain Tirthankaras attained moksha (liberation) on this 1,365-meter hill. The 27-km circumambulation path passes 20 tonks (shrines) through pristine forest. Over a million Jain pilgrims visit annually. The forest on Parasnath Hill is considered sacred by tribal communities and protected by religious reverence for centuries.",fee:["Free"]},
+  {emoji:"🌊",name:"Hundru Falls",location:"Ranchi District",desc:"The highest waterfall in Jharkhand — the Subarnarekha river plunges 98 meters into a deep forested gorge. Most spectacular from October to December when the monsoon-swollen river tumbles with full force. The surrounding Chota Nagpur forest creates an atmosphere of deep wilderness. A ropeway and trekking path reach the base.",fee:["Paid"]},
+  {emoji:"🐅",name:"Betla National Park & Tiger Reserve",location:"Palamu District",desc:"Jharkhand's premier wildlife sanctuary — one of the first nine Tiger Reserves designated under Project Tiger in 1973. Set in the sal and bamboo forests of Palamu, it shelters tigers, elephants, leopards, gaur, sloth bears and wild dogs. The Palamau Fort ruins within the park add historical intrigue to the wildlife experience.",fee:["Paid"]},
+  {emoji:"🏔️",name:"Netarhat — Queen of Chotanagpur",location:"Latehar District",desc:"A remote plateau at 1,128 meters — known for its extraordinary sunrises and sunsets over the Chota Nagpur forest horizon. Dense forests of sal and pine surround the plateau. The Lodh Falls (143 meters — highest in Jharkhand) are nearby. Netarhat's cool climate, silence and forest trails make it Jharkhand's finest hill retreat.",fee:["Free"]},
+  {emoji:"💎",name:"Lodh (Burha Ghagh) Falls",location:"Latehar District",desc:"Jharkhand's highest waterfall — 143 meters of the Burha river plunging through pristine forest. A remote location accessible by trek through dense sal forest adds to the drama. The pool at the base is crystal clear. Surrounded by tribal Oraon and Munda villages, the approach is as spectacular as the falls themselves.",fee:["Free"]},
+  {emoji:"🗿",name:"Rajrappa Chinnamasta Temple",location:"Ramgarh District",desc:"One of the 51 Shakti Peethas — the Chinnamasta Devi temple sits at the dramatic confluence of the Damodar and Bhairavi rivers. The self-decapitating goddess is one of Tantric Hinduism's most powerful forms. The setting — rivers meeting amid forest, with the temple's crimson flags reflected in the water — is of extraordinary power.",fee:["Free"]},
+  {emoji:"🌳",name:"Saranda Forest",location:"West Singhbhum",desc:"One of India's largest sal forests — 800 sq km of dense, cathedral-like sal trees covering iron-rich hills. The name Saranda means 'seven hundred hills' in Ho tribal language. Home to elephants, leopards and hundreds of bird species. The Ho tribe has lived within this forest for millennia in a relationship of profound ecological knowledge.",fee:["Free"]},
+  {emoji:"🏛️",name:"Hazaribagh Rock Paintings",location:"Hazaribagh District",desc:"The Isko and Chacho hills near Hazaribagh contain over 200 prehistoric rock painting sites — some dating to 10,000 BCE. The paintings depict hunting scenes, animals, shamanic figures and abstract patterns. Many are in situ, visible on open rock faces. The concentration of Mesolithic art here rivals the most significant rock art sites in the world.",fee:["Free"]},
+  {emoji:"🦅",name:"Udhwa Lake Bird Sanctuary",location:"Sahebganj District",desc:"A Ramsar wetland site on the Ganga floodplain — winter home to tens of thousands of migratory birds including bar-headed geese, greater flamingos and Siberian ducks. The lake's reed beds, lotus fields and Ganga backwaters create extraordinary birdwatching. Located near the remarkable Rajmahal Hills fossil park — 150-million-year-old plant fossils.",fee:["Paid"]}
+];
+
+const artsData = [
+  {emoji:"💃",name:"Chhau Dance",location:"Seraikela, Chaibasa & Purulia border",desc:"One of India's UNESCO Intangible Cultural Heritage forms — a semi-classical martial dance using elaborate masks, vigorous footwork and acrobatic movements. Seraikela Chhau (mask dance) is the most refined form, developed under royal patronage of the Seraikela kings. Performed at night during Chaitra Parva (March-April) with torchlight, it tells stories from the Mahabharata and Ramayana."},
+  {emoji:"🖼️",name:"Sohrai & Khovar Painting",location:"Hazaribagh District — UNESCO Listed",desc:"Two of India's most important living tribal art traditions, both inscribed on UNESCO's Intangible Cultural Heritage list. Sohrai — harvest festival paintings in white, red and black on freshly plastered walls — and Khovar — bridal room paintings celebrating new marriages. Done by Santali, Munda and Oraon women using natural pigments and combs for texture."},
+  {emoji:"🧺",name:"Tribal Basket & Bamboo Craft",location:"Statewide",desc:"Jharkhand's tribal communities produce extraordinary bamboo and cane work — winnowing trays (supa), fish traps, storage baskets, furniture and decorative items of geometric precision. The Ho tribe's bamboo construction techniques, the Santali weaving patterns and the Munda tool-making tradition are each distinct. The forest provides all raw materials."},
+  {emoji:"🥁",name:"Mandar Drumming & Folk Music",location:"Statewide",desc:"The mandar — a clay barrel drum — is the musical heartbeat of Jharkhand's tribal world. Played at every festival, wedding and ceremony, its rhythms carry specific social meanings. The Santali dhol, the Oraon's nagara and the nagpuri instruments create a rich sonic landscape. The tumda (a two-stringed fiddle) and flute accompany night-long community songs."},
+  {emoji:"🪡",name:"Tassar Silk Weaving",location:"Bhagalpur edge & Tribal Districts",desc:"Jharkhand is one of India's leading producers of tassar (tussah) silk — a wild silk produced from silkworms that feed on arjun and asan trees in forest clearings. The silk has a characteristic golden-brown sheen and rough texture. Tribal communities rear the cocoons in the forest. Jharkhand tassar has a GI tag and is woven into sarees and stoles of great beauty."},
+  {emoji:"🗿",name:"Stone Carving & Bead Work",location:"Kolhan & Tribal Regions",desc:"Jharkhand's Paharia and Kolhan tribal communities have traditions of decorative stone carving — ancestor memorial stones (sasan diri) placed at burial grounds are carved with figures representing the deceased's achievements. Tribal bead jewelry — multiple strands of glass, seed and metal beads in community-specific patterns — is worn by women as identity markers."}
+];
+
+const traditionsData = [
+  {emoji:"🌸",name:"Sarhul — Festival of Flowers",location:"Statewide Tribal Areas — Spring",desc:"The most sacred festival of the Munda and Oraon tribes — a spring festival worshipping the Sal tree (sarjom) as the mother of all creation. White sal flowers are offered to the village deity (Sarna) by the traditional priest (pahan). Young men and women dance in circles around the sacred grove, singing call-and-response folk songs. No other celebration so perfectly expresses the tribal relationship with the forest."},
+  {emoji:"🍂",name:"Karma — Festival of the Tree",location:"Statewide — August/September",desc:"The Munda, Oraon and Ho tribes worship the Karma tree (Nauclea parvifolia) as a deity of fate and good fortune. Young unmarried women fast, plant karma branches in the village center and dance around them through the night with young men. The songs (karma git) are among the most beautiful in tribal India — full of longing, nature imagery and community joy."},
+  {emoji:"🥁",name:"Sohrai — Harvest Festival",location:"Santhal & Munda Areas — November",desc:"The great harvest festival of Jharkhand's tribes — cattle are bathed and decorated, homes freshly plastered with red and black earth, and the extraordinary Sohrai paintings made on every wall. The community feasts, drum circles and folk songs of Sohrai fill villages for three days. It is the visual art festival of the year — every woman expresses herself through her painting."},
+  {emoji:"🎭",name:"Chaitra Parva",location:"Seraikela & Chaibasa — March/April",desc:"The spring festival at which Seraikela Chhau dance is performed with full ceremonial ceremony — masked dancers performing through the night with torches. The festival lasts 13 nights. Village communities gather from across the region. The royal patronage of Seraikela gave Chhau its elaborate costumes and court-refined movements."},
+  {emoji:"🙏",name:"Kanwar Yatra — Shravan Pilgrimage",location:"Deoghar — July/August",desc:"Every Shravan (monsoon month), millions of saffron-clad Kanwariyas carry ornate wooden kanwar yokes bearing Ganga water from Sultanganj, walking 105 km on foot to perform abhishek at the Baidyanath Jyotirlinga. It is one of the world's largest annual pilgrimages — the roads filled with devotees chanting 'Bol Bam' for weeks. An extraordinary spectacle of faith."},
+  {emoji:"🌾",name:"Tusu Parab",location:"Santhal Parganas — Makar Sankranti",desc:"The Tusu harvest festival of the Santhal and Kurmi communities — celebrated at Makar Sankranti with the construction of elaborate decorated palanquins (chouwdal) carrying the tusu deity, carried in processions to rivers for immersion. Young girls sing tusu songs throughout the preceding month, sleeping with the deity. A joyful, deeply local celebration of abundance."}
+];
+
+const cuisinesData = [
+  {emoji:"🍚",name:"Handia — Rice Beer",location:"Tribal Villages Statewide",desc:"The sacred and social drink of Jharkhand's tribal communities — rice fermented with a herbal starter (ranu) made from 20–30 forest plants over 5–7 days. Cloudy, mildly sour, mildly alcoholic and deeply nutritious. Offered to guests as the highest form of hospitality. Central to every tribal ceremony, festival and rite of passage. The recipe for ranu is a guarded family inheritance."},
+  {emoji:"🌿",name:"Rugra — Forest Mushroom Curry",location:"Tribal Forests — Monsoon Season",desc:"Rugra (Astraeus hygrometricus) is a unique puffball mushroom that grows only in the laterite soil of Jharkhand's forests after monsoon rains. Collected by tribal women, it is cooked with mustard oil, onion and simple spices into a curry of extraordinary earthy flavor. Rugra is a seasonal delicacy available only August–October and impossible to cultivate — it grows wild or not at all."},
+  {emoji:"🫓",name:"Dhuska",location:"Statewide — Street Food",desc:"Jharkhand's most beloved street food — thick, crispy fritters made from ground rice and chana dal batter, deep-fried until golden and airy inside. Eaten with aloo sabzi (potato curry) and green chutney. The Dhuska at Ranchi's roadside stalls is a mandatory experience. A simple food of great textural pleasure — crisp shell, soft sponge interior."},
+  {emoji:"🍲",name:"Litti Chokha (Jharkhandi style)",location:"Statewide",desc:"Shared with Bihar but made distinctly — wheat balls stuffed with sattu (roasted gram flour), carom seeds, mustard oil and lime, roasted directly on coal embers until charred. Served with spiced mashed sweet potato and brinjal (chokha). The Jharkhandi version uses more carom and garlic in the stuffing. Eaten at roadside dhabas across the state."},
+  {emoji:"🥗",name:"Mahua Ladoo & Mahua Dal",location:"Tribal Regions",desc:"The mahua tree (Madhuca longifolia) is the sacred provider tree of Jharkhand's tribes. Its flowers are eaten fresh as a sweet snack, dried and ground into flour for ladoos, and fermented into alcohol. Mahua dal — lentils cooked with dried mahua flowers — has a unique sweet-savory depth impossible to replicate. The tree blooms in March and its flowers are gathered from the forest floor at dawn."},
+  {emoji:"🍘",name:"Malpua & Arsa Roti",location:"Festival Foods",desc:"Malpua — sweet fried pancakes soaked in sugar syrup flavored with fennel and cardamom, made for festivals and ceremonies. Arsa Roti — a thick, crisp rice flour sweet pancake made during Karma and Sohrai festivals, rolled in sesame seeds and deep fried. Both are prepared in large quantities for community sharing — the act of making is as important as the eating."},
+  {emoji:"🌱",name:"Badi & Pital Chutney",location:"Santhal Parganas & Chota Nagpur",desc:"Badi — sun-dried lentil nuggets made from urad or moong dal, fermented, spiced and dried in the sun over days. Rehydrated and cooked in curries or fried as a crunchy accompaniment. Pital chutney — brass-pot cooked chutney of forest greens with mustard and dried chilies — is a condiment of extraordinary sharpness. Both are foods of frugal, sustainable abundance."},
+  {emoji:"🫕",name:"Chilka Roti & Dal Pithi",location:"Statewide",desc:"Chilka Roti — a soft crepe made from fermented rice and lentil batter, slightly sour from fermentation, eaten with potato curry or chutney. Dal Pithi — small whole-wheat dumplings cooked directly in lentil soup, absorbing the dal's flavor from the inside. Both are everyday foods of Jharkhandi households — nutritious, filling, made from the simplest ingredients with extraordinary skill."},
+  {emoji:"🎋",name:"Bamboo Shoot Pickle & Sabzi",location:"Tribal Forest Areas",desc:"The young shoots of bamboo, harvested in monsoon season, are eaten as a vegetable, pickled in mustard oil and dried for year-round use. Bamboo shoot sabzi — cooked with mustard seeds, turmeric and dried red chili — has a distinctive fermented-earthy flavor. A food unavailable in markets, found only in tribal homes and forest villages. Jharkhand's most authentic seasonal delicacy."}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"6-24°C",weather:"Cool Winter",details:"Crisp cold mornings. Forests golden-brown. Best month for Betla and Hazaribagh wildlife. Deoghar temple visits comfortable. Tribal village life at its most leisurely. Pack warm layers for nights.",best:true},
+  {month:"February",avgTemp:"8-28°C",weather:"Pleasant",details:"Sarhul preparations begin — sal forests show first white flowers. Perfect temperatures. Parasnath pilgrimage comfortable. Netarhat sunrises spectacular. Tassar silk markets active.",best:true},
+  {month:"March",avgTemp:"14-34°C",weather:"Warm Spring",details:"Sarhul festival — the forest blooms white with sal flowers. Chhau dance at Chaitra Parva (Seraikela). Excellent for tribal village travel. Last good month before summer heat builds.",best:true},
+  {month:"April",avgTemp:"18-38°C",weather:"Hot",details:"Summer arriving. Sal trees shed leaves temporarily — the forest goes briefly bare before monsoon. Chaitra Parva Chhau festival in full swing. Visit waterfalls before they shrink in dry season."},
+  {month:"May",avgTemp:"22-42°C",weather:"Very Hot",details:"Peak summer. Dry winds across the plateau. Not recommended for outdoor tourism. Mahua flowers falling in forests — tribal communities gather them at dawn. Mangoes ripening in village orchards."},
+  {month:"June",avgTemp:"24-38°C",weather:"Pre-Monsoon",details:"Pre-monsoon storms begin. Forests anticipate rain. Humidity rising. Kanwar Yatra preparations begin at Deoghar. Tribal communities prepare fields for planting. Not recommended for travel."},
+  {month:"July",avgTemp:"22-30°C",weather:"Monsoon",details:"Monsoon transforms Jharkhand. Every waterfall thunders to life. Hundru and Lodh Falls at maximum power. Kanwar Yatra pilgrimage — millions walk to Deoghar. Forests explode deep green.",best:true},
+  {month:"August",avgTemp:"22-30°C",weather:"Deep Monsoon",details:"Karma festival celebrated in tribal villages. Rugra mushrooms appear in forests — tribal harvest season. Monsoon waterfalls still spectacular. Roads to remote areas can be difficult."},
+  {month:"September",avgTemp:"22-32°C",weather:"Late Monsoon",details:"Rains easing. Forests lush. Rugra mushroom season peak. Wildlife sanctuaries beginning to reopen. Tassar cocoon harvest in forest clearings. An excellent transitional month for adventurous travelers."},
+  {month:"October",avgTemp:"16-30°C",weather:"Autumn",details:"Ideal month — cool, clear, waterfalls still full. Sohrai harvest festival preparations. Diwali illuminates every village. Betla and Hazaribagh perfect for safari. Tribal art season begins.",best:true},
+  {month:"November",avgTemp:"10-26°C",weather:"Early Winter",details:"Jharkhand Sthapna Diwas on the 15th — state celebrations. Sohrai festival paintings adorn village walls. Wildlife at its best. Parasnath pilgrimage comfortable. Tusu songs beginning.",best:true},
+  {month:"December",avgTemp:"6-22°C",weather:"Winter",details:"Cool and clear. Deoghar temple in winter mist. Netarhat plateau cold and extraordinarily atmospheric. Tassar silk saree shopping season. Best overall conditions for covering the full state.",best:true}
+];
+
+// Populate weather
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  wGrid.innerHTML += `<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div>
+    <div class="wt">${w.avgTemp}</div>
+    <div class="wd">${w.details}</div>
+  </div>`;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const el = document.createElement('div');
+  el.className = 'dacc';
+  el.dataset.name = d.name.toLowerCase();
+  el.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list"><li>${d.known}</li></ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+        </div>
+      </div>
+    </div>`;
+  accordion.appendChild(el);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `<div class="pcard">
+    <div class="pcard-acc"></div>
+    <div class="pcard-body">
+      <span class="pi">${p.emoji}</span>
+      <div class="pn">${p.name}</div>
+      <div class="pl">${p.location}</div>
+      <div class="pd">${p.desc}</div>
+      <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+      <div class="dos-donts">
+        <div class="dos"><div class="dd-title">✓ DO</div><ul class="dd-list"><li>Hire local tribal guides in forests</li><li>Respect sacred sarna groves</li></ul></div>
+        <div class="donts"><div class="dd-title">✗ DON'T</div><ul class="dd-list"><li>Enter tribal groves uninvited</li><li>Photograph ceremonies without consent</li></ul></div>
+      </div>
+    </div>
+  </div>`;
+});
+
+// Populate arts, traditions, cuisines
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId, i) => {
+  const datasets = [artsData, traditionsData, cuisinesData];
+  const grid = document.getElementById(gridId);
+  datasets[i].forEach(item => {
+    grid.innerHTML += `<div class="acard">
+      <span class="ae">${item.emoji}</span>
+      <div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+
+// Accordion
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const all = document.querySelectorAll('.dacc');
+  if(openAccordion !== null && openAccordion !== idx) all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion = all[idx].classList.contains('open') ? idx : null;
+}
+function filterDistricts(q) {
+  document.querySelectorAll('.dacc').forEach(a => {
+    a.style.display = a.dataset.name.includes(q.toLowerCase()) ? '' : 'none';
+  });
+}
+function toggleMusic() {
+  const a = document.getElementById('bgm'), b = document.getElementById('musicBtn');
+  if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  en:{
+    heroName:"Jharkhand", heroNative:"झारखण्ड",
+    heroTag:"Land of Forests, Waterfalls, Minerals & Tribal Heartbeat",
+    scrollLbl:"SCROLL TO EXPLORE",
+    qw:"🌡️ Weather",qd:"📍 Districts",qp:"🏛️ Places",qa:"🎨 Arts",qt:"🥁 Traditions",qc:"🍲 Cuisines",
+    lAbout:"About Jharkhand", aboutTitle:"Soul of Vananchal",
+    aboutBody:"Jharkhand — the land of forests — emerged as India's 28th state on November 15, 2000. This is one of the most resource-rich pieces of land on earth, sitting atop vast reserves of coal, iron ore, copper and uranium. Yet its true wealth lies in its Adivasi civilizations — Santali, Munda, Ho, Oraon, Kharia and dozens more. The Santali people gave the world the Ol Chiki script — one of the few writing systems ever deliberately invented. Jharkhand's waterfalls, sal forests, the Baidyanath Jyotirlinga, Parasnath Hill and its UNESCO-listed Sohrai-Khovar paintings make it one of India's most extraordinary states.",
+    lWeather:"Climate & Best Time", weatherTitle:"When to Visit Jharkhand",
+    weatherNote:"Jharkhand has three seasons: hot summer (March–June), monsoon (July–September) and a beautiful cool winter (October–February). October to March is ideal — the Chota Nagpur forests glow in golden light and tribal festivals fill villages with drums.",
+    lDist:"All 24 Districts", distTitle:"Every District of Jharkhand",
+    distNote:"Jharkhand's 24 districts spread across the Chota Nagpur Plateau and the Santhal Parganas — from the steel city of Jamshedpur to the pilgrim city of Deoghar.",
+    distSearch:"Search districts...",
+    lPlaces:"Sacred, Natural & Historical Wonders", placesTitle:"Wonders of Jharkhand",
+    lArts:"Tribal Arts, Crafts & Heritage", artsTitle:"Living Traditions of Jharkhand",
+    lTrad:"Festivals & Tribal Celebrations", tradTitle:"Soul of Jharkhandi Culture",
+    lCuisines:"Culinary Heritage", cuisinesTitle:"Flavors of Jharkhand",
+    footerT:"JAY JHARKHAND — JOHAR", footerS:"Jharkhand Sthapna Diwas — November 15 · 2000"
+  },
+  hi:{
+    heroName:"झारखण्ड", heroNative:"झारखण्ड",
+    heroTag:"जंगल, झरने, खनिज और आदिवासी धड़कन की भूमि",
+    scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",
+    qw:"🌡️ मौसम",qd:"📍 जिले",qp:"🏛️ स्थल",qa:"🎨 कलाएं",qt:"🥁 परंपराएं",qc:"🍲 व्यंजन",
+    lAbout:"झारखण्ड के बारे में", aboutTitle:"वनांचल की आत्मा",
+    aboutBody:"झारखण्ड — जंगलों की भूमि — 15 नवंबर 2000 को भारत के 28वें राज्य के रूप में उभरा। यह पृथ्वी पर सबसे संसाधन-समृद्ध भूखंडों में से एक है — कोयला, लौह अयस्क, तांबे और यूरेनियम के विशाल भंडार। लेकिन इसकी सच्ची संपत्ति इसकी आदिवासी सभ्यताओं में है — संताली, मुंडा, हो, उरांव, खड़िया और दर्जनों अन्य। संताली लोगों ने दुनिया को ओल चिकी लिपि दी। बैद्यनाथ ज्योतिर्लिंग, पारसनाथ पहाड़ और यूनेस्को सूचीबद्ध सोहराई-खोवर चित्रकला इसे भारत के सबसे असाधारण राज्यों में से एक बनाते हैं।",
+    lWeather:"जलवायु और सर्वोत्तम समय", weatherTitle:"झारखण्ड कब जाएं",
+    weatherNote:"झारखण्ड में तीन मौसम हैं: गर्म गर्मी (मार्च-जून), मानसून (जुलाई-सितंबर) और सुंदर शीत ऋतु (अक्टूबर-फरवरी)। अक्टूबर से मार्च आदर्श है।",
+    lDist:"सभी 24 जिले", distTitle:"झारखण्ड के हर जिले",
+    distNote:"झारखण्ड के 24 जिले छोटा नागपुर पठार और संथाल परगना में फैले हैं — जमशेदपुर से देवघर तक।",
+    distSearch:"जिले खोजें...",
+    lPlaces:"पवित्र, प्राकृतिक और ऐतिहासिक चमत्कार", placesTitle:"झारखण्ड के चमत्कार",
+    lArts:"जनजातीय कला, शिल्प और विरासत", artsTitle:"झारखण्ड की जीवंत परंपराएं",
+    lTrad:"त्योहार और जनजातीय उत्सव", tradTitle:"झारखण्डी संस्कृति की आत्मा",
+    lCuisines:"पाक विरासत", cuisinesTitle:"झारखण्ड का स्वाद",
+    footerT:"जय झारखण्ड — जोहार", footerS:"झारखण्ड स्थापना दिवस — 15 नवंबर · 2000"
+  },
+  sa:{
+    heroName:"झारखण्ड", heroNative:"झारखण्ड",
+    heroTag:"बन, ओड़ाक, खनिज आर आदिवासी दिल के धरती",
+    scrollLbl:"जोखा करे स्क्रॉल करेन",
+    qw:"🌡️ मौसम",qd:"📍 जिला",qp:"🏛️ जाग़ाह",qa:"🎨 कला",qt:"🥁 परब",qc:"🍲 दाली-भात",
+    lAbout:"झारखण्ड बाबत", aboutTitle:"वनांचल के आतमा",
+    aboutBody:"झारखण्ड — बनों के धरती — 15 नवंबर 2000 तारिक भारत के 28वाँ राज्य बनल। एकर सच्चा दौलत एकर आदिवासी मानुष में आचे — संताली, मुंडा, हो, उरांव, खड़िया आर आर। संताली मानुष दुनिया के ओलचिकी लिपि दिलक — एगो मन से बनावल लिखाई प्रणाली। बैद्यनाथ मंदिर, पारसनाथ पहाड़ आर सोहराई-खोवर चित्रकला एकरे अद्भुत बनावेला।",
+    lWeather:"मौसम आर सबसे बढ़िया समय", weatherTitle:"झारखण्ड कबे जाइबेन",
+    weatherNote:"झारखण्ड में तीन मौसम आचे: गर्मी, बरसात आर जाड़ा। अक्टूबर से मार्च सबसे बढ़िया समय आचे।",
+    lDist:"सभी 24 जिला", distTitle:"झारखण्ड के हर जिला",
+    distNote:"झारखण्ड के 24 जिला छोटा नागपुर से संथाल परगना तक फैलल आचे।",
+    distSearch:"जिला खोजेन...",
+    lPlaces:"पवित्र, प्राकृतिक आर ऐतिहासिक अजूबा", placesTitle:"झारखण्ड के अजूबा",
+    lArts:"आदिवासी कला, हस्तशिल्प आर विरासत", artsTitle:"झारखण्ड के जीवंत परंपरा",
+    lTrad:"परब आर आदिवासी उत्सव", tradTitle:"झारखण्डी संस्कृति के आतमा",
+    lCuisines:"खाना के विरासत", cuisinesTitle:"झारखण्ड के सुवाद",
+    footerT:"जय झारखण्ड — जोहार", footerS:"झारखण्ड स्थापना दिवस — 15 नवंबर · 2000"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t = translations[lang];
+  const keys = ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc',
+    'lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote',
+    'lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle',
+    'lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'];
+  keys.forEach(k => {
+    const el = document.getElementById(k);
+    if(el && t[k]) el.textContent = t[k];
+  });
+  document.getElementById('distSearch').placeholder = t.distSearch;
+}
+</script>
+</body>
+</html>
