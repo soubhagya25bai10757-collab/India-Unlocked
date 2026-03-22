@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haryana — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B6B2F;--saffron:#C47B0A;--navy:#1A3060;--wheat:#C8A050;--cream:#fdf6e0;--deep:#060808;--border:rgba(27,107,47,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(6,8,8,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--green);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,246,224,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,246,224,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--green);color:#fff;border-color:var(--green);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--green);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,8,.18) 0%,rgba(6,8,8,.04) 38%,rgba(6,8,8,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(196,123,10,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.4rem,8vw,7.5rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--saffron);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,246,224,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(27,107,47,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,246,224,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--green);color:#fff;border-color:var(--green);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--saffron),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(27,107,47,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--saffron);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--saffron);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,246,224,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(27,107,47,.1);border:1px solid rgba(27,107,47,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(27,107,47,.18);border-color:rgba(27,107,47,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(196,123,10,.55);background:rgba(196,123,10,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--saffron);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,246,224,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--green);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(27,107,47,.65);}
+.dsearch::placeholder{color:rgba(253,246,224,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(27,107,47,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(27,107,47,.08);}
+.dacc:hover{border-color:rgba(27,107,47,.42);background:rgba(27,107,47,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(27,107,47,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--saffron);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--saffron);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(27,107,47,.35);background:rgba(27,107,47,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--saffron);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,246,224,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--green);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(27,107,47,.2);border:1px solid rgba(27,107,47,.38);color:rgba(253,246,224,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(196,123,10,.2);border:1px solid rgba(196,123,10,.42);color:var(--saffron);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--saffron);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(27,107,47,.09);border:1.5px solid rgba(27,107,47,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(27,107,47,.55);box-shadow:0 18px 54px rgba(27,107,47,.14);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--green),var(--saffron));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--saffron);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,246,224,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(27,107,47,.22);border:1px solid rgba(27,107,47,.42);color:#a8ffc0;}
+.fb-fr{background:rgba(26,48,96,.2);border:1px solid rgba(26,48,96,.38);color:#a0c8ff;}
+.fb-free{background:rgba(196,123,10,.18);border:1px solid rgba(196,123,10,.38);color:var(--saffron);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(27,107,47,.14);border:1px solid rgba(27,107,47,.3);}
+.donts{background:rgba(26,48,96,.12);border:1px solid rgba(26,48,96,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a8ffc0;}.donts .dd-title{color:#a0c8ff;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(168,255,192,.78);}.donts .dd-list li{color:rgba(160,200,255,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(27,107,47,.1);border:1.5px solid rgba(27,107,47,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(27,107,47,.52);background:rgba(27,107,47,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,246,224,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,246,224,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(27,107,47,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,246,224,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,246,224,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">HARYANA</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-hry" onclick="setLang('hry')">हरियाणवी</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#9876;&#65039;</span>
+    <div class="hero-name" id="heroName">Haryana</div>
+    <div class="hero-native" id="heroNative">हरियाणा</div>
+    <div class="hero-tag" id="heroTag">Land of Kurukshetra, Champions, Green Revolution & Hariyali</div>
+    <div class="tribar"><div style="background:#1B6B2F"></div><div style="background:#C47B0A"></div><div style="background:#1A3060"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Haryana</span>
+  <h2 class="sec-title" id="aboutTitle">Where the <em>Mahabharata Was Born</em></h2>
+  <p class="sec-body" id="aboutBody">Haryana — the land whose name means "abode of Hari (Vishnu)" or "green land" (Hari = green, ayana = abode) — is one of the most consequential pieces of land in human history. The Kurukshetra district is the site of the Mahabharata war — the eighteen-day battle between the Pandavas and Kauravas that the Bhagavad Gita describes as having taken place on this very soil. Here, Lord Krishna delivered the Bhagavad Gita to Arjuna before the battle — one of the most influential philosophical texts in human civilization. The Harappan Civilization thrived on Haryana's banks: Rakhigarhi in Hisar district is the largest Harappan site yet discovered, larger than Mohenjo-daro, with an unbroken 5,000-year archaeological sequence. Haryana also hosts Thanesar — the capital of Harshavardhana's empire (606–647 AD), the most powerful ruler of North India before the Islamic invasions. The state was carved from Punjab in 1966 following linguistic reorganization and has since transformed itself with extraordinary speed. The Green Revolution was pioneered here — Haryana's farmers adopted high-yield wheat varieties in the 1960s and transformed India from a famine-stricken country into a wheat exporter. Today Haryana contributes over 60% of India's wheat procurement. In sports, Haryana is the most dominant state in India: the state that is 1.7% of India's population has won over 40% of India's Olympic medals since 2000 — in wrestling, boxing, weightlifting, hockey and athletics. The state has produced 40+ Olympic and World Championship medalists. The Aravalli hills in the south, the Ghaggar river in the north, the Yamuna in the east and the Shivalik foothills create a diverse landscape beneath Haryana's flat exterior. The state's folk culture — Ragini, Saang theatre, Phag songs, Holi of Brij — is robustly alive in villages where farmers are also Olympic champions.</p>
+</section>
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Haryana</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Haryana has four seasons: cold winter (Nov–Feb), scorching summer (Apr–Jun), monsoon (Jul–Sep) and a brief pleasant spring (Mar). October to March is the golden window — Kurukshetra is best in winter, the Surajkund Crafts Mela is in February, wheat fields turn golden in March and wildlife sanctuaries are at their finest.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 22 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Haryana</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Haryana's 22 districts span the Gangetic plains, the Aravalli range, the Yamuna corridor and the Ghaggar-Hakra basin. Each carries layers of Mahabharata-era mythology, Harappan archaeology and living agricultural culture.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred, Historical &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Haryana</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Haryana</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Haryanvi Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Haryana</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+<footer>
+  <span class="fe">&#128591;</span>
+  <div class="ft" id="footerT">JAI HARYANA — HARYANA BANEGA NAUMBER WAN</div>
+  <div class="fs" id="footerS">Haryana Foundation Day — November 1 &middot; 1966</div>
+</footer>
+<audio id="bgm" loop preload="auto"><source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg"></audio>
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(10,40,18);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(35,55,10);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(12,25,55);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22270%22 fill=%22rgba(27,107,47,0.25)%22/%3E%3Ccircle cx=%221030%22 cy=%22350%22 r=%22290%22 fill=%22rgba(26,48,96,0.2)%22/%3E%3Ccircle cx=%22590%22 cy=%22700%22 r=%22200%22 fill=%22rgba(196,123,10,0.16)%22/%3E%3Crect x=%220%22 y=%22730%22 width=%221200%22 height=%2270%22 fill=%22rgba(27,107,47,0.1)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+{name:"Kurukshetra",region:"Central Haryana",known:"Bhagavad Gita's Birthplace, Mahabharata War Site",heritage:["Brahma Sarovar","Sannihit Sarovar","Jyotisar — Gita Upadesh Site","Kurukshetra Panorama Museum","Sheikh Chilli Tomb"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Hisar",region:"West Haryana",known:"Rakhigarhi — Largest Harappan Site, Steel City",heritage:["Rakhigarhi Harappan Site","Agroha Dham","Firozshah Tughlaq's Palace","Haryana Agricultural University"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Gurugram",region:"NCR Haryana",known:"Millennium City, IT Hub, Delhi NCR Business",heritage:["Sultanpur Bird Sanctuary","Sheetla Mata Temple","Tau Devi Lal Stadium"],languages:["Hindi","Haryanvi","English","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Faridabad",region:"NCR Haryana",known:"Industrial Capital, Surajkund Lake, Crafts Mela",heritage:["Surajkund Lake","Surajkund Mela Grounds","Badkhal Lake","Aravalli Biodiversity Park"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Panipat",region:"North Haryana",known:"City of Three Battles, Handloom Textiles",heritage:["Panipat Museum — Three Battles","Devi Temple","Ibrahim Lodi Tomb","Panipat Handloom Heritage"],languages:["Hindi","Haryanvi","Punjabi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Ambala",region:"North Haryana",known:"Gateway to Hills, Scientific Instruments, Cantonment",heritage:["Ambala Cantonment Heritage","Aam Khas Bagh","Naggal Wildlife Sanctuary"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-42°C"},
+{name:"Rohtak",region:"Central Haryana",known:"Heart of Haryana, Asthal Bohar Crafts",heritage:["Tilyar Lake","Asthal Bohar Heritage","Khokrakot Archaeological Site"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Sonipat",region:"NCR Haryana",known:"Sports Academy Hub, Delhi Border District",heritage:["Sonipat Heritage Sites","Khanpur Mausoleum","Agricultural Heritage"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Jhajjar",region:"NCR Haryana",known:"Beri Heritage, Dighal, Haryana Lore",heritage:["Beri Heritage Sites","Bhindawas Wildlife Sanctuary","Kulasiya Village"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Rewari",region:"South Haryana",known:"Aravalli Foothills, Bawal Industrial",heritage:["Rewari Steam Loco Museum","Kund Village Heritage","Aravalli Trails"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Mahendragarh",region:"South Haryana",known:"Aravalli Heritage, Narnaul, Suri Dynasty",heritage:["Chor Gumbad Narnaul","Shahi Hammam Narnaul","Shah Quli Khan's Tomb","Aravalli Landscape"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"4-46°C"},
+{name:"Nuh (Mewat)",region:"South Haryana",known:"Aravalli Biodiversity, Mewati Culture, Hilly Terrain",heritage:["Aravalli Biodiversity Park","Mewati Folk Heritage","Ferozepur Jhirka"],languages:["Hindi","Mewati","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"4-46°C"},
+{name:"Palwal",region:"South Haryana",known:"Dholpur Border, Agra Canal",heritage:["Ancient Heritage Sites","Agra Canal","Border Landscape"],languages:["Hindi","Haryanvi","Braj"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Karnal",region:"North Haryana",known:"Rice Bowl, Kalpana Chawla's Birthplace, Canal",heritage:["Kalpana Chawla Memorial","Karnal Fort","Karna Lake","Canal Heritage"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Kaithal",region:"Central Haryana",known:"Karna's Kingdom, Gurdwara Heritage, Agriculture",heritage:["Karna Tanks","Gurdwara Neem Sahib","Ancient Tanks"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Jind",region:"Central Haryana",known:"Ancient Yudhishthira Connection, Agriculture",heritage:["Jind Heritage Sites","Ram Raiya Gurudwara","Agricultural Heritage"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Bhiwani",region:"West Haryana",known:"Boxing Capital of India, Sports Heritage",heritage:["Bhiwani Boxing Academy","Tosham Rock Inscriptions","Digambar Jain Temple"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Charkhi Dadri",region:"West Haryana",known:"New District, Agricultural Belt, Aravalli Edge",heritage:["Aravalli Foothills","Agricultural Heritage","Dadri Heritage"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Fatehabad",region:"West Haryana",known:"Harappan Banawali Site, Agricultural",heritage:["Banawali Harappan Site","Fatehabad Fort","Canal Heritage"],languages:["Hindi","Haryanvi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Sirsa",region:"West Haryana",known:"Desert Edge, Dera Sacha Sauda, Ghaggar River",heritage:["Ghaggar River Heritage","Dera Sacha Sauda","Agricultural Landscape"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"2-46°C"},
+{name:"Panchkula",region:"North Haryana",known:"Morni Hills, Chandigarh Gateway, Pinjore Gardens",heritage:["Morni Hills — Only Hill Station Haryana","Yadavindra Gardens Pinjore","Mansa Devi Temple"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-42°C"},
+{name:"Yamunanagar",region:"North Haryana",known:"Yamuna River, Kalesar National Park, Paper Mills",heritage:["Kalesar National Park","Yamuna River Heritage","Adi Badri Temple"],languages:["Hindi","Haryanvi","Punjabi"],bestMonths:"Oct-Mar",avgTemp:"4-42°C"}
+];
+
+const placesData=[
+{emoji:"⚔️",name:"Kurukshetra — Dharmakshetra",location:"Kurukshetra District",desc:"The site of the Mahabharata war — the 18-day battle whose memory has shaped Indian civilization for 3,000 years. Jyotisar marks the exact spot where Lord Krishna delivered the Bhagavad Gita to Arjuna before the battle commenced. The Brahma Sarovar — a sacred tank of 3.3 km circumference — hosts an extraordinary solar eclipse fair where millions bathe. The Kurukshetra Panorama and Science Centre recreates the entire battlefield in a 360-degree cyclorama.",fee:["Free (Museum paid)"]},
+{emoji:"🏺",name:"Rakhigarhi — Largest Harappan Site",location:"Hisar District",desc:"The largest Harappan Civilization site in the Indian subcontinent — larger than Mohenjo-daro and Harappa — with evidence of continuous occupation from 6,500 BCE to 2,000 BCE. Excavations have revealed a grid-planned city, granaries, drainage systems, jewelry workshops, fire altars and pottery. The 2019 DNA study of Rakhigarhi's ancient genome published in Cell is one of the most significant archaeological discoveries in recent history.",fee:["Museum: Paid"]},
+{emoji:"🎨",name:"Surajkund International Crafts Mela",location:"Faridabad",desc:"India's largest crafts fair — held every February for 15 days, bringing 1,200 artisans from across India and 20+ countries around a 10th-century sun temple tank (Surajkund). Every Indian state has a pavilion; folk performers, weavers, potters, embroiderers, woodworkers and metalworkers display their art. Over a million visitors attend. The largest platform for India's craft traditions anywhere in the world.",fee:["Entry paid"]},
+{emoji:"🦅",name:"Sultanpur National Park",location:"Gurugram District",desc:"A small but extraordinarily rich bird sanctuary — 150+ species including the endangered Sarus crane, bar-headed goose and 40+ migratory species visiting in winter. Located just 15 km from Gurugram, Sultanpur is where the NCR's urban millions escape to watch 5,000+ flamingos turn the wetland pink at dawn. One of India's most accessible and rewarding birdwatching sites.",fee:["Rs.5 Indians","Rs.40 Foreigners"]},
+{emoji:"🌊",name:"Brahma Sarovar — Kurukshetra",location:"Kurukshetra",desc:"The largest man-made tank in India — a sacred lake of extraordinary sanctity, believed to have been created by Brahma himself. A 3.3 km embankment dotted with 56 temples surrounds the shimmering water. During solar eclipses (Surya Grahan), millions of pilgrims bathe here simultaneously — one of the most spectacular mass pilgrimage events in the world. At dusk the reflections of the temples in the still water are breathtaking.",fee:["Free"]},
+{emoji:"🏰",name:"Pinjore Gardens (Yadavindra Gardens)",location:"Panchkula District",desc:"One of North India's finest Mughal-period gardens — terraced gardens built by Nawab Fidai Khan in the 17th century on a hillside in the Shivalik foothills. Seven terraces descend with fountains, pavilions, a Japanese garden and a mini zoo. In spring when the flowers bloom and the Shivalik hills frame the backdrop, Pinjore is one of Haryana's most beautiful places.",fee:["Rs.20 Indians"]},
+{emoji:"🦌",name:"Kalesar National Park",location:"Yamunanagar District",desc:"A dense sal and bamboo forest in the Shivalik foothills — home to leopards, elephants, elephants (migratory from Uttarakhand), sloth bears, barking deer, king cobra and over 200 bird species. The Yamuna river forms the northern boundary. The forest is dense, wild and almost entirely untouched by tourism — offering genuine wilderness experience within 3 hours of Delhi.",fee:["Paid"]},
+{emoji:"🛕",name:"Sthaneshwar Mahadev & Heritage Circuit",location:"Kurukshetra",desc:"The ancient Sthaneshwar Mahadev temple — where the Pandavas worshipped Shiva before the great battle — is one of the most sacred sites in Kurukshetra's extensive heritage circuit. The circuit includes the Bhadrakali Temple, Sheikh Chilli's Tomb, Sannihit Sarovar (where the seven sacred rivers are believed to converge) and the Jyotisar pipal tree under which the Bhagavad Gita was spoken.",fee:["Free"]},
+{emoji:"🏋️",name:"Sports Authority — Bhiwani & Rohtak",location:"Bhiwani & Rohtak",desc:"Haryana's extraordinary sports infrastructure — the Bhiwani Boxing Club has produced more Olympic and World Championship boxers than any other club in India. Rohtak's sports academies, wrestling akharas and Gurugram's modern facilities together form a network that has made Haryana the source of 40%+ of India's Olympic medals from 1.7% of its population. No other state-sport ratio exists like it anywhere in the world.",fee:["Free (public areas)"]},
+{emoji:"🌿",name:"Morni Hills — Haryana's Only Hill Station",location:"Panchkula District",desc:"A quiet plateau at 1,220 meters in the Shivalik range — twin lakes (Tikkar Taal), dense pine and sal forests, and views across the plains create a peaceful weekend retreat. The Adventure Sports Complex offers rappelling, trekking and zipline. The hills feel entirely separate from the flat, industrial Haryana of popular imagination — a reminder that the state has surprising geographic depth.",fee:["Free"]}
+];
+
+const artsData=[
+{emoji:"🎭",name:"Saang Folk Theatre",location:"Statewide",desc:"Haryana's oldest and most beloved folk theatre form — all-night performances combining song, dance, comedy and mythology. Traditionally performed by all-male troupes, Saang deals with stories of legendary Haryanvi heroes like Raja Bhoj, Puran Bhagat and romantic tales of the Braj region. The lead actor plays all female roles. Saang troupes are still active in villages — this is folk theatre as community newspaper."},
+{emoji:"🎵",name:"Ragini — Folk Singing Tradition",location:"Statewide",desc:"The defining musical tradition of Haryana — competitive folk singing in which two singers engage in a musical debate (raganis) on themes of love, valor, philosophy and social commentary. Each singer responds to the other's verse improvising in the Haryanvi dialect. The ragini competitions at melas and festivals can last through the night. Haryana's ragini tradition is inscribed as state Intangible Cultural Heritage."},
+{emoji:"🥻",name:"Phulkari Embroidery & Handloom",location:"Rohtak, Bhiwani, Hisar",desc:"Haryana shares the Phulkari embroidery tradition with Punjab — running stitch floral patterns on khaddar cloth in silk thread. Haryana's version tends toward bolder geometric patterns and stronger colors. The state's handloom tradition in Panipat — the 'Cast-off Capital' — has woven blankets, shawls and durries from recycled cloth for centuries. Panipat's recycled textile industry is one of the world's largest circular economy clusters."},
+{emoji:"💃",name:"Ghoomar & Haryanvi Folk Dance",location:"Statewide",desc:"Ghoomar — a circle dance performed by women at festivals and weddings — is Haryana's most widespread folk dance. The distinctive counterclockwise spinning movement with colorful odhanis (dupattas) creates a spiraling visual beauty. Dhamal is performed by men in the Holi season — aggressive, energetic dancing around bonfires. The Phag folk songs sung during Holi reflect a centuries-old tradition of playful, bold village expression."},
+{emoji:"🏺",name:"Pottery & Terracotta — Hisar Tradition",location:"Hisar, Bhiwani",desc:"Haryana's pottery tradition has roots going back to the Harappan civilization — the potters of Hisar district continue wheel-throwing traditions whose forms echo 5,000-year-old Rakhigarhi ceramics. The state's earthenware — water pots, grain storage vessels, ritual objects — retains the functional and aesthetic vocabulary of the ancient agricultural civilizations. Modern artisans are reviving natural pigment decoration."},
+{emoji:"🥊",name:"Wrestling & Combat Sports Heritage",location:"Bhiwani, Rohtak, Sonipat",desc:"Haryana's akhara (wrestling pit) culture is among the oldest in India — every village has its wrestling ground where young men train from childhood. The tradition connects directly to the Mahabharata's descriptions of malla yuddha (wrestling). Today this ancient discipline has been channeled into Olympic wrestling, boxing, athletics and weightlifting — making Haryana the most decorated Olympic state per capita in modern India."}
+];
+
+const traditionsData=[
+{emoji:"🌊",name:"Kurukshetra Solar Eclipse Fair",location:"Kurukshetra — During Solar Eclipses",desc:"One of the largest periodic mass gatherings in India — during every solar eclipse, millions of pilgrims converge on the Brahma Sarovar to bathe in its sacred waters, believing that a solar eclipse bath at Kurukshetra washes away the sins of 1,000 births. The sight of the vast tank filled with millions of devotees, oil lamps floating on the water and bells ringing across 56 temples simultaneously is extraordinary."},
+{emoji:"🎨",name:"Surajkund Crafts Mela",location:"Faridabad — February",desc:"India's grandest crafts festival — 15 days in early February at the 10th-century sun temple tank. Over 1,200 artisans from India and 20+ countries. Cultural programs every evening with folk performers from the year's 'focus state'. The largest gathering of living craft traditions in India. UNESCO has recognized it as a model festival for intangible cultural heritage preservation."},
+{emoji:"🌾",name:"Baisakhi & Harvest Celebrations",location:"Statewide — April 13",desc:"Baisakhi is the harvest festival of Haryana's wheat farmers — the moment when the golden wheat is ready for cutting. Celebrated with Bhangra, Giddha, community feasts and the distribution of food to the poor. In Haryana's agricultural villages, Baisakhi is the most emotionally significant day of the year — the harvest's success or failure determines the family's fortune for the next twelve months."},
+{emoji:"🔥",name:"Holi — Phag Festival",location:"Statewide — March",desc:"Haryana's Holi has a distinct character from the Braj tradition — the Phag songs (erotic, satirical folk songs specific to the Holi season) are sung in village squares for weeks before the festival. The Holika Dahan bonfires are enormous — each village competing for the largest fire. On Holi day itself, the color revelry is as vivid and uninhibited as anywhere in India."},
+{emoji:"🏋️",name:"Dangal — Village Wrestling Tournament",location:"Statewide",desc:"The Dangal (wrestling tournament) is central to Haryanvi village culture — a festival of physical excellence, community identity and intense local pride. Villages host dangals at major festivals and fairs; the best wrestlers become local legends. The progression from village dangal to district to national to Olympic podium is the story of dozens of Haryanvi champions. These village tournaments are where Olympic careers begin."},
+{emoji:"🌸",name:"Teej & Gangaur",location:"Statewide — August",desc:"The monsoon festival of Haryanvi women — celebrating the arrival of the rains and the goddess Parvati's reunion with Shiva. Women dress in green and swing on flower-decorated jhulas in every courtyard. Folk songs of longing and joy fill the air. Married women pray for their husbands' long life; unmarried girls pray for good matches. The courtyard jhula and the Teej songs are among Haryana's most beautiful folk traditions."}
+];
+
+const cuisinesData=[
+{emoji:"🥛",name:"Haryanvi Cuisine — Dairy Heart",region:"Statewide — Milk & Butter Tradition",desc:"Haryana is India's dairy heartland — the state has the highest per capita milk production in India. This abundance shapes every meal: butter (makhan) is added to everything, lassi is thick as cream, kadhi is made with fresh buttermilk, and the ghee used in chapati is the best-quality desi ghee in North India. The Haryanvi farmer's relationship to the cow and buffalo shapes the entire food culture."},
+{emoji:"🫓",name:"Bajra Khichdi & Millet Rotis",region:"Rural Haryana",desc:"The traditional winter staple of Haryana's villages — pearl millet (bajra) cooked as khichdi with ghee, or ground and made into thick flat rotis (bajra roti) eaten with jaggery and white butter. A nutritional powerhouse that has sustained generations of farmers and wrestlers. Bajra is Haryana's native grain — drought-resistant, iron-rich and deeply flavored. The simplicity of bajra roti with makhan and gur is transcendent."},
+{emoji:"🥣",name:"Kadhi Pakora — Haryana Style",region:"Statewide",desc:"Haryana's kadhi is thicker, more sour and more generous than the standard North Indian version — a yogurt and besan curry with large fried pakoras, served over rice or with bajra roti. The buttermilk used is fresh from the morning's churning. Haryanvi women consider their kadhi recipe a point of personal pride. Eaten at every family gathering, it is comfort food of the most fundamental kind."},
+{emoji:"🌾",name:"Bathua Raita & Seasonal Greens",region:"Winter Special — Statewide",desc:"Bathua (Chenopodium) — a wild leafy green that grows in wheat fields — is Haryana's signature winter food. Bathua raita (yogurt mixed with boiled bathua), bathua paratha and bathua saag are eaten through winter with extraordinary enthusiasm. Other seasonal greens — sarson (mustard), methi (fenugreek) and palak — are cooked with maize flour and fresh butter in a cuisine deeply tied to the agricultural calendar."},
+{emoji:"🍵",name:"Thick Lassi & Chaach",region:"Statewide",desc:"Haryana's lassi is not the restaurant variety — it is a meal in itself. Thick, freshly churned yogurt blended with water until frothy, topped with a thick layer of malai (cream), sometimes with a ball of white butter floating on top. Served in large clay pots. The Haryanvi farmer's morning begins with this lassi. Chaach (spiced thin buttermilk) is drunk through the day. No beverage in India is more generously poured."},
+{emoji:"🍛",name:"Hara Dhania Shorba & Haryanvi Dal",region:"Statewide",desc:"Green coriander soup — a thin, fragrant broth of fresh coriander, green chilies and garlic — is a uniquely Haryanvi preparation drunk before meals as a digestive and palate primer. The Haryanvi mixed dal — arhar, chana and masoor lentils cooked together with whole spices and finished with a mustard-seed tempering — is the everyday backbone of the rural diet, eaten twice daily with millet or wheat rotis."},
+{emoji:"🍬",name:"Gajar Ka Halwa & Milk Sweets",region:"Winter Special",desc:"Carrot halwa made from Haryana's famous red Desi Gajar (native red carrot available only in winter) — grated, slow-cooked in milk with sugar and enormous amounts of ghee. The Haryanvi version is richer and less sweet than the standard version. Rewari's sweet shops produce extraordinary milk-based sweets using the state's surplus milk: kalakand, khoya barfi, and peda that rival any in North India."},
+{emoji:"🫕",name:"Kachri Ki Sabzi & Sangri",region:"South Haryana — Aravalli Border",desc:"In the Mewat and southern Haryana districts bordering Rajasthan, the desert food traditions enter — kachri (wild desert melon, dried) and sangri (dried desert beans) cooked with spices create uniquely flavored curries impossible to find elsewhere. These are drought-season foods of extraordinary ingenuity — transforming dried produce into deeply satisfying curries that sustained communities through hot, waterless summers."},
+{emoji:"🥚",name:"Haryanvi Non-Veg — Village Style",region:"Rural Haryana",desc:"The non-vegetarian tradition of Haryana's villages centers on desi chicken (free-range country chicken) cooked in a dry masala over wood fire — no water, just onion, ginger, garlic and whole spices releasing their own moisture. The village murgh is dramatically different from commercial chicken. Mutton preparations in Mewat use local herbs and a slower cook. The food is bold, spare and entirely satisfying."}
+];
+
+const weatherData=[
+{month:"January",avgTemp:"4-20°C",weather:"Cold Winter",details:"Haryana at its most beautiful — wheat fields emerald green, mustard fields golden yellow. Fog rolls in from the plains at night. Kurukshetra winter pilgrimage season. Surajkund Mela preparations. Morni Hills occasionally frosted.",best:true},
+{month:"February",avgTemp:"8-24°C",weather:"Pleasant",details:"Surajkund Crafts Mela (first two weeks) — India's greatest craft festival. Mustard in full bloom across the plains. Wildlife at Kalesar and Sultanpur excellent. The most beautiful month across Haryana.",best:true},
+{month:"March",avgTemp:"14-30°C",weather:"Spring",details:"Holi — celebrated with Haryanvi Phag songs and enormous bonfires. Wheat fields turning golden before harvest. Baisakhi preparations begin. Last comfortable outdoor month before summer heat. Morni Hills at its freshest.",best:true},
+{month:"April",avgTemp:"20-36°C",weather:"Warm",details:"Baisakhi harvest festival — the wheat cut, threshed and celebrated. Heat building. Ranthambore open. Sultanpur still pleasant in early morning. Village dangal season active."},
+{month:"May",avgTemp:"26-42°C",weather:"Very Hot",details:"Peak summer. Haryana plains heat up sharply — temperatures regularly cross 44°C in Hisar and Sirsa. Morni Hills still comfortable. Not recommended for outdoor heritage visits."},
+{month:"June",avgTemp:"28-44°C",weather:"Hot",details:"Extreme heat. Loo winds blow across the plains. Monsoon anticipated eagerly. Not recommended for travel. Farmers prepare fields for kharif (summer) sowing."},
+{month:"July",avgTemp:"26-34°C",weather:"Monsoon",details:"Monsoon arrives — dramatic relief from the heat. Fields begin to green. Ghaggar and Yamuna rivers rising. Village fairs begin. Teej festival celebrated with jhulas and folk songs."},
+{month:"August",avgTemp:"24-32°C",weather:"Monsoon",details:"Teej — Haryana's women's festival in full swing. Green countryside. Morni Hills waterfalls active. Rains continue. The wheat-growing plains transform to rice and kharif crops. Not ideal for driving."},
+{month:"September",avgTemp:"22-32°C",weather:"Late Monsoon",details:"Rains easing. Fields lush. Navratri and Dussehra preparations. Village wrestling tournaments (dangals) intensifying. Wildlife sanctuaries preparing for peak season. A beautiful transitional month."},
+{month:"October",avgTemp:"14-30°C",weather:"Autumn",details:"Perfect weather returns. Dussehra and Diwali. Kurukshetra pilgrimage season opens. Surajkund Lake beautiful. Sultanpur flamingos arriving. Village harvests of rice and kharif crops. Excellent month.",best:true},
+{month:"November",avgTemp:"8-24°C",weather:"Early Winter",details:"Haryana Foundation Day — November 1. Wheat sowing begins — the fields are being planted for the great harvest. Sultanpur in full migratory bird season. Fog starting. Crisp, clear days for all outdoor sites.",best:true},
+{month:"December",avgTemp:"4-20°C",weather:"Winter",details:"Cold and clear. Mustard fields beginning to flower — by late December the plains are yellow. Morni Hills cold and atmospheric. Surajkund Mela preparations visible. Haryana's winter beauty at its peak.",best:true}
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Visit Jyotisar at sunrise for quiet reflection</li><li>Try thick lassi from a village dairy</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Miss Surajkund Mela if in Feb</li><li>Underestimate summer heat in western Haryana</li></ul></div>
+    </div>
+  </div></div>`;
+});
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Haryana",heroNative:"हरियाणा",heroTag:"Land of Kurukshetra, Champions, Green Revolution & Hariyali",scrollLbl:"SCROLL TO EXPLORE",qw:"&#127777; Weather",qd:"&#128205; Districts",qp:"&#127963; Places",qa:"&#127912; Arts",qt:"&#129345; Traditions",qc:"&#127374; Cuisines",lAbout:"About Haryana",aboutTitle:"Where the Mahabharata Was Born",aboutBody:"Haryana is where the Bhagavad Gita was spoken — Kurukshetra is the site of the Mahabharata war. Rakhigarhi in Hisar is the largest Harappan site ever discovered, larger than Mohenjo-daro. Haryana's Green Revolution fed India. With 1.7% of India's population, Haryana wins over 40% of India's Olympic medals — the most dominant sports-producing state per capita on earth. The state's dairy, wheat, wrestling and folk traditions are all world-class.",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Haryana",weatherNote:"October to March is the golden window — wheat fields turn golden in March, the Surajkund Crafts Mela is in February and Kurukshetra is most atmospheric in winter.",lDist:"All 22 Districts",distTitle:"Every District of Haryana",distNote:"Haryana's 22 districts span the Gangetic plains, Aravalli range, Yamuna corridor and the Ghaggar-Hakra basin — each with layers of Mahabharata mythology and Harappan archaeology.",distSearch:"Search districts...",lPlaces:"Sacred, Historical & Natural Wonders",placesTitle:"Wonders of Haryana",lArts:"Arts, Crafts & Heritage",artsTitle:"Living Traditions of Haryana",lTrad:"Festivals & Celebrations",tradTitle:"Soul of Haryanvi Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Haryana",footerT:"JAI HARYANA — HARYANA BANEGA NAUMBER WAN",footerS:"Haryana Foundation Day — November 1 · 1966"},
+  hi:{heroName:"हरियाणा",heroNative:"हरियाणा",heroTag:"कुरुक्षेत्र, चैम्पियन, हरित क्रांति और हरियाली की भूमि",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",qw:"&#127777; मौसम",qd:"&#128205; जिले",qp:"&#127963; स्थल",qa:"&#127912; कलाएं",qt:"&#129345; परंपराएं",qc:"&#127374; व्यंजन",lAbout:"हरियाणा के बारे में",aboutTitle:"जहाँ महाभारत का जन्म हुआ",aboutBody:"हरियाणा वह धरती है जहाँ भगवद गीता का उपदेश दिया गया था — कुरुक्षेत्र महाभारत युद्ध का स्थल है। हिसार का राखीगढ़ी मोहनजोदड़ो से भी बड़ा सबसे बड़ा हड़प्पा स्थल है। हरियाणा की हरित क्रांति ने भारत को खिलाया। 1.7% जनसंख्या के साथ हरियाणा भारत के 40% से अधिक ओलंपिक पदक जीतता है — प्रति व्यक्ति सबसे अधिक खेल उत्पादन करने वाला राज्य।",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"हरियाणा कब जाएं",weatherNote:"अक्टूबर से मार्च सुनहरा समय है — गेहूँ के खेत मार्च में सुनहरे हो जाते हैं और सूरजकुंड शिल्प मेला फरवरी में होता है।",lDist:"सभी 22 जिले",distTitle:"हरियाणा के हर जिले",distNote:"हरियाणा के 22 जिले गंगा के मैदान, अरावली पर्वतमाला, यमुना गलियारे और घग्गर-हकरा बेसिन में फैले हैं।",distSearch:"जिले खोजें...",lPlaces:"पवित्र, ऐतिहासिक और प्राकृतिक चमत्कार",placesTitle:"हरियाणा के चमत्कार",lArts:"कला, शिल्प और विरासत",artsTitle:"हरियाणा की जीवंत परंपराएं",lTrad:"त्योहार और उत्सव",tradTitle:"हरियाणवी संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"हरियाणा का स्वाद",footerT:"जय हरियाणा — हरियाणा बनेगा नंबर वन",footerS:"हरियाणा स्थापना दिवस — 1 नवंबर · 1966"},
+  hry:{heroName:"हरियाणा",heroNative:"हरियाणा",heroTag:"कुरुक्षेत्र, चैम्पियन, हरित क्रांति अर हरियाली की धरती",scrollLbl:"देखण नै स्क्रॉल करो",qw:"&#127777; मौसम",qd:"&#128205; जिला",qp:"&#127963; जगां",qa:"&#127912; कला",qt:"&#129345; त्योहार",qc:"&#127374; खाणा",lAbout:"हरियाणा के बारे में",aboutTitle:"जड़ां महाभारत का जनम हुया",aboutBody:"हरियाणा वो धरती सै जड़ां भगवान कृष्ण नैं अर्जुन नैं गीता का उपदेश दिया था। कुरुक्षेत्र महाभारत की लड़ाई का मैदान सै। हिसार का राखीगढ़ी दुनिया का सबसे बड़ा हड़प्पा स्थल सै। हरियाणा नैं हरित क्रांति के जरिये भारत नैं भुखमरी से बचाया। 1.7% आबादी के साथ हरियाणा देश के 40% से ज्यादा ओलम्पिक मेडल जीतता सै।",lWeather:"मौसम अर सबसे बढ़िया बखत",weatherTitle:"हरियाणा कद जावो",weatherNote:"अक्टूबर सूं मार्च तक सुनहरा बखत सै — गेहूं के खेत मार्च में सुनहरे होज्यां सैं अर फरवरी में सूरजकुंड मेला लगता सै।",lDist:"सभी 22 जिला",distTitle:"हरियाणा का हर जिला",distNote:"हरियाणा के 22 जिला गंगा के मैदान, अरावली, यमुना अर घग्गर-हकरा नदी के किनारे फैल्या सैं।",distSearch:"जिला खोजो...",lPlaces:"पवित्र, ऐतिहासिक अर कुदरती अजूबे",placesTitle:"हरियाणा के अजूबे",lArts:"कला, हस्तशिल्प अर विरासत",artsTitle:"हरियाणा की जीवंत परंपरा",lTrad:"त्योहार अर उत्सव",tradTitle:"हरियाणवी संस्कृति की जान",lCuisines:"खाणे की विरासत",cuisinesTitle:"हरियाणा का जायका",footerT:"जय हरियाणा — हरियाणा बनेगा नंबर वन",footerS:"हरियाणा स्थापना दिवस — 1 नवंबर · 1966"}
+};
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc','lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote','lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'].forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.textContent=t[k];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
