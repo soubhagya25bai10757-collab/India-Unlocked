@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tripura — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#FF6B35;--gold:#D4A574;--teal:#20b2aa;--cream:#f5f1e8;--deep:#0a0e1a;--card:#ffffff08;--border:rgba(255,107,53,0.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(10,14,26,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--saffron);color:var(--deep);}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,241,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,241,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--saffron);color:var(--cream);border-color:var(--saffron);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--saffron);color:var(--cream);}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.45) saturate(1.4);animation:zk 18s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.05);}to{transform:scale(1.13);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.02) 35%,rgba(10,14,26,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(255,107,53,.8));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(3rem,9vw,7.5rem);color:#fff;letter-spacing:.02em;line-height:1;text-shadow:0 4px 40px rgba(0,0,0,.9);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--saffron);font-style:italic;letter-spacing:.1em;margin-top:.3rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,241,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(255,107,53,.35);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);color:rgba(245,241,232,.75);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--saffron);color:var(--cream);border-color:var(--saffron);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.25);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--saffron),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:1px solid rgba(255,107,53,.08);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--saffron);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--saffron);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.1rem);color:rgba(245,241,232,.68);line-height:1.85;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s;position:relative;backdrop-filter:blur(8px);}
+.wcard:hover{background:rgba(255,107,53,.1);border-color:rgba(255,107,53,.45);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(255,107,53,.5);background:rgba(255,107,53,.08);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--saffron);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,241,232,.5);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--saffron);color:var(--cream);font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;font-weight:500;}
+.dsearch:focus{border-color:rgba(255,107,53,.6);}
+.dsearch::placeholder{color:rgba(245,241,232,.28);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(255,107,53,.16);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02);}
+.dacc:hover{border-color:rgba(255,107,53,.32);background:rgba(255,107,53,.05);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(255,107,53,.08);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--saffron);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--saffron);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(255,107,53,.3);background:rgba(255,107,53,.06);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--saffron);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,241,232,.68);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--saffron);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(255,107,53,.2);border:1px solid rgba(255,107,53,.35);color:rgba(245,241,232,.75);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.temp-badge{padding:4px 10px;border-radius:9px;font-size:.7rem;cursor:default;font-family:"Poppins",sans-serif;font-weight:500;}
+.tb-best{background:rgba(255,107,53,.25);border:1px solid rgba(255,107,53,.5);color:var(--saffron);}
+.tb-ok{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(245,241,232,.6);}
+.tb-hot{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--saffron);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(255,107,53,.07);border:1.5px solid rgba(255,107,53,.2);border-radius:16px;overflow:hidden;transition:all .35s;position:relative;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(255,107,53,.55);box-shadow:0 16px 50px rgba(255,107,53,.12);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--saffron),var(--teal));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(255,107,53,.22);border:1px solid rgba(255,107,53,.4);color:#7deaea;}
+.fb-fr{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.fb-free{background:rgba(26,122,26,.22);border:1px solid rgba(26,122,26,.4);color:#90ee90;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,122,26,.14);border:1px solid rgba(26,122,26,.28);}
+.donts{background:rgba(230,57,43,.12);border:1px solid rgba(230,57,43,.25);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#90ee90;} .donts .dd-title{color:#ffb080;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(144,238,144,.78);} .donts .dd-list li{color:rgba(255,176,128,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:linear-gradient(135deg,rgba(255,107,53,.1),rgba(0,0,0,.2));border:1.5px solid rgba(255,107,53,.2);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(255,107,53,.5);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.art-fee{font-size:.72rem;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(245,241,232,.65);font-family:"Poppins",sans-serif;font-weight:500;}
+footer{text-align:center;padding:50px 20px 40px;border-top:1px solid rgba(255,107,53,.08);}
+footer .fe{font-size:2.2rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,241,232,.25);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,241,232,.35);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title">TRIPURA</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">&#2361;&#2367;&#2306;&#2342;&#2368;</button>
+    <button class="lang-btn" id="lb-bn" onclick="setLang('bn')">বাংলা</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🏛️</span>
+    <div class="hero-name" id="heroName">Tripura</div>
+    <div class="hero-native" id="heroNative">त्रिपुरा</div>
+    <div class="hero-tag" id="heroTag">Land of Maharajas, Palaces & Temples</div>
+    <div class="tribar"><div style="background:#FF6B35"></div><div style="background:#ffffff"></div><div style="background:#FFD700"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Tripura</span>
+  <h2 class="sec-title" id="aboutTitle">Land of <em>Maharajas & Mystique</em></h2>
+  <p class="sec-body" id="aboutBody">Tripura, the "Land of Maharajas," is a northeastern state steeped in regal heritage, spiritual significance and cultural diversity. Nestled between Assam and Bangladesh, Tripura boasts a unique blend of Hindu, Buddhist and tribal traditions. Known for its magnificent palaces, ancient temples, serene lakes and vibrant tribal communities, Tripura represents Northeast India's grandeur and warmth. From the impressive Ujjayanta Palace in Agartala to sacred Kamakshi Temple, from lush natural reserves to bustling cultural centers, Tripura offers immersive experiences. The state's rich historical past as an independent kingdom, colorful handicraft traditions, diverse festivals and authentic cuisine make it a captivating destination. Tripura's commitment to preserving its heritage while embracing modernity creates a unique travel experience where ancient palaces stand alongside contemporary development.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Tripura</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Tripura experiences monsoon (May-September), cool autumn (October-November), mild winter (December-February) and warm spring (March-April). October to March offers ideal weather with comfortable temperatures, clear skies and excellent visibility for exploring historical sites and natural attractions.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 4 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Tripura</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Tripura's 4 districts showcase remarkable diversity from the royal capital Agartala to the scenic hill stations, from ancient pilgrimage centers to tribal strongholds. Each district offers unique historical, cultural and natural attractions.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Palaces &amp; Temples</span>
+  <h2 class="sec-title" id="placesTitle">Treasures of <em>Tripura</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Tripura</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Tripuran Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Tripura</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY TRIPURA</div>
+  <div class="fs" id="footerS">Tripura Day — January 21 · 1972</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Northeast_India_classical_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27grd%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(255,107,53);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(32,178,170);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23grd)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Agartala",region:"Central District",known:"Royal Capital, Palace Heritage, Cultural Center, Tourism Hub",heritage:["Ujjayanta Palace","Kamakshi Temple","Laxmi Narayan Temple","City Palace"],languages:["Bengali","Hindi","English","Manipuri"],bestMonths:"Oct-Mar",avgTemp:"12-32°C"},
+  {name:"West Tripura",region:"Western Part",known:"Historical Heartland, Temple Region, Heritage Sites",heritage:["Ancient Temples","Sacred Sites","Historical Monument","Spiritual Centers"],languages:["Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"14-34°C"},
+  {name:"Dhalai",region:"Northern Part",known:"Hill Station Gateway, Nature Hub, Scenic Beauty",heritage:["Hill Stations","Forest Reserves","Natural Scenic Sites"],languages:["Bengali","Hindi","English","Tribal"],bestMonths:"Oct-Mar",avgTemp:"10-28°C"},
+  {name:"Gomti",region:"Southern Part",known:"Rural Heart, Tribal Area, Agricultural Region",heritage:["Tribal Villages","Agricultural Heritage","Natural Forest Areas"],languages:["Bengali","Hindi","English","Tribal"],bestMonths:"Oct-Mar",avgTemp:"16-36°C"}
+];
+
+const placesData = [
+  {emoji:"🏛️",name:"Ujjayanta Palace",location:"Agartala",desc:"Grand royal palace showcasing Mughal architecture. Former residence of Tripura maharajas. Magnificent structure with museum displaying royal heritage artifacts",fee:["Paid"]},
+  {emoji:"🛕",name:"Kamakshi Temple",location:"Agartala",desc:"Ancient Hindu temple dedicated to goddess Kamakshi. Sacred pilgrimage site with spiritual significance. Historic temple reflecting religious traditions",fee:["Free"]},
+  {emoji:"🏰",name:"City Palace",location:"Agartala",desc:"Royal residence of Tripura maharajas showcasing architectural grandeur. Still partially occupied royal family seat. Heritage structure with historical importance",fee:["Restricted Entry"]},
+  {emoji:"💧",name:"Rudrasagar Lake",location:"Melaghar",desc:"Beautiful lake surrounded by scenic landscapes. Popular tourist destination for leisure activities. Serene water body creating peaceful ambiance",fee:["Free"]},
+  {emoji:"🧘",name:"Laxmi Narayan Temple",location:"Agartala",desc:"Ancient Hindu temple with religious significance. Intricate architecture reflecting devotional traditions. Sacred site attracting pilgrims and tourists",fee:["Free"]},
+  {emoji:"🌳",name:"Sepahijala Wildlife Sanctuary",location:"Agartala",desc:"Protected forest area with diverse wildlife species. Natural habitat for native and migratory birds. Conservation area showcasing ecological importance",fee:["Paid"]},
+  {emoji:"🏛️",name:"Palace Grounds",location:"Various",desc:"Royal estates and heritage properties scattered across state. Historical significance of royal architecture. Gardens and monuments preserving regal legacy",fee:["Entry Varies"]},
+  {emoji:"🛕",name:"Ujjayanta Complex",location:"Agartala",desc:"Large heritage complex including palace, gardens and museums. Comprehensive royal heritage site. Architecture spanning multiple periods of history",fee:["Paid"]},
+  {emoji:"🌄",name:"Jampui Hill",location:"Dhalai",desc:"Hill station with scenic panoramic views. Trekking destination with natural beauty. Peaceful mountain retreat with agricultural areas",fee:["Free Trekking"]},
+  {emoji:"🎭",name:"Cultural Museum",location:"Agartala",desc:"Repository of Tripura's cultural artifacts and heritage items. Traditional costumes, crafts and historical documents. Educational center on state's rich culture",fee:["Paid"]}
+];
+
+const artsData = [
+  {emoji:"🧵",name:"Tripura Bamboo Craft",location:"Statewide",desc:"Traditional bamboo products and handicrafts. Baskets, furniture and decorative items. Sustainable craft reflecting tribal heritage"},
+  {emoji:"🎨",name:"Tripura Textiles",location:"Villages",desc:"Handwoven traditional fabrics with intricate patterns. Colorful designs and traditional techniques. Tribal and Bengali weaving heritage"},
+  {emoji:"💃",name:"Tribal Dance",location:"Cultural Centers",desc:"Traditional dances of Tripura's tribal communities. Rhythmic movements expressing cultural identity. Performed at festivals and celebrations"},
+  {emoji:"🏺",name:"Pottery & Ceramics",location:"Rural Areas",desc:"Traditional pottery using age-old techniques. Functional and decorative ceramic items. Artisan-made products with cultural significance"},
+  {emoji:"🎭",name:"Mask Making",location:"Heritage Centers",desc:"Traditional masks for cultural performances and rituals. Artistic expressions with spiritual importance. Intricate carving and painting techniques"},
+  {emoji:"🖼️",name:"Traditional Painting",location:"Statewide",desc:"Folk art traditions with mythological themes. Vibrant colors reflecting cultural narratives. Ancestral artistic expressions preserved"}
+];
+
+const traditionsData = [
+  {emoji:"🎉",name:"Garia Puja",location:"Statewide, Spring",desc:"Spring festival celebrating the coming harvest season. Ritual worship of goddess Earth. Agricultural community traditions and festivities"},
+  {emoji:"🌾",name:"Autumn Festival",location:"Statewide, October",desc:"Celebration of autumn season with cultural programs. Traditional gatherings and community events. Seasonal festival with religious significance"},
+  {emoji:"🎆",name:"Tripura Day",location:"Statewide, January 21",desc:"Celebration of Tripura's formation as union territory. Parades, cultural programs and national pride. State heritage showcase and festivities"},
+  {emoji:"💧",name:"Diwali Celebration",location:"Statewide",desc:"Festival of lights with traditional observances. Family gatherings and traditional sweets. Spiritual significance across communities"},
+  {emoji:"🛕",name:"Dussehra Festival",location:"Statewide",desc:"Hindu festival celebrating victory of good over evil. Religious rituals and community celebrations. Traditional worship and cultural performances"},
+  {emoji:"🎊",name:"Phagun Festival",location:"Statewide",desc:"Celebration of spring season's arrival. Folk dance and music performances. Cultural expression of joy and renewal"}
+];
+
+const cuisinesData = [
+  {emoji:"🍲",name:"Momos",region:"Statewide, Most Famous",desc:"Steamed dumplings with various fillings. Tibetan influence in Northeast cuisine. Popular snack and main course"},
+  {emoji:"🥘",name:"Khichuri",region:"Statewide",desc:"Rice and lentil one-pot meal with vegetables. Simple yet nutritious comfort food. Traditional preparation during festivals"},
+  {emoji:"🍜",name:"Chutneys",region:"Various",desc:"Traditional spiced condiments and pastes. Flavor enhancers for meals. Made from local produce and spices"},
+  {emoji:"🧅",name:"Hilsa Fish Curry",region:"Rivers & Streams",desc:"Fresh hilsa fish in aromatic gravy. Seasonal delicacy reflecting river culture. Traditional preparation with coconut and spices"},
+  {emoji:"🥒",name:"Pickles",region:"Statewide",desc:"Fermented and pickled vegetables. Traditional preservation methods. Tangy accompaniments to meals"},
+  {emoji:"🍚",name:"Rice Dishes",region:"Statewide",desc:"Various rice preparations as staple diet. Foundation of Tripuran cuisine. Agricultural heritage reflected in food"},
+  {emoji:"🐟",name:"Fish Preparation",region:"Rivers & Lakes",desc:"Fresh water fish cooked traditionally. Multiple cooking methods and styles. River culture influencing food habits"},
+  {emoji:"🧄",name:"Spice Mix",region:"Traditional Kitchens",desc:"Unique blend of local spices and herbs. Aromatic flavoring for preparations. Traditional knowledge in spice combination"},
+  {emoji:"🌶️",name:"Chili Dishes",region:"Statewide",desc:"Spiced preparations with local chilies. Hot flavors suited to climate. Digestive properties in traditional medicine"},
+  {emoji:"🥬",name:"Greens & Vegetables",region:"Seasonal",desc:"Fresh seasonal vegetables in traditional preparation. Nutritious and healthy options. Local produce utilization"},
+  {emoji:"☕",name:"Tea",region:"Statewide",desc:"Traditional tea preparation with spices. Morning ritual and social custom. Aromatic beverage culture"},
+  {emoji:"🍚",name:"Rice with Vegetables",region:"Statewide",desc:"Mixed rice vegetable dish. Wholesome meal combining nutrition. Traditional family preparation"},
+  {emoji:"🧈",name:"Traditional Sweets",region:"Festival Preparation",desc:"Desserts using local ingredients. Festival treats and special occasions. Ancient recipes passed through generations"},
+  {emoji:"🍌",name:"Fruit Dishes",region:"Statewide",desc:"Fresh and preserved fruits in seasonal preparation. Natural sweetness in traditional cuisine. Local produce utilization"},
+  {emoji:"🥛",name:"Milk Products",region:"Dairy Areas",desc:"Fresh milk and dairy in traditional preparation. Nutritious food additions. Small-scale dairy practices"},
+  {emoji:"🌰",name:"Seeds & Nuts",region:"Forest Products",desc:"Nuts and seeds in various preparations. Nutritional supplements. Sustainable gathering practices"}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"10-28°C",weather:"Cool Winter",details:"Cool season with comfortable temperatures. Clear skies and dry conditions. Ideal weather for tourism"},
+  {month:"February",avgTemp:"12-31°C",weather:"Pleasant",details:"Warming trend begins. Still comfortable and clear. Good visibility for sightseeing"},
+  {month:"March",avgTemp:"16-34°C",weather:"Warm Spring",details:"Spring season with rising temperatures. Festival season begins. Pleasant weather continues"},
+  {month:"April",avgTemp:"20-36°C",weather:"Hot",details:"Temperatures rising considerably. Pre-monsoon conditions. Occasional afternoon showers"},
+  {month:"May",avgTemp:"22-34°C",weather:"Monsoon Arrival",details:"Southwest monsoon begins. Regular rainfall starting. Landscape turning green gradually"},
+  {month:"June",avgTemp:"20-28°C",weather:"Monsoon Peak",details:"Heavy rainfall throughout month. Humid conditions. Roads and activities affected"},
+  {month:"July",avgTemp:"20-27°C",weather:"Monsoon",details:"Continued monsoon rainfall. Waterlogged conditions. Nature thriving with greenery"},
+  {month:"August",avgTemp:"20-28°C",weather:"Monsoon",details:"Monsoon continues with heavy showers. Flooding risks in low areas. Wet season peak"},
+  {month:"September",avgTemp:"18-30°C",weather:"Post-Monsoon",details:"Rainfall reducing gradually. Weather becoming clearer. Transitional season"},
+  {month:"October",avgTemp:"16-28°C",weather:"Autumn",details:"Perfect weather arrives. Clear skies and comfortable temperatures. Peak tourism season",best:true},
+  {month:"November",avgTemp:"12-26°C",weather:"Cool Autumn",details:"Temperature dropping noticeably. Clear visibility excellent. Comfortable conditions",best:true},
+  {month:"December",avgTemp:"10-24°C",weather:"Winter",details:"Winter approaches with cooler temperatures. Clear skies. Festival season begins"}
+];
+
+// Populate weather grid
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  const isBest = w.best;
+  wGrid.innerHTML += `
+    <div class="wcard${isBest?' best':''}">
+      ${isBest?'<span class="best-tag">BEST TIME</span>':''}
+      <div class="wm">${w.month}</div>
+      <div class="wt">${w.avgTemp}</div>
+      <div class="wd">${w.details}</div>
+    </div>
+  `;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const dacc = document.createElement('div');
+  dacc.className = 'dacc';
+  dacc.dataset.name = d.name.toLowerCase();
+  
+  dacc.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list">
+            <li>${d.known}</li>
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">
+            ${d.heritage.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">
+            ${d.languages.map(l => `<span class="lchip">${l}</span>`).join('')}
+          </div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row">
+            <span class="temp-badge tb-best">${d.avgTemp}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  accordion.appendChild(dacc);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `
+    <div class="pcard">
+      <div class="pcard-acc"></div>
+      <div class="pcard-body">
+        <span class="pi">${p.emoji}</span>
+        <div class="pn">${p.name}</div>
+        <div class="pl">${p.location}</div>
+        <div class="pd">${p.desc}</div>
+        <div class="fee-row">
+          ${Array.isArray(p.fee) ? p.fee.map(f => `<span class="fee-badge ${f.includes('Free')?'fb-free':f.includes('Foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('') : `<span class="fee-badge ${p.fee.includes('Free')?'fb-free':'fb-in'}">${p.fee}</span>`}
+        </div>
+        <div class="dos-donts">
+          <div class="dos">
+            <div class="dd-title">✓ DO</div>
+            <ul class="dd-list">
+              <li>Respect heritage sites</li>
+              <li>Preserve history</li>
+            </ul>
+          </div>
+          <div class="donts">
+            <div class="dd-title">✗ DON'T</div>
+            <ul class="dd-list">
+              <li>Damage monuments</li>
+              <li>Disrespect sacred places</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Populate arts
+const artGrid = document.getElementById('artGrid');
+artsData.forEach(a => {
+  artGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${a.emoji}</span>
+      <div class="at">${a.name}</div>
+      <div class="ad">${a.desc}</div>
+      <div class="art-fee"><span>${a.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate traditions
+const tradGrid = document.getElementById('tradGrid');
+traditionsData.forEach(t => {
+  tradGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${t.emoji}</span>
+      <div class="at">${t.name}</div>
+      <div class="ad">${t.desc}</div>
+      <div class="art-fee"><span>${t.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate cuisines
+const cuisinesGrid = document.getElementById('cuisinesGrid');
+cuisinesData.forEach(c => {
+  cuisinesGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${c.emoji}</span>
+      <div class="at">${c.name}</div>
+      <div class="ad">${c.desc}</div>
+      <div class="art-fee"><span>${c.region}</span></div>
+    </div>
+  `;
+});
+
+// Accordion toggle
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const accords = document.querySelectorAll('.dacc');
+  const current = accords[idx];
+  
+  if(openAccordion !== null && openAccordion !== idx) {
+    accords[openAccordion].classList.remove('open');
+  }
+  
+  current.classList.toggle('open');
+  openAccordion = current.classList.contains('open') ? idx : null;
+}
+
+// Search districts
+function filterDistricts(query) {
+  const accords = document.querySelectorAll('.dacc');
+  accords.forEach(a => {
+    a.style.display = a.dataset.name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+
+// Music toggle
+function toggleMusic() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('musicBtn');
+  if(audio.paused) {
+    audio.play();
+    btn.classList.add('on');
+  } else {
+    audio.pause();
+    btn.classList.remove('on');
+  }
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Language translations
+const translations = {
+  en: {
+    navTitle: "TRIPURA",
+    heroName: "Tripura",
+    heroNative: "त्रिपुरा",
+    heroTag: "Land of Maharajas, Palaces & Temples",
+    scrollLbl: "SCROLL TO EXPLORE",
+    weatherPill: "🌡️ Weather",
+    districtsPill: "📍 Districts",
+    placesPill: "🏛️ Places",
+    artsPill: "🎨 Arts",
+    tradPill: "🪔 Traditions",
+    cuisinesPill: "🍲 Cuisines",
+    aboutLbl: "About Tripura",
+    aboutTitle: "Land of Maharajas & Mystique",
+    aboutBody: "Tripura, the 'Land of Maharajas,' is a northeastern state steeped in regal heritage, spiritual significance and cultural diversity. Nestled between Assam and Bangladesh, Tripura boasts a unique blend of Hindu, Buddhist and tribal traditions. Known for its magnificent palaces, ancient temples, serene lakes and vibrant tribal communities, Tripura represents Northeast India's grandeur and warmth. From the impressive Ujjayanta Palace in Agartala to sacred Kamakshi Temple, from lush natural reserves to bustling cultural centers, Tripura offers immersive experiences.",
+    weatherLbl: "Climate & Best Time",
+    weatherTitle: "When to Visit Tripura",
+    weatherNote: "Tripura experiences monsoon (May-September), cool autumn (October-November), mild winter (December-February) and warm spring (March-April). October to March offers ideal weather with comfortable temperatures, clear skies and excellent visibility for exploring historical sites and natural attractions.",
+    distLbl: "All 4 Districts",
+    distTitle: "Every District of Tripura",
+    distNote: "Tripura's 4 districts showcase remarkable diversity from the royal capital Agartala to the scenic hill stations, from ancient pilgrimage centers to tribal strongholds. Each district offers unique historical, cultural and natural attractions.",
+    distSearch: "Search districts...",
+    placesLbl: "Palaces & Temples",
+    placesTitle: "Treasures of Tripura",
+    artsLbl: "Arts, Crafts & Heritage",
+    artsTitle: "Living Traditions of Tripura",
+    tradLbl: "Festivals & Celebrations",
+    tradTitle: "Soul of Tripuran Culture",
+    cuisinesLbl: "Culinary Heritage",
+    cuisinesTitle: "Flavors of Tripura",
+    footerT: "JAY TRIPURA",
+    footerS: "Tripura Day — January 21 · 1972"
+  },
+  hi: {
+    navTitle: "त्रिपुरा",
+    heroName: "त्रिपुरा",
+    heroNative: "त्रिपुरा",
+    heroTag: "महाराजाओं की भूमि, महल और मंदिर",
+    scrollLbl: "अन्वेषण के लिए स्क्रॉल करें",
+    weatherPill: "🌡️ मौसम",
+    districtsPill: "📍 जिले",
+    placesPill: "🏛️ स्थान",
+    artsPill: "🎨 कला",
+    tradPill: "🪔 परंपराएं",
+    cuisinesPill: "🍲 खान-पान",
+    aboutLbl: "त्रिपुरा के बारे में",
+    aboutTitle: "महाराजाओं और रहस्य की भूमि",
+    aboutBody: "त्रिपुरा, 'महाराजाओं की भूमि,' एक उत्तरपूर्वी राज्य है जो शाही विरासत, आध्यात्मिक महत्व और सांस्कृतिक विविधता में डूबा हुआ है। असम और बांग्लादेश के बीच स्थित, त्रिपुरा हिंदू, बौद्ध और जनजातीय परंपराओं का एक अद्वितीय मिश्रण प्रदर्शित करता है।",
+    weatherLbl: "जलवायु और सर्वश्रेष्ठ समय",
+    weatherTitle: "त्रिपुरा कब जाएं",
+    weatherNote: "त्रिपुरा मानसून (मई-सितंबर), ठंडी शरद ऋतु (अक्टूबर-नवंबर), हल्की सर्दी (दिसंबर-फरवरी) और गर्म बसंत (मार्च-अप्रैल) का अनुभव करता है।",
+    distLbl: "सभी 4 जिले",
+    distTitle: "त्रिपुरा के हर जिले",
+    distNote: "त्रिपुरा के 4 जिले शाही राजधानी आगरतला से लेकर सुंदर हिल स्टेशन तक उल्लेखनीय विविधता प्रदर्शित करते हैं।",
+    distSearch: "जिलों को खोजें...",
+    placesLbl: "महल और मंदिर",
+    placesTitle: "त्रिपुरा के खजाने",
+    artsLbl: "कला, शिल्प और विरासत",
+    artsTitle: "त्रिपुरा की जीवंत परंपराएं",
+    tradLbl: "त्योहार और समारोह",
+    tradTitle: "त्रिपुरी संस्कृति की आत्मा",
+    cuisinesLbl: "पाक परंपरा",
+    cuisinesTitle: "त्रिपुरा का स्वाद",
+    footerT: "जय त्रिपुरा",
+    footerS: "त्रिपुरा दिवस — 21 जनवरी · 1972"
+  },
+  bn: {
+    navTitle: "ত্রিপুরা",
+    heroName: "ত্রিপুরা",
+    heroNative: "त्रिपुरा",
+    heroTag: "মহারাজাদের ভূমি, প্রাসাদ ও মন্দির",
+    scrollLbl: "অন্বেষণ করতে স্ক্রল করুন",
+    weatherPill: "🌡️ আবহাওয়া",
+    districtsPill: "📍 জেলা",
+    placesPill: "🏛️ স্থান",
+    artsPill: "🎨 শিল্প",
+    tradPill: "🪔 ঐতিহ্য",
+    cuisinesPill: "🍲 রন্ধনশিল্প",
+    aboutLbl: "ত্রিপুরা সম্পর্কে",
+    aboutTitle: "মহারাজাদের এবং রহস্যের ভূমি",
+    aboutBody: "ত্রিপুরা, 'মহারাজাদের ভূমি,' একটি উত্তরপূর্বাঞ্চলীয় রাজ্য যা রাজকীয় ঐতিহ্য, আধ্যাত্মিক তাৎপর্য এবং সাংস্কৃতিক বৈচিত্র্যে নিমজ্জিত। আসাম এবং বাংলাদেশের মধ্যে অবস্থিত, ত্রিপুরা হিন্দু, বৌদ্ধ এবং উপজাতীয় ঐতিহ্যের এক অনন্য মিশ্রণ প্রদর্শন করে।",
+    weatherLbl: "জলবায়ু ও সেরা সময়",
+    weatherTitle: "ত্রিপুরা কখন পরিদর্শন করবেন",
+    weatherNote: "ত্রিপুরা মৌসুমী (মে-সেপ্টেম্বর), শীতল শরৎ (অক্টোবর-নভেম্বর) অনুভব করে। অক্টোবর থেকে মার্চ আদর্শ আবহাওয়া প্রদান করে।",
+    distLbl: "সমস্ত 4 জেলা",
+    distTitle: "ত্রিপুরার প্রতিটি জেলা",
+    distNote: "ত্রিপুরার 4টি জেলা রাজকীয় রাজধানী আগরতলা থেকে দৃশ্যমান পাহাড় পর্যন্ত উল্লেখযোগ্য বৈচিত্র্য প্রদর্শন করে।",
+    distSearch: "জেলা অনুসন্ধান করুন...",
+    placesLbl: "প্রাসাদ ও মন্দির",
+    placesTitle: "ত্রিপুরার ধন",
+    artsLbl: "শিল্প, কারুশিল্প ও ঐতিহ্য",
+    artsTitle: "ত্রিপুরার জীবন্ত ঐতিহ্য",
+    tradLbl: "উৎসব ও উদযাপন",
+    tradTitle: "ত্রিপুরী সংস্কৃতির সার",
+    cuisinesLbl: "রন্ধন ঐতিহ্য",
+    cuisinesTitle: "ত্রিপুরার স্বাদ",
+    footerT: "জয় ত্রিপুরা",
+    footerS: "ত্রিপুরা দিবস — ২১ জানুয়ারি · ১৯৭२"
+  }
+};
+
+// Language setting function
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lb-' + lang).classList.add('active');
+  
+  const t = translations[lang];
+  
+  document.getElementById('heroName').textContent = t.heroName;
+  document.getElementById('heroNative').textContent = t.heroNative;
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('scrollLbl').textContent = t.scrollLbl;
+  document.getElementById('qw').textContent = t.weatherPill;
+  document.getElementById('qd').textContent = t.districtsPill;
+  document.getElementById('qp').textContent = t.placesPill;
+  document.getElementById('qa').textContent = t.artsPill;
+  document.getElementById('qt').textContent = t.tradPill;
+  document.getElementById('qc').textContent = t.cuisinesPill;
+  document.getElementById('lAbout').textContent = t.aboutLbl;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutBody').textContent = t.aboutBody;
+  document.getElementById('lWeather').textContent = t.weatherLbl;
+  document.getElementById('weatherTitle').textContent = t.weatherTitle;
+  document.getElementById('weatherNote').textContent = t.weatherNote;
+  document.getElementById('lDist').textContent = t.distLbl;
+  document.getElementById('distTitle').textContent = t.distTitle;
+  document.getElementById('distNote').textContent = t.distNote;
+  document.getElementById('distSearch').placeholder = t.distSearch;
+  document.getElementById('lPlaces').textContent = t.placesLbl;
+  document.getElementById('placesTitle').textContent = t.placesTitle;
+  document.getElementById('lArts').textContent = t.artsLbl;
+  document.getElementById('artsTitle').textContent = t.artsTitle;
+  document.getElementById('lTrad').textContent = t.tradLbl;
+  document.getElementById('tradTitle').textContent = t.tradTitle;
+  document.getElementById('lCuisines').textContent = t.cuisinesLbl;
+  document.getElementById('cuisinesTitle').textContent = t.cuisinesTitle;
+  document.getElementById('footerT').textContent = t.footerT;
+  document.getElementById('footerS').textContent = t.footerS;
+}
+</script>
+</body>
+</html>
