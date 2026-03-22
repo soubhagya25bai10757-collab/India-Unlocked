@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odisha — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0A3B7C;--saffron:#C87010;--teal:#006655;--gold:#D4A010;--cream:#fdf4e0;--deep:#060810;--border:rgba(10,59,124,0.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(6,8,16,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--blue);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,244,224,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,244,224,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--blue);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,16,.18) 0%,rgba(6,8,16,.04) 38%,rgba(6,8,16,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(212,160,16,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.4rem,8.5vw,7.8rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,244,224,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(10,59,124,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,244,224,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(10,59,124,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,244,224,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(10,59,124,.1);border:1px solid rgba(10,59,124,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(10,59,124,.18);border-color:rgba(10,59,124,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(212,160,16,.55);background:rgba(212,160,16,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,244,224,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--saffron);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(10,59,124,.65);}
+.dsearch::placeholder{color:rgba(253,244,224,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(10,59,124,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(10,59,124,.08);}
+.dacc:hover{border-color:rgba(10,59,124,.42);background:rgba(10,59,124,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(10,59,124,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(10,59,124,.35);background:rgba(10,59,124,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,244,224,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--saffron);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(10,59,124,.2);border:1px solid rgba(10,59,124,.38);color:rgba(253,244,224,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(212,160,16,.2);border:1px solid rgba(212,160,16,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(10,59,124,.09);border:1.5px solid rgba(10,59,124,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(10,59,124,.55);box-shadow:0 18px 54px rgba(10,59,124,.14);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--blue),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,244,224,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(10,59,124,.22);border:1px solid rgba(10,59,124,.42);color:#a8c8ff;}
+.fb-fr{background:rgba(0,102,85,.2);border:1px solid rgba(0,102,85,.38);color:#80ffd4;}
+.fb-free{background:rgba(212,160,16,.18);border:1px solid rgba(212,160,16,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(0,102,85,.14);border:1px solid rgba(0,102,85,.3);}
+.donts{background:rgba(200,112,16,.12);border:1px solid rgba(200,112,16,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#80ffd4;}.donts .dd-title{color:#ffd4a0;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(128,255,212,.78);}.donts .dd-list li{color:rgba(255,212,160,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(10,59,124,.1);border:1.5px solid rgba(10,59,124,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(10,59,124,.52);background:rgba(10,59,124,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,244,224,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,244,224,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(10,59,124,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,244,224,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,244,224,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">ODISHA</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-or" onclick="setLang('or')">ଓଡ଼ିଆ</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#127754;</span>
+    <div class="hero-name" id="heroName">Odisha</div>
+    <div class="hero-native" id="heroNative">ଓଡ଼ିଶା</div>
+    <div class="hero-tag" id="heroTag">Land of Jagannath, Konark Sun Temple, Tribal Heritage & the Bay of Bengal</div>
+    <div class="tribar"><div style="background:#0A3B7C"></div><div style="background:#D4A010"></div><div style="background:#006655"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Odisha</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Soul of Ancient Kalinga</em></h2>
+  <p class="sec-body" id="aboutBody">Odisha — the ancient land of Kalinga — is one of the Indian subcontinent's most spiritually resonant, artistically rich and ecologically extraordinary states. The Battle of Kalinga in 261 BC, fought on Odisha's soil, changed the course of world history: Emperor Ashoka witnessed the carnage of 100,000 dead, renounced war and embraced Buddhism — his subsequent moral edicts spread across Asia and influenced the foundations of modern international law. The land that could transform a conqueror into a pacifist carries within it something of extraordinary civilizational power. The Jagannath Temple at Puri — where Lord Jagannath (a form of Vishnu with pre-Hindu tribal roots) has been worshipped for over 1,000 years — is one of Hinduism's four Dhams (cardinal pilgrimage sites). The Rath Yatra — the annual chariot procession of Jagannath — is the world's oldest, largest and most powerful religious chariot festival, drawing millions who pull the giant wooden chariots through Puri's Grand Road. The word "juggernaut" in the English language derives from "Jagannath" — the unstoppable force of the chariot. The Konark Sun Temple — a UNESCO World Heritage Site — is a 13th-century architectural marvel built in the form of the sun god's colossal chariot with 24 intricately carved wheels and seven horses. The quality of its erotic sculpture rivals Khajuraho; its astronomical precision rivals Jantar Mantar. The Lingaraj Temple of Bhubaneswar and the city's 500+ ancient temples make it the "Temple City of India." Odisha's tribal population — 22% of the state, over 60 distinct tribes including Kondh, Santali, Gond, Saura, Juang and Dongria Kondh — represent some of the most culturally intact indigenous communities in South Asia. The Eastern Ghats of Odisha shelter these communities in forests of extraordinary biodiversity. The state's coastline — 485 km of the Bay of Bengal — is the nesting ground for the olive ridley sea turtle, which arrives in its millions at Gahirmatha and Rushikulya beaches for the world's largest mass nesting (arribada) event. Odisha's arts — Pattachitra painting, Odissi dance (one of India's eight classical forms), Gotipua, Chhau dance, silver filigree, stone carving and palm leaf manuscripts — represent a civilization that has never stopped creating. This is India at its most ancient, most creative and most quietly magnificent.</p>
+</section>
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Odisha</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Odisha has three seasons: hot summer (March–June), monsoon (July–September) and a pleasant winter (October–February). October to February is ideal — the Rath Yatra falls in June/July, Konark is best in winter light, the Chilika Lake flamingos arrive in November and the olive ridley turtles nest from November to March.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 30 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Odisha</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Odisha's 30 districts span five geographic zones: the coastal plains, the Eastern Ghats tribal highlands, the Mahanadi river basin, the northern plateau and the southern forests. Each carries layers of Kalinga-era history, tribal culture and living artistic traditions.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="ଜିଲ୍ଲା ଖୋଜ / Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred, Archaeological &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Odisha</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Odisha</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Odia Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Odisha</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+<footer>
+  <span class="fe">&#128591;</span>
+  <div class="ft" id="footerT">JAI JAGANNATH — BANDE UTKAL JANANI</div>
+  <div class="fs" id="footerS">Odisha Foundation Day — April 1 &middot; 1936</div>
+</footer>
+<audio id="bgm" loop preload="auto"><source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg"></audio>
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(5,20,60);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(30,40,10);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(0,40,35);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22180%22 cy=%22200%22 r=%22270%22 fill=%22rgba(10,59,124,0.28)%22/%3E%3Ccircle cx=%221050%22 cy=%22340%22 r=%22300%22 fill=%22rgba(0,102,85,0.2)%22/%3E%3Ccircle cx=%22590%22 cy=%22700%22 r=%22220%22 fill=%22rgba(212,160,16,0.15)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+{name:"Puri",region:"Coastal Odisha",known:"Jagannath Temple — One of Four Hindu Dhams, Rath Yatra",heritage:["Jagannath Temple Puri","Rath Yatra Grand Road","Puri Beach","Chilika Lake Edge","Gundicha Temple"],languages:["Odia","Hindi"],bestMonths:"Oct-Mar",avgTemp:"16-36°C"},
+{name:"Bhubaneswar (Khordha)",region:"Coastal Odisha",known:"Temple City of India, 500+ Ancient Temples, State Capital",heritage:["Lingaraj Temple","Mukteshwar Temple","Rajarani Temple","Odisha State Museum","Udayagiri-Khandagiri Caves"],languages:["Odia","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"14-40°C"},
+{name:"Konark (Puri District)",region:"Coastal Odisha",known:"Konark Sun Temple — UNESCO World Heritage Site",heritage:["Konark Sun Temple (UNESCO)","Chandrabhaga Beach","Konark Dance Festival Site"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"16-36°C"},
+{name:"Cuttack",region:"Mahanadi Delta",known:"Silver City, Millennium City, Cuttack Chandi Mandir",heritage:["Barabati Fort","Silver Filigree Workshops","Cuttack Chandi Mandir","Netaji Birth Memorial"],languages:["Odia","Hindi"],bestMonths:"Oct-Mar",avgTemp:"14-40°C"},
+{name:"Chilika (Puri-Khordha-Ganjam)",region:"Coastal Odisha",known:"Asia's Largest Brackish Lake, Irrawaddy Dolphins, Flamingos",heritage:["Chilika Lake (Ramsar Site)","Satapada Dolphin Point","Nalaban Island Bird Sanctuary"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"16-36°C"},
+{name:"Koraput",region:"South Odisha",known:"Tribal Heritage, Koraput Biodiversity Hotspot, Coffee",heritage:["Tribal Museum Koraput","Deomali Peak (Highest Odisha)","Jeypore Palace","Sabara Srikhetra"],languages:["Odia","Koraput Tribal","Telugu"],bestMonths:"Oct-Mar",avgTemp:"10-38°C"},
+{name:"Rayagada",region:"South Odisha",known:"Dongria Kondh Tribe, Niyamgiri Hills, Tribal Art",heritage:["Niyamgiri Hills — Dongria Kondh","Harishankar Temple","Chatikona Tribal Market"],languages:["Odia","Kui","Kondh"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+{name:"Kalahandi",region:"South Odisha",known:"Phurlijharan Waterfall, Tribal Culture, Red Ants Chutney",heritage:["Phurlijharan Waterfall","Asurgarh Fort","Tribal Cultural Sites"],languages:["Odia","Gondi","Kondh"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+{name:"Kandhamal",region:"Central Odisha",known:"Turmeric Capital, Kondh Tribe, Phulbani Hills",heritage:["Belghar Wildlife Sanctuary","Daringbadi (Kashmir of Odisha)","Kondh Tribal Heritage"],languages:["Odia","Kui","Kondh"],bestMonths:"Oct-Mar",avgTemp:"10-38°C"},
+{name:"Ganjam",region:"South Odisha",known:"Berhampur Silk, Chilika Edge, Rushikulya Turtle Beach",heritage:["Rushikulya Olive Ridley Nesting","Gopalpur Beach","Brahmagiri Bird Sanctuary"],languages:["Odia","Telugu"],bestMonths:"Oct-Mar",avgTemp:"16-40°C"},
+{name:"Gajapati",region:"South Odisha",known:"Eastern Ghats, Tribal Heritage, Paralakhemundi",heritage:["Mahendragiri Peak","Srikurma Temple","Tribal Forest Villages"],languages:["Odia","Telugu","Kondh"],bestMonths:"Oct-Mar",avgTemp:"12-40°C"},
+{name:"Mayurbhanj",region:"North Odisha",known:"Simlipal — Tiger Reserve, Tribal Capital, Chhau Dance",heritage:["Simlipal Tiger Reserve","Baripada Heritage","Chhau Dance Villages","Haripur Ruins"],languages:["Odia","Santali","Ho","Bengali"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+{name:"Keonjhar",region:"North Odisha",known:"Barbil Iron Ore, Gonasika Gorge, Tribal Heritage",heritage:["Gonasika — Baitarani River Origin","Sanaghagara Waterfall","Tribal Archaeological Sites"],languages:["Odia","Santali","Juang"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+{name:"Sundargarh",region:"North Odisha",known:"Steel City Rourkela, Tribal Heritage, Ib River",heritage:["Rourkela Steel Plant Heritage","Vedvyas Ashram","Bonai Wildlife Sanctuary"],languages:["Odia","Santali","Munda","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+{name:"Sambalpur",region:"West Odisha",known:"Sambalpuri Saree, Hirakud Dam, Debrigarh Wildlife",heritage:["Hirakud Dam","Samaleswari Temple","Debrigarh Wildlife Sanctuary","Sambalpuri Weaving Villages"],languages:["Odia","Sambalpuri"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+{name:"Bargarh",region:"West Odisha",known:"Dhanuyatra Festival, Sambalpuri Culture",heritage:["Dhanuyatra Festival Ground","Nrusinghanath Temple","Tribal Heritage"],languages:["Odia","Sambalpuri"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+{name:"Balangir",region:"West Odisha",known:"Patnagarh Fort, Kantabanji, Sonepur Fair",heritage:["Sonepur Balua Ghat","Patnagarh Fort","Titilagarh Heritage"],languages:["Odia","Sambalpuri"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+{name:"Nuapada",region:"West Odisha",known:"Sunabeda Wildlife, Forest Belt",heritage:["Sunabeda Wildlife Sanctuary","Dense Forest Trails","Tribal Villages"],languages:["Odia","Sambalpuri","Gondi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+{name:"Baudh",region:"Central Odisha",known:"Ancient Buddhist Heritage, Baudhimath",heritage:["Baudhimath Temple","Mahanadi River","Buddhist Heritage"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+{name:"Nayagarh",region:"Central Odisha",known:"Satkosia Gorge, Mahanadi Canyon, Tiger Reserve",heritage:["Satkosia Tiger Reserve","Tikarpada Wildlife","Mahanadi River Gorge"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"12-42°C"},
+{name:"Dhenkanal",region:"Central Odisha",known:"Kapilash Temple, Mahanadi River",heritage:["Kapilash Shiva Temple","Dhenkanal Fort","Joranda Heritage"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"12-42°C"},
+{name:"Angul",region:"Central Odisha",known:"NALCO, Satkosia Buffer, Badasingha Lake",heritage:["Satkosia Wildlife Corridor","Badasingha Lake","Hingula Temple"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+{name:"Jagatsinghpur",region:"Coastal Odisha",known:"Gahirmatha — World's Largest Olive Ridley Nesting",heritage:["Gahirmatha Marine Sanctuary","Olive Ridley Turtle Nesting","Paradeep Port"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"16-38°C"},
+{name:"Kendrapara",region:"Coastal Odisha",known:"Bhitarkanika — Saltwater Crocodiles, Mangroves",heritage:["Bhitarkanika National Park","Saltwater Crocodile Sanctuary","Mangrove Forest","Gahirmatha Buffer"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"16-38°C"},
+{name:"Jajpur",region:"Coastal Odisha",known:"Biraja Temple, Industrialization, Mahanadi",heritage:["Biraja Shakti Peetha","Jajpur Archaeological Heritage","Mahanadi Delta"],languages:["Odia"],bestMonths:"Oct-Mar",avgTemp:"14-40°C"},
+{name:"Bhadrak",region:"Coastal Odisha",known:"Bhadrakali Temple, Akhandalamani, River Delta",heritage:["Akhandalamani Temple","Bhadrakali Mandir","River Delta Culture"],languages:["Odia","Bengali"],bestMonths:"Oct-Mar",avgTemp:"14-38°C"},
+{name:"Balasore",region:"Coastal Odisha",known:"Chandipur Beach (Missile Testing), Panchalingeswar",heritage:["Chandipur Beach","Panchalingeswar Temple","Remuna Kheeri Temple","Nilgiri Fort"],languages:["Odia","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"14-38°C"},
+{name:"Boudh",region:"Central Odisha",known:"Boudh Palace, Kantamal, Mahanadi",heritage:["Boudh Palace Heritage","Kantamal Dam","Mahanadi River Culture"],languages:["Odia","Sambalpuri"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+{name:"Subarnapur (Sonepur)",region:"West Odisha",known:"Sonepur Cattle Fair, Mahanadi-Tel Confluence",heritage:["Sonepur Cattle Fair","Mahanadi-Tel Confluence","Subarneswar Temple"],languages:["Odia","Sambalpuri"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+{name:"Jharsuguda",region:"North Odisha",known:"Power Hub, Industrial Odisha, Ib River",heritage:["Ib River Heritage","Industrial City Heritage","Bagdihi Temple"],languages:["Odia","Hindi","Sambalpuri"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"}
+];
+
+const placesData=[
+{emoji:"🛕",name:"Jagannath Temple, Puri",location:"Puri",desc:"One of Hinduism's four sacred Dhams — the Jagannath Temple has stood for over 1,000 years and is among the most spiritually powerful places on earth. Lord Jagannath — with his distinctive wide eyes and unfinished arms — is a pre-Hindu tribal deity absorbed into the Vaishnava tradition, making this temple uniquely inclusive. The daily prasad (Mahaprasad) fed to 10,000+ people is cooked in the world's largest temple kitchen. Non-Hindus are not permitted inside — but the surrounding Dham vibrates with devotion.",fee:["Free (Hindus only)"]},
+{emoji:"☀️",name:"Konark Sun Temple",location:"Puri District",desc:"UNESCO World Heritage Site — a 13th-century architectural masterpiece conceived as the colossal stone chariot of the sun god Surya. Twenty-four intricately carved wheels (functioning as sundials), seven stone horses and hundreds of erotic sculpture panels cover every surface. Built by King Narasimhadeva I of the Eastern Ganga dynasty in 1250 AD. The precision of its astronomical alignments — equinox sunrises through the entrance gate — reveals a civilization of extraordinary scientific knowledge.",fee:["Rs.40 Indians","Rs.600 Foreigners"]},
+{emoji:"🦭",name:"Chilika Lake",location:"Puri-Khordha-Ganjam",desc:"Asia's largest brackish water lagoon — 1,100 sq km of shimmering water teeming with Irrawaddy dolphins (found only here and in the Ganges), flamingos, over 160 migratory bird species and extraordinary fish diversity. A Ramsar Convention wetland of international importance. The Nalaban Island bird sanctuary within the lake turns pink with flamingos from November to February. Boat rides to the dolphin point at dawn are among Odisha's most memorable experiences.",fee:["Boat charges apply"]},
+{emoji:"🐊",name:"Bhitarkanika National Park",location:"Kendrapara District",desc:"One of the largest mangrove ecosystems in Asia and the home of India's largest population of saltwater crocodiles — the most dangerous reptile on earth, reaching 6 meters in length. The Bhitarkanika mangrove labyrinth shelters kingfishers, sea eagles, monitor lizards, spotted deer and the rare Irrawaddy dolphin. The Gahirmatha beach at its edge hosts the world's largest olive ridley sea turtle nesting event — millions of turtles arrive together.",fee:["Paid"]},
+{emoji:"🏛️",name:"Bhubaneswar Temple City",location:"Bhubaneswar, Khordha",desc:"Once home to over 7,000 temples, Bhubaneswar still has 500+ functioning ancient temples in various states of extraordinary preservation. The Lingaraj Temple (11th century) is the largest and most magnificent; the Mukteshwar Temple (10th century) is the most exquisitely proportioned; the Rajarani Temple (11th century) has the finest sculpture. Together they form the most complete surviving record of the Kalinga school of temple architecture.",fee:["Free (Hindus only at Lingaraj)"]},
+{emoji:"🏺",name:"Udayagiri-Khandagiri Caves",location:"Bhubaneswar",desc:"2nd–1st century BC rock-cut caves carved for Jain monks by the Kalinga king Kharavela — one of ancient India's most powerful rulers. The Rani Gumpha (Queen's Cave) has elaborately carved friezes depicting royal processions, women, animals and Kharavela's military victories. The Hathigumpha (Elephant Cave) inscription is one of the most important historical records of ancient India.",fee:["Rs.15 Indians","Rs.200 Foreigners"]},
+{emoji:"🐢",name:"Gahirmatha & Olive Ridley Turtles",location:"Jagatsinghpur District",desc:"The world's largest mass nesting site of olive ridley sea turtles — every winter, 300,000 to 800,000 turtles arrive simultaneously on Gahirmatha beach in the mass nesting event called arribada. The spectacle of hundreds of thousands of turtles covering every inch of beach, digging nests and laying eggs is one of nature's most extraordinary events. The Indian Navy and forest department protect the beach during nesting season.",fee:["Protected — permit required"]},
+{emoji:"🦅",name:"Simlipal Tiger Reserve",location:"Mayurbhanj District",desc:"One of India's largest tiger reserves — 2,750 sq km of dense sal forest in the Eastern Ghats of north Odisha. Home to tigers, elephants, leopards, gaur, wild dogs, 231 species of orchid and extraordinary butterfly diversity. The tribal communities (Ho, Santali, Kharia) living in and around the reserve have profound ecological knowledge. The Barehipani Falls (399 meters) and Joranda Falls within the reserve are among Odisha's finest.",fee:["Paid"]},
+{emoji:"⚔️",name:"Dhauli Shanti Stupa — Ashokan Rock Edicts",location:"Bhubaneswar (Dhauli Hills)",desc:"The site of the Battle of Kalinga (261 BC) — the battle that transformed Emperor Ashoka from a conqueror into a Buddhist pacifist whose moral edicts shaped world history. The hilltop Shanti Stupa (built jointly by India and Japan) overlooks the Daya river valley where the battle was fought. The original Ashokan rock edicts are carved into a natural rock face at the base — some of the most historically significant inscriptions on earth.",fee:["Free"]},
+{emoji:"🌊",name:"Puri Beach & Chandrabhaga",location:"Puri District",desc:"Puri's beach — where the Bay of Bengal meets the sacred town — is one of India's most spiritually charged coastlines. Pilgrims bathe at the Swargadwara ghat while fishermen launch their traditional fishing boats beyond the surf. Chandrabhaga beach near Konark is where the Chandrabhaga Mela is held — one of Odisha's most beautiful small festivals. The entire 485-km coastline of Odisha is lined with similar stories.",fee:["Free"]}
+];
+
+const artsData=[
+{emoji:"🖼️",name:"Pattachitra Painting",location:"Raghurajpur Village, Puri District",desc:"One of India's oldest surviving scroll painting traditions — intricate narrative paintings on cloth (patta) or palm leaf depicting stories of Lord Jagannath, the Ramayana and Mahabharata. Natural colors from stone, leaves and flowers. The village of Raghurajpur near Puri is entirely composed of Pattachitra artists — every home is a studio. GI-tagged, internationally collected and recently exhibited at the Victoria and Albert Museum."},
+{emoji:"💃",name:"Odissi Classical Dance",location:"Statewide",desc:"One of India's eight classical dance forms — considered the oldest surviving classical dance tradition in India, with roots in the devadasi (temple dancer) tradition and documented in 2nd-century BC temple sculptures at Udayagiri. Characterized by the tribhanga (triple bend) body posture, fluid movement and expressive abhinaya (mime). Guru Kelucharan Mohapatra revived Odissi from near-extinction in the 1950s. Now performed worldwide."},
+{emoji:"🥁",name:"Gotipua & Chhau Dance",location:"Puri, Mayurbhanj, Baripada",desc:"Gotipua — young boys dressed as women performing acrobatic devotional dance dedicated to Lord Krishna — is one of Odisha's most distinctive performing traditions, considered the precursor of Odissi. Mayurbhanj Chhau — a vigorous martial dance using elaborate animal and mythological masks — is UNESCO Intangible Cultural Heritage. The Baripada Chhau festival is one of India's most extraordinary folk performance events."},
+{emoji:"🔩",name:"Silver Filigree (Tarakasi)",location:"Cuttack",desc:"Cuttack's silver filigree craft — Tarakasi — is one of India's most refined metal crafts. Thin silver wires are twisted, bent and soldered without solder into intricate lacework patterns of flowers, peacocks and geometric designs. The Cuttack craftsmen produce jewelry, decorative items and the spectacular silver ornaments worn by the Jagannath idols during festivals. GI-tagged, internationally exhibited. Each piece takes days to make."},
+{emoji:"🪡",name:"Sambalpuri Saree & Ikat Weaving",location:"Sambalpur, Bargarh, Sonepur",desc:"The Sambalpuri saree — woven in the Mahanadi river towns of western Odisha — uses a tie-and-dye (ikat) technique where threads are resist-dyed before weaving to create geometric patterns of extraordinary precision. The Sambalpuri weave requires the weaver to visualize the final pattern in reverse from the thread stage. GI-tagged. The Bomkai, Pasapalli and Sonepuri sarees from this region are among India's most prized textiles."},
+{emoji:"📜",name:"Palm Leaf Manuscript — Talapatrachitra",location:"Puri, Kendrapara",desc:"An ancient tradition of illustrated manuscripts inscribed on palm leaves — the talipot palm leaves are dried, treated and inscribed with a sharp stylus. The incisions are rubbed with lampblack to reveal the text and illustrations. Libraries of these manuscripts preserve ancient Sanskrit and Odia texts, medicinal knowledge and ritual calendars. Some survive from the 12th century. Living practitioners still create new manuscripts alongside Pattachitra."}
+];
+
+const traditionsData=[
+{emoji:"🎡",name:"Rath Yatra — Jagannath's Chariot Festival",location:"Puri — June/July",desc:"The world's oldest, largest and most powerful chariot festival — held annually on Ashadha Shuddha Dwitiya. The three colossal wooden chariots of Jagannath (45 feet), Balabhadra and Subhadra are pulled by hundreds of thousands of devotees through the 3-km Grand Road to the Gundicha Temple. The chariots are rebuilt fresh every year from specific wood. The English word 'juggernaut' derives from 'Jagannath' — a measure of the festival's legendary power."},
+{emoji:"🌊",name:"Chandrabhaga Mela — Magha Saptami",location:"Chandrabhaga Beach, Konark — February",desc:"One of Odisha's most beautiful small festivals — on Magha Saptami (seventh day of the bright fortnight of Magha), devotees bathe at the Chandrabhaga river mouth at sunrise, worshipping the sun just as the Konark temple was built to honor. Thousands gather on the beach. The combination of Konark's silhouette against the winter sunrise and the sound of the sea at devotional time is extraordinary."},
+{emoji:"🎭",name:"Dhanuyatra — World's Largest Open Theatre",location:"Bargarh — December/January",desc:"Recognized by the Guinness Book as the world's largest open-air theatre — an 11-day festival in Bargarh town transforming the entire town into a stage. The story of Krishna killing his uncle Kansa is performed by 50,000 actors across a 10-km stage that is the entire town. Every resident becomes a character. No tickets, no audience/actor separation. The most genuinely participatory theatrical event in the world."},
+{emoji:"🌸",name:"Puri Beach Festival & Konark Dance Festival",location:"Puri and Konark — December",desc:"The Konark Dance Festival — held every year in December against the backdrop of the illuminated Sun Temple — is one of India's most spectacular classical dance events. Bharatanatyam, Odissi, Manipuri, Kathak and Kuchipudi performers dance on an open-air stage with the UNESCO World Heritage temple as backdrop. The Puri Beach Festival runs simultaneously with sand art, traditional crafts and cultural performances."},
+{emoji:"🎉",name:"Raja Parba — Women's Festival",location:"Statewide — June",desc:"Odisha's unique three-day festival celebrating the earth's menstruation (the onset of the monsoon season) — the earth goddess Bhudevi is considered to be menstruating and therefore resting. Swings are hung from every tree; young women dress in new clothes, eat special sweets and play on the swings. No farming is done for three days. Raja Parba is one of India's most original and ecologically rooted festivals."},
+{emoji:"🪔",name:"Kumar Purnima",location:"Statewide — October",desc:"Odisha's uniquely beautiful festival for young women — on the full moon night of Ashwin, unmarried girls pray to Kartik (Kumar — the eternal youth) for a good husband. They decorate courtyards with alpona (floor art), light lamps in the shape of earthen boats (diyas) and float them on water. The night sky reflected in village ponds full of floating lamps is one of Odisha's most hauntingly beautiful seasonal images."}
+];
+
+const cuisinesData=[
+{emoji:"🍚",name:"Pakhala Bhata — Fermented Rice",location:"Statewide — Summer Classic",desc:"Odisha's most distinctive everyday food — cooked rice soaked overnight in water until slightly fermented, served cold the next day with fried vegetables, roasted potato, raw onion, green chili and lime. The fermentation creates a tangy, probiotic-rich dish that cools the body in Odisha's hot summers. Pakhala Dibasa (Pakhala Day) celebrated every March is a social media phenomenon — Odias worldwide share their pakhala plates with pride."},
+{emoji:"🍡",name:"Dalma — Odisha's Signature Dal",location:"Statewide",desc:"Lentils cooked with raw vegetables (raw banana, pumpkin, raw papaya, drumstick) and tempered with panch phutana (five-spice: mustard, fenugreek, cumin, anise and dried chili) — the definitive Odia dal. No tomato, no onion, no garlic. The natural sweetness of the vegetables and the earthiness of the lentils create a dish of extraordinary nutritional depth. Dalma is also the prasad of the Jagannath Temple — offered to the deity daily."},
+{emoji:"🐟",name:"Macha Besara — Mustard Fish Curry",location:"Coastal Odisha",desc:"Fish cooked in a sharp mustard-poppy seed paste with turmeric and green chili — the signature fish preparation of coastal Odisha. The Odia mustard paste is ground slightly coarser than Bengali shorshe, giving a more textured bite. Rohu, catla, hilsa and dozens of freshwater and sea fish from Odisha's rivers and coast find their way into this curry. The combination of mustard's sharpness and fish's sweetness is distinctly Odia."},
+{emoji:"🍢",name:"Chhena Poda & Rasabali",location:"Puri, Nayagarh",desc:"Chhena Poda — 'burnt cheese' — is Odisha's most original contribution to Indian sweets. Fresh chhena (cottage cheese) mixed with sugar, cardamom and cashews, baked in a clay vessel until caramelized on all surfaces. It is the only Indian sweet that uses the Maillard reaction for flavor. Said to be Lord Jagannath's favorite sweet. Rasabali — deep-fried chhena discs soaked in thickened sweetened milk — is the Kendrapara district's pride."},
+{emoji:"🌿",name:"Saga Bhaja & Forest Greens",location:"Tribal Odisha",desc:"Odisha's tribal communities bring extraordinary forest-food knowledge to the cuisine — dozens of wild greens (saga), mushrooms, tubers, flowers and fruits cooked simply with mustard oil, dried chili and panch phutana. Khatta saga (sorrel), kochila (bitter fruit), kendu leaf preparations and mahua flower dishes represent a forest-to-table cuisine of extraordinary variety. Red ant chutney (kai chutney) from Odisha's tribal belt is a delicacy prized for its protein and tangy-citrus flavor."},
+{emoji:"🥘",name:"Santula — Vegetable Medley",location:"Statewide",desc:"Odisha's signature everyday vegetable preparation — a semi-dry medley of seasonal vegetables (potato, brinjal, raw banana, beans) cooked without oil in a small amount of water with turmeric and panch phutana, finished with a drizzle of mustard oil. The minimal intervention allows each vegetable's natural flavor to emerge. Santula is the dish that appears at every Odia meal, every day, in every household — the most democratic and nutritious expression of the cuisine."},
+{emoji:"🍮",name:"Kheer Mohana & Temple Sweets",location:"Puri Jagannath Temple Tradition",desc:"The Puri Jagannath Temple's Mahaprasad is cooked in 752 earthen pots by 600 cooks in the world's largest temple kitchen. Fifty-six food items (Chhappan Bhog) are prepared daily using traditional wood-fired cooking. The kheer (rice pudding), laddoo, pitha and sweet rice preparations have been unchanged for centuries. Receiving the Mahaprasad is considered the ultimate blessing — believers say it cannot go stale regardless of how long it is kept."},
+{emoji:"🫓",name:"Manda Pitha & Arisa Pitha",location:"Festival Foods — Statewide",desc:"Odisha has an extraordinary pitha (rice cake) culture with over 50 varieties made for different festivals. Manda Pitha — steamed rice dumplings stuffed with sweetened coconut and chhena — are made for Raja Parba and Durga Puja. Arisa Pitha — deep-fried rice flour discs sweetened with jaggery — are made for harvest festivals. Chakuli Pitha (fermented rice crepes) and Poda Pitha (baked rice cake) round out a sweet tradition of singular regional character."},
+{emoji:"☕",name:"Koraput Coffee & Forest Produce",location:"Koraput, South Odisha",desc:"The tribal highlands of Koraput and Kondhamal district grow some of India's finest specialty coffee and turmeric. Kondhamal turmeric — GI-tagged — has extraordinary curcumin content and a bright aroma, grown by Kondh tribal farmers at 900+ meters. Koraput coffee, shade-grown by tribal communities in the Eastern Ghats, is now being recognised by specialty coffee buyers. These forest-agricultural products embody Odisha's tribal communities' sustainable relationship with their landscape."}
+];
+
+const weatherData=[
+{month:"January",avgTemp:"12-28°C",weather:"Cool Winter",details:"Perfect across Odisha. Konark Sun Temple in golden winter light. Chilika flamingos at peak. Olive ridley turtles nesting at Gahirmatha and Rushikulya. Simlipal safaris excellent. Puri beach clean and calm.",best:true},
+{month:"February",avgTemp:"14-32°C",weather:"Pleasant",details:"Chandrabhaga Mela at Konark — sunrise worship at the Sun Temple. Konark Dance Festival in some years. Tribal haat markets in full swing. Olive ridley mass nesting (arribada) season peak. Superb month.",best:true},
+{month:"March",avgTemp:"18-36°C",weather:"Warm",details:"Raja Parba preparations begin. Pakhala Dibasa celebrated. Tribal festivals across eastern Ghats. Bhitarkanika wildlife at its best. Last comfortable outdoor month before summer heat builds.",best:true},
+{month:"April",avgTemp:"22-40°C",weather:"Hot",details:"Summer arriving. Coastal areas still have sea breeze. Tribal highlands cooler. Not ideal for Bhubaneswar temple circuit in heat of day. Chilika boat rides pleasant early morning."},
+{month:"May",avgTemp:"26-42°C",weather:"Very Hot",details:"Peak summer across the plains. Koraput and Kandhamal highlands still bearable. Pre-monsoon storms (Kal Baisakhi) bring brief dramatic relief. Manage with early starts."},
+{month:"June",avgTemp:"26-34°C",weather:"Pre-Monsoon",details:"Rath Yatra — Jagannath's chariot festival typically falls in June or July. This is one of the world's greatest religious spectacles. Monsoon breaks over the coast. Not ideal for casual tourism but extraordinary for pilgrimage.",best:true},
+{month:"July",avgTemp:"24-32°C",weather:"Monsoon",details:"Rath Yatra (if not in June) — the return journey Ulta Rath Yatra follows nine days later. Heavy rains across Odisha. Simlipal closed. Mahanadi in spate. Waterfalls at Barehipani at maximum power."},
+{month:"August",avgTemp:"24-32°C",weather:"Deep Monsoon",details:"Raja Parba if lunar calendar aligns — the earth's festival, women on swings. Heavy rains. Forests extraordinarily green. Tribal communities in their agricultural peak. Kumar Purnima preparations beginning."},
+{month:"September",avgTemp:"24-34°C",weather:"Late Monsoon",details:"Rains easing. Kumar Purnima (full moon of Ashwin) — floating lamps on village ponds. Navratri. Simlipal reopening. Chilika water freshened by monsoon inflow. Beautiful transitional month."},
+{month:"October",avgTemp:"18-32°C",weather:"Autumn",details:"Kumar Purnima — one of Odisha's most beautiful festivals. Dussehra. Bhubaneswar temple circuit ideal. Tribal markets active. Chilika migratory birds beginning to arrive. Excellent month.",best:true},
+{month:"November",avgTemp:"14-28°C",weather:"Early Winter",details:"Odisha Foundation Day approaches. Chilika flamingos arriving. Olive ridley turtles beginning to appear off the coast. Konark Dance Festival. Puri Beach Festival. Wildlife sanctuaries excellent. Best overall month.",best:true},
+{month:"December",avgTemp:"12-26°C",weather:"Winter",details:"Cool and clear. Konark Dance Festival. Dhanuyatra in Bargarh — world's largest open-air theatre. Turtle season peak. Chilika dolphins active. Puri beach luminous in winter light. Bhubaneswar temples glowing.",best:true}
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Eat Mahaprasad if visiting Puri</li><li>Visit Raghurajpur for live Pattachitra</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Miss sunrise at Konark equinox</li><li>Photograph turtle nesting without permit</li></ul></div>
+    </div>
+  </div></div>`;
+});
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Odisha",heroNative:"ଓଡ଼ିଶା",heroTag:"Land of Jagannath, Konark Sun Temple, Tribal Heritage & the Bay of Bengal",scrollLbl:"SCROLL TO EXPLORE",qw:"&#127777; Weather",qd:"&#128205; Districts",qp:"&#127963; Places",qa:"&#127912; Arts",qt:"&#129345; Traditions",qc:"&#127374; Cuisines",lAbout:"About Odisha",aboutTitle:"The Soul of Ancient Kalinga",aboutBody:"Odisha is the ancient land of Kalinga — where the Battle of Kalinga transformed Ashoka into a Buddhist pacifist and changed world history. The Jagannath Temple at Puri is one of Hinduism's four Dhams. The Konark Sun Temple is a UNESCO World Heritage Site. The Rath Yatra gave English the word 'juggernaut'. Odissi is one of India's oldest classical dance forms. Gahirmatha hosts the world's largest olive ridley turtle nesting. Chilika is Asia's largest brackish lake. Pattachitra, silver filigree, Sambalpuri ikat and Chhau dance make Odisha one of India's most artistically extraordinary states.",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Odisha",weatherNote:"October to February is ideal — Konark is best in winter light, Chilika flamingos arrive in November and the olive ridley turtles nest from November to March.",lDist:"All 30 Districts",distTitle:"Every District of Odisha",distNote:"Odisha's 30 districts span five geographic zones: coastal plains, Eastern Ghats tribal highlands, Mahanadi river basin, northern plateau and southern forests.",distSearch:"Search districts...",lPlaces:"Sacred, Archaeological & Natural Wonders",placesTitle:"Wonders of Odisha",lArts:"Arts, Crafts & Heritage",artsTitle:"Living Traditions of Odisha",lTrad:"Festivals & Celebrations",tradTitle:"Soul of Odia Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Odisha",footerT:"JAI JAGANNATH — BANDE UTKAL JANANI",footerS:"Odisha Foundation Day — April 1 · 1936"},
+  hi:{heroName:"ओडिशा",heroNative:"ଓଡ଼ିଶା",heroTag:"जगन्नाथ, कोणार्क सूर्य मंदिर, जनजातीय विरासत और बंगाल की खाड़ी की भूमि",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",qw:"&#127777; मौसम",qd:"&#128205; जिले",qp:"&#127963; स्थल",qa:"&#127912; कलाएं",qt:"&#129345; परंपराएं",qc:"&#127374; व्यंजन",lAbout:"ओडिशा के बारे में",aboutTitle:"प्राचीन कलिंग की आत्मा",aboutBody:"ओडिशा प्राचीन कलिंग की भूमि है — जहाँ कलिंग युद्ध ने अशोक को बौद्ध शांतिवादी में बदला और विश्व इतिहास को बदल दिया। पुरी का जगन्नाथ मंदिर हिंदू धर्म के चार धामों में से एक है। कोणार्क सूर्य मंदिर यूनेस्को विश्व धरोहर स्थल है। रथ यात्रा ने अंग्रेजी भाषा को 'juggernaut' शब्द दिया। गहिरमाथा में दुनिया की सबसे बड़ी ऑलिव रिडले कछुए की नेस्टिंग होती है।",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"ओडिशा कब जाएं",weatherNote:"अक्टूबर से फरवरी आदर्श है — कोणार्क सर्दियों में सबसे अच्छा है, नवंबर में चिलिका में फ्लेमिंगो आते हैं और ऑलिव रिडले कछुए नवंबर से मार्च तक नेस्टिंग करते हैं।",lDist:"सभी 30 जिले",distTitle:"ओडिशा के हर जिले",distNote:"ओडिशा के 30 जिले पाँच भौगोलिक क्षेत्रों में फैले हैं: तटीय मैदान, पूर्वी घाट की जनजातीय पहाड़ियां, महानदी बेसिन, उत्तरी पठार और दक्षिणी वन।",distSearch:"जिले खोजें...",lPlaces:"पवित्र, पुरातात्विक और प्राकृतिक चमत्कार",placesTitle:"ओडिशा के चमत्कार",lArts:"कला, शिल्प और विरासत",artsTitle:"ओडिशा की जीवंत परंपराएं",lTrad:"त्योहार और उत्सव",tradTitle:"ओड़िया संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"ओडिशा का स्वाद",footerT:"ଜୟ ଜଗନ୍ନାଥ — ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ",footerS:"ଓଡ଼ିଶା ସ୍ଥାପନା ଦିବସ — ଏପ୍ରିଲ 1 · 1936"},
+  or:{heroName:"ଓଡ଼ିଶା",heroNative:"ଓଡ଼ିଶା",heroTag:"ଜଗନ୍ନାଥ, କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର, ଜନଜାତି ଐତିହ୍ୟ ଏବଂ ବଙ୍ଗ ଉପସାଗର",scrollLbl:"ଅନ୍ୱେଷଣ ପାଇଁ ସ୍କ୍ରୋଲ୍ କରନ୍ତୁ",qw:"&#127777; ଆବହାୱା",qd:"&#128205; ଜିଲ୍ଲା",qp:"&#127963; ସ୍ଥାନ",qa:"&#127912; କଳା",qt:"&#129345; ଉତ୍ସବ",qc:"&#127374; ଖାଦ୍ୟ",lAbout:"ଓଡ଼ିଶା ସମ୍ପର୍କରେ",aboutTitle:"ପ୍ରାଚୀନ କଳିଙ୍ଗର ଆତ୍ମା",aboutBody:"ଓଡ଼ିଶା ହେଉଛି ପ୍ରାଚୀନ କଳିଙ୍ଗ ଭୂମି — ଯେଉଁଠି କଳିଙ୍ଗ ଯୁଦ୍ଧ ଅଶୋକଙ୍କୁ ବୌଦ୍ଧ ଶାନ୍ତିବାଦୀରେ ପରିଣତ କଲା ଏବଂ ବିଶ୍ୱ ଇତିହାସ ପରିବର୍ତ୍ତନ ହେଲା। ପୁରୀ ଜଗନ୍ନାଥ ମନ୍ଦିର ହିନ୍ଦୁ ଧର୍ମର ଚାରୋଟି ଧାମ ମଧ୍ୟରୁ ଗୋଟିଏ। କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର ୟୁନେସ୍କୋ ବିଶ୍ୱ ଐତିହ୍ୟ ସ୍ଥଳ। ରଥ ଯାତ୍ରା ଇଂଲିଶ ଭାଷାକୁ juggernaut ଶବ୍ଦ ଦେଲା।",lWeather:"ଆବହାୱା ଏବଂ ସର୍ବୋତ୍ତମ ସମୟ",weatherTitle:"ଓଡ଼ିଶାକୁ କ‍ଣ ବେଳ ଆସିବେ",weatherNote:"ଅକ୍ଟୋବର ରୁ ଫେବ୍ରୁଆରୀ ଆଦର୍ଶ — ଶୀତଳ ଆଲୋକରେ କୋଣାର୍କ ସୁନ୍ଦର, ନଭେମ୍ବରରେ ଚିଲିକାରେ ଫ୍ଲାମିଙ୍ଗୋ ଆସନ୍ତି।",lDist:"ସମସ୍ତ 30 ଜିଲ୍ଲା",distTitle:"ଓଡ଼ିଶାର ପ୍ରତ୍ୟେକ ଜିଲ୍ଲା",distNote:"ଓଡ଼ିଶାର 30 ଜିଲ୍ଲା ପାଞ୍ଚଟି ଭୌଗୋଳିକ ଅଞ୍ଚଳରେ ବ୍ୟାପ୍ତ — ଉପକୂଳ ସମଭୂମି, ପୂର୍ବ ଘାଟ, ମହାନଦୀ ବେସିନ, ଉତ୍ତର ମାଳଭୂମି ଏବଂ ଦକ୍ଷିଣ ଅରଣ୍ୟ।",distSearch:"ଜିଲ୍ଲା ଖୋଜ...",lPlaces:"ପବିତ୍ର, ପ୍ରତ୍ନତାତ୍ତ୍ୱିକ ଏବଂ ପ୍ରାକୃତିକ ଅଦ୍ଭୁତ",placesTitle:"ଓଡ଼ିଶାର ଅଦ୍ଭୁତ",lArts:"କଳା, ହସ୍ତଶିଳ୍ପ ଏବଂ ଐତିହ୍ୟ",artsTitle:"ଓଡ଼ିଶାର ଜୀବନ୍ତ ପରମ୍ପରା",lTrad:"ଉତ୍ସବ ଏବଂ ଅନୁଷ୍ଠାନ",tradTitle:"ଓଡ଼ିଆ ସଂସ୍କୃତିର ଆତ୍ମା",lCuisines:"ରନ୍ଧନ ଐତିହ୍ୟ",cuisinesTitle:"ଓଡ଼ିଶାର ସ୍ୱାଦ",footerT:"ଜୟ ଜଗନ୍ନାଥ — ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ",footerS:"ଓଡ଼ିଶା ସ୍ଥାପନା ଦିବସ — ଏପ୍ରିଲ 1 · 1936"}
+};
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc','lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote','lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'].forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.textContent=t[k];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
