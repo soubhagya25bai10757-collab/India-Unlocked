@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ladakh — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#1A4A7A;--saffron:#C87820;--snow:#8AAAC0;--maroon:#7A1A1A;--cream:#f5f2ea;--deep:#04080f;--border:rgba(26,74,122,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(4,8,15,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--sky);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,242,234,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,242,234,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--sky);color:#fff;border-color:var(--sky);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--sky);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;filter:brightness(0.76) saturate(1.1);}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,15,.22) 0%,rgba(4,8,15,.04) 38%,rgba(4,8,15,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(200,120,32,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.8rem,9vw,8rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--saffron);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,242,234,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(26,74,122,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(245,242,234,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--sky);color:#fff;border-color:var(--sky);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--saffron),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(26,74,122,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--saffron);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--saffron);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(245,242,234,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(26,74,122,.1);border:1px solid rgba(26,74,122,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(26,74,122,.18);border-color:rgba(26,74,122,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,120,32,.55);background:rgba(200,120,32,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--saffron);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,242,234,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--sky);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(26,74,122,.65);}
+.dsearch::placeholder{color:rgba(245,242,234,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(26,74,122,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(26,74,122,.08);}
+.dacc:hover{border-color:rgba(26,74,122,.42);background:rgba(26,74,122,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(26,74,122,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--saffron);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--saffron);font-size:.85rem;transition:transform .35s;flex-shrink:0;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(26,74,122,.35);background:rgba(26,74,122,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--saffron);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,242,234,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--sky);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(26,74,122,.2);border:1px solid rgba(26,74,122,.38);color:rgba(245,242,234,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,120,32,.2);border:1px solid rgba(200,120,32,.42);color:var(--saffron);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--saffron);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(26,74,122,.09);border:1.5px solid rgba(26,74,122,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(26,74,122,.55);box-shadow:0 18px 54px rgba(26,74,122,.18);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--maroon),var(--saffron));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--saffron);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,242,234,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(26,74,122,.22);border:1px solid rgba(26,74,122,.42);color:#a8c8ff;}
+.fb-fr{background:rgba(122,26,26,.2);border:1px solid rgba(122,26,26,.38);color:#ffb8b8;}
+.fb-free{background:rgba(200,120,32,.18);border:1px solid rgba(200,120,32,.38);color:var(--saffron);}
+.fb-permit{background:rgba(26,122,58,.2);border:1px solid rgba(26,122,58,.38);color:#a0ffb8;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,74,122,.14);border:1px solid rgba(26,74,122,.3);}
+.donts{background:rgba(122,26,26,.12);border:1px solid rgba(122,26,26,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a8c8ff;}.donts .dd-title{color:#ffb8b8;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(168,200,255,.78);}.donts .dd-list li{color:rgba(255,184,184,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(26,74,122,.1);border:1.5px solid rgba(26,74,122,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(26,74,122,.52);background:rgba(26,74,122,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,242,234,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(245,242,234,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(26,74,122,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,242,234,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,242,234,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.altitude-note{background:rgba(200,120,32,.1);border:1px solid rgba(200,120,32,.28);border-radius:12px;padding:16px 20px;margin-top:16px;font-size:.82rem;color:rgba(245,242,234,.7);line-height:1.7;}
+.altitude-note strong{color:var(--saffron);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">LADAKH — LAND OF HIGH PASSES</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-la" onclick="setLang('la')">ལ་དྭགས་</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🏔️</span>
+    <div class="hero-name" id="heroName">Ladakh</div>
+    <div class="hero-native" id="heroNative">ལ་དྭགས་ — लद्दाख़</div>
+    <div class="hero-tag" id="heroTag">Roof of the World — Where the Sky Touches the Mountains and Time Stands Still</div>
+    <div class="tribar">
+      <div style="background:#1A4A7A"></div>
+      <div style="background:#C87820"></div>
+      <div style="background:#7A1A1A"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap">
+    <span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span>
+    <div class="sarrow"></div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Ladakh</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Roof of the World</em></h2>
+  <p class="sec-body" id="aboutBody">Ladakh — the Land of High Passes — is the highest, most arid, most remote and most extraordinary Union Territory in India. Carved out of the former state of Jammu & Kashmir in 2019 and made a separate Union Territory, Ladakh occupies the far northeastern corner of India at an average altitude of 3,500 metres, rising to over 7,000 metres in the Karakoram Range to the north. It shares borders with China (Tibet) to the east and Pakistan to the northwest, making it simultaneously one of India's most strategically sensitive and most spiritually alive regions. The landscape of Ladakh is of a beauty that defies ordinary description — snow-capped peaks of the Himalayas and Karakoram reflected in turquoise glacial lakes, ancient monasteries perched on impossibly steep crags above valleys where prayer flags flutter in the thin cold air, rivers of glacial meltwater rushing through gorges of banded geological strata laid down 50 million years ago when the Indian subcontinent collided with Asia and pushed up the Himalayan range. The two districts of Ladakh — Leh and Kargil — represent two profoundly different cultural worlds. Leh district is the heartland of Tibetan Buddhist culture, where Ladakhi people descended from Tibetan settlers maintain a civilisation thousands of years old: monasteries with butter lamp shrines, lamas in maroon robes, thangka paintings of extraordinary refinement, the resonant sound of the ragdung (6-metre ceremonial horn) and the architecture of Leh Palace and Thiksey Monastery that echo Lhasa's Potala Palace. Kargil district, by contrast, is predominantly Muslim — a Shia Muslim community with roots in Central Asia and Persia, whose culture, music and religious practices connect more to Iran than to Tibet. Ladakh is also one of India's most remarkable adventure destinations — the world's highest motorable road (Khardung La, 5,359m), the extraordinary Chadar Trek on the frozen Zanskar River in winter, motorcycle journeys across the Tibetan plateau landscape and some of the world's finest high-altitude camping and trekking.</p>
+
+  <div class="altitude-note">
+    <strong>⚠️ Altitude Warning:</strong> Ladakh's average altitude of 3,500m (Leh: 3,524m) causes Acute Mountain Sickness (AMS) in many visitors. <strong>Essential:</strong> Rest completely for the first 24-48 hours after arriving in Leh. Do not exert yourself. Drink 3-4 litres of water daily. Do not ascend to higher altitude on your first day. Consult a doctor about Diamox (acetazolamide) before travel. People with heart or lung conditions should consult a physician before visiting Ladakh.
+  </div>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Ladakh</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Ladakh has extreme seasons — from -30°C in winter to 33°C in summer. The main tourist season is May to September when roads are open, lakes are accessible and the landscape is at its most dramatic. The Manali-Leh highway opens around May; the Srinagar-Leh highway opens earlier. Winter (November-February) is for the Chadar Trek and extraordinary stargazing — but extreme cold and road closures require serious preparation.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">Both Districts</span>
+  <h2 class="sec-title" id="distTitle">Leh & Kargil — <em>Two Worlds of Ladakh</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Ladakh's two districts represent two distinct civilisations — Buddhist Leh and Shia Muslim Kargil — united by the same dramatic landscape but with entirely different cultural, linguistic and religious traditions. Both are extraordinary in their own right.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Monasteries, Lakes, Passes &amp; Wilderness</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Ladakh</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Buddhist Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Ladakh</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Ladakh's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Ladakh</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JULEY LADAKH — ཇུ་ལེ་ལ་དྭགས་</div>
+  <div class="fs" id="footerS">Union Territory &middot; Capital: Leh &middot; Separated from J&K: October 31, 2019 &middot; Highest UT in India</div>
+</footer>
+
+<audio id="bgm" loop preload="auto"></audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(4,10,25);stop-opacity:1%27/%3E%3Cstop offset=%2745%25%27 style=%27stop-color:rgb(10,25,50);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(30,15,8);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/%3E%3Ccircle cx=%22150%22 cy=%22180%22 r=%22280%22 fill=%22rgba(26,74,122,0.32)%22/%3E%3Ccircle cx=%221050%22 cy=%22300%22 r=%22300%22 fill=%22rgba(200,120,32,0.2)%22/%3E%3Ccircle cx=%22580%22 cy=%22680%22 r=%22230%22 fill=%22rgba(122,26,26,0.15)%22/%3E%3Ccircle cx=%22600%22 cy=%22380%22 r=%22200%22 fill=%22rgba(138,170,192,0.08)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+  {name:"Leh District",region:"Buddhist Ladakh — Heart of the Territory",known:"Leh city, Pangong Tso, Nubra Valley, Hemis Monastery, Thiksey, Khardung La, Zanskar",heritage:["Leh Palace (17th century, 9 storeys)","Hemis Monastery — largest in Ladakh","Thiksey Monastery — modelled on Potala Palace","Pangong Tso Lake — 134km long, half in China","Nubra Valley — sand dunes & double-humped Bactrian camels","Khardung La — world's highest motorable road (5,359m)","Magnetic Hill","Shanti Stupa — Japanese Buddhist stupa","Alchi — 10th century monastery, oldest in Ladakh","Lamayuru — 'Moonland' landscape"],languages:["Ladakhi","Hindi","English"],bestMonths:"May-Sep",avgTemp:"-25 to 33°C"},
+  {name:"Kargil District",region:"Shia Muslim Ladakh — Western District",known:"Kargil War Memorial, Suru Valley, Zanskar, Rangdum Monastery, Mulbekh",heritage:["Kargil War Memorial (1999 Kargil War site)","Mulbekh Rock Carving (9-metre Maitreya Buddha, 8th century)","Rangdum Monastery — Tibetan Buddhist monastery in Muslim district","Suru Valley — dramatic river valley","Zanskar Valley — world's most isolated valley","Padum — Zanskar capital","Chadar Trek — frozen Zanskar River winter walk"],languages:["Balti","Shina","Ladakhi","Purgi","Hindi"],bestMonths:"Jun-Sep",avgTemp:"-30 to 32°C"},
+];
+
+const placesData=[
+  {emoji:"🏔️",name:"Pangong Tso Lake",location:"Leh District — 160km from Leh",desc:"One of the most extraordinary lakes on earth — Pangong Tso (4,350m altitude) stretches 134 kilometres from India into Tibet, with only 45km on the Indian side. The lake is landlocked and has no outlet — the water is slightly brackish and turns from turquoise to deep blue to green as the light changes through the day. In winter it freezes completely. The lake gained worldwide fame after the film '3 Idiots'. The drive from Leh via Chang La pass (5,360m) is one of the world's great high-altitude road journeys. Permits required for Indian nationals.",fee:["Wildlife fee","Restricted area permit for Indian nationals"]},
+  {emoji:"🏯",name:"Thiksey Monastery",location:"Leh District — 19km from Leh",desc:"The most dramatically situated monastery in Ladakh — Thiksey Gompa rises in 12 storeys of whitewashed buildings up the face of a steep crag, mirroring the Potala Palace in Lhasa. Founded in the 15th century, it houses over 100 monks. The monastery's most prized possession is the two-storey Maitreya (future Buddha) statue, installed in 1980 by the Dalai Lama. The view from the roof at dawn — the Indus Valley below, snow peaks in every direction, butter lamps flickering in the shrine rooms — is one of the most otherworldly experiences in India.",fee:["Rs.50"]},
+  {emoji:"🏔️",name:"Khardung La Pass",location:"Leh District — 38km north of Leh",desc:"The world's highest motorable road at 5,359 metres — the Khardung La pass (officially opened in 1988) connects Leh to the Nubra Valley and has become a pilgrimage for motorcyclists, cyclists and self-drive tourists from across the world. The summit in thin air where oxygen is 50% of sea level, the prayer flags whipping in the freezing wind, the 360-degree views of the Himalayan and Karakoram ranges, and the chai stall manned by soldiers create an experience of surreal altitude. A certificate confirming you drove the world's highest road is awarded at the top.",fee:["Free — valid ID required for border area"]},
+  {emoji:"🐪",name:"Nubra Valley & Bactrian Camels",location:"North Leh District — 120km from Leh",desc:"Beyond Khardung La, the Nubra Valley ('valley of flowers') was historically part of the Silk Route between Central Asia and India. The valley floor at 3,000m is dotted with sand dunes — a geological anomaly where the ancient Silk Road has deposited desert sands in the heart of the Himalayas. The double-humped Bactrian camels (Camelus bactrianus) that were once used on the Silk Road still roam the dunes at Hunder village and can be ridden by tourists. Diskit Monastery (400 years old) overlooks the valley with a 32-metre Maitreya Buddha statue.",fee:["Restricted area permit required","Camel ride charges"]},
+  {emoji:"🏔️",name:"Magnetic Hill",location:"Leh-Kargil Highway — 30km from Leh",desc:"One of India's most unusual natural phenomena — the Magnetic Hill on the Leh-Kargil highway appears to make vehicles roll uphill when left in neutral. The effect is an optical illusion created by the surrounding landscape — the hills create a visual field that misleads the brain about the road's gradient. The Indian Air Force has stated that the area has such strong magnetic properties that aircraft flying over must increase altitude to avoid magnetic interference. Whether science or illusion, it is one of Ladakh's most visited and photographed spots.",fee:["Free"]},
+  {emoji:"🙏",name:"Hemis Monastery",location:"Leh District — 45km from Leh",desc:"The largest and wealthiest monastery in Ladakh — Hemis Gompa (17th century) is most famous for its biennial Hemis Festival, when the monastery's legendary thangka (scroll painting) — one of the largest in existence — is unfurled publicly once every 12 years. The monastery's museum contains extraordinary Tibetan Buddhist treasures: ancient thangkas, copper statues, silver stupas and the library of Buddhist scriptures. Hemis is affiliated with the Drukpa Kagyu school of Tibetan Buddhism and trains over 1,000 monks.",fee:["Rs.100"]},
+  {emoji:"🧊",name:"Chadar Trek — Frozen Zanskar River",location:"Kargil District — Zanskar Valley",desc:"One of the world's most extraordinary treks — the Chadar Trek (January-February) follows the frozen surface of the Zanskar River through a gorge so deep and narrow that sunlight reaches the river floor for only a few hours each day in winter. Trekkers walk on the ice (chadar = sheet) for 5-7 days between villages that are completely inaccessible by any other means in winter. The experience of sleeping in caves along the frozen river, hearing the ice crack and groan underfoot, and the absolute silence of the gorge in winter is unlike anything else on earth.",fee:["Trekking permit","Guide compulsory"]},
+  {emoji:"🌟",name:"Stargazing — Leh Dark Sky Reserve",location:"Leh & Hanle Observatory",desc:"Ladakh has some of the world's darkest skies — at 3,500+ metres with minimal light pollution and exceptionally clear air, the Milky Way is visible with the naked eye on every clear night. The Indian Astronomical Observatory at Hanle (4,500m altitude) is one of the highest observatories in the world and occasionally allows public visits. The Leh Dark Sky Reserve near Hanle is officially recognised as one of Asia's best stargazing destinations. The sight of 7,000+ stars visible simultaneously with the naked eye, the Andromeda Galaxy visible as a smudge and shooting stars crossing the sky every few minutes is extraordinary.",fee:["Observatory visits by prior arrangement"]},
+  {emoji:"🏔️",name:"Zanskar Valley",location:"Kargil District — Padum",desc:"The most isolated inhabited valley in the world — Zanskar is cut off from the rest of Ladakh for 6-7 months each year when the passes are snowbound. The valley's 14,000 inhabitants live in complete winter isolation, accessible only via the frozen Zanskar River (Chadar Trek). In summer, the single road over the Pensi La pass (4,401m) is the only vehicle access. The monasteries of Phugtal (built into a cliff face around a natural cave), Karsha and Zangla preserve medieval Tibetan Buddhist traditions with extraordinary authenticity.",fee:["Inner Line Permit required for some areas"]},
+  {emoji:"🕌",name:"Alchi Monastery",location:"Leh District — 70km from Leh",desc:"The most artistically important monastery in Ladakh — Alchi was founded around 1000 CE and contains the oldest surviving Kashmiri-style Buddhist murals in the world. The paintings inside the Du-khang (Assembly Hall) and Sum-tsek (Three-storey Temple) — in brilliant mineral pigments of red, blue and gold — depict Buddhist iconography of extraordinary refinement and are considered priceless world heritage. Unlike Ladakh's other gompa perched on crags, Alchi sits in an apricot orchard in the valley — its ordinariness belying the extraordinary art within.",fee:["Rs.50"]},
+];
+
+const artsData=[
+  {emoji:"🎨",name:"Thangka Painting",location:"Monasteries & workshops throughout Leh",desc:"Thangka (scroll painting) is the supreme visual art of Ladakhi Buddhist culture — intricate depictions of Buddhas, Bodhisattvas, mandalas, the Wheel of Life and biographical scenes, painted in mineral pigments on cotton cloth sized with chalk. The finest thangkas take months or years to complete and require years of training in iconometric proportions (each deity's body proportions are precisely specified in canonical texts). The Alchi monastery's 1,000-year-old murals represent the apex of this tradition. Contemporary thangka painters in Leh maintain the tradition actively."},
+  {emoji:"🥁",name:"Ladakhi Music — Ragdung & Traditional Instruments",location:"Throughout Ladakh",desc:"Ladakhi ceremonial music is among the most distinctive in Asia — the ragdung (a 6-metre telescoping copper horn that produces a deep, resonant drone), the gyaling (a shawm/oboe), the nga (a large double-headed drum) and various cymbals and bells create a soundscape of extraordinary power during monastery festivals. The music does not follow melodic patterns but rather creates a sonic atmosphere — filling monastery courtyards with sound that seems to come from the earth itself. Folk music (shono) is melodic and often sung during harvests and festivals."},
+  {emoji:"🧵",name:"Ladakhi Weaving & Pashmina",location:"Villages throughout Leh district",desc:"Ladakh is the original source of pashmina — the extraordinarily fine wool combed (not sheared) from the undercoat of the Changthangi goat, bred by the Changpa nomads of the Changthang plateau at 4,500m. The finest pashmina shawls, woven by hand in Ladakhi homes, are among the most valuable textile products in the world. Ladakhi women also weave nambu (coarse wool fabric for garments), striped blankets and traditional carpets. The distinctive Ladakhi dress — the goncha (a long robe) and the perak (the woman's turquoise-studded headdress) — are each handwoven and adorned."},
+  {emoji:"🏺",name:"Wood Carving & Monastery Architecture",location:"Leh Palace, monasteries throughout",desc:"Ladakhi wood carving — intricate geometric and floral patterns carved into the wooden columns, lintels, balconies and doorways of monasteries and traditional homes — reflects Central Asian, Tibetan and Kashmiri influences combined into a distinctive regional style. The carved wooden balconies of Leh's old town, the elaborately decorated doorways of Shey Palace and the monastery prayer halls with their forest of carved pillars represent a craft tradition maintained by a small number of master craftspeople."},
+  {emoji:"🙏",name:"Butter Sculpture — Torma",location:"Monasteries — festivals",desc:"Torma (ritual offering sculptures made from tsampa flour and coloured butter) are one of the most extraordinary art forms of Tibetan Buddhism, practised with particular mastery in Ladakh's monasteries. For the Losar (New Year) festival and other major ceremonies, monks spend weeks sculpting elaborate multi-coloured torma of Buddhas, deities, mythical animals and geometric offerings — intricate three-dimensional artworks that are consecrated and then ritually burned at the festival's conclusion. The temporary nature of these masterpieces is itself a teaching about impermanence."},
+  {emoji:"🌺",name:"Changpa Nomad Culture",location:"Changthang Plateau — eastern Ladakh",desc:"The Changpa nomads of the Changthang plateau are among the highest-altitude peoples on earth — herding their yaks and Changthangi goats across the world's highest plateau (4,500-5,000m) in conditions of extraordinary severity. Their yak-hair tents (reboo), their knowledge of high-altitude medicine, their system of seasonal migration between summer and winter pastures, and their stewardship of the pashmina goat herds that supply the world's finest wool represent a living nomadic civilisation of extraordinary resilience."},
+];
+
+const traditionsData=[
+  {emoji:"🎭",name:"Hemis Festival — Masked Cham Dances",location:"Hemis Monastery — June/July",desc:"The most spectacular festival in Ladakh — the Hemis Festival (held on the 10th day of the Tibetan month of Tse-Chu, usually June or July) commemorates the birth of Guru Padmasambhava, who brought Buddhism to Tibet and Ladakh. Monks in elaborate masks and brocade costumes perform the Cham — sacred masked dances depicting the defeat of evil and the protection of the Dharma. The dances, accompanied by cymbals, drums and ragdung horns, are simultaneously a religious ritual and a theatrical performance of extraordinary visual power. Thousands of Ladakhis and international visitors attend."},
+  {emoji:"🎉",name:"Losar — Ladakhi New Year",location:"Throughout Ladakh — December/January",desc:"Losar (the Tibetan Buddhist New Year) is the most important festival of the Ladakhi Buddhist calendar — celebrated in December or January according to the Tibetan lunar calendar. Homes are whitewashed, new clothes worn, elaborate butter sculptures (torma) prepared, and the monasteries fill with monks performing rituals to remove the negative influences of the old year. The festival's most dramatic moment is the monastic Gustor ceremony — a ritual dance performance at major monasteries like Spituk, Phyang and Thiksey — when monks in terrifying mahakala masks perform the destruction of the demon of the old year."},
+  {emoji:"🏹",name:"Ladakh Festival",location:"Leh — September",desc:"The government-organised Ladakh Festival (early September) is a showcase of Ladakhi culture — folk dances, music, polo (the traditional sport of Ladakh), archery competitions and a spectacular opening procession through Leh with representatives of every village in traditional dress. The festival was established to promote Ladakhi culture and to give visitors a concentrated experience of the region's extraordinary diversity. The polo match at Leh's polo ground — played in the traditional Ladakhi style (on small mountain horses with informal rules) — is one of the festival's highlights."},
+  {emoji:"❄️",name:"Chadar Trek Tradition — Winter Crossing",location:"Zanskar Valley — January/February",desc:"The Chadar Trek on the frozen Zanskar River is not merely an adventure activity but a living cultural tradition — for centuries, Zanskaris used the frozen river as their winter highway when mountain passes were snowbound, carrying goods and travelling to Leh for trade and pilgrimage. The monks of Zanskar's monasteries used the frozen river to travel for winter teachings. Today the tradition continues in both the cultural practice (Zanskari families still use the chadar for winter travel) and the trekking industry that has grown around it, which provides significant income to local guides and porters."},
+  {emoji:"🌸",name:"Sindhu Darshan Festival",location:"Confluence of Indus River, Leh — June",desc:"The Sindhu Darshan Festival (June) celebrates the Indus River — one of Asia's mightiest rivers, which flows through the heart of Ladakh — as a symbol of the unity of India. Pilgrims and tourists come to the river's banks near Leh, offerings of flowers and water are made to the Sindhu (Indus), and cultural performances representing different states of India celebrate national unity in the region closest to India's contested borders. The festival has political as well as cultural significance — asserting Indian cultural identity in Ladakh's border landscape."},
+  {emoji:"🧘",name:"Buddhist Meditation Retreats",location:"Monasteries throughout Ladakh",desc:"Ladakh's monasteries offer some of the world's most authentic Buddhist retreat experiences — several monasteries accept visitors for meditation retreats, Dharma study and participation in daily monastic life. The Mahabodhi International Meditation Centre in Leh, the retreat facilities at Hemis and Phyang, and the solitary retreat caves above various Zanskar monasteries give serious practitioners access to traditions of meditation that have been unbroken in Ladakh for over 1,000 years. The combination of altitude, silence and concentrated spiritual atmosphere makes Ladakh one of the world's most compelling places for contemplative practice."},
+];
+
+const cuisinesData=[
+  {emoji:"🍵",name:"Butter Tea (Po Cha)",location:"Throughout Ladakh",desc:"The defining beverage of Ladakh — po cha (butter tea) is made by churning strong black tea with yak butter and salt in a traditional wooden churn. The result is a savory, rich, slightly sour drink that tastes nothing like tea and takes considerable getting used to but is physiologically brilliant for high altitude — the butter calories provide energy for the cold, the salt replaces electrolytes and the hot liquid warms from inside. Refusing po cha when offered in a Ladakhi home is considered deeply impolite. The flavour, once acquired, becomes the taste memory of the landscape."},
+  {emoji:"🥣",name:"Tsampa — Roasted Barley Flour",location:"Throughout Ladakh",desc:"Tsampa — roasted barley flour — is the staple food of Ladakh, Tibet and the Himalayan world. It can be eaten raw mixed with butter tea into a dough (called pak), cooked as porridge, added to soups, or made into flatbread. Barley is the only grain that grows reliably at Ladakh's altitude — the entire agricultural system of the region has been built around it for millennia. Tsampa has sustained Buddhist monks on meditation retreats, Silk Road traders crossing the Karakoram, and Changpa nomads at 5,000m. It is simple, complete and irreplaceable."},
+  {emoji:"🍜",name:"Thukpa — Noodle Soup",location:"Ladakhi restaurants & homes",desc:"Thukpa — hand-pulled or rolled noodles in a rich broth with vegetables and sometimes meat — is the most warming and beloved dish of Ladakh's restaurant culture. Originally from Tibet, thukpa has been adapted in Ladakh to use local ingredients: yak or sheep meat, root vegetables that survive the altitude and cold, and the distinctive Ladakhi spice palette. On a cold Leh evening at 3,500m, a bowl of thukpa in a traditional restaurant is one of the most perfectly satisfying food experiences available. The broth is drunk, the noodles are eaten and warmth radiates from inside outward."},
+  {emoji:"🥟",name:"Momos — Himalayan Dumplings",location:"Throughout Ladakh",desc:"Momos (dumplings) — steamed or fried, filled with minced meat (yak, mutton or chicken) or vegetables, served with a fiery chilli sauce — are the street food of Ladakh and the entire Himalayan region. Ladakhi momos have a slightly thicker wrapper than the Nepali or Tibetan versions and are often served with a tomato-based sauce alongside the chilli dip. The momo stalls of Leh's market — tiny steaming operations where the dumplings are made fresh and served in bamboo baskets — are the most democratic and warming food experience the city offers."},
+  {emoji:"🌾",name:"Skyu — Ladakhi Pasta Stew",location:"Ladakhi homes & local restaurants",desc:"Skyu is the most distinctively Ladakhi dish — hand-shaped pasta pieces (made by pressing a thumb into flat dough) cooked in a thick stew of root vegetables (turnip, radish, carrot), mutton or yak meat and seasoned with local spices. The pasta absorbs the stew's flavours and the result is extraordinarily hearty and sustaining — designed to fuel a day of agricultural work or mountaineering at altitude. Skyu is almost never found in tourist restaurants; to eat skyu properly requires a homestay invitation or cooking lesson from a Ladakhi family."},
+  {emoji:"🍑",name:"Apricots & Ladakhi Fruit",location:"Leh district valleys",desc:"Ladakh's short summer (June-August) produces the finest apricots in India — the apricot orchards of the Indus Valley, Nubra and Sham valleys turn white with blossom in April and produce small, intensely flavoured fruits in July. Ladakhi apricot jam, dried apricots and apricot oil (pressed from the kernels) are among the most prized products of the region. The apricot harvest in July-August, when the trees bend with fruit and the villages fill with the smell of drying apricots spread on rooftops, is one of the most beautifully sensory experiences of a Ladakhi summer."},
+  {emoji:"🧉",name:"Chang — Barley Beer",location:"Ladakhi homes & festivals",desc:"Chang — fermented barley beer — is the traditional celebratory drink of Buddhist Ladakh, offered to guests and consumed at festivals, harvests and social gatherings. Slightly sour, mildly alcoholic and opaque, chang is served in wooden cups or china bowls and is refilled as soon as it is drunk — refusing a second (or third) refill requires considerable diplomatic skill. The drink occupies a complex position in Buddhist culture — alcohol is generally discouraged but chang has been part of Ladakhi social life for so long that it is accepted as a cultural institution rather than a transgression."},
+];
+
+const weatherData=[
+  {month:"January",avgTemp:"-20 to -2°C",weather:"Extreme Winter",details:"Chadar Trek on frozen Zanskar River — the most extraordinary winter trek in the world. Leh road accessible by air only. Losar (New Year) in some years. Extreme cold but extraordinary stargazing. Only for prepared adventurers."},
+  {month:"February",avgTemp:"-18 to 5°C",weather:"Peak Chadar Season",details:"Chadar Trek peak season — frozen river at its most stable. Losar (Ladakhi New Year) celebrations in monasteries. Very cold but spectacular. Flights to Leh operating."},
+  {month:"March",avgTemp:"-10 to 12°C",weather:"Late Winter",details:"Warming slightly. Srinagar-Leh highway beginning to open. Monastery festivals resuming. Apricot blossoms beginning in lower valleys (late March). Beautiful but still cold."},
+  {month:"April",avgTemp:"-2 to 18°C",weather:"Spring",details:"Apricot blossoms — the most beautiful month in Ladakh's valleys. Srinagar-Leh highway open. Fewer tourists. Perfect for cultural tourism. Manali-Leh highway still closed.",best:true},
+  {month:"May",avgTemp:"5 to 24°C",weather:"Season Opening",details:"Manali-Leh highway opening (usually mid-May). Pangong Tso accessible. Trekking season begins. All monasteries active. The landscape transforms from brown to green. Excellent weather.",best:true},
+  {month:"June",avgTemp:"10 to 30°C",weather:"Peak Season",details:"Perfect — warm days, cool nights, clear skies, all roads open. Hemis Festival (June/July — check dates). Pangong Tso, Nubra Valley, Tso Moriri all accessible. Book everything in advance.",best:true},
+  {month:"July",avgTemp:"14 to 33°C",weather:"Peak Season",details:"Warmest month — Hemis Festival if not June. Apricot harvest in valleys. All passes open. Maximum tourist numbers. Book months in advance for accommodation in Leh.",best:true},
+  {month:"August",avgTemp:"13 to 32°C",weather:"Excellent",details:"Still excellent. Some rain (less than rest of India). Apricot harvest continuing. Slightly fewer tourists than July. Spectacular trekking conditions. All high passes accessible.",best:true},
+  {month:"September",avgTemp:"8 to 26°C",weather:"Excellent",details:"Ladakh Festival (early September). Autumn colours beginning in the valleys. Slightly cooler — perfect trekking weather. Pangong Tso most beautiful in September light. Excellent month.",best:true},
+  {month:"October",avgTemp:"0 to 18°C",weather:"Late Season",details:"Roads beginning to close — Manali-Leh highway usually closes by end of October. Monastery festivals. Beautiful autumn light on the mountains. Last month for most tourist activities."},
+  {month:"November",avgTemp:"-10 to 5°C",weather:"Winter Closing",details:"Roads closing. Srinagar-Leh highway may close. Flights operating. Few tourists. Monasteries and local life continuing. First snows adding to dramatic landscape."},
+  {month:"December",avgTemp:"-20 to -2°C",weather:"Deep Winter",details:"Winter fully set. Only accessible by air. Zanskar River beginning to freeze (Chadar Trek preparation). Losar preparations in some years. Extraordinary stargazing. Extreme cold."},
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('permit')?'fb-permit':f.toLowerCase().includes('foreigner')||f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('')}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Rest for 24-48 hrs on arrival — acclimatise</li><li>Carry layers — temperature drops 15°C at night</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Ignore AMS symptoms — descend immediately</li><li>Touch or disturb monastery artifacts</li></ul></div>
+    </div>
+  </div></div>`;
+});
+
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location}</span></div>
+    </div>`;
+  });
+});
+
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play().catch(()=>{});b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{
+    heroName:"Ladakh",heroNative:"ལ་དྭགས་ — लद्दाख़",
+    heroTag:"Roof of the World — Where the Sky Touches the Mountains and Time Stands Still",
+    scrollLbl:"SCROLL TO EXPLORE",lAbout:"About Ladakh",aboutTitle:"The Roof of the World",
+    lWeather:"Climate & Best Time",weatherTitle:"When to Visit Ladakh",
+    lDist:"Both Districts",distTitle:"Leh & Kargil — Two Worlds of Ladakh",
+    lPlaces:"Monasteries, Lakes, Passes & Wilderness",placesTitle:"Wonders of Ladakh",
+    lArts:"Buddhist Arts, Crafts & Heritage",artsTitle:"Living Traditions of Ladakh",
+    lTrad:"Festivals & Celebrations",tradTitle:"Soul of Ladakh's Culture",
+    lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Ladakh",
+    footerT:"JULEY LADAKH — ཇུ་ལེ་ལ་དྭགས་"
+  },
+  hi:{
+    heroName:"लद्दाख़",heroNative:"ལ་དྭགས་ — लद्दाख़ — ऊँचे दर्रों की भूमि",
+    heroTag:"विश्व की छत — जहाँ आकाश पहाड़ों को छूता है और समय रुक जाता है",
+    scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",lAbout:"लद्दाख के बारे में",
+    aboutTitle:"विश्व की छत",lWeather:"जलवायु और सर्वोत्तम समय",
+    weatherTitle:"लद्दाख कब जाएं",lDist:"दोनों जिले",
+    distTitle:"लेह और कारगिल — लद्दाख की दो दुनिया",
+    lPlaces:"मठ, झीलें, दर्रे और जंगल",placesTitle:"लद्दाख के चमत्कार",
+    lArts:"बौद्ध कलाएं, शिल्प और विरासत",artsTitle:"लद्दाख की जीवंत परंपराएं",
+    lTrad:"त्योहार और उत्सव",tradTitle:"लद्दाख संस्कृति की आत्मा",
+    lCuisines:"पाक विरासत",cuisinesTitle:"लद्दाख का स्वाद",
+    footerT:"जुले लद्दाख — ཇུ་ལེ་ལ་དྭགས་"
+  },
+  la:{
+    heroName:"ལ་དྭགས་",heroNative:"ལ་དྭགས་ — Land of High Passes",
+    heroTag:"འཇིག་རྟེན་གྱི་ཐོག་ཁང་ — Where Sky Touches the Mountains",
+    scrollLbl:"ཤེས་རྟོགས་ལ་གཡུར་རོལ།",lAbout:"ལ་དྭགས་སྐོར།",
+    aboutTitle:"འཇིག་རྟེན་གྱི་ཐོག་ཁང་།",lWeather:"གནམ་གཤིས་དང་དུས་ཚོད།",
+    weatherTitle:"ལ་དྭགས་ལ་ཡོང་བའི་དུས།",lDist:"ས་ཁུལ་གཉིས།",
+    distTitle:"ལེ་དང་སྐར་གིལ།",lPlaces:"དགོན་པ་དང་མཚོ།",
+    placesTitle:"ལ་དྭགས་ཀྱི་ངོ་མཚར་བ།",lArts:"སངས་རྒྱས་ཀྱི་རིག་གཞུང་།",
+    artsTitle:"ལ་དྭགས་ཀྱི་ལོ་རྒྱུས།",lTrad:"དུས་ཆེན།",
+    tradTitle:"ལ་དྭགས་ཀྱི་བྱུས་གཞི།",lCuisines:"ཟས་ཀྱི་ལོ་རྒྱུས།",
+    cuisinesTitle:"ལ་དྭགས་ཀྱི་རོ་མྱང་།",footerT:"ཇུ་ལེ་ལ་དྭགས་ — JULEY LADAKH"
+  },
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  const ids=['heroName','heroNative','heroTag','scrollLbl','lAbout','aboutTitle','lWeather','weatherTitle','lDist','distTitle','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT'];
+  ids.forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.innerHTML=t[k];});
+  document.getElementById('distSearch').placeholder=lang==='hi'?'जिले खोजें...':lang==='la'?'ས་ཁུལ་འཚོལ།':'Search districts...';
+}
+</script>
+</body>
+</html>
