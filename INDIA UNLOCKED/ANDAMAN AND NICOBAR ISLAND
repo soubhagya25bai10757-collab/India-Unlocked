@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andaman & Nicobar Islands — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0A6E7A;--coral:#C84B2A;--gold:#C8A010;--navy:#0A1A3A;--cream:#f0f8f5;--deep:#040d12;--border:rgba(10,110,122,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(4,13,18,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--teal);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.7rem;letter-spacing:.12em;color:rgba(240,248,245,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(240,248,245,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--teal);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;filter:brightness(0.75) saturate(1.2);}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,13,18,.2) 0%,rgba(4,13,18,.04) 38%,rgba(4,13,18,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(10,110,122,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2rem,6.5vw,5.5rem);color:#fff;letter-spacing:.01em;line-height:1.05;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1rem,2.4vw,1.7rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(240,248,245,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(10,110,122,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(240,248,245,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--teal);color:#fff;border-color:var(--teal);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(10,110,122,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(240,248,245,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(10,110,122,.1);border:1px solid rgba(10,110,122,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(10,110,122,.18);border-color:rgba(10,110,122,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,160,16,.55);background:rgba(200,160,16,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(240,248,245,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--teal);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(10,110,122,.65);}
+.dsearch::placeholder{color:rgba(240,248,245,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(10,110,122,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(10,110,122,.08);}
+.dacc:hover{border-color:rgba(10,110,122,.42);background:rgba(10,110,122,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(10,110,122,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(10,110,122,.35);background:rgba(10,110,122,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(240,248,245,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--teal);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(10,110,122,.2);border:1px solid rgba(10,110,122,.38);color:rgba(240,248,245,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,160,16,.2);border:1px solid rgba(200,160,16,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(10,110,122,.09);border:1.5px solid rgba(10,110,122,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(10,110,122,.55);box-shadow:0 18px 54px rgba(10,110,122,.16);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--teal),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(240,248,245,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(10,110,122,.22);border:1px solid rgba(10,110,122,.42);color:#a0f0e8;}
+.fb-fr{background:rgba(200,75,42,.2);border:1px solid rgba(200,75,42,.38);color:#ffb8a0;}
+.fb-free{background:rgba(200,160,16,.18);border:1px solid rgba(200,160,16,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(10,110,122,.14);border:1px solid rgba(10,110,122,.3);}
+.donts{background:rgba(200,75,42,.12);border:1px solid rgba(200,75,42,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a0f0e8;}.donts .dd-title{color:#ffb8a0;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(160,240,232,.78);}.donts .dd-list li{color:rgba(255,184,160,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(10,110,122,.1);border:1.5px solid rgba(10,110,122,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(10,110,122,.52);background:rgba(10,110,122,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(240,248,245,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(240,248,245,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(10,110,122,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(240,248,245,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(240,248,245,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">ANDAMAN & NICOBAR ISLANDS</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-bn" onclick="setLang('bn')">বাংলা</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#127988;&#65039;</span>
+    <div class="hero-name" id="heroName">Andaman &amp;<br>Nicobar Islands</div>
+    <div class="hero-native" id="heroNative">अंडमान और निकोबार द्वीप समूह</div>
+    <div class="hero-tag" id="heroTag">India's Emerald Archipelago — Where the Ocean is Alive and History Runs Deep</div>
+    <div class="tribar"><div style="background:#0A6E7A"></div><div style="background:#C8A010"></div><div style="background:#C84B2A"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Andaman & Nicobar</span>
+  <h2 class="sec-title" id="aboutTitle">India's <em>Last Frontier</em></h2>
+  <p class="sec-body" id="aboutBody">The Andaman and Nicobar Islands — India's remote archipelago in the Bay of Bengal — are among the most extraordinary places in the country and among the most ecologically significant territories in Asia. An arc of 572 islands, islets and rocks stretching 800 kilometres from north to south, of which only 37 are permanently inhabited, the Andaman and Nicobar Islands sit closer to Myanmar and Thailand than to the Indian mainland. The islands are covered in dense tropical rainforest of astonishing biodiversity — over 2,200 plant species, 270 bird species, saltwater crocodiles, dugongs (sea cows), leatherback sea turtles, Andaman wild pigs and dozens of endemic species found nowhere else on earth. The surrounding waters are among the most biodiverse marine ecosystems in the Indian Ocean — the coral reefs here contain over 550 species of coral and 1,200 species of fish, rivalling the Great Barrier Reef in biodiversity. The islands have a layered human history as dramatic as their natural one: for millennia, four indigenous groups — the Great Andamanese, Onge, Jarawa and Sentinelese (North Andaman) in the Andamans, and the Shompen and Nicobarese in the Nicobars — lived in complete isolation, developing cultures, languages and knowledge systems found nowhere else on earth. The British turned the islands into a penal colony in 1858 — the Cellular Jail in Port Blair, where Indian freedom fighters including Veer Savarkar were imprisoned in solitary cells, is the most emotionally charged site of India's independence movement. The 2004 Indian Ocean tsunami devastated parts of the archipelago, killing over 9,000 people and permanently altering some islands' geography. Today the Andaman and Nicobar Islands offer India's finest diving, some of Asia's best beaches, extraordinary wildlife and a history that ranges from the Stone Age to the independence movement.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Andaman & Nicobar</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">The islands have a tropical climate — warm year-round (23–33°C). November to April is ideal — calm seas, clear skies, excellent visibility for diving (30m+). May to October brings the southwest monsoon with rough seas and limited ferry services. The northeast monsoon (October-November) is milder. December-January is peak season — book accommodation well in advance.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 3 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Andaman & Nicobar</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">The archipelago is divided into 3 districts — North & Middle Andaman (the island chain's heart), South Andaman (with Port Blair, the capital) and Nicobar (the southern islands, largely restricted). The Nicobar Islands require special permits and most areas are off-limits to protect the indigenous Nicobarese and Shompen communities.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Beaches, Coral, History &amp; Jungle</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Andaman & Nicobar</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Indigenous Cultures, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Andaman & Nicobar</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Island Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Andaman's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Andaman & Nicobar</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">&#127754;</span>
+  <div class="ft" id="footerT">JAI HIND — ANDAMAN & NICOBAR ISLANDS</div>
+  <div class="fs" id="footerS">Union Territory &middot; Capital: Port Blair &middot; Established as UT: 1956</div>
+</footer>
+
+<audio id="bgm" loop preload="auto"></audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(4,20,35);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(5,45,55);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(8,30,18);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22280%22 fill=%22rgba(10,110,122,0.35)%22/%3E%3Ccircle cx=%221050%22 cy=%22350%22 r=%22300%22 fill=%22rgba(10,110,122,0.22)%22/%3E%3Ccircle cx=%22600%22 cy=%22700%22 r=%22240%22 fill=%22rgba(200,75,42,0.15)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+  {name:"South Andaman",region:"Capital District",known:"Port Blair, Cellular Jail, Corbyn's Cove, Ross Island, Neil Island",heritage:["Cellular Jail National Memorial","Ross Island (British HQ ruins)","Corbyn's Cove Beach","Chatham Saw Mill (1883 — oldest in Asia)","Anthropological Museum","Rajiv Gandhi Water Sports Complex"],languages:["Hindi","Bengali","Tamil","Telugu","English"],bestMonths:"Nov-Apr",avgTemp:"23-32°C"},
+  {name:"North & Middle Andaman",region:"Northern Islands",known:"Diglipur (North's largest town), Saddle Peak, Ross & Smith Islands, Baratang",heritage:["Saddle Peak — highest point at 732m","Ross & Smith Islands (twin islands connected by sandbar)","Baratang Caves (limestone & mud volcano)","Lamiya Bay Beach","Alfred Caves"],languages:["Hindi","Bengali","Tamil","Nicobarese"],bestMonths:"Nov-Apr",avgTemp:"23-32°C"},
+  {name:"Nicobar",region:"Southern Islands",known:"Car Nicobar, Great Nicobar (southernmost tip of India), Indigenous Shompen & Nicobarese",heritage:["Indira Point — India's southernmost point","Great Nicobar Biosphere Reserve (UNESCO)","Indigenous Nicobarese settlements","Galathea Bay — Leatherback turtle nesting"],languages:["Nicobarese","Shompen","Hindi"],bestMonths:"Nov-Mar",avgTemp:"24-32°C"},
+];
+
+const placesData=[
+  {emoji:"🏛️",name:"Cellular Jail — Kala Pani",location:"Port Blair, South Andaman",desc:"The most emotionally charged monument in India's independence movement — the Cellular Jail (built 1896-1906) was where the British imprisoned Indian freedom fighters in solitary confinement, deliberately isolating each prisoner in individual cells (hence 'cellular'). Veer Savarkar, Batukeshwar Dutt and hundreds of other nationalists spent years here in conditions of extraordinary brutality. The evening Sound & Light show narrates the history with remarkable power. A mandatory pilgrimage for every Indian.",fee:["Rs.30 Indians","Rs.100 Foreigners"]},
+  {emoji:"🏖️",name:"Radhanagar Beach (Beach No. 7)",location:"Havelock Island (Swaraj Dweep)",desc:"Repeatedly voted Asia's best beach — a 2km arc of powder-white sand fringed with ancient Gurjan trees, with the clear turquoise waters of the Bay of Bengal in front. The beach faces west, making it one of India's finest sunset beaches. The water is calm, clear and inviting, with a gently shelving sandy bottom. It is set within a forest that runs down to the beach — no resorts directly on the sand, preserving its pristine quality. At its finest in the golden light of late afternoon.",fee:["Rs.50 beach conservation fee"]},
+  {emoji:"🤿",name:"Havelock Island Diving & Snorkelling",location:"Havelock Island (Swaraj Dweep)",desc:"India's finest scuba diving destination — the coral reefs around Havelock offer 30+ metre visibility in peak season (Nov-Apr) with extraordinary marine biodiversity: manta rays, whale sharks, sea turtles, reef sharks, Napoleon wrasses, clownfish in anemones, nudibranchs and giant clams. Elephant Beach on the island's north has a reef accessible by snorkel just 50m from shore — one of India's best snorkelling sites. Multiple PADI-certified dive operators run courses from beginner to advanced.",fee:["Paid — dive packages"]},
+  {emoji:"🌊",name:"Neil Island (Shaheed Dweep)",location:"Neil Island",desc:"A quieter, smaller and more intimate alternative to Havelock — Neil Island has three beautiful beaches (Laxmanpur, Bharatpur and Sitapur), a natural rock arch (Natural Bridge) carved by the sea, excellent snorkelling at Bharatpur and a slow island rhythm that Havelock is losing to tourism. The island is covered in farmland (it supplies most of Port Blair's vegetables) and has a small, charming village centre. The sunrise at Sitapur Beach is legendary.",fee:["Free beaches"]},
+  {emoji:"🐊",name:"Crocodile Safari — Baratang Island",location:"Baratang, Middle Andaman",desc:"Baratang Island offers one of India's most dramatic natural experiences — the journey itself, through the dense Jarawa Tribal Reserve forest in a convoy of vehicles (no stopping, no photography of Jarawa people), creates a palpable sense of entering another world. At Baratang: limestone caves of extraordinary formations, India's only mud volcano (a natural geological curiosity), and mangrove creek boat safaris where saltwater crocodiles, herons and kingfishers are abundant.",fee:["Paid — ferry + cave entry"]},
+  {emoji:"🏝️",name:"Ross Island (Netaji Subhash Chandra Bose Island)",location:"2km from Port Blair",desc:"The former British administrative headquarters — Ross Island, a 15-minute ferry from Port Blair, is now a hauntingly beautiful ruin where nature is reclaiming an entire colonial city. The roots of enormous Bodhi trees split through the Commissioner's house, the church, the tennis courts and the bakery. Spotted deer wander freely through the ruins. The British called it the 'Paris of the East'. It was later occupied by the Japanese in WWII. Now administered by the Indian Navy.",fee:["Rs.50 Indians","Rs.150 Foreigners"]},
+  {emoji:"🌋",name:"Barren Island Volcano",location:"92km northeast of Port Blair",desc:"South Asia's only active volcano — Barren Island erupts intermittently and has been increasingly active since 1991. Boat trips from Port Blair circumnavigate the island (landing is not permitted) as lava can be seen flowing into the sea during active phases. Even during quieter periods, the volcanic island rising from the Bay of Bengal — with its sulphur clouds and blackened lava fields — is an extraordinary sight. The surrounding waters are some of the best big-fish diving in India.",fee:["Paid — boat charter"]},
+  {emoji:"🐢",name:"Turtle Nesting — Galathea Bay",location:"Great Nicobar Island (restricted)",desc:"The world's largest nesting site for leatherback sea turtles (Dermochelys coriacea) — Galathea Bay on Great Nicobar Island hosts thousands of nesting leatherbacks annually, one of the most significant marine turtle nesting events on earth. Access is restricted (requires special permit and approval from the Andaman administration). The island is also home to the Shompen — one of the world's most isolated indigenous peoples — and the Nicobar megapode, an extraordinary bird.",fee:["Special restricted area permit required"]},
+  {emoji:"🏊",name:"North Bay & Jolly Buoy Coral Parks",location:"South Andaman",desc:"North Bay Island offers glass-bottom boat rides over the coral gardens for non-swimmers; Jolly Buoy Island (open alternating months to allow reef recovery) is the premier snorkelling and diving site in South Andaman — pristine coral gardens with exceptional visibility. The coral restoration program here is one of India's most successful. Both islands are day-trip destinations from Port Blair, accessible by government ferries.",fee:["Paid — ferry + snorkel equipment"]},
+];
+
+const artsData=[
+  {emoji:"🎨",name:"Nicobari Tribal Art & Craftsmanship",location:"Nicobar Islands (restricted)",desc:"The Nicobarese people have developed extraordinary craft traditions over millennia — intricate woven goods from pandanus and coconut palm leaves, beautifully carved wooden figures representing ancestral spirits (Kar-Nicobar figures), decorated fishing canoes and ritual objects. The Nicobarese coconut-leaf weaving produces baskets, mats and ceremonial items of remarkable precision. Most authentic Nicobarese crafts are not commercially available — they exist within living community practice."},
+  {emoji:"🐚",name:"Shell Craft & Marine Art",location:"Port Blair markets",desc:"The Andamans have a distinctive shell craft tradition — the extraordinary variety of shells found in these waters (cowries, conches, nautilus, spider shells) have been crafted into jewelry, decorative objects and household items. The Port Blair local market and Aberdeen Bazaar sell shell craft alongside coral-free marine souvenirs. Note: collection of live shells, corals or marine organisms is illegal under the Wildlife Protection Act."},
+  {emoji:"🎭",name:"Nicobarese Music & Dance",location:"Car Nicobar (restricted)",desc:"The Nicobarese have a rich tradition of communal music and dance — performed during the Ossuary Feast (a funeral rite that can last months), during festivals and at community gatherings. The dances involve the whole community and are accompanied by log drums and singing. The Car Nicobar style of music — melodic, rhythmic and deeply communal — is entirely distinct from any mainland Indian tradition. Access to witness these ceremonies requires special permits."},
+  {emoji:"🌿",name:"Onge & Jarawa — Living Stone Age Cultures",location:"Little Andaman, South Andaman (protected)",desc:"The Onge of Little Andaman and the Jarawa of South and Middle Andaman are among the world's last surviving hunter-gatherer societies. The Jarawa, who chose contact with the outside world only in the late 1990s, still live primarily by hunting, fishing and gathering in the forests of their reserve. The Onge are believed to have been in the Andamans for up to 60,000 years — making them among the oldest continuous human cultures on earth. All contact is strictly regulated — photography and interaction are illegal."},
+  {emoji:"🎣",name:"Traditional Fishing & Seafaring",location:"Andaman Islands — fishing villages",desc:"The Andamanese settler communities — Bengali, Tamil, Telugu and other mainland Indian communities who came as political prisoners, landless farmers and later voluntary settlers — have developed distinctive maritime craft traditions. The fishing boats of the Andamans, the traditional fish-smoking techniques, the net-making communities of Wandoor and Diglipur, and the distinctive wooden boat-building tradition represent a living maritime heritage adapted to island life."},
+  {emoji:"🏺",name:"Japanese WWII Heritage",location:"Ross Island, Havelock, Port Blair",desc:"The Japanese occupied the Andaman and Nicobar Islands from 1942 to 1945, and their presence left a distinct layer of history on the islands — Japanese bunkers, tunnels, anti-aircraft gun emplacements and the ruins of Japanese military installations are scattered across several islands. The Japanese military also executed hundreds of Indian civilians during the occupation. These WWII heritage sites add another layer to the islands' complex historical identity — from prehistoric indigenous cultures to British colonialism to Japanese occupation to Indian democracy."},
+];
+
+const traditionsData=[
+  {emoji:"🕯️",name:"Martyr's Day — Cellular Jail",location:"Port Blair — March 23 & August 15",desc:"The Cellular Jail Sound & Light show — performed every evening — narrates the history of the jail and the freedom fighters imprisoned here with a power that is difficult to describe. On Independence Day (August 15) and Martyrs' Day, the ceremonies at the Cellular Jail are particularly moving — the jail is illuminated, the national flag is hoisted, and the memories of those who suffered here are honoured by the entire island community."},
+  {emoji:"🌊",name:"Island Tourism Festival",location:"Port Blair — January/February",desc:"The annual Island Tourism Festival (usually held in January) is the biggest cultural event of the year — cultural performances by the island's various communities (Bengali, Tamil, Telugu, Nicobarese), traditional boat races in the harbour, handicraft exhibitions, food festivals and music concerts. The festival celebrates the extraordinary human diversity of the islands — more than 20 languages are spoken in Port Blair alone."},
+  {emoji:"🐢",name:"Turtle Conservation — Nesting Season",location:"Various beaches — October to March",desc:"During the nesting season (October to March), sea turtles — including olive ridley, hawksbill, green and leatherback turtles — come ashore to nest on Andaman beaches. The Forest Department and conservation NGOs conduct turtle patrolling, nest protection and release of hatchlings in community events. Turtle watching at Mundapahar beach near Port Blair and at Little Andaman's beaches is an extraordinary experience — conducted with strict conservation protocols."},
+  {emoji:"🎪",name:"Nicobarese Ossuary Feast",location:"Car Nicobar (restricted)",desc:"The most distinctive cultural tradition of the Nicobar Islands — the Ossuary Feast (Tug) is a funeral rite that can last for months, during which the community honours the dead through elaborate ceremonies, feasting, dancing and the construction of an ossuary house. It is one of the most complex funerary traditions in Asia. The feast reaffirms community bonds and redistributes wealth. Access to witness the ceremony is restricted — visitors to Car Nicobar require tribal area permits."},
+  {emoji:"🏄",name:"Water Sports & Diving Community",location:"Havelock, Neil, Port Blair",desc:"The diving and water sports community of the Andamans has developed a strong conservation culture — dive operators require participants to follow strict reef protection protocols, no-take zones are enforced, and several operators run active coral restoration and reef monitoring programs. The annual Clean the Sea drives, conducted by diving clubs with participation from tourists, have become a significant community event. The Andaman Scuba Club and Lacadives are among India's oldest dive operations."},
+  {emoji:"🌺",name:"Pongal & Diwali in the Islands",location:"Port Blair & settlements",desc:"The island's multi-community character means festivals from across India are celebrated here — Tamil Pongal in January (with kolam, sugarcane and the boiling of new rice), Bengali Durga Puja in October (with elaborate pandals), Diwali and the Andaman-specific tradition of seafarers' festivals. The blend of mainland Indian festival traditions adapted to an island setting — with fresh seafood replacing traditional mainland dishes, and coconut palms replacing the usual festival trees — creates a uniquely Andaman cultural synthesis."},
+];
+
+const cuisinesData=[
+  {emoji:"🦞",name:"Andaman Seafood — the Freshest in India",location:"Port Blair, Havelock, Neil Island",desc:"The seafood of the Andaman Islands is among the freshest and most diverse in India — the islands sit in some of the world's most productive fishing waters. Lobster, crab, prawns, squids, octopus, red snapper, grouper, barracuda and tuna are all landed daily. The lobster curry at Fat Martin's restaurant (Port Blair) is legendary. The grilled lobster at the beach shacks of Havelock — bought from the morning boats and cooked within hours — is one of India's great food experiences."},
+  {emoji:"🥥",name:"Coconut-Based Island Cuisine",location:"Throughout the islands",desc:"Coconut is the defining ingredient of Andaman cooking — coconut milk is used in curries, coconut water is the island's natural drink, grated coconut appears in chutneys and desserts. The fish coconut curry — fresh reef fish simmered in coconut milk with local spices — is the dish that most distinctively captures the Andaman's island character. Coconut prawn curry, coconut rice and coconut-based sweets reflect the island's most abundant natural resource."},
+  {emoji:"🍜",name:"Bengali & South Indian Fusion",location:"Port Blair restaurants",desc:"Port Blair's food culture reflects its multicultural population — Bengali, Tamil, Telugu, Malayali and Punjabi cooking traditions all exist side by side. The result is a distinctive island fusion: Bengali fish preparations using Andaman reef fish instead of freshwater carp; South Indian breakfasts (idli, dosa, uttapam) made with coconut; Tamil seafood curries adapted to use locally available species. The dhabas of Port Blair's Aberdeen Bazaar serve an extraordinary mix."},
+  {emoji:"🐟",name:"Smoked & Dried Fish Traditions",location:"Fishing villages across the islands",desc:"The island's isolation historically required food preservation — smoked and dried fish are a significant part of Andaman food culture. The fish smoking techniques brought by Bengali settlers, adapted to use local wood species, produce distinctively flavoured dried fish. Dried prawns (chingri) from the Andamans are sold across India and are considered among the finest quality. The fishing villages of Wandoor, Ferrargunj and Diglipur each have their own smoking traditions."},
+  {emoji:"🍺",name:"Toddy & Local Drinks",location:"Andaman villages",desc:"Fresh coconut toddy — fermented coconut palm sap — is the traditional alcoholic drink of the islands, consumed fresh (mildly alcoholic) or allowed to ferment further into a stronger drink. Coconut water straight from the green coconut is the island's most refreshing non-alcoholic drink, available everywhere for Rs. 20-30. Fresh sugarcane juice, lime soda and passion fruit juice from the island's small farms are also distinctively Andamanese refreshments."},
+  {emoji:"🍛",name:"Nicobarese Pandanus Rice",location:"Nicobar Islands (restricted)",desc:"The Nicobarese have a distinctive food culture centred on coconut, pandanus (screw pine), wild pig, fish and taro — ingredients gathered from their forest and reef environment. Pandanus fruit (the keystone food of the Pacific and many island cultures) is used in rice preparations, giving a distinctive fragrance. Nicobarese cooking is entirely self-sufficient — using only what the forest, sea and small gardens provide — and represents one of the last complete island food systems in the Indian Ocean."},
+];
+
+const weatherData=[
+  {month:"January",avgTemp:"23-29°C",weather:"Peak Season",details:"Ideal — clear skies, calm seas, 30m+ diving visibility. Whale sharks, manta rays and turtles all active. New Year celebrations in Port Blair. Book everything 3 months in advance.",best:true},
+  {month:"February",avgTemp:"24-30°C",weather:"Peak Season",details:"Best diving and snorkelling month — sea is calm, water clarity at maximum. Radhanagar Beach at its most beautiful. Island Tourism Festival usually in February. All ferries running.",best:true},
+  {month:"March",avgTemp:"25-31°C",weather:"Excellent",details:"Seas still calm, slightly warming. Excellent for beach holidays and diving. Turtle nesting season winding down. Slightly less crowded than December-February.",best:true},
+  {month:"April",avgTemp:"26-32°C",weather:"Good",details:"Pre-monsoon warming. Still excellent for island tourism. Humidity rising slightly. Last month for reliable inter-island ferry services before monsoon disruptions."},
+  {month:"May",avgTemp:"26-32°C",weather:"Monsoon Approaching",details:"Southwest monsoon arrives. Ferry services becoming unpredictable. Rough seas. Not recommended for island hopping. Port Blair accessible by flight year-round."},
+  {month:"June",avgTemp:"25-30°C",weather:"SW Monsoon",details:"Heavy rains. Rough seas — most inter-island ferries suspended or irregular. Some beaches close. Port Blair remains operational. Only for monsoon lovers and adventurers."},
+  {month:"July",avgTemp:"25-29°C",weather:"Monsoon",details:"Peak monsoon — heavy rainfall, rough sea. Limited island access. Green and lush landscapes. Cellular Jail and Port Blair museums accessible. Diving suspended."},
+  {month:"August",avgTemp:"25-29°C",weather:"Monsoon",details:"Independence Day celebrated at Cellular Jail — emotional ceremony. Seas still rough. Very limited ferry services. Not recommended for beach tourism."},
+  {month:"September",avgTemp:"25-30°C",weather:"Late Monsoon",details:"Rains easing slightly. Some ferries resuming. Seas calming. Pre-season preparation in hotels. Diving possible in protected bays."},
+  {month:"October",avgTemp:"25-31°C",weather:"Post-Monsoon",details:"Northeast monsoon begins — calmer than SW monsoon. Seas settling. Turtle nesting season begins. Some tourists arriving. Good for Port Blair-based tourism.",best:true},
+  {month:"November",avgTemp:"24-30°C",weather:"Season Opening",details:"Season properly opening — seas calming, diving visibility improving. Radhanagar Beach becoming beautiful again. Turtle nesting at night on several beaches. Book ahead.",best:true},
+  {month:"December",avgTemp:"23-29°C",weather:"Peak Season",details:"Christmas and New Year — the islands are at their most beautiful and most crowded. Book 3-4 months in advance for Havelock accommodation. Best diving conditions returning. Festive atmosphere.",best:true},
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreigner')||f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('')}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Book Nov-Apr — peak diving season</li><li>Follow coral reef protection rules strictly</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Photograph or interact with Jarawa tribe</li><li>Collect shells, coral or marine life</li></ul></div>
+    </div>
+  </div></div>`;
+});
+
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location}</span></div>
+    </div>`;
+  });
+});
+
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play().catch(()=>{});b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Andaman &amp; Nicobar Islands",heroNative:"अंडमान और निकोबार द्वीप समूह",heroTag:"India's Emerald Archipelago — Where the Ocean is Alive and History Runs Deep",scrollLbl:"SCROLL TO EXPLORE",lAbout:"About Andaman & Nicobar",aboutTitle:"India's Last Frontier",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Andaman & Nicobar",lDist:"All 3 Districts",distTitle:"Every District of Andaman & Nicobar",lPlaces:"Beaches, Coral, History & Jungle",placesTitle:"Wonders of Andaman & Nicobar",lArts:"Indigenous Cultures, Crafts & Heritage",artsTitle:"Living Traditions of Andaman & Nicobar",lTrad:"Festivals & Island Celebrations",tradTitle:"Soul of Andaman's Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Andaman & Nicobar",footerT:"JAI HIND — ANDAMAN & NICOBAR ISLANDS"},
+  hi:{heroName:"अंडमान और निकोबार द्वीपसमूह",heroNative:"अंडमान और निकोबार — भारत का पन्ना",heroTag:"भारत का पन्ना द्वीपसमूह — जहाँ समुद्र जीवित है और इतिहास गहरा",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",lAbout:"अंडमान और निकोबार के बारे में",aboutTitle:"भारत की अंतिम सीमा",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"अंडमान कब जाएं",lDist:"सभी 3 जिले",distTitle:"अंडमान के हर जिले",lPlaces:"समुद्र तट, प्रवाल, इतिहास और जंगल",placesTitle:"अंडमान के चमत्कार",lArts:"स्वदेशी संस्कृतियां, शिल्प और विरासत",artsTitle:"अंडमान की जीवंत परंपराएं",lTrad:"त्योहार और द्वीप उत्सव",tradTitle:"अंडमान संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"अंडमान का स्वाद",footerT:"जय हिन्द — अंडमान और निकोबार द्वीपसमूह"},
+  bn:{heroName:"আন্দামান ও নিকোবর দ্বীপপুঞ্জ",heroNative:"আন্দামান ও নিকোবর — ভারতের পান্না",heroTag:"ভারতের পান্না দ্বীপপুঞ্জ — যেখানে সমুদ্র জীবন্ত এবং ইতিহাস গভীর",scrollLbl:"অন্বেষণ করতে স্ক্রোল করুন",lAbout:"আন্দামান ও নিকোবর সম্পর্কে",aboutTitle:"ভারতের শেষ সীমান্ত",lWeather:"জলবায়ু ও সেরা সময়",weatherTitle:"আন্দামান কখন যাবেন",lDist:"সকল ৩ জেলা",distTitle:"আন্দামানের প্রতিটি জেলা",lPlaces:"সমুদ্র সৈকত, প্রবাল, ইতিহাস ও জঙ্গল",placesTitle:"আন্দামানের বিস্ময়",lArts:"আদিবাসী সংস্কৃতি, কারুশিল্প ও ঐতিহ্য",artsTitle:"আন্দামানের জীবন্ত ঐতিহ্য",lTrad:"উৎসব ও দ্বীপ উদযাপন",tradTitle:"আন্দামান সংস্কৃতির আত্মা",lCuisines:"রন্ধনসম্পর্কীয় ঐতিহ্য",cuisinesTitle:"আন্দামানের স্বাদ",footerT:"জয় হিন্দ — আন্দামান ও নিকোবর দ্বীপপুঞ্জ"},
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  const ids=['heroName','heroNative','heroTag','scrollLbl','lAbout','aboutTitle','lWeather','weatherTitle','lDist','distTitle','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT'];
+  ids.forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.innerHTML=t[k];});
+  document.getElementById('distSearch').placeholder=lang==='hi'?'जिले खोजें...':lang==='bn'?'জেলা খুঁজুন...':'Search districts...';
+}
+</script>
+</body>
+</html>
