@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2D5016;--gold:#FFD700;--teal:#008B8B;--cream:#F5F1E8;--deep:#0a0e1a;--card:#ffffff08;--border:rgba(45,80,22,0.25);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(10,14,26,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--green);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--green);color:var(--deep);}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,241,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,241,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--green);color:var(--cream);border-color:var(--green);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--green);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--green);color:var(--cream);}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.45) saturate(1.2);animation:zk 18s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.05);}to{transform:scale(1.13);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.02) 35%,rgba(10,14,26,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(45,80,22,.8));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(3rem,9vw,7.5rem);color:#fff;letter-spacing:.02em;line-height:1;text-shadow:0 4px 40px rgba(0,0,0,.9);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--green);font-style:italic;letter-spacing:.1em;margin-top:.3rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,241,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(45,80,22,.35);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);color:rgba(245,241,232,.75);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--green);color:var(--cream);border-color:var(--green);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.25);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--green),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:1px solid rgba(45,80,22,.12);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--green);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--green);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.1rem);color:rgba(245,241,232,.68);line-height:1.85;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s;position:relative;backdrop-filter:blur(8px);}
+.wcard:hover{background:rgba(45,80,22,.1);border-color:rgba(45,80,22,.45);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(45,80,22,.5);background:rgba(45,80,22,.08);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--green);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,241,232,.5);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--green);color:var(--cream);font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;font-weight:500;}
+.dsearch:focus{border-color:rgba(45,80,22,.6);}
+.dsearch::placeholder{color:rgba(245,241,232,.28);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(45,80,22,.16);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02);}
+.dacc:hover{border-color:rgba(45,80,22,.32);background:rgba(45,80,22,.05);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(45,80,22,.08);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--green);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--green);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(45,80,22,.3);background:rgba(45,80,22,.06);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,241,232,.68);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--green);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(0,139,139,.2);border:1px solid rgba(0,139,139,.35);color:rgba(245,241,232,.75);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.temp-badge{padding:4px 10px;border-radius:9px;font-size:.7rem;cursor:default;font-family:"Poppins",sans-serif;font-weight:500;}
+.tb-best{background:rgba(45,80,22,.25);border:1px solid rgba(45,80,22,.5);color:var(--green);}
+.tb-ok{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(245,241,232,.6);}
+.tb-hot{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--green);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(0,139,139,.07);border:1.5px solid rgba(0,139,139,.2);border-radius:16px;overflow:hidden;transition:all .35s;position:relative;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(0,139,139,.55);box-shadow:0 16px 50px rgba(0,139,139,.12);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--green),var(--teal));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:12px;}
+.holy-tag{display:inline-block;background:rgba(45,80,22,.28);color:#90ee90;border:1px solid rgba(45,80,22,.4);font-size:.48rem;padding:3px 8px;border-radius:8px;margin-left:4px;vertical-align:middle;font-family:"Poppins",sans-serif;font-weight:600;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(0,139,139,.22);border:1px solid rgba(0,139,139,.4);color:#7deaea;}
+.fb-fr{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.fb-free{background:rgba(26,122,26,.22);border:1px solid rgba(26,122,26,.4);color:#90ee90;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,122,26,.14);border:1px solid rgba(26,122,26,.28);}
+.donts{background:rgba(230,57,43,.12);border:1px solid rgba(230,57,43,.25);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#90ee90;} .donts .dd-title{color:#ffb080;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(144,238,144,.78);} .donts .dd-list li{color:rgba(255,176,128,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:linear-gradient(135deg,rgba(0,139,139,.1),rgba(0,0,0,.2));border:1.5px solid rgba(0,139,139,.2);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(0,139,139,.5);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.art-fee{font-size:.72rem;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(245,241,232,.65);font-family:"Poppins",sans-serif;font-weight:500;}
+footer{text-align:center;padding:50px 20px 40px;border-top:1px solid rgba(45,80,22,.12);}
+footer .fe{font-size:2.2rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,241,232,.25);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,241,232,.35);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title">KERALA</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">&#2361;&#2367;&#2306;&#2342;&#2368;</button>
+    <button class="lang-btn" id="lb-ml" onclick="setLang('ml')">&#3349;&#3374;&#3391;&#3405;</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🌴</span>
+    <div class="hero-name" id="heroName">Kerala</div>
+    <div class="hero-native" id="heroNative">കേരളം</div>
+    <div class="hero-tag" id="heroTag">Land of God, Spices & Backwaters</div>
+    <div class="tribar"><div style="background:#2D5016"></div><div style="background:#FFD700"></div><div style="background:#FFFFFF"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Kerala</span>
+  <h2 class="sec-title" id="aboutTitle">God's Own <em>Country</em></h2>
+  <p class="sec-body" id="aboutBody">Kerala, fondly called "God's Own Country," is India's southernmost state on the Arabian Sea coast. A land of pristine backwaters, emerald rice paddies, and spice-scented winds, Kerala stands out with its high literacy rate, healthcare standards, and social development. Once the spice capital that attracted traders from across the world, Kerala retains its mystique through coconut palms, tea gardens, and beaches. Home to ancient mosques, synagogues, Hindu temples, and Christian churches coexisting peacefully, Kerala embodies spiritual pluralism. With its exceptional biodiversity, ayurvedic traditions, and cuisine that blends tradition with international influence, Kerala offers a unique blend of natural beauty, cultural richness, and modern consciousness.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate & Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Kerala</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Kerala experiences monsoons (June-August and October-November), hot summers (March-May), and pleasant winters (November-February). The backwaters and spice plantations are best explored during winter months.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 14 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Kerala</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Kerala's 14 districts stretch from the Arabian Sea to the Western Ghats, each offering distinct attractions from backwater tourism to hill stations and spice plantations.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred &amp; Historic Sites</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Kerala</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Kerala</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Kerala Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Kerala</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY KERALA MATA</div>
+  <div class="fs" id="footerS">Kerala Piravi (Foundation Day) — November 1 · 1956</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Kerala_Kathakali_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27grd%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(45,80,22);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(26,42,78);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23grd)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Thiruvananthapuram",region:"South Kerala",known:"State Capital, Spiritual Hub, Beach & Backwater Tourism",heritage:["Padmanabhaswamy Temple","Napier Museum","Kuthiramalika Palace"],languages:["Malayalam","English","Tamil"],bestMonths:"Nov-Feb",avgTemp:"22-28°C"},
+  {name:"Kollam",region:"South Kerala",known:"Spice Trade Center, Ashtamudi Lake, Maritime Gateway",heritage:["Ashtamudi Lake","Kollam Lighthouse","Ancient Port"],languages:["Malayalam","Tamil"],bestMonths:"Oct-Mar",avgTemp:"20-30°C"},
+  {name:"Pathanamthitta",region:"Central Kerala",known:"Pilgrimage Gateway, Sabarimala Temple, Rubber Plantations",heritage:["Sabarimala Temple","Konni Sanctuary","Bamboo Groves"],languages:["Malayalam"],bestMonths:"Nov-Mar",avgTemp:"18-26°C"},
+  {name:"Alappuzha",region:"Central Kerala",known:"Backwater Paradise, Houseboat Tourism, Lagoon Networks",heritage:["Backwaters","Vembanad Lake","Chinese Fishing Nets"],languages:["Malayalam","Tamil"],bestMonths:"Jul-Sep, Nov-Feb",avgTemp:"22-30°C"},
+  {name:"Kottayam",region:"Central Kerala",known:"Rubber Hub, Catholic Pilgrimage, Tea Plantations",heritage:["St. Mary's Church","Vembanad Lake","Kumarakom Sanctuary"],languages:["Malayalam"],bestMonths:"Oct-Mar",avgTemp:"20-28°C"},
+  {name:"Idukki",region:"High Ranges",known:"Hill Station Capital, Tea & Spice Plantations, Dams",heritage:["Idukki Arch Dam","Munnar Hill Station","Periyar Tiger Reserve"],languages:["Malayalam","Tamil"],bestMonths:"Oct-May",avgTemp:"12-24°C"},
+  {name:"Ernakulam",region:"Central Kerala",known:"Commercial Hub, Spice Market, Cosmopolitan Culture",heritage:["Fort Kochi","Chinese Fishing Nets","Jewish Synagogue"],languages:["Malayalam","English","Tamil"],bestMonths:"Oct-Mar",avgTemp:"24-32°C"},
+  {name:"Thrissur",region:"North Central Kerala",known:"Cultural Capital, Temple Hub, Elephant Festival",heritage:["Thrissur Pooram","Vadakkumnathan Temple","Round Mosque"],languages:["Malayalam","English"],bestMonths:"Oct-Feb",avgTemp:"24-30°C"},
+  {name:"Malappuram",region:"North Kerala",known:"Educational Hub, Historical Significance, Green Valleys",heritage:["Jami Mosque","Kottakkal Ayurveda","Nilambur Forests"],languages:["Malayalam"],bestMonths:"Nov-Feb",avgTemp:"22-30°C"},
+  {name:"Kozhikode",region:"North Kerala",known:"Spice Gateway, Historic Port, Beach Tourism",heritage:["Kozhikode Beach","Calicut Bazaar","Beypore Port"],languages:["Malayalam","English","Tamil"],bestMonths:"Oct-Mar",avgTemp:"24-30°C"},
+  {name:"Wayanad",region:"Northeast Kerala",known:"Coffee Plantations, Wildlife Sanctuary, Adventure Tourism",heritage:["Wayanad Wildlife Sanctuary","Chembra Peak","Coffee Estates"],languages:["Malayalam","English"],bestMonths:"Oct-Apr",avgTemp:"15-25°C"},
+  {name:"Kannur",region:"Far North Kerala",known:"Spice Plantations, Beachside Fort, Traditional Craft Hub",heritage:["Kannur Fort","Beypore Heritage","Theyyam Performance"],languages:["Malayalam","Tamil"],bestMonths:"Oct-Mar",avgTemp:"24-30°C"},
+  {name:"Kasaragod",region:"Far North Kerala",known:"Northern Gateway, Spice Farms, Culturally Diverse",heritage:["Kasaragod Fort","Bekal Fort","Spice Markets"],languages:["Malayalam","Tulu","Tamil"],bestMonths:"Nov-Feb",avgTemp:"24-30°C"},
+  {name:"Palakkad",region:"East Kerala",known:"Gateway to Tamil Nadu, Historical Fort, Agricultural Heart",heritage:["Palakkad Fort","Jain Temple","Tea Plantations"],languages:["Malayalam","Tamil"],bestMonths:"Oct-Apr",avgTemp:"18-32°C"}
+];
+
+const placesData = [
+  {emoji:"🏰",name:"Padmanabhaswamy Temple",location:"Thiruvananthapuram",desc:"One of India's richest temples, dedicated to Lord Vishnu with intricate architecture and sacred vaults",fee:["Free"],tags:["Temple","Heritage","Spiritual"]},
+  {emoji:"🚤",name:"Ashtamudi Lake",location:"Kollam",desc:"Largest lake in Kerala, heart of backwater tourism with houseboats and sunset views",fee:["Free","Houseboat Paid"],tags:["Backwater","Nature","Tourism"]},
+  {emoji:"⛩️",name:"Sabarimala Temple",location:"Pathanamthitta",desc:"Ancient pilgrimage destination, nestled in Western Ghats sacred to Lord Ayyappa",fee:["Free"],tags:["Temple","Pilgrimage","Mountain"]},
+  {emoji:"🌊",name:"Backwaters of Kerala",location:"Alappuzha, Kottayam",desc:"Unique lagoon system with serene houseboats and village tours through coconut palms",fee:["Free","Tour Paid"],tags:["Backwater","Nature","Experience"]},
+  {emoji:"🏛️",name:"Fort Kochi",location:"Ernakulam",desc:"Historic colonial settlement with Portuguese, Dutch, British influences and vibrant bazaars",fee:["Free"],tags:["Heritage","Colonial","Cultural"]},
+  {emoji:"🏔️",name:"Munnar Hill Station",location:"Idukki",desc:"Highest town in South India with rolling tea plantations and mist-covered mountains",fee:["Free","Paid attractions"],tags:["Hill Station","Nature","Adventure"]},
+  {emoji:"🎪",name:"Thrissur Pooram",location:"Thrissur",desc:"World's largest elephant gathering festival with 100+ decorated elephants",fee:["Free to watch"],tags:["Festival","Cultural","Elephant"]},
+  {emoji:"🌿",name:"Periyar Tiger Reserve",location:"Idukki",desc:"Pristine wildlife sanctuary protecting tigers, elephants, and rare species",fee:["Paid"],tags:["Wildlife","Conservation","Nature"]},
+  {emoji:"🎭",name:"Kathakali Performance",location:"Thrissur, Kochi",desc:"Ancient classical dance form with elaborate costumes and mythology-based stories",fee:["Paid"],tags:["Performance","Art","Traditional"]},
+  {emoji:"🌴",name:"Varkala Beach",location:"Thiruvananthapuram",desc:"Unique cliffside beach with spiritual significance and sunset meditation spots",fee:["Free"],tags:["Beach","Spiritual","Scenic"]}
+];
+
+const artsData = [
+  {emoji:"🎭",name:"Kathakali Classical Dance",location:"Statewide, Thrissur Focus",desc:"Ancient dance-drama form with colorful costumes and mythology-based narratives"},
+  {emoji:"🎬",name:"Koodiyatta Shadow Puppet Theater",location:"Statewide, Ancient Tradition",desc:"Shadow puppet performances enacting Mahabharata and Ramayana"},
+  {emoji:"🎨",name:"Mural Art & Painting",location:"Statewide",desc:"Colorful murals depicting mythological scenes on temples and palaces"},
+  {emoji:"🛟",name:"Coir & Coconut Crafts",location:"Statewide",desc:"Traditional crafts from coconut fibers using sustainable practices"},
+  {emoji:"📿",name:"Rosewood & Sandalwood Carving",location:"Kochi, Thrissur",desc:"Intricate wood carving in sacred sandalwood and furniture"},
+  {emoji:"🎵",name:"Classical Percussions",location:"Statewide",desc:"Mridangam, chenda drums and traditional instruments"}
+];
+
+const traditionsData = [
+  {emoji:"🎆",name:"Onam Festival",location:"Statewide",desc:"Harvest festival with flower carpets, boat races, and traditional meals"},
+  {emoji:"🐘",name:"Pooram Elephant Festivals",location:"Thrissur, Statewide",desc:"Temple festivals featuring decorated elephants and ancient rituals"},
+  {emoji:"🎯",name:"Theyyam Performance",location:"North Kerala",desc:"Ritualistic performance art with supernatural characters and tribal traditions"},
+  {emoji:"🏊",name:"Boat Race Culture",location:"Backwaters, Ashtamudi Lake",desc:"Snake boat racing with traditional songs and water sports"},
+  {emoji:"🙏",name:"Thrissur Pooram Mahotsavams",location:"Statewide Temples",desc:"Temple fairs celebrating deities with processions and rituals"},
+  {emoji:"🌸",name:"Pookalam Flower Arrangement",location:"Statewide Homes",desc:"Traditional flower carpet art with seasonal flowers"}
+];
+
+const cuisinesData = [
+  {emoji:"🍛",name:"Fish Curry & Kerala Cuisine",region:"Statewide",desc:"Traditional fish curry with coconut milk and tamarind - the soul of Kerala cooking"},
+  {emoji:"🫔",name:"Appam & Stew",region:"Statewide",desc:"Fermented rice pancakes with crispy edges served with chicken stew"},
+  {emoji:"🍜",name:"Puttu & Kadala Curry",region:"Statewide",desc:"Steamed cylindrical rice cake with chickpea curry - street food staple"},
+  {emoji:"🥘",name:"Avial",region:"Statewide",desc:"Mixed vegetable curry with coconut paste and cumin"},
+  {emoji:"🍲",name:"Sambar & Kerala Style",region:"Statewide",desc:"Lentil-based vegetable broth unique to Kerala"},
+  {emoji:"🌶️",name:"Rasam",region:"Statewide",desc:"Spicy tamarind broth with tomatoes - digestive soup"},
+  {emoji:"🐟",name:"Meen Pollichathu",region:"Coastal Kerala",desc:"Fish wrapped in banana leaves with coconut and spices"},
+  {emoji:"🍚",name:"Erdhal Payasam",region:"Statewide",desc:"Creamy dessert with tapioca and coconut milk - festival special"},
+  {emoji:"🥄",name:"Kaya Varuthrachathu",region:"Statewide",desc:"Banana chips fried in jaggery - sweet crispy snack"},
+  {emoji:"🍗",name:"Chicken Kerala Roast",region:"Statewide",desc:"Slow-cooked chicken with dark spice rub and village cooking method"},
+  {emoji:"🍤",name:"Shrimp Kozhikari",region:"Coastal Regions",desc:"Small shrimps seasoned with turmeric - coastal delicacy"},
+  {emoji:"🥥",name:"Coconut Rice",region:"Statewide",desc:"Rice with fresh grated coconut and spices - wholesome meal"},
+  {emoji:"🍲",name:"Paya Curry",region:"Statewide",desc:"Slow-cooked leg meat curry - rich and deeply flavorful"},
+  {emoji:"🌰",name:"Banana Chips & Snacks",region:"Statewide",desc:"Thin-sliced banana fried in oil - popular tea-time snack"},
+  {emoji:"🥛",name:"Payasam Varieties",region:"Statewide",desc:"Sweet puddings with jaggery and coconut milk - festival essential"},
+  {emoji:"🍌",name:"Nendran Banana Preparations",region:"Statewide",desc:"Local plantain variety in curries or fried - nutritious staple"}
+];
+
+const weatherData = [
+  {month:"November",avgTemp:"28°C",weather:"Pleasant",details:"Post-monsoon freshness, clear skies, perfect backwater weather"},
+  {month:"December",avgTemp:"26°C",weather:"Cool",details:"Ideal touring season, dry weather, festivals begin"},
+  {month:"January",avgTemp:"24°C",weather:"Ideal",details:"Best season for all activities, festival season",best:true},
+  {month:"February",avgTemp:"27°C",weather:"Pleasant",details:"Warm days, cool nights, excellent for backwaters"},
+  {month:"March",avgTemp:"30°C",weather:"Getting Hot",details:"Heat increases, spice plantations bloom"},
+  {month:"April",avgTemp:"32°C",weather:"Very Hot",details:"Peak heat, stay in hill stations"},
+  {month:"May",avgTemp:"31°C",weather:"Pre-Monsoon",details:"Hot and humid, southwest winds begin"},
+  {month:"June",avgTemp:"26°C",weather:"Monsoon",details:"Southwest monsoon arrives, lush greenery"},
+  {month:"July",avgTemp:"25°C",weather:"Wet",details:"Heavy rainfall, verdant landscape"},
+  {month:"August",avgTemp:"25°C",weather:"Monsoon",details:"Continued monsoon, Onam celebrations start"},
+  {month:"September",avgTemp:"26°C",weather:"Monsoon",details:"Northeast monsoon begins"},
+  {month:"October",avgTemp:"27°C",weather:"Clearing",details:"Monsoon clearing, fresh air, harvest preparations"}
+];
+
+// Populate weather grid
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  const isBest = w.best;
+  wGrid.innerHTML += `
+    <div class="wcard${isBest?' best':''}">
+      ${isBest?'<span class="best-tag">BEST TIME</span>':''}
+      <div class="wm">${w.month}</div>
+      <div class="wt">${w.avgTemp}</div>
+      <div class="wd">${w.details}</div>
+    </div>
+  `;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const dacc = document.createElement('div');
+  dacc.className = 'dacc';
+  dacc.dataset.name = d.name.toLowerCase();
+  
+  dacc.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list">
+            <li>${d.known}</li>
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">
+            ${d.heritage.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">
+            ${d.languages.map(l => `<span class="lchip">${l}</span>`).join('')}
+          </div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row">
+            <span class="temp-badge tb-best">${d.avgTemp}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  accordion.appendChild(dacc);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `
+    <div class="pcard">
+      <div class="pcard-acc"></div>
+      <div class="pcard-body">
+        <span class="pi">${p.emoji}</span>
+        <div class="pn">${p.name}</div>
+        <div class="pl">${p.location}</div>
+        <div class="pd">${p.desc}</div>
+        <div class="fee-row">
+          ${Array.isArray(p.fee) ? p.fee.map(f => `<span class="fee-badge ${f.includes('Free')?'fb-free':f.includes('Foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('') : `<span class="fee-badge ${p.fee.includes('Free')?'fb-free':'fb-in'}">${p.fee}</span>`}
+        </div>
+        <div class="dos-donts">
+          <div class="dos">
+            <div class="dd-title">✓ DO</div>
+            <ul class="dd-list">
+              <li>Respect local customs</li>
+              <li>Dress appropriately</li>
+            </ul>
+          </div>
+          <div class="donts">
+            <div class="dd-title">✗ DON'T</div>
+            <ul class="dd-list">
+              <li>Photography restrictions</li>
+              <li>Loud behavior</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Populate arts
+const artGrid = document.getElementById('artGrid');
+artsData.forEach(a => {
+  artGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${a.emoji}</span>
+      <div class="at">${a.name}</div>
+      <div class="ad">${a.desc}</div>
+      <div class="art-fee"><span>${a.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate traditions
+const tradGrid = document.getElementById('tradGrid');
+traditionsData.forEach(t => {
+  tradGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${t.emoji}</span>
+      <div class="at">${t.name}</div>
+      <div class="ad">${t.desc}</div>
+      <div class="art-fee"><span>${t.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate cuisines
+const cuisinesGrid = document.getElementById('cuisinesGrid');
+cuisinesData.forEach(c => {
+  cuisinesGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${c.emoji}</span>
+      <div class="at">${c.name}</div>
+      <div class="ad">${c.desc}</div>
+      <div class="art-fee"><span>${c.region}</span></div>
+    </div>
+  `;
+});
+
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const accords = document.querySelectorAll('.dacc');
+  const current = accords[idx];
+  if(openAccordion !== null && openAccordion !== idx) accords[openAccordion].classList.remove('open');
+  current.classList.toggle('open');
+  openAccordion = current.classList.contains('open') ? idx : null;
+}
+
+function filterDistricts(query) {
+  const accords = document.querySelectorAll('.dacc');
+  accords.forEach(a => {
+    a.style.display = a.dataset.name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+
+function toggleMusic() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('musicBtn');
+  if(audio.paused) {
+    audio.play();
+    btn.classList.add('on');
+  } else {
+    audio.pause();
+    btn.classList.remove('on');
+  }
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+const translations = {
+  en: {
+    navTitle: "KERALA",
+    heroName: "Kerala",
+    heroNative: "കേരളം",
+    heroTag: "Land of God, Spices & Backwaters",
+    scrollLbl: "SCROLL TO EXPLORE",
+    weatherPill: "🌡️ Weather",
+    districtsPill: "📍 Districts",
+    placesPill: "🏛️ Places",
+    artsPill: "🎨 Arts",
+    tradPill: "🪔 Traditions",
+    cuisinesPill: "🍲 Cuisines",
+    aboutLbl: "About Kerala",
+    aboutTitle: "God's Own Country",
+    aboutBody: "Kerala, fondly called 'God's Own Country,' is India's southernmost state on the Arabian Sea coast. A land of pristine backwaters, emerald rice paddies, and spice-scented winds, Kerala stands out with its high literacy rate, healthcare standards, and social development. Once the spice capital that attracted traders from across the world, Kerala retains its mystique through coconut palms, tea gardens, and beaches. Home to ancient mosques, synagogues, Hindu temples, and Christian churches coexisting peacefully, Kerala embodies spiritual pluralism.",
+    weatherLbl: "Climate & Best Time",
+    weatherTitle: "When to Visit Kerala",
+    weatherNote: "Kerala experiences monsoons (June-August and October-November), hot summers (March-May), and pleasant winters (November-February). The backwaters and spice plantations are best explored during winter months.",
+    distLbl: "All 14 Districts",
+    distTitle: "Every District of Kerala",
+    distNote: "Kerala's 14 districts stretch from the Arabian Sea to the Western Ghats, each offering distinct attractions from backwater tourism to hill stations and spice plantations.",
+    distSearch: "Search districts...",
+    placesLbl: "Sacred & Historic Sites",
+    placesTitle: "Wonders of Kerala",
+    artsLbl: "Arts, Crafts & Heritage",
+    artsTitle: "Living Traditions of Kerala",
+    tradLbl: "Festivals & Celebrations",
+    tradTitle: "Soul of Kerala Culture",
+    cuisinesLbl: "Culinary Heritage",
+    cuisinesTitle: "Flavors of Kerala",
+    footerT: "JAY KERALA MATA",
+    footerS: "Kerala Piravi (Foundation Day) — November 1 · 1956"
+  },
+  hi: {
+    navTitle: "केरल",
+    heroName: "केरल",
+    heroNative: "കേരളം",
+    heroTag: "भगवान की भूमि, मसाले और बैकवाटर्स",
+    scrollLbl: "अन्वेषण के लिए स्क्रॉल करें",
+    weatherPill: "🌡️ मौसम",
+    districtsPill: "📍 जिले",
+    placesPill: "🏛️ स्थान",
+    artsPill: "🎨 कला",
+    tradPill: "🪔 परंपराएं",
+    cuisinesPill: "🍲 खान-पान",
+    aboutLbl: "केरल के बारे में",
+    aboutTitle: "भगवान की अपनी भूमि",
+    aboutBody: "केरल, जिसे 'भगवान की अपनी भूमि' कहा जाता है, भारत का सबसे दक्षिणी राज्य है। यह प्राचीन बैकवाटर्स, हरी-भरी चावल की पट्टियों और मसालों की खुशबू वाली जगह है। केरल उच्च साक्षरता दर, स्वास्थ्यसेवा मानकों और सामाजिक विकास के लिए खड़ा है।",
+    weatherLbl: "जलवायु और सर्वश्रेष्ठ समय",
+    weatherTitle: "केरल कब जाएं",
+    weatherNote: "केरल मानसून, गर्म गर्मी और सुखद सर्दियों का अनुभव करता है। बैकवाटर्स सर्दियों में सबसे अच्छे होते हैं।",
+    distLbl: "सभी 14 जिले",
+    distTitle: "केरल के हर जिले",
+    distNote: "केरल के 14 जिले अरब सागर से पश्चिमी घाट तक फैले हैं।",
+    distSearch: "जिलों को खोजें...",
+    placesLbl: "पवित्र और ऐतिहासिक स्थल",
+    placesTitle: "केरल के चमत्कार",
+    artsLbl: "कला, शिल्प और विरासत",
+    artsTitle: "केरल की जीवंत परंपराएं",
+    tradLbl: "त्योहार और समारोह",
+    tradTitle: "केरल संस्कृति की आत्मा",
+    cuisinesLbl: "पाक परंपरा",
+    cuisinesTitle: "केरल का स्वाद",
+    footerT: "जय केरल माता",
+    footerS: "केरल पिरवी (स्थापना दिवस) — 1 नवंबर · 1956"
+  },
+  ml: {
+    navTitle: "കേരളം",
+    heroName: "കേരളം",
+    heroNative: "കേരളം",
+    heroTag: "ദൈവത്തിന്റെ നാടു, സുഗന്ധദ്രവ്യങ്ങളും ബാക്ക്‌വാറ്റർ്സും",
+    scrollLbl: "പര്യവേക്ഷണത്തിനായി സ്ക്രോൾ ചെയ്യുക",
+    weatherPill: "🌡️ കാലാവസ്ഥ",
+    districtsPill: "📍 ജില്ലകൾ",
+    placesPill: "🏛️ സ്ഥലങ്ങൾ",
+    artsPill: "🎨 കലകൾ",
+    tradPill: "🪔 പരിപാടികൾ",
+    cuisinesPill: "🍲 ഭക്ഷണം",
+    aboutLbl: "കേരളത്തെ കുറിച്ച്",
+    aboutTitle: "ദൈവത്തിന്റെ സ്വന്തം നാട്",
+    aboutBody: "കേരളം, അരബിക്കടലിന്റെ തീരത്തുള്ള ഭാരതത്തിന്റെ തെക്കേ സിമയിൽ സ്ഥിതിചെയ്യുന്ന അത്യാധുനിക ബാക്ക്‌വാറ്റർ്സിന്റെ നാടാണ്। വിദ്യാഭ്യാസ നിരക്ക്, ആരോഗ്യ സേവനങ്ങൾ എന്നിവയിൽ കേരളം വിലസിച്ചുനിൽക്കുന്നു।",
+    weatherLbl: "കാലാവസ്ഥയും ഉത്തമ സമയവും",
+    weatherTitle: "കേരളത്തിലേക്ക് പോകാനുള്ള സമയം",
+    weatherNote: "കേരളം മാനൂൺ, വേനൽ വിഷ്ണുവും ശൈത്യകാലത്തിനും വിധേയമാണ്।",
+    distLbl: "എല്ലാ 14 ജില്ലകൾ",
+    distTitle: "കേരളത്തിന്റെ ഓരോ ജില്ല",
+    distNote: "കേരളത്തിന്റെ 14 ജില്ലകൾ അരബിക്കടലിനിന്ന് പടിഞ്ഞാറൻ പർവതങ്ങൾ വരെ വ്യാപിച്ചുകിടക്കുന്നു।",
+    distSearch: "ജില്ലകൾ തിരയുക...",
+    placesLbl: "പവിത്രവും ചരിത്രപ്രധാനവുമായ സ്ഥലങ്ങൾ",
+    placesTitle: "കേരളത്തിന്റെ അത്ഭുതങ്ങൾ",
+    artsLbl: "കലകൾ, കരുശില്പം, പൈതൃകം",
+    artsTitle: "കേരളത്തിന്റെ ജീവന്തമായ പരമ്പരകൾ",
+    tradLbl: "പെരുന്നാൾ ആചരണങ്ങൾ",
+    tradTitle: "കേരള സംസ്കാരത്തിന്റെ ആത്മാവ്",
+    cuisinesLbl: "പാചക പരമ്പര",
+    cuisinesTitle: "കേരളത്തിന്റെ സ്വാദ്",
+    footerT: "ജയ കേരള മാതാ",
+    footerS: "കേരള പിരവി (സ്ഥാപനദിനം) — നവംബർ 1 · 1956"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lb-' + lang).classList.add('active');
+  const t = translations[lang];
+  document.getElementById('heroName').textContent = t.heroName;
+  document.getElementById('heroNative').textContent = t.heroNative;
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('scrollLbl').textContent = t.scrollLbl;
+  document.getElementById('qw').textContent = t.weatherPill;
+  document.getElementById('qd').textContent = t.districtsPill;
+  document.getElementById('qp').textContent = t.placesPill;
+  document.getElementById('qa').textContent = t.artsPill;
+  document.getElementById('qt').textContent = t.tradPill;
+  document.getElementById('qc').textContent = t.cuisinesPill;
+  document.getElementById('lAbout').textContent = t.aboutLbl;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutBody').textContent = t.aboutBody;
+  document.getElementById('lWeather').textContent = t.weatherLbl;
+  document.getElementById('weatherTitle').textContent = t.weatherTitle;
+  document.getElementById('weatherNote').textContent = t.weatherNote;
+  document.getElementById('lDist').textContent = t.distLbl;
+  document.getElementById('distTitle').textContent = t.distTitle;
+  document.getElementById('distNote').textContent = t.distNote;
+  document.getElementById('distSearch').placeholder = t.distSearch;
+  document.getElementById('lPlaces').textContent = t.placesLbl;
+  document.getElementById('placesTitle').textContent = t.placesTitle;
+  document.getElementById('lArts').textContent = t.artsLbl;
+  document.getElementById('artsTitle').textContent = t.artsTitle;
+  document.getElementById('lTrad').textContent = t.tradLbl;
+  document.getElementById('tradTitle').textContent = t.tradTitle;
+  document.getElementById('lCuisines').textContent = t.cuisinesLbl;
+  document.getElementById('cuisinesTitle').textContent = t.cuisinesTitle;
+  document.getElementById('footerT').textContent = t.footerT;
+  document.getElementById('footerS').textContent = t.footerS;
+}
+</script>
+</body>
+</html>
