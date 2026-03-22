@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshadweep — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--lagoon:#006994;--coral:#E8613A;--sand:#C8A84B;--green:#1A7A3A;--cream:#f0fbff;--deep:#020d14;--border:rgba(0,105,148,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(2,13,20,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--sand);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--lagoon);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(240,251,255,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(240,251,255,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--lagoon);color:#fff;border-color:var(--lagoon);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--sand);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--lagoon);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;filter:brightness(0.76) saturate(1.3);}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,13,20,.22) 0%,rgba(2,13,20,.04) 38%,rgba(2,13,20,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(0,105,148,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.8rem,8vw,7rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--sand);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(240,251,255,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(0,105,148,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(240,251,255,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--lagoon);color:#fff;border-color:var(--lagoon);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--sand),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(0,105,148,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--sand);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--sand);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(240,251,255,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(0,105,148,.1);border:1px solid rgba(0,105,148,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(0,105,148,.18);border-color:rgba(0,105,148,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,168,75,.55);background:rgba(200,168,75,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--sand);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(240,251,255,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--lagoon);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(0,105,148,.65);}
+.dsearch::placeholder{color:rgba(240,251,255,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(0,105,148,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(0,105,148,.08);}
+.dacc:hover{border-color:rgba(0,105,148,.42);background:rgba(0,105,148,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(0,105,148,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--sand);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--sand);font-size:.85rem;transition:transform .35s;flex-shrink:0;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(0,105,148,.35);background:rgba(0,105,148,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--sand);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(240,251,255,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--lagoon);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(0,105,148,.2);border:1px solid rgba(0,105,148,.38);color:rgba(240,251,255,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,168,75,.2);border:1px solid rgba(200,168,75,.42);color:var(--sand);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--sand);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(0,105,148,.09);border:1.5px solid rgba(0,105,148,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(0,105,148,.55);box-shadow:0 18px 54px rgba(0,105,148,.18);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--lagoon),var(--sand));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--sand);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(240,251,255,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(0,105,148,.22);border:1px solid rgba(0,105,148,.42);color:#a0e8ff;}
+.fb-fr{background:rgba(232,97,58,.2);border:1px solid rgba(232,97,58,.38);color:#ffd0b8;}
+.fb-free{background:rgba(200,168,75,.18);border:1px solid rgba(200,168,75,.38);color:var(--sand);}
+.fb-permit{background:rgba(26,122,58,.2);border:1px solid rgba(26,122,58,.38);color:#a0ffb8;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(0,105,148,.14);border:1px solid rgba(0,105,148,.3);}
+.donts{background:rgba(232,97,58,.12);border:1px solid rgba(232,97,58,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a0e8ff;}.donts .dd-title{color:#ffd0b8;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(160,232,255,.78);}.donts .dd-list li{color:rgba(255,208,184,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(0,105,148,.1);border:1.5px solid rgba(0,105,148,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(0,105,148,.52);background:rgba(0,105,148,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(240,251,255,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(240,251,255,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(0,105,148,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(240,251,255,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(240,251,255,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.permit-note{background:rgba(0,105,148,.12);border:1px solid rgba(0,105,148,.3);border-radius:12px;padding:16px 20px;margin-top:16px;font-size:.82rem;color:rgba(240,251,255,.7);line-height:1.7;}
+.permit-note strong{color:var(--sand);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">LAKSHADWEEP</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-ml" onclick="setLang('ml')">മലയാളം</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#127754;</span>
+    <div class="hero-name" id="heroName">Lakshadweep</div>
+    <div class="hero-native" id="heroNative">लक्षद्वीप — ലക്ഷദ്വീപ്</div>
+    <div class="hero-tag" id="heroTag">A Hundred Thousand Islands — India's Only Coral Atoll Kingdom</div>
+    <div class="tribar">
+      <div style="background:#006994"></div>
+      <div style="background:#C8A84B"></div>
+      <div style="background:#E8613A"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#islands" id="qi">&#127968; Islands</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Lakshadweep</span>
+  <h2 class="sec-title" id="aboutTitle">India's <em>Coral Crown</em></h2>
+  <p class="sec-body" id="aboutBody">Lakshadweep — meaning "A Hundred Thousand Islands" in Sanskrit — is India's smallest Union Territory by area and its only coral atoll system. A necklace of 36 tiny coral islands, 12 atolls, 3 reefs and 5 submerged banks scattered across 32 square kilometres of land in the vast Arabian Sea, Lakshadweep sits 200 to 440 kilometres west of the Kerala coast. Only 10 of the 36 islands are inhabited. The total population of barely 65,000 people — all Muslim, all Malayalam-speaking, all descended from ancient Keralite settlers who converted to Islam centuries ago — makes Lakshadweep the least populated Union Territory in India. What the islands lack in size they more than compensate for in natural splendour. The lagoons of Lakshadweep — enclosed saltwater bodies between the coral reef and the island — are among the clearest waters on earth, with visibility of 40-50 metres and a turquoise so vivid it appears artificial. The coral reefs here contain over 600 species of coral fish, sea turtles, dolphins, whale sharks, manta rays, reef sharks and dugongs (sea cows). The coral atoll system itself — India's only one — formed over millions of years as volcanic seamounts subsided and coral grew upward to maintain sea level, creating some of the world's most spectacular underwater landscapes. The islands are also home to the last significant population of the coconut crab in India — the world's largest land invertebrate. Lakshadweep requires an entry permit for all Indian visitors (obtained easily in advance) and a separate permit for non-Indians. Some islands are restricted entirely. The result is that these are among the least-visited and best-preserved tropical islands in Asia — the Maldives of India, but wilder, quieter and entirely authentic.</p>
+
+  <div class="permit-note">
+    <strong>⚠️ Entry Permit Required:</strong> All visitors to Lakshadweep — Indian and foreign — must obtain an Entry Permit before arrival. Indian citizens apply through the Lakshadweep Administration or authorised tour operators. Foreign nationals require additional clearances. Only certain islands are open to tourists: <strong>Agatti, Bangaram, Kadmat, Kalpeni, Kavaratti, Minicoy and Thinnakara.</strong> Islands like Andrott, Amini, Chetlat, Kiltan and Bitra are closed to tourists to protect the resident communities.
+  </div>
+</section>
+
+<!-- WEATHER -->
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Lakshadweep</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Lakshadweep has a tropical maritime climate — warm and humid year-round (25–32°C). October to May is the best period — calm seas and superb diving visibility (40m+). The southwest monsoon (June–September) brings heavy rain and rough seas that make inter-island travel impossible. Peak season is December–March when the lagoons are at their clearest and calmest.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<!-- ISLANDS (instead of districts) -->
+<section id="islands" class="fade-in">
+  <span class="sec-lbl" id="lIslands">Tourist Islands</span>
+  <h2 class="sec-title" id="islandsTitle">The Open <em>Islands of Lakshadweep</em></h2>
+  <p class="sec-body" id="islandsNote" style="margin-bottom:18px">Of Lakshadweep's 36 islands, only these 7 are accessible to tourists with a standard Entry Permit. Each has its own character — from Kavaratti (the capital) to the remote Minicoy with its distinctive Maldivian-influenced culture. Access is mainly by flight to Agatti or by ship from Kochi.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search islands..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<!-- PLACES -->
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Lagoons, Coral Reefs &amp; Island Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Lakshadweep</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<!-- ARTS -->
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Island Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Culture of <em>Lakshadweep</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<!-- TRADITIONS -->
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Island Life</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Lakshadweep</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<!-- CUISINES -->
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Lakshadweep</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🐠</span>
+  <div class="ft" id="footerT">JAI HIND — LAKSHADWEEP</div>
+  <div class="fs" id="footerS">Union Territory &middot; Capital: Kavaratti &middot; India's Smallest UT by Area &middot; 1956</div>
+</footer>
+
+<audio id="bgm" loop preload="auto"></audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(0,20,40);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(0,55,85);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(0,40,20);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/%3E%3Ccircle cx=%22150%22 cy=%22180%22 r=%22260%22 fill=%22rgba(0,105,148,0.38)%22/%3E%3Ccircle cx=%221050%22 cy=%22300%22 r=%22300%22 fill=%22rgba(0,105,148,0.25)%22/%3E%3Ccircle cx=%22600%22 cy=%22680%22 r=%22220%22 fill=%22rgba(232,97,58,0.15)%22/%3E%3Ccircle cx=%22600%22 cy=%22400%22 r=%22180%22 fill=%22rgba(200,168,75,0.1)%22/%3E%3C/svg%3E")';
+
+const islandData=[
+  {name:"Agatti Island",region:"Northern Lakshadweep",known:"Only airport in Lakshadweep — Gateway island, stunning lagoon, scuba diving",heritage:["Agatti Airport (India's shortest commercial runway — 1,204m over the sea)","Agatti Lagoon — extraordinary turquoise water","Coral reef diving sites","Thinnakara uninhabited island nearby"],languages:["Malayalam","Jeseri (local dialect)"],bestMonths:"Oct-May",avgTemp:"25-32°C"},
+  {name:"Bangaram Island",region:"Northern Lakshadweep",known:"Uninhabited luxury resort island — India's only uninhabited tourist island with resort",heritage:["Bangaram Island Resort (only structure on island)","Pristine coral reef — one of India's finest","Sea turtle nesting beach","Thinnakara & Parali islands nearby"],languages:["Malayalam (staff only — no permanent residents)"],bestMonths:"Oct-May",avgTemp:"25-32°C"},
+  {name:"Kavaratti Island",region:"Central Lakshadweep",known:"Capital of Lakshadweep — Government hub, Ujra Mosque, Marine Aquarium",heritage:["Ujra Mosque — 52 mosques on this one island","Lakshadweep Marine Aquarium","Government House & Secretariat","Traditional boat-building yard"],languages:["Malayalam","Jeseri"],bestMonths:"Oct-May",avgTemp:"25-32°C"},
+  {name:"Kadmat Island",region:"Central Lakshadweep",known:"Longest tourist island — 8km long, water sports, lagoon camping",heritage:["8km beach — one of India's longest pristine beaches","Lagoon camping site","Scuba diving — beginner-friendly reefs","Traditional community life — interacting with residents permitted"],languages:["Malayalam","Jeseri"],bestMonths:"Oct-May",avgTemp:"25-32°C"},
+  {name:"Kalpeni Island",region:"Southern Lakshadweep",known:"Three islets — Cheriyam, Pitti & Tilakkam — unique multi-atoll formation",heritage:["Unique multi-island lagoon system","Kollam beach (white sand, turquoise lagoon)","Cheriyam Island — storm-ravaged smaller island","Exceptional snorkelling — shallow coral gardens"],languages:["Malayalam","Jeseri"],bestMonths:"Oct-May",avgTemp:"25-32°C"},
+  {name:"Minicoy Island",region:"Southernmost — closest to Maldives",known:"Most distinctive island — Maldivian-influenced culture, lighthouse, tuna fishing",heritage:["Minicoy Lighthouse (1885) — 300 steps, panoramic view","Maldivian-influenced architecture & culture","Traditional tuna fishing — pole & line method","Unique Mahl language (closer to Maldivian Dhivehi than Malayalam)"],languages:["Mahl (Dhivehi)","Malayalam"],bestMonths:"Oct-May",avgTemp:"25-33°C"},
+  {name:"Thinnakara Island",region:"Northern Lakshadweep",known:"Uninhabited island near Agatti — tent camping, pristine reef",heritage:["Tent camping on uninhabited island","Coral reef snorkelling — some of India's finest","Zero light pollution — extraordinary stargazing","Complete solitude — no permanent residents"],languages:["No residents"],bestMonths:"Nov-Apr",avgTemp:"25-32°C"},
+];
+
+const placesData=[
+  {emoji:"🤿",name:"Agatti & Bangaram Coral Reefs",location:"Northern Lakshadweep",desc:"India's finest scuba diving and snorkelling — the coral reefs around Agatti and Bangaram islands offer 40-50 metre visibility in peak season with coral gardens of extraordinary diversity: 600+ species of fish, sea turtles resting on the reef, white-tip reef sharks circling the drop-offs, manta rays cruising the channel, and Napoleon wrasse of enormous size. The Bangaram reef drop-off — where the coral wall plunges 40 metres into the deep blue — is one of the most dramatic dive sites in India.",fee:["Paid — dive packages","Entry Permit required"]},
+  {emoji:"🏝️",name:"Bangaram Atoll — Uninhabited Paradise",location:"Bangaram Island",desc:"The most exclusive island experience in India — Bangaram is an uninhabited coral island with a single eco-resort that has operated since 1983. The island is entirely surrounded by a living coral reef with a turquoise lagoon so clear that the bottom is visible at 8 metres depth. No vehicles, no roads, no noise except the ocean. Coconut crabs (the world's largest land invertebrate) wander the beach at night. Sea turtles nest on the south beach. The only way to experience an uninhabited tropical island in India.",fee:["Resort accommodation required","Entry Permit required"]},
+  {emoji:"🌊",name:"Kalpeni Lagoon — Multi-Atoll System",location:"Kalpeni Island",desc:"Kalpeni's extraordinary geography — three small islands (Kalpeni, Cheriyam and Tilakkam) sharing a single large lagoon — creates one of the most spectacular lagoon environments in Asia. The shallow lagoon between the islands is a natural snorkelling park with coral gardens, sea grass beds (feeding ground for dugongs), reef fish in extraordinary numbers and excellent visibility. The outer reef at Kalpeni receives strong currents that bring large pelagic fish including tuna, barracuda and occasional whale sharks.",fee:["Entry Permit required","Boat charges apply"]},
+  {emoji:"🏗️",name:"Minicoy Lighthouse",location:"Minicoy Island",desc:"The Minicoy Lighthouse — built by the British in 1885 — is 52 metres tall and required 300 steps to climb. It stands on the southern tip of Minicoy Island and offers the most panoramic view in Lakshadweep — the entire atoll spread below, the deep blue of the Arabian Sea on one side and the turquoise lagoon on the other. Minicoy is the southernmost inhabited island of India before the Maldives, and the lighthouse guided ships through the Eight Degree Channel for over a century.",fee:["Rs.10 entry"]},
+  {emoji:"🐢",name:"Sea Turtle Nesting Beaches",location:"Multiple islands",desc:"Lakshadweep is a critical nesting site for two sea turtle species — the green turtle (Chelonia mydas) and the hawksbill turtle (Eretmochelys imbricata). Both species are critically endangered and the Lakshadweep reefs support feeding populations of hundreds of individuals. Nesting occurs on several beaches, particularly at Bangaram, Thinnakara and the uninhabited islands. The Forest Department conducts nest monitoring and hatchery protection programs. Night turtle watching (with strict protocols) is one of the most extraordinary wildlife experiences available.",fee:["Free with Forest Dept. escort","Entry Permit required"]},
+  {emoji:"🕌",name:"Ujra Mosque — Kavaratti",location:"Kavaratti Island",desc:"Kavaratti's Ujra Mosque is the most elaborately decorated of the 52 mosques on the capital island — built of local coral and wood with an interior of exquisite wooden carving that reflects the island's long tradition of master craftsmanship. The ceiling is carved from driftwood collected from the sea, shaped by artisans who worked without nails or metal fasteners. Lakshadweep has more mosques per square kilometre than virtually anywhere in India — the entire population is Muslim, and religious life is the heartbeat of island society.",fee:["Free — modest dress required"]},
+  {emoji:"🐠",name:"Lakshadweep Marine Aquarium",location:"Kavaratti Island",desc:"The Lakshadweep Marine Aquarium in Kavaratti is one of the finest in India for displaying the extraordinary biodiversity of coral reef ecosystems — living coral displays, reef fish of every colour and size, sea anemones with clownfish, moray eels in crevices and regular displays of local marine species. It also functions as a coral propagation and reef restoration centre, where coral fragments are grown on underwater frames before transplantation to damaged reef sections. India's most important coral conservation facility.",fee:["Rs.20 Indians","Rs.100 Foreigners"]},
+  {emoji:"⛵",name:"Traditional Thoni & Odi Boat Building",location:"Kavaratti & Agatti",desc:"Lakshadweep's traditional boat-building tradition — constructing the thoni (a large wooden sailing vessel) and odi (outrigger canoe) without nails, using only wooden pegs and coconut fibre caulking — is one of the most sophisticated traditional marine craft traditions in India. The boats are built entirely from locally available materials: coconut wood for the hull, coir (coconut fibre) for lashing and caulking, and cotton sailcloth. Kavaratti's boat yard is one of the last places in India where this tradition is actively practised.",fee:["Free to observe"]},
+];
+
+const artsData=[
+  {emoji:"🥁",name:"Lava Dance (Kolkali & Parichakali)",location:"All islands",desc:"The traditional martial dance of Lakshadweep — Kolkali (performed with short sticks) and Parichakali (performed with swords and shields) are the most distinctive performing arts of the islands. Both are performed by men in traditional white dress with elaborate footwork, striking movements and rhythmic chanting. Kolkali involves 16 or more performers striking sticks in synchronised patterns as they move in a circle. The dances are performed at weddings, festivals and important celebrations — deeply rooted in the islands' Islamic cultural tradition."},
+  {emoji:"🪵",name:"Coral & Wood Carving",location:"Kavaratti, Minicoy",desc:"The Lakshadweep tradition of carving from coral stone and driftwood has produced some of the most distinctive decorative art in India — mosque interiors with carved wooden ceilings and screens, coral stone pillars with geometric Islamic patterns, and wooden furniture with intricate inlay work. The use of naturally available materials — coral stone from the reef, driftwood from the ocean — and the Islamic tradition of geometric (non-figurative) art creates a distinctive aesthetic found nowhere else in India."},
+  {emoji:"🧵",name:"Coir Craft — Coconut Fibre Weaving",location:"All islands",desc:"Coconut palm is the defining natural resource of Lakshadweep — and the tradition of working with coir (coconut fibre) is deeply embedded in island life. Ropes, mats, baskets, bags and traditional boat caulking are all made from coir using techniques passed down through generations. The coir rope-making of Lakshadweep — twisted by hand into ropes of extraordinary strength — is sold across India. The coconut palm also provides fronds for thatching, trunk for construction, and oil for cooking and traditional medicine."},
+  {emoji:"🐚",name:"Shell Craft & Marine Jewellery",location:"Kavaratti market",desc:"The extraordinary variety of shells found in Lakshadweep's reefs — cowries, turbans, cones, olives, volutes and hundreds of other species — have historically been used for craft, currency and decoration. Today shell craft (using only shells found naturally washed up on beaches, not collected from live animals) includes jewellery, decorative items and traditional implements. The cowrie shell has particular cultural significance — historically used as currency across the Indian Ocean world, cowries from Lakshadweep were a major trade commodity for centuries."},
+  {emoji:"⛵",name:"Traditional Navigation & Seamanship",location:"All islands",desc:"The islanders of Lakshadweep are among India's most accomplished traditional mariners — navigating the Arabian Sea using stars, ocean swells, bird behaviour and traditional knowledge accumulated over centuries. The outrigger canoe (odi) and the large sailing vessel (thoni) were the primary means of inter-island travel for centuries, requiring intimate knowledge of winds, currents and reef navigation. This maritime knowledge is gradually being documented by researchers as motor vessels replace traditional sailing craft."},
+  {emoji:"🎵",name:"Oppana — Islamic Wedding Music",location:"All islands",desc:"Oppana is the traditional music and dance of Lakshadweep's Muslim community — performed at weddings by women in a circle around the bride, clapping hands in rhythmic patterns and singing songs of praise and celebration in Malayalam. The form is also found in coastal Kerala's Muslim communities but has a distinctively island character in Lakshadweep. The songs celebrate the bride's beauty, invoke divine blessings and narrate the history of the community. Oppana is performed only at weddings — it is not a public entertainment but a sacred community ritual."},
+];
+
+const traditionsData=[
+  {emoji:"🌙",name:"Eid Celebrations — Island Style",location:"All islands",desc:"Lakshadweep's Eid celebrations — both Eid-ul-Fitr and Eid-ul-Adha — are the most important festivals of the year for the entirely Muslim island population. The celebrations combine the standard Islamic observances (communal prayers, feasting, visiting family) with distinctively island customs: Kolkali and Parichakali performances in the evening, special island foods (tuna preparations, coconut sweets), and the extraordinary sight of the entire population of a small island gathering on the beach for community celebrations."},
+  {emoji:"🎣",name:"Traditional Tuna Fishing — Minicoy",location:"Minicoy Island",desc:"The pole-and-line tuna fishing of Minicoy Island is one of the world's most sustainable fishing traditions — a method that catches one fish at a time with a barbless hook, causing zero bycatch and zero reef damage. The tuna fishing boats of Minicoy venture into the open ocean at night, return at dawn with their catch, and the processing, drying and export of skipjack tuna has been the economic backbone of Minicoy for centuries. The tradition is shared with the Maldives — Minicoy's closest cultural neighbour."},
+  {emoji:"🪸",name:"Coral Reef Conservation — Community Protocols",location:"All islands",desc:"The islanders of Lakshadweep have maintained traditional conservation practices for their coral reefs for centuries — reef areas reserved for fishing, seasonal closures, prohibition on destructive fishing methods. After the 1998 coral bleaching event (which killed significant portions of the reef) and the 2004 tsunami, the Lakshadweep Administration established formal Marine Protected Areas and the islanders developed community-based reef monitoring. The result is one of India's most successful examples of community-led marine conservation."},
+  {emoji:"🌴",name:"Coconut Harvest Festival",location:"All islands — annual",desc:"The coconut palm is sacred in Lakshadweep — every aspect of island life depends on it — and the annual coconut harvest is marked with community celebration. Lakshadweep produces some of the finest coconuts in India (the volcanic atoll soil and saline water give the coconuts an exceptional flavour). The harvest involves the entire community; coconut climbers (a specialist skill) harvest from tall palms using traditional methods; and the communal processing of copra (dried coconut) is a major community economic event."},
+  {emoji:"🌊",name:"Monsoon Season — Island Isolation",location:"All islands — June to September",desc:"The monsoon season — when rough seas cut the islands off from the mainland for weeks at a time — has shaped the character, culture and psychology of Lakshadweep's people profoundly. The tradition of storing food (dried tuna, coconut products, rice), maintaining community solidarity during isolation, and the collective celebration when the seas calm and supply ships arrive has created a distinctive island resilience. The monsoon-stranded communities developed strong oral traditions, music and storytelling that filled the long isolated evenings."},
+  {emoji:"⚓",name:"Ship Arrival Celebrations",location:"All islands",desc:"Each arrival of the supply ship from Kochi — the lifeline of every island — is a community event. The ship brings fresh vegetables, rice, medical supplies, electronics and news from the mainland. Children run to the jetty; families wait for letters and packages; the island's entire social life reorganises around the ship schedule. The joy of the ship's arrival, and the community coming together to unload supplies, distribute goods and share news, is one of the most distinctive cultural rhythms of island life — invisible to tourists but central to Lakshadweep identity."},
+];
+
+const cuisinesData=[
+  {emoji:"🐟",name:"Mas Curry — Lakshadweep Tuna Curry",location:"All islands",desc:"Tuna is the defining ingredient of Lakshadweep cuisine — the skipjack tuna (locally called mas) is eaten fresh, dried, smoked, in curries, as a paste and as a condiment. The mas curry — tuna pieces cooked in a rich coconut milk gravy with local spices, curry leaves and kokum — is the island's most distinctive dish. The flavour is quite different from mainland Indian fish curries — the tuna's firm flesh, the fresh coconut milk, and the specific blend of island spices create a dish of extraordinary depth."},
+  {emoji:"🥥",name:"Coconut in Everything",location:"All islands",desc:"Coconut is to Lakshadweep what ghee is to North India or oil to Tamil Nadu — it appears in every dish, every preparation, every drink. Coconut milk forms the base of all curries; grated coconut is added to chutneys, rice dishes and sweets; coconut oil is the only cooking medium; coconut water is the island's natural refreshment; and coconut toddy (the fermented sap of the palm flower) is the traditional drink. The variety of coconut preparations in Lakshadweep cuisine is extraordinary."},
+  {emoji:"🍚",name:"Mas Bai — Tuna Rice",location:"All islands",desc:"Mas bai — rice cooked with dried tuna, coconut milk and local spices — is the everyday staple of Lakshadweep, eaten for breakfast, lunch and dinner in different variations. The dried tuna gives the rice a deep, slightly smoky flavour that is entirely distinctive to the islands. Mas bai is the dish that every person who grows up in Lakshadweep remembers as the taste of home — simple, deeply satisfying and impossible to replicate without the specific dried tuna of the islands."},
+  {emoji:"🍯",name:"Halwa & Island Sweets",location:"All islands — festivals",desc:"Lakshadweep's sweet tradition reflects both the Kerala mainland influence and the Islamic festive culture — halwa made from rice, wheat or coconut with jaggery and ghee; unnakkai (a steamed rice dumpling filled with coconut and jaggery); ada (steamed rice cakes in banana leaf); and the special festival sweets made only for Eid. The use of coconut jaggery (made from coconut palm sap) rather than sugarcane jaggery gives the island's sweets a distinctive, slightly caramel flavour."},
+  {emoji:"🐠",name:"Reef Fish Preparations",location:"All islands",desc:"Beyond tuna, Lakshadweep's reefs provide an extraordinary variety of food fish — red snapper, grouper, parrotfish, rabbitfish, triggerfish and many others. The island cooking traditions for these species reflect centuries of knowledge: certain fish are best cooked dry-spiced; others need coconut milk; some are best grilled over coconut shell charcoal. The coral reef fishing traditions of Lakshadweep are carefully regulated — reef fish are caught only using traditional pole-and-line or handline methods, never nets."},
+  {emoji:"🧃",name:"Coconut Toddy & Island Drinks",location:"Traditional community",desc:"Kallu — fresh coconut toddy (the fermented sap of the coconut palm flower) — has been the traditional drink of the islands for centuries, though its consumption sits in complex relationship with Islamic practice. Fresh toddy (mildly alcoholic, consumed within hours of tapping) is nutritionally rich and distinctively flavoured. Neera — the unfermented version — is a sweet, mineral-rich drink consumed for health. Coconut water straight from the green coconut is available everywhere. The islands have no alcohol licence and commercial alcohol is not sold."},
+];
+
+const weatherData=[
+  {month:"January",avgTemp:"26-30°C",weather:"Peak Season",details:"Perfect — flat calm lagoons, 40m+ visibility, best turtle watching. All water sports and diving fully operational. Busiest month — book 2-3 months ahead.",best:true},
+  {month:"February",avgTemp:"26-31°C",weather:"Peak Season",details:"Equally excellent. Whale sharks occasionally spotted at Bangaram drop-off. Manta rays at Agatti channel. Lagoon water temperature ideal for long snorkelling sessions.",best:true},
+  {month:"March",avgTemp:"27-32°C",weather:"Excellent",details:"Still superb conditions. Slightly warmer. Fewer tourists than Jan-Feb. Excellent for diving the outer reef walls where bigger fish are active.",best:true},
+  {month:"April",avgTemp:"28-33°C",weather:"Good",details:"Pre-monsoon warming. Seas still calm. Good visibility. Last ideal month before monsoon approaches. Some operators begin to close for the season."},
+  {month:"May",avgTemp:"28-33°C",weather:"Transition",details:"Monsoon approaching — seas beginning to build. Some ferries becoming irregular. Still possible to visit but plan carefully. Last weeks of the tourist season."},
+  {month:"June",avgTemp:"27-31°C",weather:"SW Monsoon",details:"Monsoon arrives — rough seas, heavy rain. All tourist boat services suspended. Ships from Kochi sail irregularly. Islands essentially closed to tourism."},
+  {month:"July",avgTemp:"26-30°C",weather:"Monsoon",details:"Peak monsoon — heavy rainfall, rough sea. Islands cut off. The lagoons fill with fresh water runoff. No tourist access."},
+  {month:"August",avgTemp:"26-30°C",weather:"Monsoon",details:"Monsoon continues. Islands in isolation. Community life turns inward — the monsoon season is when island oral traditions, music and storytelling are most active."},
+  {month:"September",avgTemp:"26-30°C",weather:"Late Monsoon",details:"Seas beginning to calm at month's end. Some ships resuming cautiously. Pre-season preparations on islands. Not recommended for tourism."},
+  {month:"October",avgTemp:"26-31°C",weather:"Season Opening",details:"Northeast monsoon — generally calmer than SW monsoon. Seas settling. First tourists arriving. Diving visibility improving rapidly. Turtle nesting season beginning.",best:true},
+  {month:"November",avgTemp:"26-30°C",weather:"Good Season",details:"Season properly underway. Good diving conditions. Lagoons clearing after monsoon. Some of the best coral photography conditions as the water is still rich in nutrients.",best:true},
+  {month:"December",avgTemp:"25-30°C",weather:"Peak Season",details:"Christmas and New Year — islands at their most beautiful. Bangaram fully booked. Agatti at capacity. All dive sites operational. Book 3-4 months ahead.",best:true},
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+
+const accordion=document.getElementById('distAccordion');
+islandData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('permit')?'fb-permit':f.toLowerCase().includes('foreigner')||f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('')}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Get Entry Permit well in advance</li><li>Follow reef protection rules strictly</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Touch or stand on coral — heavy fine</li><li>Visit restricted islands without clearance</li></ul></div>
+    </div>
+  </div></div>`;
+});
+
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location}</span></div>
+    </div>`;
+  });
+});
+
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play().catch(()=>{});b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Lakshadweep",heroNative:"लक्षद्वीप — ലക്ഷദ്വീപ്",heroTag:"A Hundred Thousand Islands — India's Only Coral Atoll Kingdom",scrollLbl:"SCROLL TO EXPLORE",lAbout:"About Lakshadweep",aboutTitle:"India's Coral Crown",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Lakshadweep",lIslands:"Tourist Islands",islandsTitle:"The Open Islands of Lakshadweep",islandsNote:"Of Lakshadweep's 36 islands, only these 7 are accessible to tourists with a standard Entry Permit.",lPlaces:"Lagoons, Coral Reefs & Island Wonders",placesTitle:"Wonders of Lakshadweep",lArts:"Island Arts, Crafts & Heritage",artsTitle:"Living Culture of Lakshadweep",lTrad:"Festivals & Island Life",tradTitle:"Soul of Lakshadweep",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Lakshadweep",footerT:"JAI HIND — LAKSHADWEEP"},
+  hi:{heroName:"लक्षद्वीप",heroNative:"लक्षद्वीप — एक लाख द्वीप",heroTag:"एक लाख द्वीप — भारत का एकमात्र प्रवाल एटोल राज्य",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",lAbout:"लक्षद्वीप के बारे में",aboutTitle:"भारत का प्रवाल मुकुट",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"लक्षद्वीप कब जाएं",lIslands:"पर्यटन द्वीप",islandsTitle:"लक्षद्वीप के खुले द्वीप",islandsNote:"लक्षद्वीप के 36 द्वीपों में से केवल ये 7 पर्यटकों के लिए खुले हैं।",lPlaces:"लैगून, प्रवाल भित्तियाँ और द्वीप चमत्कार",placesTitle:"लक्षद्वीप के चमत्कार",lArts:"द्वीप कलाएं, शिल्प और विरासत",artsTitle:"लक्षद्वीप की जीवंत संस्कृति",lTrad:"त्योहार और द्वीप जीवन",tradTitle:"लक्षद्वीप की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"लक्षद्वीप का स्वाद",footerT:"जय हिन्द — लक्षद्वीप"},
+  ml:{heroName:"ലക്ഷദ്വീപ്",heroNative:"ലക്ഷദ്വീപ് — ഒരു ലക്ഷം ദ്വീപുകൾ",heroTag:"ഒരു ലക്ഷം ദ്വീപുകൾ — ഇന്ത്യയുടെ ഏകമാത്ര പവിഴ ദ്വീപ് രാജ്യം",scrollLbl:"പര്യവേക്ഷണം ചെയ്യാൻ സ്ക്രോൾ ചെയ്യുക",lAbout:"ലക്ഷദ്വീപിനെ കുറിച്ച്",aboutTitle:"ഇന്ത്യയുടെ പവിഴ മുകുടം",lWeather:"കാലാവസ്ഥയും ഏറ്റവും നല്ല സമയവും",weatherTitle:"ലക്ഷദ്വീപ് എപ്പോൾ സന്ദർശിക്കണം",lIslands:"ടൂറിസ്റ്റ് ദ്വീപുകൾ",islandsTitle:"ലക്ഷദ്വീപിലെ തുറന്ന ദ്വീപുകൾ",islandsNote:"ലക്ഷദ്വീപിലെ 36 ദ്വീപുകളിൽ ഈ 7 എണ്ണം മാത്രമേ ടൂറിസ്റ്റുകൾക്ക് ലഭ്യമാകൂ.",lPlaces:"ലഗൂണുകൾ, പവിഴ ദ്വീപുകൾ, ദ്വീപ് അദ്ഭുതങ്ങൾ",placesTitle:"ലക്ഷദ്വീപിലെ അദ്ഭുതങ്ങൾ",lArts:"ദ്വീപ് കലകൾ, കരകൗശലം, പൈതൃകം",artsTitle:"ലക്ഷദ്വീപിലെ ജീവനുള്ള സംസ്കാരം",lTrad:"ഉത്സവങ്ങളും ദ്വീപ് ജീവിതവും",tradTitle:"ലക്ഷദ്വീപിന്റെ ആത്മാവ്",lCuisines:"പാചക പൈതൃകം",cuisinesTitle:"ലക്ഷദ്വീപിന്റെ രുചി",footerT:"ജയ് ഹിന്ദ് — ലക്ഷദ്വീപ്"},
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  const ids=['heroName','heroNative','heroTag','scrollLbl','lAbout','aboutTitle','lWeather','weatherTitle','lIslands','islandsTitle','islandsNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT'];
+  ids.forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.innerHTML=t[k];});
+  document.getElementById('distSearch').placeholder=lang==='hi'?'द्वीप खोजें...':lang==='ml'?'ദ്വീപ് തിരയുക...':'Search islands...';
+}
+</script>
+</body>
+</html>
