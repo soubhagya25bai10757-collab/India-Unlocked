@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhya Pradesh — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#C05B0A;--maroon:#7B1C2E;--gold:#D4960A;--teal:#00695C;--cream:#fdf3e3;--deep:#080507;--card:#ffffff0d;--border:rgba(192,91,10,0.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(8,5,7,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--saffron);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,243,227,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,243,227,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--saffron);color:#fff;border-color:var(--saffron);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--saffron);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,5,7,.18) 0%,rgba(8,5,7,.04) 38%,rgba(8,5,7,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(212,150,10,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2rem,7.5vw,6.8rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,243,227,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(192,91,10,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,243,227,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--saffron);color:#fff;border-color:var(--saffron);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(192,91,10,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,243,227,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(192,91,10,.1);border:1px solid rgba(192,91,10,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(192,91,10,.18);border-color:rgba(192,91,10,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(212,150,10,.55);background:rgba(212,150,10,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,243,227,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--saffron);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(192,91,10,.65);}
+.dsearch::placeholder{color:rgba(253,243,227,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(192,91,10,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(192,91,10,.08);}
+.dacc:hover{border-color:rgba(192,91,10,.42);background:rgba(192,91,10,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(192,91,10,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(192,91,10,.35);background:rgba(192,91,10,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,243,227,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--saffron);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(192,91,10,.2);border:1px solid rgba(192,91,10,.38);color:rgba(253,243,227,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(212,150,10,.2);border:1px solid rgba(212,150,10,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(192,91,10,.09);border:1.5px solid rgba(192,91,10,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(192,91,10,.55);box-shadow:0 18px 54px rgba(192,91,10,.14);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--saffron),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,243,227,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(192,91,10,.22);border:1px solid rgba(192,91,10,.42);color:#ffd4a0;}
+.fb-fr{background:rgba(123,28,46,.2);border:1px solid rgba(123,28,46,.38);color:#ffa8b8;}
+.fb-free{background:rgba(0,105,92,.18);border:1px solid rgba(0,105,92,.38);color:#80ffd4;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(0,105,92,.14);border:1px solid rgba(0,105,92,.3);}
+.donts{background:rgba(123,28,46,.12);border:1px solid rgba(123,28,46,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#80ffd4;}.donts .dd-title{color:#ffa8b8;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(128,255,212,.78);}.donts .dd-list li{color:rgba(255,168,184,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(192,91,10,.1);border:1.5px solid rgba(192,91,10,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(192,91,10,.52);background:rgba(192,91,10,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,243,227,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,243,227,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(192,91,10,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,243,227,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,243,227,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">MADHYA PRADESH</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-bu" onclick="setLang('bu')">बुंदेली</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#128047;</span>
+    <div class="hero-name" id="heroName">Madhya Pradesh</div>
+    <div class="hero-native" id="heroNative">मध्य प्रदेश</div>
+    <div class="hero-tag" id="heroTag">Heart of India — Tigers, Temples, Tribes &amp; Timeless Stone</div>
+    <div class="tribar"><div style="background:#C05B0A"></div><div style="background:#D4960A"></div><div style="background:#7B1C2E"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777;&#65039; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963;&#65039; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Madhya Pradesh</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Heart of India</em></h2>
+  <p class="sec-body" id="aboutBody">Madhya Pradesh — the Middle Province — sits at the geographic, ecological and civilizational center of the Indian subcontinent. The largest state in India by area (308,252 sq km), it holds three UNESCO World Heritage Sites in extraordinary proximity: the erotic temples of Khajuraho built by the Chandela dynasty, the Buddhist monuments of Sanchi where Emperor Ashoka's Great Stupa has stood for 2,300 years, and the rock shelters of Bhimbetka containing paintings 30,000 years old — some of humanity's earliest art. MP is India's tiger capital — home to six of India's finest tiger reserves: Kanha, Bandhavgarh, Pench, Satpura, Panna and Tadoba. The Kanha meadows inspired Rudyard Kipling's Jungle Book — Mowgli's forest is real, still wild, still breathing. The sacred city of Ujjain holds one of the twelve Jyotirlingas and hosts the Kumbh Mela (Simhastha) every 12 years. Orchha's Bundela palaces rise from the Betwa river like a mirage of the 17th century, completely intact. Gwalior Fort — one of India's great citadels — surveys the Chambal plains from its crag. Mandu's deserted Sultanate city tells the legendary love story of Baz Bahadur and Roopmati in stone. The Narmada — one of India's most sacred rivers — rises at Amarkantak and flows west through marble gorges. Madhya Pradesh is India in its most elemental state — the forest, the stone, the river and the tiger, all still here.</p>
+</section>
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Madhya Pradesh</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">MP has three seasons: blazing summer (March-June), monsoon (July-September) and a glorious winter (October-February). October to March is ideal for tiger safaris, heritage temples and river travel. Tiger reserves close July 1 to September 30 for monsoon — the best time is February when tigers congregate at dwindling water holes.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 55 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Madhya Pradesh</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">MP's 55 districts span five historic regions — Malwa, Bundelkhand, Baghelkhand, Mahakoshal and Nimar — each with its own dynasty, dialect, cuisine and landscape ranging from the Chambal ravines to the Vindhya highlands.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">UNESCO Sites, Tiger Reserves &amp; Ancient Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Madhya Pradesh</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Madhya Pradesh</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>MP's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Madhya Pradesh</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+<footer>
+  <span class="fe">&#128591;</span>
+  <div class="ft" id="footerT">JAY MADHYA PRADESH — MERA MP MAHAN</div>
+  <div class="fs" id="footerS">MP Foundation Day — November 1 &middot; 1956</div>
+</footer>
+<audio id="bgm" loop preload="auto"><source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg"></audio>
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(80,30,8);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(55,22,10);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(20,35,18);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22190%22 cy=%22210%22 r=%22270%22 fill=%22rgba(192,91,10,0.24)%22/%3E%3Ccircle cx=%221020%22 cy=%22340%22 r=%22300%22 fill=%22rgba(123,28,46,0.18)%22/%3E%3Ccircle cx=%22590%22 cy=%22680%22 r=%22210%22 fill=%22rgba(212,150,10,0.16)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+{name:"Bhopal",region:"Malwa-Central",known:"State Capital, Lake City, Taj-ul-Masajid",heritage:["Taj-ul-Masajid","Upper Lake (Bada Talab)","Bharat Bhavan","State Museum","VIP Road Heritage"],languages:["Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+{name:"Indore",region:"Malwa",known:"Cleanest City in India, Rajwada, Street Food Capital",heritage:["Rajwada Palace","Lal Bagh Palace","Kanch Mandir","Sarafa Bazaar Night Market"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+{name:"Ujjain",region:"Malwa",known:"Mahakaleshwar Jyotirlinga, Simhastha Kumbh, Holy City",heritage:["Mahakaleshwar Temple","Kal Bhairav Temple","Harsiddhi Mandir","Ram Ghat"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Gwalior",region:"Chambal",known:"Gwalior Fort, Tansen Heritage, Scindia Dynasty",heritage:["Gwalior Fort","Man Mandir Palace","Tansen Tomb","Sas-Bahu Temples","Jai Vilas Palace"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Jabalpur",region:"Mahakoshal",known:"Marble Rocks, Narmada, Bhedaghat Gorge",heritage:["Bhedaghat Marble Rocks","Dhuandhar Falls","Madan Mahal Fort","Rani Durgavati Museum"],languages:["Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Chhatarpur",region:"Bundelkhand",known:"Khajuraho UNESCO Temples, Chandela Heritage",heritage:["Khajuraho Western Group (UNESCO)","Kandariya Mahadeva","Eastern Jain Temples","Panna Nearby"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Tikamgarh",region:"Bundelkhand",known:"Orchha Gateway, Chandela Ruins, Rural Bundelkhand",heritage:["Orchha Fort Complex","Chandela Heritage Sites","Betwa River"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Datia",region:"Bundelkhand",known:"Datia Palace, Pitambara Peeth, Sonagiri Jain",heritage:["Datia Palace (Bir Singh Dev Mahal)","Pitambara Peeth","Sonagiri Jain Temples"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Panna",region:"Bundelkhand",known:"Panna Tiger Reserve, Diamond Mines, Ken River",heritage:["Panna Tiger Reserve","Diamond Mining Heritage","Ken River","Pranath Temple"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Jun",avgTemp:"6-46°C"},
+{name:"Damoh",region:"Bundelkhand",known:"Singurgarh Fort, Noha Wildlife, Jatashankhar Cave",heritage:["Singurgarh Fort","Noha Wildlife Sanctuary","Jatashankhar Cave Temple"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Sagar",region:"Bundelkhand",known:"Sagar Lake, Dr. Hari Singh Gour University Heritage",heritage:["Sagar Lake","Dr. H.S. Gour University","Rahatgarh Fort"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Umaria",region:"Baghelkhand",known:"Bandhavgarh — Highest Tiger Density in India",heritage:["Bandhavgarh Tiger Reserve","Bandhavgarh Fort Ruins","White Tiger Origin"],languages:["Hindi","Bagheli"],bestMonths:"Oct-Jun",avgTemp:"6-44°C"},
+{name:"Mandla",region:"Mahakoshal",known:"Kanha Buffer, Narmada, Gond Kingdom Heritage",heritage:["Kanha National Park Buffer","Narmada River","Ramnagar Gond Fort","Ghughua Fossil Park"],languages:["Hindi","Gondi"],bestMonths:"Oct-Jun",avgTemp:"6-42°C"},
+{name:"Balaghat",region:"Mahakoshal",known:"Kanha National Park, Wainganga River, Copper",heritage:["Kanha Tiger Reserve","Wainganga River","Copper Mine Heritage"],languages:["Hindi","Gondi"],bestMonths:"Oct-Jun",avgTemp:"6-42°C"},
+{name:"Seoni",region:"Mahakoshal",known:"Pench — Kipling's Original Jungle Book Forest",heritage:["Pench Tiger Reserve","Pench River","Mowgli Trail","Rudyard Kipling Connection"],languages:["Hindi","Gondi"],bestMonths:"Oct-Jun",avgTemp:"8-44°C"},
+{name:"Narmadapuram",region:"Malwa-Mahakoshal",known:"Satpura Tiger Reserve, Pachmarhi Hill Station",heritage:["Satpura Tiger Reserve","Pachmarhi — Queen of Satpura","Narmada Ghats","Tawa Dam"],languages:["Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Raisen",region:"Malwa",known:"Bhimbetka UNESCO, Bhojpur Temple, Raisen Fort",heritage:["Bhimbetka Rock Shelters (UNESCO)","Bhojpur Shiva Temple","Raisen Fort"],languages:["Hindi"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+{name:"Vidisha",region:"Malwa",known:"Udayagiri Caves, Heliodorus Pillar, Besnagar",heritage:["Udayagiri Rock-Cut Caves","Heliodorus Pillar","Besnagar Garuda Pillar"],languages:["Hindi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Dhar",region:"Malwa",known:"Mandu Nearby, Paramara Heritage, Bhojshala",heritage:["Mandu Hill Fort","Dhar Fort","Bhojshala Temple-Mosque"],languages:["Hindi","Malwi","Bhili"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Jhabua",region:"Malwa",known:"Bhil Tribal Heartland, Bhagoria Festival",heritage:["Bhil Tribal Villages","Bhagoria Haat Festival Sites","Dudhi River"],languages:["Bhili","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Alirajpur",region:"Malwa",known:"Dense Tribal Forest, Bhil-Bhilala Heritage, Narmada",heritage:["Tribal Forest Villages","Narmada Gorge","Kathiwada Heritage"],languages:["Bhili","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Khargoone",region:"Nimar",known:"Maheshwar — Holkar Capital, Omkareshwar, Narmada",heritage:["Maheshwar Fort and Ghats","Ahilyabai Holkar Palace","Omkareshwar Jyotirlinga"],languages:["Hindi","Nimadi"],bestMonths:"Oct-Mar",avgTemp:"8-46°C"},
+{name:"Khandwa",region:"Nimar",known:"Omkareshwar Area, Hanuwantiya Island, Indirasagar",heritage:["Omkareshwar Island Temple","Hanuwantiya Island Festival","Indirasagar Dam"],languages:["Hindi","Nimadi"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Burhanpur",region:"Nimar",known:"Mughal Heritage, Asirgarh Fort, Tapti River",heritage:["Asirgarh Fort","Shahi Qila Burhanpur","Dargah-e-Hakimi","Tapti River Ghats"],languages:["Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Barwani",region:"Nimar",known:"Tribal Region, Kajli Fair, Narmada Dam Area",heritage:["Tribal Heritage Villages","Kajli Mela","Sardar Sarovar Area"],languages:["Hindi","Nimadi","Bhili"],bestMonths:"Oct-Mar",avgTemp:"8-46°C"},
+{name:"Ratlam",region:"Malwa",known:"Ratlami Sev (GI Tag), Sailana Palace, Jain Temples",heritage:["Sailana Palace","Kaila Devi Temple","Ratlami Sev Heritage"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Mandsaur",region:"Malwa",known:"Pashupatinath Temple, Chambal River, Opium",heritage:["Pashupatinath Temple","Chambal River","Sondwa Fort"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Neemuch",region:"Malwa",known:"Garadia Mahadev Gorge, Charbhuja Temple",heritage:["Garadia Mahadev Cliff Temple","Neemuch Cantonment","Charbhuja Temple"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Dewas",region:"Malwa",known:"Industrial City, Chamundamata Temple Hill",heritage:["Chamundamata Hill Temple","Kali Sindh River","Industrial Heritage"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Shajapur",region:"Malwa",known:"Kali Sindh River, Soybean Belt, Agriculture",heritage:["Kali Sindh Heritage","Agricultural Landscape","Local Temples"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Rajgarh",region:"Malwa",known:"Kuno River, Narsinghgarh Heritage, Forests",heritage:["Narsinghgarh Fort","Kuno-Palpur Wildlife","Parvati River"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Shivpuri",region:"Chambal-Gwalior",known:"Madhav National Park, Scindia Chhatris, Tighra Dam",heritage:["Madhav National Park","Scindia Chhatris","George Castle","Tighra Dam"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Guna",region:"Chambal-Gwalior",known:"Aron Fort, Chambal Ravines, Industrial Belt",heritage:["Aron Fort","Chambal Valley","Parasari Lake"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Ashoknagar",region:"Chambal-Gwalior",known:"Chanderi Silk (GI Tag), Chanderi Fort, Weavers",heritage:["Chanderi Fort","Chanderi Silk Weaving Village","Koshak Mahal"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Morena",region:"Chambal",known:"Chambal Valley, Ravines, Mitawali Temple",heritage:["Mitawali Temple (Khajuraho-era)","Padavali Temple","Chambal Safari"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Bhind",region:"Chambal",known:"Chambal Ravines, Ater Fort, Gohad Fort",heritage:["Ater Fort","Gohad Fort","Chambal River"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Sheopur",region:"Chambal",known:"Kuno National Park — Cheetah Reintroduction Site",heritage:["Kuno National Park (Cheetah Project)","Karahal Sanctuary","Chambal River"],languages:["Hindi","Saharia Tribal"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Satna",region:"Baghelkhand",known:"Maihar Mata Temple, Chitrakoot Gateway, Vindhya",heritage:["Maihar Sharda Mata Temple","Chitrakoot (shared with UP)","Ramnagaria"],languages:["Hindi","Bagheli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Rewa",region:"Baghelkhand",known:"White Tiger Origin, Rewa Fort, Vindhya Plateau",heritage:["Rewa Fort","Govindgarh Palace","Venkat Falls","White Tiger Heritage"],languages:["Hindi","Bagheli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Shahdol",region:"Baghelkhand",known:"Son River, Coal Belt, Tribal Heritage",heritage:["Son River","Tribal Heritage","Coal Mine History"],languages:["Hindi","Bagheli","Gondi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Anuppur",region:"Baghelkhand",known:"Amarkantak — Narmada and Son Rivers Origin, Sacred",heritage:["Amarkantak Narmada Origin","Shaktipeeth Temples","Satpura Ranges"],languages:["Hindi","Bagheli","Gondi"],bestMonths:"Oct-Mar",avgTemp:"4-42°C"},
+{name:"Dindori",region:"Mahakoshal",known:"Tribal Heartland, Ghughua Fossil Park, Rock Art",heritage:["Ghughua National Fossil Park","Barna Dam","Gondi Tribal Heritage"],languages:["Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+{name:"Chhindwara",region:"Mahakoshal",known:"Pench Buffer, Patalkot Valley, Tamia Hill",heritage:["Patalkot Valley (Bharia Tribe)","Pench Buffer","Tamia Hill Station"],languages:["Hindi","Gondi","Korku"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+{name:"Narsinghpur",region:"Mahakoshal",known:"Narmada River Ghats, Sugar Industry, Gadarwara",heritage:["Narmada River Ghats","Barman Ghat","Kareli Heritage"],languages:["Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Harda",region:"Mahakoshal",known:"Tawa River, Narmada Valley, Forest",heritage:["Tawa River","Narmada Valley Heritage","Satpura Buffer"],languages:["Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"8-44°C"},
+{name:"Betul",region:"Malwa",known:"Satpura Ranges, Multai — Tapti River Origin",heritage:["Multai — Tapti River Source","Sarni Dam","Satpura Forest"],languages:["Hindi","Gondi","Korku"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+{name:"Sehore",region:"Malwa",known:"Salkanpur Temple, Narmada Canal, Fertile Plains",heritage:["Salkanpur Bijasan Mata Temple","Narmada Canal Heritage","Sehore Fort"],languages:["Hindi"],bestMonths:"Oct-Mar",avgTemp:"6-42°C"},
+{name:"Katni",region:"Mahakoshal",known:"Limestone Capital, Railway Junction, Marble",heritage:["Marble Limestone Heritage","Katni River","Bahoriband Temples"],languages:["Hindi","Bagheli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Agar Malwa",region:"Malwa",known:"Geranium Oil Capital, Kali Sindh River",heritage:["Geranium Oil Heritage","Kali Sindh River","Local Temples"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Niwari",region:"Bundelkhand",known:"Orchha — Bundela Heritage, Betwa River",heritage:["Orchha Fort Complex","Ram Raja Temple","Cenotaphs on Betwa"],languages:["Hindi","Bundeli"],bestMonths:"Oct-Mar",avgTemp:"4-44°C"},
+{name:"Maihar",region:"Baghelkhand",known:"Sharda Mata Temple, Classical Music Heritage",heritage:["Maihar Sharda Mata Temple","Maihar Gharana Music"],languages:["Hindi","Bagheli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Pandhurna",region:"Mahakoshal",known:"Chhindwara Region, Pench Gateway",heritage:["Pench Tiger Reserve Gateway","Kanhan River","Tribal Areas"],languages:["Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+{name:"Mauganj",region:"Baghelkhand",known:"New District, Vindhya Plateau, Son River",heritage:["Son River Valley","Vindhya Plateau","Forest Heritage"],languages:["Hindi","Bagheli"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"},
+{name:"Chachaura",region:"Malwa-Chambal",known:"New District, Rajgarh Region, Vindhya Edge",heritage:["Vindhya Hills","Local Temple Circuit","Agricultural Heritage"],languages:["Hindi","Malwi"],bestMonths:"Oct-Mar",avgTemp:"6-44°C"}
+];
+
+const placesData=[
+{emoji:"🛕",name:"Khajuraho Temple Complex",location:"Chhatarpur District",desc:"UNESCO World Heritage Site — 25 surviving temples of the 85 built by the Chandela dynasty between 950-1050 AD. The Kandariya Mahadeva temple rises 30 meters in a cascade of sandstone sculpture depicting every aspect of human and divine existence. The celebrated erotic carvings (about 10% of total) represent Tantric philosophy — the union of the earthly and divine. One of humanity's great architectural achievements.",fee:["Rs.40 Indians","Rs.600 Foreigners"]},
+{emoji:"🏛️",name:"Sanchi Buddhist Monuments",location:"Raisen District",desc:"UNESCO World Heritage Site — Emperor Ashoka's Great Stupa, built in the 3rd century BC to enshrine the Buddha's relics. The four elaborately carved gateways (toranas) with scenes from the Buddha's life are among the finest examples of early Indian art. This hill of pilgrimage 46 km from Bhopal has remained undisturbed for 2,300 years — one of the most spiritually peaceful places in India.",fee:["Rs.30 Indians","Rs.500 Foreigners"]},
+{emoji:"🦴",name:"Bhimbetka Rock Shelters",location:"Raisen District",desc:"UNESCO World Heritage Site — 750 rock shelters in the Vindhya foothills with paintings spanning 30,000 years of continuous human habitation. The oldest works are among humanity's earliest art. Ochre, white and green figures depict hunting, dancing and ritual. The extraordinary continuity — the same site used from the Paleolithic through medieval times — makes Bhimbetka one of archaeology's most remarkable places.",fee:["Rs.25 Indians","Rs.250 Foreigners"]},
+{emoji:"🐯",name:"Kanha Tiger Reserve",location:"Mandla-Balaghat",desc:"The forest that inspired Rudyard Kipling's Jungle Book — the Kanha meadows (maidans) are among the most beautiful wildlife landscapes in Asia. Home to Bengal tigers, the hard-ground barasingha (found nowhere else on earth), leopards, wild dogs and gaur. The morning safari through golden grassland at dawn, following a tiger's pug marks, is India's most iconic wildlife experience.",fee:["Zone-wise charges"]},
+{emoji:"🐅",name:"Bandhavgarh Tiger Reserve",location:"Umaria District",desc:"India's highest density of Bengal tigers — the origin of virtually every white tiger in captivity worldwide (all descend from Mohan, caught here in 1951). The ancient Bandhavgarh Fort perched on an 800-meter rock with a 2,000-year-old reclining Vishnu carved into the cliff adds mythological gravity. Safaris here offer the best statistical chance of tiger sightings in India.",fee:["Zone-wise charges"]},
+{emoji:"🏰",name:"Orchha Fort and Palace Complex",location:"Niwari District",desc:"A 17th-century Bundela capital rising from the Betwa river — seemingly unchanged since the Mughal era. The Jehangir Mahal (seven-story palace built to receive Emperor Jahangir), the Ram Raja Temple where Ram is worshipped as a king with military honors, and cenotaphs lining the river create a complete medieval city. The mist off the Betwa at dawn is breathtaking.",fee:["Rs.25 Indians","Rs.250 Foreigners"]},
+{emoji:"⛩️",name:"Mahakaleshwar Temple, Ujjain",location:"Ujjain",desc:"One of the twelve Jyotirlingas — the Mahakaleshwar is one of Hinduism's most powerful sites. The Bhasma Aarti performed at 4am using cremation ashes is a ritual of raw intensity found nowhere else. Ujjain is one of seven sacred Hindu cities and hosts the Simhastha Kumbh Mela every 12 years. The Ram Ghat at dawn, with 100 temples along the Shipra river, is extraordinary.",fee:["Free"]},
+{emoji:"🌊",name:"Bhedaghat Marble Rocks",location:"Jabalpur",desc:"The Narmada cuts through 3 km of gleaming white marble cliffs — 30-meter walls of polished stone glowing rose-gold at sunset, reflected in the green water. The Dhuandhar waterfall thunders between the rocks downstream. Boat rides through the gorge by full moonlight — when the white marble shines silver — are legendary experiences that have drawn visitors since the colonial era.",fee:["Boat charges apply"]},
+{emoji:"🦋",name:"Mandu — Hilltop Ghost City",location:"Dhar District",desc:"A deserted Sultanate capital on a 20-km plateau — Jahaz Mahal (Ship Palace), Hindola Mahal and Roopmati's Pavilion tell the legendary love story of Sultan Baz Bahadur and the singer Roopmati, who killed herself rather than surrender to Akbar's forces. Twelve sq km of medieval Islamic architecture in romantic ruin, surrounded by gorges and forest. The most beautiful ghost city in India.",fee:["Rs.25 Indians","Rs.250 Foreigners"]},
+{emoji:"🏔️",name:"Pachmarhi Hill Station",location:"Narmadapuram District",desc:"The only hill station in MP — a plateau at 1,067 meters in the Satpura ranges, surrounded by the Satpura Tiger Reserve. Dhupgarh at 1,352m (highest point in MP) gives views across the plateau at sunrise. Bee Falls, Jata Shankar cave, Pandava Caves and ancient rock paintings create a landscape of exceptional natural and archaeological richness.",fee:["Entry charges"]},
+{emoji:"🦁",name:"Kuno National Park — Cheetah",location:"Sheopur District",desc:"The site of India's historic cheetah reintroduction project — African cheetahs were brought here in 2022 after the species was extinct in India for 70 years. The park's open grasslands, thorn forests and the Kuno river create an ecosystem being carefully restored. A wildlife destination of global conservation significance, still developing but already drawing wildlife enthusiasts worldwide.",fee:["Charges apply"]}
+];
+
+const artsData=[
+{emoji:"🎨",name:"Gond Tribal Painting",location:"Mandla, Dindori, Balaghat",desc:"One of India's most internationally celebrated folk art forms — the Gond community paints intricate dot-and-dash patterns filling images of animals, trees and deities with vibrating visual energy. Jangarh Singh Shyam, discovered in the 1980s, was exhibited at the Pompidou Centre. Today Gond art is collected and exhibited globally as a major contemporary folk tradition."},
+{emoji:"🧵",name:"Chanderi and Maheshwari Silk",location:"Chanderi (Ashoknagar) and Maheshwar",desc:"Two of India's finest handloom traditions. Chanderi — a gossamer-thin silk-cotton fabric woven since the 10th century with zari borders and traditional butis; GI-tagged. Maheshwari — created under Ahilyabai Holkar's patronage in the 18th century, distinguished by its reversible border. Both are woven in homes along the river by communities with a thousand-year loom knowledge."},
+{emoji:"🪆",name:"Bagh Print and Natural Dye Craft",location:"Bagh Village, Dhar District",desc:"Natural dye block printing from Bagh on the Baghini river — geometric and floral patterns hand-printed with madder, indigo and turmeric. The Khatri family has practiced this for 15 generations. GI-tagged and internationally exhibited as one of India's finest textile traditions, Bagh print is now collected by design museums worldwide."},
+{emoji:"🎭",name:"Malwa Maach Theatre",location:"Ujjain, Indore, Malwa Region",desc:"The traditional folk opera of the Malwa plateau — performed through the night with elaborate costumes, improvised dialogue and songs in the Malwi dialect. Maach deals with mythology, social satire and historical legends. The actor-singers are revered in their communities. Over 400 years old, Maach is still performed regularly at village festivals across Malwa."},
+{emoji:"🥁",name:"Tertali Dance and Tribal Arts",location:"Rewa, Panna — Kamar Community",desc:"Tertali — a virtuoso seated dance performed by Kamar women of Baghelkhand with up to 13 manjira (cymbals) attached to different parts of their bodies. The complexity of coordinated rhythm is staggering. Combined with the Bhil Ghoomar of western MP and the Gondi ritual dances of the south, MP's tribal performing traditions are among the richest in India."},
+{emoji:"🔔",name:"Gwalior Gharana and Classical Music",location:"Gwalior",desc:"Gwalior is the cradle of Hindustani classical music — the Gwalior Gharana is the oldest and most foundational school of North Indian classical vocal music, established under the patronage of the Tomar and Scindia dynasties. Tansen — one of the Navaratnas of Akbar's court — was trained here. Every major Hindustani vocalist traces lineage back to the Gwalior Gharana."}
+];
+
+const traditionsData=[
+{emoji:"💃",name:"Khajuraho Dance Festival",location:"Khajuraho — February",desc:"India's premier classical dance festival — held against the illuminated backdrop of the Khajuraho temples in the open air. Bharatanatyam, Kathak, Odissi, Manipuri, Kuchipudi and other classical forms are performed on stages built facing the Western Temple Group. The combination of India's finest dancers with India's finest medieval stone is one of the most beautiful experiences the country offers."},
+{emoji:"🌸",name:"Bhagoria Haat — Bhil Tribal Festival",location:"Jhabua and Alirajpur — March",desc:"The extraordinary pre-Holi festival of the Bhil tribe — village fairs where young men and women meet, court and elope with chosen partners. If a girl accepts the gulal thrown by a young man, she agrees to marry him. Bhagoria is one of India's few surviving community courtship festivals — joyful, colorful and deeply rooted in tribal freedom and social consent."},
+{emoji:"🔱",name:"Simhastha Kumbh Mela",location:"Ujjain — Every 12 Years",desc:"Ujjain's Kumbh Mela when Jupiter enters Leo — sadhus of all akharas gather on the Shipra banks. Millions bathe on auspicious dates. The processions of Naga sadhus — ash-covered, carrying tridents, riding elephants and horses — are among the most spectacular religious processions in the world. The next Simhastha is in 2028."},
+{emoji:"🏰",name:"Orchha Ram Navami",location:"Orchha — March/April",desc:"Ram Navami at Orchha is spectacular — the Ram Raja Temple (where Rama is worshipped as a king with state honors) marks the occasion with cannon salutes, a military guard of honor and processions. The only place in India where Lord Ram receives a full military salute daily. The confluence of royalty, devotion and architecture makes this one of MP's most distinctive festivals."},
+{emoji:"🎵",name:"Tansen Music Festival",location:"Gwalior — November/December",desc:"India's premier classical Hindustani music festival held at Tansen's tomb in Gwalior. Four days of the finest classical vocalists and instrumentalists performing at the Hazira tomb complex. The legend that singing under Tansen's tamarind tree improves one's voice draws musicians from across India. The most important annual event in North Indian classical music."},
+{emoji:"🌊",name:"Narmada Jayanti and Parikrama",location:"Amarkantak and Narmada Banks",desc:"The Narmada is worshipped as a goddess and circumambulated (parikrama) as the only river in India walked as a pilgrimage — a 2,600 km circuit along both banks taking 3 years. Narmada Jayanti celebrates the river's birth at Amarkantak. The dawn bathing at Amarkantak where the Narmada and Son rivers emerge from the same plateau is one of MP's most spiritually potent experiences."}
+];
+
+const cuisinesData=[
+{emoji:"🌾",name:"Dal Bafla",region:"Malwa — State Signature Dish",desc:"The soul food of MP — wheat dough balls boiled then baked until golden, cracked open and drowned in ghee, served with thick dal and a ladoo. The Rajasthani baati's richer MP cousin. Eaten at every dhaba from Bhopal to Indore as the definitive comfort food of the Malwa plateau. The combination of textures — crisp outside, soft inside, bathed in clarified butter — is immensely satisfying."},
+{emoji:"🌽",name:"Bhutte Ka Kees",region:"Indore — Malwa Street Specialty",desc:"Fresh corn grated and cooked in ghee with green chilies, coriander, mustard seeds and lime until fluffy and aromatic. Served from roadside carts in earthen bowls. A dish impossible to eat without smiling. The Indori street food scene — bhutte ka kees, poha, jalebi, garadu — is considered one of India's finest urban street food cultures."},
+{emoji:"🫓",name:"Indori Poha",region:"Indore",desc:"The definitive MP breakfast — flattened rice cooked with onion, mustard seeds, curry leaves and turmeric, topped with sev, pomegranate seeds, fresh coriander and lime. Served with jalebi for dipping. Indore's poha is nationally considered the finest version — lighter, more fragrant and more complexly garnished than anywhere else in India. A breakfast that defines a city."},
+{emoji:"🍬",name:"Mawa Bati and Morena Gajak",region:"Gwalior, Morena",desc:"Mawa Bati — a golden fried pastry ball stuffed with mawa, dry fruits and saffron, dipped in syrup — is MP's most beloved sweet. Morena's Gajak (GI-tagged sesame brittle with jaggery) is made from white sesame grown on the Chambal plateau and is the finest in India. Gajak is Gwalior's most famous winter export — sent across the country from October to February."},
+{emoji:"🌶️",name:"Ratlami Sev",region:"Ratlam — GI Tagged National Icon",desc:"India's most distinctive sev — a chickpea flour noodle preparation with cloves, black pepper and carom seeds giving it a fiery, spiced complexity impossible to replicate elsewhere. GI-tagged, Ratlami sev is the definitive MP snack, exported across India. The town of Ratlam has been making this sev for 400 years and it appears on restaurant menus across India as a garnish."},
+{emoji:"🥘",name:"Bhopali Non-Vegetarian Cuisine",region:"Bhopal — Nawabi Heritage",desc:"Bhopal's Muslim ruling legacy left extraordinary culinary depth — keema samosa, bhopali gosht korma, rogan josh, nihari and the Bhopali paan. The old city's haleem, biryani and kebab culture near Jama Masjid reflects centuries of Nawabi patronage. Bhopal's kebab tradition — with its use of whole spices and slow cooking — rivals Lucknow in subtlety and depth of flavor."},
+{emoji:"🍖",name:"Poha-Jalebi and Sabudana Khichdi",region:"Malwa — Fasting and Festival Food",desc:"The beloved MP pairing of savory poha with sweet crispy jalebis for breakfast — a counterintuitive combination of extraordinary pleasure. Sabudana khichdi — sago pearls with peanuts, ghee and green chili — is the universal fasting food. The tribal communities of MP's forests add extraordinary variety: mahua preparations, bamboo shoot dishes and wild honey from the Vindhya forests."},
+{emoji:"🫕",name:"Chakki Ki Shaak",region:"Bundelkhand Region",desc:"Whole-wheat dough cooked in a spiced curry sauce — a unique Bundelkhand dish of extreme frugality transformed into comfort food. The dough absorbs the curry's flavors from within. A food born from necessity that has become a regional identity dish. Eaten with lentils and flatbread across the Bundelkhand plateau, it sustains communities through the region's notoriously hot and dry summers."},
+{emoji:"☕",name:"Thandai and Malwa Sharbat",region:"Ujjain and Indore",desc:"The thandai of Ujjain during Mahashivratri and Holi — cold milk drink with almonds, rose petals, poppy seeds, black pepper and saffron — consumed in enormous quantities by pilgrims. The Malwa plateau tradition of seasonal sharbats — aam panna, bel sharbat, kokum — using local fruit orchards is among the finest cold-drink culture in India. Indore's Chappan Dukan area is their home."},
+{emoji:"🌿",name:"Vindhya and Tribal Forest Foods",region:"Tribal Districts",desc:"The forests of MP provide an extraordinary seasonal pantry: mahua flowers eaten fresh and made into ladoos, char chironji seeds used in sweets and kormas, kathal (jackfruit) prepared as a meat substitute, and dried amla in a dozen preparations. The Gond, Baiga and Bharia tribes' forest-to-table cuisine — entirely organic, entirely local, entirely ancient — is being documented and revived."}
+];
+
+const weatherData=[
+{month:"January",avgTemp:"6-24°C",weather:"Cool Winter",details:"Tiger reserves at their finest — dry grasslands, water holes crowded with wildlife. Khajuraho Dance Festival. Orchha mist at dawn. Ujjain Ram Ghat in winter mist. Pack warm layers for evenings.",best:true},
+{month:"February",avgTemp:"10-28°C",weather:"Pleasant",details:"Peak safari month — tigers most active near shrinking water sources. Khajuraho temples in perfect golden light. Bhagoria Haat in Jhabua. Bhedaghat marble boats in clear green water. The single best month.",best:true},
+{month:"March",avgTemp:"16-34°C",weather:"Warm Spring",details:"Holi and Bhagoria. Tansen Music Festival in Gwalior. Last good safari month. Mahua trees flower across tribal districts. Orchha Ram Navami spectacular. Warmth building pleasantly.",best:true},
+{month:"April",avgTemp:"22-40°C",weather:"Hot",details:"Tiger reserves open until June 30. Heat building. Early morning safaris still rewarding. Narmada low and clear at Bhedaghat. Sal trees briefly bare. Manage with early starts and afternoon rests."},
+{month:"May",avgTemp:"28-46°C",weather:"Very Hot",details:"Temperatures exceed 46°C across Malwa and Bundelkhand. Not recommended for outdoor tourism. Pachmarhi hill station pleasant. Tiger reserves close June 30 for monsoon."},
+{month:"June",avgTemp:"28-42°C",weather:"Pre-Monsoon",details:"Last weeks of safari season. Pre-monsoon storms arrive. Tiger reserves close June 30. Extreme heat in plains. Ujjain temples remain operational. Not recommended for most sightseeing."},
+{month:"July",avgTemp:"24-32°C",weather:"Monsoon",details:"MP transforms — dry deciduous forest turns vivid green. Narmada roars at Dhuandhar. Tiger reserves closed. Marble Rocks most dramatic in monsoon surge. Scenic but difficult for travel.",best:true},
+{month:"August",avgTemp:"24-30°C",weather:"Deep Monsoon",details:"Heavy rains. Scenic but challenging travel. Amarkantak's sacred source surrounded by full rivers. Bhimbetka rock shelters glow in monsoon green. Forest mushroom and mahua season for tribal communities."},
+{month:"September",avgTemp:"24-32°C",weather:"Late Monsoon",details:"Rains easing. Forests lush. Tiger reserves preparing to reopen October 1. Narmada flowing strongly. Post-monsoon green on the plateau is extraordinarily beautiful."},
+{month:"October",avgTemp:"16-32°C",weather:"Autumn",details:"Tiger reserves reopen October 1. Dussehra and Diwali. Orchha in festival light. Khajuraho in perfect October sun. Ideal wildlife and heritage combination. The whole state opens up.",best:true},
+{month:"November",avgTemp:"10-26°C",weather:"Early Winter",details:"MP Foundation Day November 1. Tansen Music Festival Gwalior. Excellent across the state. Satpura and Pench ideal. Mandu in post-monsoon green with all palaces accessible.",best:true},
+{month:"December",avgTemp:"6-22°C",weather:"Winter",details:"Cool and clear. Gwalior Fort in winter light magnificent. Sanchi and Bhimbetka ideal. Safari season peak. Fog on the Narmada at dawn. Indore food scene in full swing. Best overall conditions.",best:true}
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';
+  el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span>
+    <div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Book tiger safaris weeks ahead</li><li>Hire licensed naturalist guides</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Make noise in tiger reserves</li><li>Touch Khajuraho sculptures</li></ul></div>
+    </div>
+  </div></div>`;
+});
+
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span>
+      <div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){
+  document.querySelectorAll('.dacc').forEach(a=>{
+    a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';
+  });
+}
+function toggleMusic(){
+  const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');
+  if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Madhya Pradesh",heroNative:"मध्य प्रदेश",heroTag:"Heart of India — Tigers, Temples, Tribes & Timeless Stone",scrollLbl:"SCROLL TO EXPLORE",qw:"&#127777;&#65039; Weather",qd:"&#128205; Districts",qp:"&#127963;&#65039; Places",qa:"&#127912; Arts",qt:"&#129345; Traditions",qc:"&#127374; Cuisines",lAbout:"About Madhya Pradesh",aboutTitle:"The Heart of India",aboutBody:"Madhya Pradesh — the Middle Province — is India's geographic and civilizational center. It holds three UNESCO World Heritage Sites: Khajuraho's Chandela temples, Sanchi's Buddhist stupas and Bhimbetka's 30,000-year-old rock paintings. It is India's tiger capital with six reserves including Kanha — the forest that inspired the Jungle Book. Ujjain is one of seven sacred Hindu cities hosting the Kumbh Mela. Orchha's medieval palaces rise from the Betwa river intact. Madhya Pradesh is India in its most elemental state — the forest, the stone, the river and the tiger.",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Madhya Pradesh",weatherNote:"October to March is ideal — tiger safaris are at their peak, Khajuraho temples glow in winter light and the Khajuraho Dance Festival runs in February.",lDist:"All 55 Districts",distTitle:"Every District of Madhya Pradesh",distNote:"MP's 55 districts span five historic regions: Malwa, Bundelkhand, Baghelkhand, Mahakoshal and Nimar — each with its own dynasty, dialect, cuisine and landscape.",distSearch:"Search districts...",lPlaces:"UNESCO Sites, Tiger Reserves & Ancient Wonders",placesTitle:"Wonders of Madhya Pradesh",lArts:"Arts, Crafts & Heritage",artsTitle:"Living Traditions of Madhya Pradesh",lTrad:"Festivals & Celebrations",tradTitle:"Soul of MP's Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Madhya Pradesh",footerT:"JAY MADHYA PRADESH — MERA MP MAHAN",footerS:"MP Foundation Day — November 1 · 1956"},
+  hi:{heroName:"मध्य प्रदेश",heroNative:"मध्य प्रदेश",heroTag:"भारत का दिल — बाघ, मंदिर, जनजाति और कालातीत पत्थर",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",qw:"&#127777;&#65039; मौसम",qd:"&#128205; जिले",qp:"&#127963;&#65039; स्थल",qa:"&#127912; कलाएं",qt:"&#129345; परंपराएं",qc:"&#127374; व्यंजन",lAbout:"मध्य प्रदेश के बारे में",aboutTitle:"भारत का दिल",aboutBody:"मध्य प्रदेश भारत का भौगोलिक और सभ्यतागत केंद्र है। तीन यूनेस्को विश्व धरोहर स्थल: खजुराहो के मंदिर, सांची के बौद्ध स्तूप और भीमबेटका की 30,000 साल पुरानी गुफा चित्रकला। भारत की बाघ राजधानी — कान्हा, बांधवगढ़, पेंच, सतपुड़ा, पन्ना। उज्जैन के महाकालेश्वर ज्योतिर्लिंग में हर 12 साल में सिंहस्थ कुंभ। ओरछा के महल बेतवा से उठते हैं।",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"मध्य प्रदेश कब जाएं",weatherNote:"अक्टूबर से मार्च आदर्श है — बाघ अभयारण्यों में सफारी चरम पर होती है और खजुराहो के मंदिर शीतकालीन प्रकाश में चमकते हैं।",lDist:"सभी 55 जिले",distTitle:"मध्य प्रदेश के हर जिले",distNote:"मध्य प्रदेश के 55 जिले पाँच ऐतिहासिक क्षेत्रों में हैं: मालवा, बुंदेलखंड, बघेलखंड, महाकोशल और निमाड़।",distSearch:"जिले खोजें...",lPlaces:"यूनेस्को स्थल, बाघ अभयारण्य और प्राचीन चमत्कार",placesTitle:"मध्य प्रदेश के चमत्कार",lArts:"कला, शिल्प और विरासत",artsTitle:"मध्य प्रदेश की जीवंत परंपराएं",lTrad:"त्योहार और उत्सव",tradTitle:"मध्य प्रदेश की संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"मध्य प्रदेश का स्वाद",footerT:"जय मध्य प्रदेश — मेरा एमपी महान",footerS:"मध्य प्रदेश स्थापना दिवस — 1 नवंबर · 1956"},
+  bu:{heroName:"मध्य प्रदेस",heroNative:"मध्य प्रदेश",heroTag:"भारत को दिल — बाघ, मंदिर, जनजाति अउर कालातीत पत्थर",scrollLbl:"देखे बर स्क्रॉल करो",qw:"&#127777;&#65039; मौसम",qd:"&#128205; जिला",qp:"&#127963;&#65039; जगह",qa:"&#127912; कला",qt:"&#129345; तिहार",qc:"&#127374; खाना",lAbout:"मध्य प्रदेस के बारे में",aboutTitle:"भारत को दिल",aboutBody:"मध्य प्रदेस भारत को भौगोलिक और सांस्कृतिक केंद्र है। इत्ते तीन यूनेस्को विश्व धरोहर हैं — खजुराहो को मंदिर, सांची को स्तूप और भीमबेटका की गुफा चित्रकला। कान्हा को जंगल किपलिंग की जंगल बुक को असली जंगल है। उज्जैन में महाकालेश्वर ज्योतिर्लिंग है। ओरछा को महल बेतवा नदी से उठत हैं।",lWeather:"मौसम अउर सबसे बढ़िया बखत",weatherTitle:"मध्य प्रदेस कबे जाओ",weatherNote:"अक्टूबर से मार्च सबसे बढ़िया है — बाघ अभयारण्य में सफारी जोरदार होत है और खजुराहो चमकत है।",lDist:"सभी 55 जिला",distTitle:"मध्य प्रदेस को हर जिला",distNote:"मध्य प्रदेस के 55 जिला मालवा, बुंदेलखंड, बघेलखंड, महाकोशल अउर निमाड़ में फैले हैं।",distSearch:"जिला खोजो...",lPlaces:"यूनेस्को स्थल, बाघ अभयारण्य अउर पुरान अजूबा",placesTitle:"मध्य प्रदेस को अजूबा",lArts:"कला, हस्तशिल्प अउर विरासत",artsTitle:"मध्य प्रदेस की जीवंत परंपरा",lTrad:"तिहार अउर उत्सव",tradTitle:"मध्य प्रदेस की संस्कृति की आत्मा",lCuisines:"खाना को विरासत",cuisinesTitle:"मध्य प्रदेस को सुवाद",footerT:"जय मध्य प्रदेस — मेरा एमपी महान",footerS:"मध्य प्रदेस स्थापना दिवस — 1 नवंबर · 1956"}
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  const keys=['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc','lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote','lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'];
+  keys.forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.textContent=t[k];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
