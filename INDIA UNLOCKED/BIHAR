@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bihar — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#CC5500;--gold:#D4A017;--green:#1A5C38;--cream:#f5f0e8;--deep:#0e0a06;--card:#ffffff08;--border:rgba(204,85,0,0.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(14,10,6,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--saffron);color:var(--deep);}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,240,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,240,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--saffron);color:var(--cream);border-color:var(--saffron);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--saffron);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--saffron);color:var(--cream);}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.45) saturate(1.4);animation:zk 18s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.05);}to{transform:scale(1.13);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,10,6,.1) 0%,rgba(14,10,6,.02) 35%,rgba(14,10,6,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(204,85,0,.8));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(3rem,9vw,7.5rem);color:#fff;letter-spacing:.02em;line-height:1;text-shadow:0 4px 40px rgba(0,0,0,.9);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.1em;margin-top:.3rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,240,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(204,85,0,.35);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);color:rgba(245,240,232,.75);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--saffron);color:var(--cream);border-color:var(--saffron);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.25);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--saffron),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:1px solid rgba(204,85,0,.08);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--saffron);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--saffron);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.1rem);color:rgba(245,240,232,.68);line-height:1.85;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s;position:relative;backdrop-filter:blur(8px);}
+.wcard:hover{background:rgba(204,85,0,.1);border-color:rgba(204,85,0,.45);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(204,85,0,.5);background:rgba(204,85,0,.08);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--saffron);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,240,232,.5);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--saffron);color:var(--cream);font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;font-weight:500;}
+.dsearch:focus{border-color:rgba(204,85,0,.6);}
+.dsearch::placeholder{color:rgba(245,240,232,.28);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(204,85,0,.16);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02);}
+.dacc:hover{border-color:rgba(204,85,0,.32);background:rgba(204,85,0,.05);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(204,85,0,.08);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--saffron);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--saffron);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(204,85,0,.3);background:rgba(204,85,0,.06);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--saffron);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,240,232,.68);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--saffron);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(204,85,0,.2);border:1px solid rgba(204,85,0,.35);color:rgba(245,240,232,.75);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.temp-badge{padding:4px 10px;border-radius:9px;font-size:.7rem;cursor:default;font-family:"Poppins",sans-serif;font-weight:500;}
+.tb-best{background:rgba(204,85,0,.25);border:1px solid rgba(204,85,0,.5);color:var(--saffron);}
+.tb-ok{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(245,240,232,.6);}
+.tb-hot{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--saffron);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(204,85,0,.07);border:1.5px solid rgba(204,85,0,.2);border-radius:16px;overflow:hidden;transition:all .35s;position:relative;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(204,85,0,.55);box-shadow:0 16px 50px rgba(204,85,0,.12);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--saffron),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,240,232,.5);line-height:1.7;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(204,85,0,.22);border:1px solid rgba(204,85,0,.4);color:#ffcb8a;}
+.fb-fr{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.fb-free{background:rgba(26,92,56,.22);border:1px solid rgba(26,92,56,.4);color:#90ee90;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,92,56,.14);border:1px solid rgba(26,92,56,.28);}
+.donts{background:rgba(230,57,43,.12);border:1px solid rgba(230,57,43,.25);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#90ee90;} .donts .dd-title{color:#ffb080;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(144,238,144,.78);} .donts .dd-list li{color:rgba(255,176,128,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:linear-gradient(135deg,rgba(204,85,0,.1),rgba(0,0,0,.2));border:1.5px solid rgba(204,85,0,.2);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(204,85,0,.5);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,240,232,.5);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.art-fee{font-size:.72rem;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(245,240,232,.65);font-family:"Poppins",sans-serif;font-weight:500;}
+footer{text-align:center;padding:50px 20px 40px;border-top:1px solid rgba(204,85,0,.08);}
+footer .fe{font-size:2.2rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,240,232,.25);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,240,232,.35);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">BIHAR</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-bh" onclick="setLang('bh')">भोजपुरी</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🪔</span>
+    <div class="hero-name" id="heroName">Bihar</div>
+    <div class="hero-native" id="heroNative">बिहार</div>
+    <div class="hero-tag" id="heroTag">Land of Buddha, Mahavira & Ancient Wisdom</div>
+    <div class="tribar">
+      <div style="background:#CC5500"></div>
+      <div style="background:#D4A017"></div>
+      <div style="background:#1A5C38"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Bihar</span>
+  <h2 class="sec-title" id="aboutTitle">Cradle of <em>Civilization & Spirituality</em></h2>
+  <p class="sec-body" id="aboutBody">Bihar, one of the oldest inhabited places on earth, is the cradle of some of humanity's greatest civilizations and spiritual traditions. The birthplace of Buddhism and Jainism, Bihar nurtured Siddhartha Gautama's enlightenment under the Bodhi Tree at Bodh Gaya and Lord Mahavira's birth at Vaishali. Home to the ancient Nalanda University — the world's first residential university — Bihar has been the seat of learning, philosophy and statecraft for over 2,500 years. The mighty Maurya and Gupta empires that once unified much of the Indian subcontinent were born in this sacred land. The Ganges and its tributaries weave through Bihar's fertile plains, nourishing fields of rice and wheat while carrying the prayers of millions. From the prehistoric caves of Kaimur to the living traditions of Chhath Puja — a festival older than recorded history — Bihar pulses with an energy that connects the ancient world to the present. Its people, the Bihari diaspora spread across every corner of India and the world, carry this civilizational pride wherever they go. Bihar today stands as a land of paradoxes: ancient ruins alongside bustling cities, profound spirituality beside commercial energy, rural simplicity alongside intellectual ambition.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Bihar</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Bihar has three distinct seasons: hot summer (March–June), monsoon (July–September) and cool winter (October–February). October to March is ideal for tourism — skies are clear, the Ganges is serene and all major pilgrimage circuits are fully accessible.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 38 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Bihar</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Bihar's 38 districts stretch from the Himalayan foothills of Champaran to the plateau edges of Rohtas, from the Ganges plains of Patna to the Kosi river basin of the east. Each district carries deep historical, religious and cultural significance.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred &amp; Historical Treasures</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Bihar</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Bihar</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Bihari Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Bihar</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY BIHAR</div>
+  <div class="fs" id="footerS">Bihar Diwas — March 22 · 1912</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27grd%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(204,85,0);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(26,92,56);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23grd)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Patna",region:"Central Bihar",known:"State Capital, Sikh Heritage, Ganga Ghats",heritage:["Patna Sahib Gurudwara","Golghar","Bihar Museum","Patna Museum"],languages:["Hindi","Urdu","Maithili","English"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Gaya",region:"Central Bihar",known:"Buddhist Pilgrimage, Pind Daan, Vishnupad Temple",heritage:["Bodh Gaya","Vishnupad Temple","Mahabodhi Temple","Phalgu River"],languages:["Hindi","Magahi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Nalanda",region:"Central Bihar",known:"Ancient University, Buddhist Heritage, Ruins",heritage:["Nalanda Ruins","Nalanda Museum","Rajgir Hills","Pawapuri"],languages:["Hindi","Magahi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Vaishali",region:"North Bihar",known:"Birthplace of Jainism, Republic Democracy Origin",heritage:["Ashoka Pillar","Relic Stupa","Coronation Tank","Abhishek Pushkarni"],languages:["Hindi","Maithili","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Muzaffarpur",region:"North Bihar",known:"Litchi Capital of India, Shahi Lychee",heritage:["Sita Kund","Ramchandra Shahi Museum","Litchi Orchards"],languages:["Hindi","Maithili","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Bhagalpur",region:"East Bihar",known:"Silk City, Gangetic Dolphin, Vikramshila",heritage:["Vikramshila University","Mandar Hill","Gangetic Dolphin Sanctuary"],languages:["Hindi","Maithili","Santali","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Rajgir",region:"Central Bihar",known:"Ancient Capital, Buddhist & Jain Heritage, Hot Springs",heritage:["Griddhakuta Hill","Venuvana","Hot Springs","Cyclopean Wall"],languages:["Hindi","Magahi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Champaran (East)",region:"North Bihar",known:"Indigo Revolt, Gandhi's Satyagraha Origin",heritage:["Bhitiharwa Ashram","Motihari Satyagraha Site","Lauriya Nandangarh"],languages:["Hindi","Maithili","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Champaran (West)",region:"North Bihar",known:"Valmiki Tiger Reserve, Wildlife Sanctuary",heritage:["Valmiki National Park","Gandak River","Ramnagar Fort"],languages:["Hindi","Maithili","Tharu"],bestMonths:"Nov-Mar",avgTemp:"8-40°C"},
+  {name:"Sitamarhi",region:"North Bihar",known:"Birthplace of Sita, Sacred Janaki Mandir",heritage:["Janaki Mandir","Haleshwar Sthan","Punaura Dham"],languages:["Hindi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Darbhanga",region:"North Bihar",known:"Maithili Culture Capital, Palace Ruins",heritage:["Darbhanga Raj Palace","Chandradhari Museum","Kusheshwar Sthan"],languages:["Maithili","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Madhubani",region:"North Bihar",known:"Madhubani Painting, UNESCO Heritage Art",heritage:["Madhubani Art Villages","Saurath Sabha","Bisfi"],languages:["Maithili","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Mithila (Saharsa)",region:"North Bihar",known:"Mithila Heartland, Kosi River Plains",heritage:["Mithila Heritage Sites","Kosi Floodplains","Folk Art Traditions"],languages:["Maithili","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Purnia",region:"North-East Bihar",known:"Commercial Hub, Gateway to Northeast",heritage:["Historical Sites","Agricultural Plains","Trade Routes"],languages:["Hindi","Maithili","Bengali","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Kishanganj",region:"North-East Bihar",known:"Tea Gardens, Himalayan Foothills",heritage:["Tea Estates","Mahananda Wildlife","Border Wetlands"],languages:["Hindi","Urdu","Bengali","Nepali"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Katihar",region:"North-East Bihar",known:"Junction City, Ganga-Kosi Confluence",heritage:["Manihari Ghat","Kosi River","Railway Heritage"],languages:["Hindi","Maithili","Bengali","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Araria",region:"North-East Bihar",known:"Border District, Agricultural Land",heritage:["Agricultural Heritage","Border Culture","River Plains"],languages:["Hindi","Maithili","Urdu"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Supaul",region:"North-East Bihar",known:"Kosi River Valley, Flood Plains",heritage:["Kosi Heritage","Flood Plains Culture","Agricultural Sites"],languages:["Hindi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Madhepura",region:"North-East Bihar",known:"Kosi Belt, Agricultural Center",heritage:["Kosi River Sites","Agricultural Heritage","Local Temples"],languages:["Hindi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"},
+  {name:"Saran",region:"Central Bihar",known:"Chhapra, Ganga Riverfront, Sugar Industry",heritage:["Amnaur","Gandhi Heritage","Ganga Ghats","Sugar Mills"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Siwan",region:"West Bihar",known:"Sher Shah Suri's Homeland Nearby, Historical",heritage:["Historical Sites","Rani Sati Mandir","Cultural Centers"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Gopalganj",region:"West Bihar",known:"Tharu Tribes, Border District",heritage:["Tharu Heritage","Agricultural Plains","Temple Sites"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Buxar",region:"West Bihar",known:"Battle of Buxar, Historic Battlefield",heritage:["Battle of Buxar Site","Ganga Ghats","Ancient Temples"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+  {name:"Bhojpur (Ara)",region:"West Bihar",known:"Bhojpur Temple, Veer Kunwar Singh Heritage",heritage:["Bhojpur Temple","Veer Kunwar Singh Fort","Ganga Plains"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+  {name:"Rohtas",region:"South Bihar",known:"Rohtas Fort, Sher Shah Suri Heritage",heritage:["Rohtas Fort","Shergarh Fort","Sasaram Mausoleum"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Kaimur (Bhabua)",region:"South Bihar",known:"Mundeshwari Temple, Oldest Temple India",heritage:["Mundeshwari Temple","Kaimur Plateau","Waterfalls"],languages:["Hindi","Bhojpuri"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Aurangabad",region:"South Bihar",known:"Dev Sun Temple, Trident Waterfall",heritage:["Dev Temple","Deo Barwe Waterfall","Son River"],languages:["Hindi","Magahi"],bestMonths:"Oct-Mar",avgTemp:"8-42°C"},
+  {name:"Jehanabad",region:"Central Bihar",known:"Barabar Caves, Oldest Rock-cut Caves",heritage:["Barabar Caves","Nagarjuni Caves","Makhdumpur"],languages:["Hindi","Magahi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Arwal",region:"Central Bihar",known:"New District, Agricultural Center",heritage:["Agricultural Heritage","Rural Culture","Temple Sites"],languages:["Hindi","Magahi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Nawada",region:"Central Bihar",known:"Kakolat Waterfall, Forest Region",heritage:["Kakolat Waterfall","Kashyap Rishi Ashram","Forest Trails"],languages:["Hindi","Magahi"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Sheikhpura",region:"Central Bihar",known:"Historical Site, Giriyak Hills",heritage:["Giriyak Hills","Historical Ruins","Agricultural Land"],languages:["Hindi","Magahi"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Lakhisarai",region:"Central Bihar",known:"Ashok Dham Temple, Shivalik Hills",heritage:["Ashok Dham","Shivalik Range","Son River"],languages:["Hindi","Magahi"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Jamui",region:"South Bihar",known:"Birthplace Mahavira (Kundagrama), Jain Heritage",heritage:["Kundagrama Jain Site","Gidhaur Fort","Khand Forest"],languages:["Hindi","Magahi","Santali"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Banka",region:"East Bihar",known:"Mandar Hill, Jain Pilgrimage",heritage:["Mandar Hill","Basukinath Temple","Chandan River"],languages:["Hindi","Santali","Maithili"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Munger",region:"East Bihar",known:"Yoga Capital, Bihar School of Yoga",heritage:["Bihar School of Yoga","Munger Fort","Ganga Ghats"],languages:["Hindi","Magahi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"10-40°C"},
+  {name:"Begusarai",region:"East Bihar",known:"Industrial Hub, Kanwar Lake Bird Sanctuary",heritage:["Kanwar Lake","IOCL Refinery Heritage","Simaria Ghat"],languages:["Hindi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Samastipur",region:"North Bihar",known:"Agricultural Hub, Railway Junction",heritage:["Agricultural Heritage","Dalsingsarai","Railway History"],languages:["Hindi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"8-40°C"},
+  {name:"Khagaria",region:"North Bihar",known:"Three Rivers Confluence, Aguwani Ghat",heritage:["Three Rivers Confluence","Aguwani Ghat","Flood Culture"],languages:["Hindi","Maithili"],bestMonths:"Oct-Mar",avgTemp:"8-38°C"}
+];
+
+const placesData = [
+  {emoji:"🌳",name:"Mahabodhi Temple, Bodh Gaya",location:"Gaya District",desc:"UNESCO World Heritage Site marking the spot of Buddha's enlightenment. The sacred Bodhi Tree under which Siddhartha Gautama attained nirvana. One of the holiest Buddhist pilgrimage sites on earth, drawing millions from across the globe.",fee:["Free Entry"]},
+  {emoji:"🏛️",name:"Nalanda University Ruins",location:"Nalanda District",desc:"Archaeological remains of the world's first great university, founded in 5th century AD. Once housed 10,000 students from across Asia. A UNESCO World Heritage Site representing the pinnacle of ancient Indian learning and scholarship.",fee:["Paid"]},
+  {emoji:"🪨",name:"Barabar Caves",location:"Jehanabad District",desc:"The oldest surviving rock-cut caves in India, dating to the Maurya Empire (3rd century BC). Four caves with extraordinary polished interiors. Immortalized as the Marabar Caves in E.M. Forster's 'A Passage to India'.",fee:["Free"]},
+  {emoji:"🕉️",name:"Vishnupad Temple",location:"Gaya City",desc:"Ancient temple built over a footprint of Lord Vishnu imprinted in solid rock. One of the most sacred Pitru Tarpan sites in Hinduism. Magnificent architecture with a 30-meter octagonal shikhara on the banks of the Phalgu.",fee:["Free"]},
+  {emoji:"🏰",name:"Rohtas Fort",location:"Rohtas District",desc:"Magnificent 16th-century fort built by Sher Shah Suri, perched atop Rohtas plateau. A masterpiece of Afghan-Mughal military architecture. Surrounded by jungle with panoramic views and fascinating historical ruins within.",fee:["Paid"]},
+  {emoji:"🪷",name:"Pawapuri (Apapapuri)",location:"Nalanda District",desc:"Sacred Jain pilgrimage site where Lord Mahavira attained moksha (liberation). The Jalmandir — a marble temple surrounded by a lotus-filled lake — is among the most serene religious sites in India.",fee:["Free"]},
+  {emoji:"🌸",name:"Rajgir & Griddhakuta Hill",location:"Nalanda District",desc:"Ancient capital of the Magadha Empire where Buddha gave many sermons. The Griddhakuta peak (Vulture's Peak) is a premier Buddhist pilgrimage site. Hot springs, ancient walls and a ropeway to the World Peace Stupa.",fee:["Paid"]},
+  {emoji:"🏺",name:"Mundeshwari Temple",location:"Kaimur District",desc:"Believed to be the oldest functional Hindu temple in India, dating to 108 AD. Octagonal architecture dedicated to Shiva and Shakti. Perched atop Mundeshwari Hill with spectacular views of the Kaimur plateau.",fee:["Free"]},
+  {emoji:"⚱️",name:"Vaishali Ashoka Pillar",location:"Vaishali District",desc:"One of Emperor Ashoka's finest surviving pillars, commemorating Buddha's last sermon. The nearby relic stupa houses Buddha's ashes. Vaishali is also credited as the birthplace of Lord Mahavira and the world's first republic.",fee:["Free"]},
+  {emoji:"📚",name:"Vikramshila University Ruins",location:"Bhagalpur District",desc:"Ruins of the second-greatest ancient university of India, founded by Pala King Dharmapala in 8th century. An important centre of Vajrayana Buddhism. The excavated site reveals a central temple, cells and courtyards.",fee:["Paid"]}
+];
+
+const artsData = [
+  {emoji:"🖼️",name:"Madhubani Painting",location:"Madhubani District & Mithila Region",desc:"UNESCO-recognized folk art tradition painted by Mithila women for centuries. Natural pigments on cloth, paper and walls. Bold geometric patterns depicting deities, nature and village life. Now a globally celebrated art form."},
+  {emoji:"🏺",name:"Sujni Embroidery",location:"Bhusura Village, Muzaffarpur",desc:"Intricate embroidery on layered cloth using reverse appliqué technique. Narrative scenes from rural Bihari life. Revived by women's self-help groups, now exported internationally as a sustainable craft."},
+  {emoji:"🥁",name:"Dhol-Nagara Music",location:"Statewide",desc:"Traditional percussion ensemble forming the heartbeat of Bihar's folk music. Used in processions, weddings and festivals. The deep resonance of nagara drums announces every auspicious occasion across the state."},
+  {emoji:"🎭",name:"Bidesia Theatre",location:"Bhojpur Region",desc:"Unique folk theatre tradition created by Bhikhari Thakur, the 'Shakespeare of Bhojpuri'. Addresses social issues of migration, dowry and gender through song, satire and performance. Still performed across villages."},
+  {emoji:"🧶",name:"Sikki Grass Craft",location:"Mithila Region",desc:"Intricate handicraft using golden sikki grass to make toys, boxes and decorative items. Traditional art of Mithila women. Each piece is hand-woven without any tools, creating stunning geometric patterns."},
+  {emoji:"🪆",name:"Manjusha Art",location:"Bhagalpur District",desc:"Ancient narrative scroll painting depicting the legend of Bihula-Bishwakharma. Snake motifs and folk scenes on rectangular boxes. One of the rarest surviving folk art traditions of eastern India."}
+];
+
+const traditionsData = [
+  {emoji:"🌅",name:"Chhath Puja",location:"Statewide & Global Bihari Diaspora",desc:"Bihar's most sacred festival — a 4-day ancient solar worship ritual offered directly to Surya (Sun God) and Chhathi Maiya. Devotees fast for 36 hours and stand in rivers at sunrise and sunset. Predates Vedic scriptures; no priest required."},
+  {emoji:"🐘",name:"Sonepur Mela",location:"Sonepur, Vaishali",desc:"Asia's largest livestock fair held at the confluence of Ganges and Gandak rivers on Kartik Purnima. Over 500 years old. Millions gather for elephants, horses, cattle, cultural programs and the legendary fair experience."},
+  {emoji:"🌾",name:"Makar Sankranti (Til Sankranti)",location:"Statewide",desc:"Harvest festival marking the sun's northward journey. Celebrated with tilkut (sesame sweets), kite flying and Ganga bathing. A day of charitable giving and family reunion across Bihar."},
+  {emoji:"🪔",name:"Diwali & Deepawali",location:"Statewide",desc:"Festival of lights celebrated across five days with lamps, fireworks and worship of Lakshmi. In Bihar, homes are whitewashed and decorated with Madhubani patterns. The Diwali after Chhath concludes Bihar's grand festival season."},
+  {emoji:"🎊",name:"Holi & Phagua",location:"Statewide",desc:"Spring festival of colors celebrated with Bhojpuri folk songs (Phagua geet) and bonfires on Holika Dahan. Braj Holi traditions are also observed. Celebrated with unique fervor in the Bhojpur and Mithila regions."},
+  {emoji:"🌸",name:"Buddha Purnima",location:"Bodh Gaya & Vaishali",desc:"Celebration of Siddhartha Gautama's birth, enlightenment and parinirvana. Tens of thousands of Buddhist monks and pilgrims from Tibet, Japan, Thailand and Sri Lanka gather at Bodh Gaya. The Mahabodhi Temple is illuminated spectacularly."}
+];
+
+const cuisinesData = [
+  {emoji:"🫓",name:"Litti Chokha",region:"Iconic Bihar Dish — Statewide",desc:"Wheat flour balls stuffed with sattu (roasted gram flour) and spices, roasted over cow-dung fire or charcoal. Served with spiced mashed brinjal and tomato (chokha). The soul food of Bihar, beloved by every class."},
+  {emoji:"🍬",name:"Tilkut",region:"Gaya — Festival Special",desc:"Traditional sweet made from white sesame seeds and sugar/jaggery. Beaten into a crispy, melt-in-mouth texture. Gaya's tilkut is world-famous and a must-have during Makar Sankranti and as a gift across India."},
+  {emoji:"🍚",name:"Sattu Paratha",region:"Statewide",desc:"Flatbread stuffed with roasted gram flour mixed with mustard oil, green chilies and spices. A protein-rich breakfast staple. Sattu is Bihar's superfood — eaten as sherbet, stuffing and flour across all meals."},
+  {emoji:"🥣",name:"Dal Pitha",region:"Statewide",desc:"Steamed or fried rice flour dumplings stuffed with spiced chana dal. A humble, nutritious snack popular during monsoon and festivals. Similar to Chinese dim sum but with Bihari masala soul."},
+  {emoji:"🍛",name:"Chana Ghugni",region:"Statewide",desc:"Spiced chickpea curry with onion, tomato and local spices. Street food staple. Eaten as breakfast with puri or as an evening snack. The flavors are bold and complex despite simple ingredients."},
+  {emoji:"🍯",name:"Khaja",region:"Silao, Nalanda — Export Famous",desc:"Layered, flaky sweet made from refined flour, sugar and ghee. Silao's khaja has GI (Geographical Indication) tag. Crispy and mildly sweet, it is sold at every railway station from Patna to Gaya."},
+  {emoji:"🥛",name:"Malpua",region:"Festival Sweet — Statewide",desc:"Deep-fried pancakes made from flour, khoya and fennel seeds, dipped in sugar syrup. A festive dessert particularly made during Holi and Chhath. Rich, sweet and fragrant with cardamom."},
+  {emoji:"🫘",name:"Bihari Mutton Curry",region:"Non-Vegetarian Specialty",desc:"Slow-cooked goat curry with whole spices, mustard oil and yogurt. The signature use of tejpatta, cloves and slow dum cooking gives it a depth of flavor distinct from other North Indian preparations."},
+  {emoji:"🌿",name:"Saag (Leafy Greens)",region:"Winter Special — Statewide",desc:"Seasonal greens like mustard, bathua and spinach cooked with garlic in mustard oil. Eaten with corn or wheat rotis and jaggery. A quintessential winter meal across Bihar's agricultural heartland."},
+  {emoji:"🍮",name:"Thekua",region:"Chhath Puja Prasad",desc:"Hard, sweet biscuits made from wheat flour, jaggery and coconut, deep-fried in ghee. The sacred prasad (offering) of Chhath Puja. No Chhath is complete without thekua; families spend days making them together."},
+  {emoji:"🫗",name:"Sattu Sharbat",region:"Summer Cooler — Statewide",desc:"Cold drink made from roasted gram flour, water, lemon, black salt and raw mango. Bihar's answer to summer heat. More nutritious than any commercial cold drink; a beloved street food across the state."},
+  {emoji:"🍙",name:"Anarsa",region:"Gopalganj — Festival Special",desc:"Rice flour and sugar sweets rolled in poppy seeds and deep-fried. Diwali and Chhath season specialty. The crispy poppy seed coating with soft rice interior is a texture unique to this ancient Bihari sweet."}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"7-20°C",weather:"Cool Winter",details:"Coldest month with foggy mornings. Excellent time for pilgrimage circuits — Bodh Gaya, Rajgir and Nalanda are best visited now. Clear skies in afternoons."},
+  {month:"February",avgTemp:"10-24°C",weather:"Pleasant",details:"Winter warming. Ideal for exploring ruins and wildlife sanctuaries. Mustard fields in bloom across the plains — a golden carpet across Bihar's landscape.",best:true},
+  {month:"March",avgTemp:"16-30°C",weather:"Warm",details:"Spring arrives. Holi festival celebrated with Bhojpuri fervor. Weather still manageable for outdoor exploration. Flowers bloom across the Gangetic plains.",best:true},
+  {month:"April",avgTemp:"22-37°C",weather:"Hot",details:"Summer begins. Avoid afternoon outdoor activities. Early morning temple visits recommended. Mangoes start appearing in markets."},
+  {month:"May",avgTemp:"26-42°C",weather:"Very Hot",details:"Peak summer. Temperatures soar. Only for the determined pilgrim. Sattu sharbat becomes essential. Pre-monsoon dust storms occasionally occur."},
+  {month:"June",avgTemp:"27-40°C",weather:"Pre-Monsoon",details:"Oppressive heat with high humidity. Monsoon arrives late June. Not recommended for tourism. Occasional thunderstorms bring brief relief."},
+  {month:"July",avgTemp:"25-32°C",weather:"Monsoon",details:"Monsoon in full swing. Heavy rainfall. Flooding in northern plains. Lush green landscapes emerge. Some roads inaccessible in flood-prone areas."},
+  {month:"August",avgTemp:"25-32°C",weather:"Monsoon Peak",details:"Peak monsoon. Rivers at maximum flow. Kosi and Gandak rivers in spate. Rural Bihar at its most verdant and challenging for travel."},
+  {month:"September",avgTemp:"24-33°C",weather:"Late Monsoon",details:"Rains receding. Festivals begin — Teej, Pitru Paksha (Gaya). Temples extremely busy. Weather transitioning toward pleasant autumn."},
+  {month:"October",avgTemp:"18-31°C",weather:"Autumn",details:"Ideal tourism month. Chhath Puja transforms riverbanks into oceans of devotion. Durga Puja celebrations. Clear skies and perfect temperatures.",best:true},
+  {month:"November",avgTemp:"13-27°C",weather:"Cool Autumn",details:"Perfect weather. Sonepur Mela begins on Kartik Purnima. Every pilgrimage site is at its best. Mist over the Ganges at dawn creates magical photography.",best:true},
+  {month:"December",avgTemp:"8-22°C",weather:"Early Winter",details:"Winter descends. Buddha's birthplace and Bodh Gaya see international Buddhist gatherings. Cold nights require warm clothing. Festival of lights lingers."}
+];
+
+// Populate weather
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  const isBest = w.best;
+  wGrid.innerHTML += `<div class="wcard${isBest?' best':''}">
+    ${isBest?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div>
+    <div class="wt">${w.avgTemp}</div>
+    <div class="wd">${w.details}</div>
+  </div>`;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const dacc = document.createElement('div');
+  dacc.className = 'dacc';
+  dacc.dataset.name = d.name.toLowerCase();
+  dacc.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list"><li>${d.known}</li></ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row"><span class="temp-badge tb-best">${d.avgTemp}</span></div>
+        </div>
+      </div>
+    </div>`;
+  accordion.appendChild(dacc);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `<div class="pcard">
+    <div class="pcard-acc"></div>
+    <div class="pcard-body">
+      <span class="pi">${p.emoji}</span>
+      <div class="pn">${p.name}</div>
+      <div class="pl">${p.location}</div>
+      <div class="pd">${p.desc}</div>
+      <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+      <div class="dos-donts">
+        <div class="dos"><div class="dd-title">✓ DO</div><ul class="dd-list"><li>Remove footwear at sacred sites</li><li>Carry water & sun protection</li></ul></div>
+        <div class="donts"><div class="dd-title">✗ DON'T</div><ul class="dd-list"><li>Photograph inside temples</li><li>Litter at heritage sites</li></ul></div>
+      </div>
+    </div>
+  </div>`;
+});
+
+// Populate arts
+const artGrid = document.getElementById('artGrid');
+artsData.forEach(a => {
+  artGrid.innerHTML += `<div class="acard"><span class="ae">${a.emoji}</span><div class="at">${a.name}</div><div class="ad">${a.desc}</div><div class="art-fee"><span>${a.location}</span></div></div>`;
+});
+
+// Populate traditions
+const tradGrid = document.getElementById('tradGrid');
+traditionsData.forEach(t => {
+  tradGrid.innerHTML += `<div class="acard"><span class="ae">${t.emoji}</span><div class="at">${t.name}</div><div class="ad">${t.desc}</div><div class="art-fee"><span>${t.location}</span></div></div>`;
+});
+
+// Populate cuisines
+const cuisinesGrid = document.getElementById('cuisinesGrid');
+cuisinesData.forEach(c => {
+  cuisinesGrid.innerHTML += `<div class="acard"><span class="ae">${c.emoji}</span><div class="at">${c.name}</div><div class="ad">${c.desc}</div><div class="art-fee"><span>${c.region}</span></div></div>`;
+});
+
+// Accordion
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const accords = document.querySelectorAll('.dacc');
+  if(openAccordion !== null && openAccordion !== idx) accords[openAccordion].classList.remove('open');
+  accords[idx].classList.toggle('open');
+  openAccordion = accords[idx].classList.contains('open') ? idx : null;
+}
+
+function filterDistricts(query) {
+  document.querySelectorAll('.dacc').forEach(a => {
+    a.style.display = a.dataset.name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+
+function toggleMusic() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('musicBtn');
+  if(audio.paused){audio.play();btn.classList.add('on');}
+  else{audio.pause();btn.classList.remove('on');}
+}
+
+// Fade-in observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Language translations
+const translations = {
+  en: {
+    heroName:"Bihar", heroNative:"बिहार", heroTag:"Land of Buddha, Mahavira & Ancient Wisdom",
+    scrollLbl:"SCROLL TO EXPLORE",
+    qw:"🌡️ Weather", qd:"📍 Districts", qp:"🏛️ Places", qa:"🎨 Arts", qt:"🪔 Traditions", qc:"🍲 Cuisines",
+    lAbout:"About Bihar", aboutTitle:"Cradle of Civilization & Spirituality",
+    aboutBody:"Bihar, one of the oldest inhabited places on earth, is the cradle of some of humanity's greatest civilizations and spiritual traditions. The birthplace of Buddhism and Jainism, Bihar nurtured Siddhartha Gautama's enlightenment under the Bodhi Tree at Bodh Gaya and Lord Mahavira's birth at Vaishali. Home to the ancient Nalanda University — the world's first residential university — Bihar has been the seat of learning, philosophy and statecraft for over 2,500 years.",
+    lWeather:"Climate & Best Time", weatherTitle:"When to Visit Bihar",
+    weatherNote:"Bihar has three distinct seasons: hot summer (March–June), monsoon (July–September) and cool winter (October–February). October to March is ideal for tourism — skies are clear, the Ganges is serene and all major pilgrimage circuits are fully accessible.",
+    lDist:"All 38 Districts", distTitle:"Every District of Bihar",
+    distNote:"Bihar's 38 districts stretch from the Himalayan foothills of Champaran to the plateau edges of Rohtas, from the Ganges plains of Patna to the Kosi river basin of the east.",
+    distSearch:"Search districts...",
+    lPlaces:"Sacred & Historical Treasures", placesTitle:"Wonders of Bihar",
+    lArts:"Arts, Crafts & Heritage", artsTitle:"Living Traditions of Bihar",
+    lTrad:"Festivals & Celebrations", tradTitle:"Soul of Bihari Culture",
+    lCuisines:"Culinary Heritage", cuisinesTitle:"Flavors of Bihar",
+    footerT:"JAY BIHAR", footerS:"Bihar Diwas — March 22 · 1912"
+  },
+  hi: {
+    heroName:"बिहार", heroNative:"बिहार", heroTag:"बुद्ध, महावीर और प्राचीन ज्ञान की भूमि",
+    scrollLbl:"खोजने के लिए स्क्रॉल करें",
+    qw:"🌡️ मौसम", qd:"📍 जिले", qp:"🏛️ स्थल", qa:"🎨 कलाएं", qt:"🪔 परंपराएं", qc:"🍲 व्यंजन",
+    lAbout:"बिहार के बारे में", aboutTitle:"सभ्यता और आध्यात्मिकता का उद्गम",
+    aboutBody:"बिहार, पृथ्वी के सबसे पुराने बसे स्थानों में से एक, मानवता की महानतम सभ्यताओं और आध्यात्मिक परंपराओं का पालना है। बौद्ध धर्म और जैन धर्म की जन्मभूमि, बिहार ने बोधगया में बोधि वृक्ष के नीचे सिद्धार्थ गौतम के ज्ञानोदय और वैशाली में भगवान महावीर के जन्म को पोषित किया। प्राचीन नालंदा विश्वविद्यालय — विश्व का पहला आवासीय विश्वविद्यालय — के घर बिहार ने 2,500 से अधिक वर्षों तक शिक्षा, दर्शन और राजनीति का केंद्र रहा है।",
+    lWeather:"जलवायु और सर्वोत्तम समय", weatherTitle:"बिहार कब जाएं",
+    weatherNote:"बिहार में तीन अलग-अलग मौसम होते हैं: गर्म गर्मी (मार्च-जून), मानसून (जुलाई-सितंबर) और ठंडी सर्दी (अक्टूबर-फरवरी)। अक्टूबर से मार्च पर्यटन के लिए आदर्श है।",
+    lDist:"सभी 38 जिले", distTitle:"बिहार के हर जिले",
+    distNote:"बिहार के 38 जिले चंपारण की हिमालयी तलहटी से रोहतास के पठार तक, पटना के गंगा मैदानों से पूर्व के कोसी नदी तट तक फैले हैं।",
+    distSearch:"जिले खोजें...",
+    lPlaces:"पवित्र और ऐतिहासिक खजाने", placesTitle:"बिहार के चमत्कार",
+    lArts:"कला, शिल्प और विरासत", artsTitle:"बिहार की जीवंत परंपराएं",
+    lTrad:"त्योहार और उत्सव", tradTitle:"बिहारी संस्कृति की आत्मा",
+    lCuisines:"पाक विरासत", cuisinesTitle:"बिहार का स्वाद",
+    footerT:"जय बिहार", footerS:"बिहार दिवस — 22 मार्च · 1912"
+  },
+  bh: {
+    heroName:"बिहार", heroNative:"बिहार", heroTag:"बुद्ध, महावीर आ प्राचीन ज्ञान के धरती",
+    scrollLbl:"खोजे खातिर स्क्रॉल करीं",
+    qw:"🌡️ मौसम", qd:"📍 जिला", qp:"🏛️ जगह", qa:"🎨 कला", qt:"🪔 परंपरा", qc:"🍲 खाना",
+    lAbout:"बिहार के बारे में", aboutTitle:"सभ्यता आ आध्यात्म के पालना",
+    aboutBody:"बिहार, धरती के सबसे पुरान बसल जगहन में से एक, मनुखता के महान सभ्यता आ आध्यात्मिक परंपरा के पालना हवे। बौद्ध आ जैन धर्म के जन्मभूमि, बिहार में बोधगया में बोधि वृक्ष के नीचे सिद्धार्थ गौतम के ज्ञान मिलल आ वैशाली में महावीर भगवान के जनम भइल। नालंदा विश्वविद्यालय — दुनिया के पहिला आवासीय विश्वविद्यालय — के ई धरती 2500 साल से ज्ञान के केंद्र रहल बा।",
+    lWeather:"मौसम आ सबसे अच्छा समय", weatherTitle:"बिहार कब जाईं",
+    weatherNote:"बिहार में तीन मौसम होला: गरम गर्मी (मार्च-जून), बरसात (जुलाई-सितंबर) आ ठंडी जाड़ा (अक्टूबर-फरवरी)। अक्टूबर से मार्च घूमे खातिर सबसे बढ़िया समय हवे।",
+    lDist:"सभे 38 जिला", distTitle:"बिहार के हर जिला",
+    distNote:"बिहार के 38 जिला चंपारण के हिमालय तलहटी से रोहतास के पठार तक, पटना के गंगा मैदान से पूरब के कोसी नदी तट तक फइलल बा।",
+    distSearch:"जिला खोजीं...",
+    lPlaces:"पवित्र आ ऐतिहासिक खजाना", placesTitle:"बिहार के अजूबा",
+    lArts:"कला, हस्तशिल्प आ विरासत", artsTitle:"बिहार के जीवंत परंपरा",
+    lTrad:"तिहुआर आ उत्सव", tradTitle:"बिहारी संस्कृति के आत्मा",
+    lCuisines:"खाना के विरासत", cuisinesTitle:"बिहार के स्वाद",
+    footerT:"जय बिहार", footerS:"बिहार दिवस — 22 मार्च · 1912"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t = translations[lang];
+  document.getElementById('heroName').textContent = t.heroName;
+  document.getElementById('heroNative').textContent = t.heroNative;
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('scrollLbl').textContent = t.scrollLbl;
+  document.getElementById('qw').textContent = t.qw;
+  document.getElementById('qd').textContent = t.qd;
+  document.getElementById('qp').textContent = t.qp;
+  document.getElementById('qa').textContent = t.qa;
+  document.getElementById('qt').textContent = t.qt;
+  document.getElementById('qc').textContent = t.qc;
+  document.getElementById('lAbout').textContent = t.lAbout;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutBody').textContent = t.aboutBody;
+  document.getElementById('lWeather').textContent = t.lWeather;
+  document.getElementById('weatherTitle').textContent = t.weatherTitle;
+  document.getElementById('weatherNote').textContent = t.weatherNote;
+  document.getElementById('lDist').textContent = t.lDist;
+  document.getElementById('distTitle').textContent = t.distTitle;
+  document.getElementById('distNote').textContent = t.distNote;
+  document.getElementById('distSearch').placeholder = t.distSearch;
+  document.getElementById('lPlaces').textContent = t.lPlaces;
+  document.getElementById('placesTitle').textContent = t.placesTitle;
+  document.getElementById('lArts').textContent = t.lArts;
+  document.getElementById('artsTitle').textContent = t.artsTitle;
+  document.getElementById('lTrad').textContent = t.lTrad;
+  document.getElementById('tradTitle').textContent = t.tradTitle;
+  document.getElementById('lCuisines').textContent = t.lCuisines;
+  document.getElementById('cuisinesTitle').textContent = t.cuisinesTitle;
+  document.getElementById('footerT').textContent = t.footerT;
+  document.getElementById('footerS').textContent = t.footerS;
+}
+</script>
+</body>
+</html>
