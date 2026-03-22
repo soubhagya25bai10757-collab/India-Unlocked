@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dadra & Nagar Haveli and Daman & Diu — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--port:#1A5C3A;--gold:#C8960A;--sea:#1A4A7A;--coral:#C8502A;--cream:#f5f8f0;--deep:#040a06;--border:rgba(26,92,58,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(4,10,6,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--port);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.1em;color:rgba(245,248,240,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,248,240,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--port);color:#fff;border-color:var(--port);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--port);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;filter:brightness(0.76) saturate(1.2);}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,10,6,.22) 0%,rgba(4,10,6,.04) 38%,rgba(4,10,6,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(200,150,10,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(1.8rem,5vw,4.5rem);color:#fff;letter-spacing:.01em;line-height:1.1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(.9rem,2.2vw,1.6rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.75rem,1.5vw,1rem);color:rgba(245,248,240,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(26,92,58,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(245,248,240,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--port);color:#fff;border-color:var(--port);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(26,92,58,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(245,248,240,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(26,92,58,.1);border:1px solid rgba(26,92,58,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(26,92,58,.18);border-color:rgba(26,92,58,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,150,10,.55);background:rgba(200,150,10,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,248,240,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--port);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(26,92,58,.65);}
+.dsearch::placeholder{color:rgba(245,248,240,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(26,92,58,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(26,92,58,.08);}
+.dacc:hover{border-color:rgba(26,92,58,.42);background:rgba(26,92,58,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(26,92,58,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(26,92,58,.35);background:rgba(26,92,58,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,248,240,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--port);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(26,92,58,.2);border:1px solid rgba(26,92,58,.38);color:rgba(245,248,240,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,150,10,.2);border:1px solid rgba(200,150,10,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(26,92,58,.09);border:1.5px solid rgba(26,92,58,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(26,92,58,.55);box-shadow:0 18px 54px rgba(26,92,58,.16);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--port),var(--gold),var(--sea));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,248,240,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(26,92,58,.22);border:1px solid rgba(26,92,58,.42);color:#a0ffb8;}
+.fb-fr{background:rgba(200,80,42,.2);border:1px solid rgba(200,80,42,.38);color:#ffd0b8;}
+.fb-free{background:rgba(200,150,10,.18);border:1px solid rgba(200,150,10,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,92,58,.14);border:1px solid rgba(26,92,58,.3);}
+.donts{background:rgba(200,80,42,.12);border:1px solid rgba(200,80,42,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a0ffb8;}.donts .dd-title{color:#ffd0b8;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(160,255,184,.78);}.donts .dd-list li{color:rgba(255,208,184,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(26,92,58,.1);border:1.5px solid rgba(26,92,58,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(26,92,58,.52);background:rgba(26,92,58,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,248,240,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(245,248,240,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(26,92,58,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,248,240,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,248,240,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.merger-note{background:rgba(200,150,10,.1);border:1px solid rgba(200,150,10,.28);border-radius:12px;padding:16px 20px;margin-top:16px;font-size:.82rem;color:rgba(245,248,240,.7);line-height:1.7;}
+.merger-note strong{color:var(--gold);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">DADRA & NAGAR HAVELI AND DAMAN & DIU</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-gu" onclick="setLang('gu')">ગુજરાતી</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">⚓</span>
+    <div class="hero-name" id="heroName">Dadra &amp; Nagar Haveli<br>and Daman &amp; Diu</div>
+    <div class="hero-native" id="heroNative">દાદરા અને નગર હવેલી અને દમણ અને દીવ</div>
+    <div class="hero-tag" id="heroTag">Portugal's Last Indian Embrace — Forts, Beaches, Forests & a Portuguese Soul</div>
+    <div class="tribar">
+      <div style="background:#1A5C3A"></div>
+      <div style="background:#C8960A"></div>
+      <div style="background:#1A4A7A"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap">
+    <span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span>
+    <div class="sarrow"></div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About This Union Territory</span>
+  <h2 class="sec-title" id="aboutTitle">Portugal's <em>Last Footprint in India</em></h2>
+  <p class="sec-body" id="aboutBody">Dadra & Nagar Haveli and Daman & Diu — merged into a single Union Territory on January 26, 2020 — represents the last, most scattered and perhaps the most surprising chapter of European colonialism in India. While the British and French held their Indian territories until 1947 and 1954 respectively, the Portuguese clung to their small coastal enclaves until 1961, when the Indian Army's Operation Vijay ended 451 years of Portuguese rule in a swift 36-hour military action. The combined UT comprises four distinct geographical units spread along India's western coast: Daman — a small port town on the Gujarat coast with a walled old city, a magnificent 16th-century Portuguese fort and a seafront promenade; Diu — a luminous limestone island off the southern tip of the Kathiawar Peninsula, blessed with extraordinary Portuguese architecture, clear beaches and a silence that Goa lost decades ago; Dadra & Nagar Haveli — an inland enclave surrounded entirely by Gujarat and Maharashtra, covered in dense tribal forest and home to the Varli, Kokaná, Dhodia and Naikda tribes whose ancient culture predates the Portuguese arrival by millennia. The Portuguese presence — concentrated in Daman and Diu — left behind architecture of enduring quality: the Moti Daman Fort (the finest Portuguese fortification in India), the St. Paul's Church (Diu, whose baroque facade rivals anything in Goa), the Church of Bom Jesus (Daman) and dozens of smaller colonial buildings whose yellow-ochre plaster and terracotta roof tiles create a Mediterranean atmosphere on the Arabian Sea coast. Today Daman and Diu are among India's most relaxed holiday destinations — less crowded than Goa, more authentic, with excellent beaches, seafood and the peaceful rhythm of small coastal towns that haven't yet been overwhelmed by mass tourism.</p>
+
+  <div class="merger-note">
+    <strong>📋 Administrative Note:</strong> This Union Territory was formed on <strong>January 26, 2020</strong> by merging the previously separate UTs of Dadra & Nagar Haveli and Daman & Diu. The capital is <strong>Daman</strong>. The UT has 3 districts: Daman, Diu, and Dadra & Nagar Haveli. Total area: 603 sq km. Total population: approximately 586,000.
+  </div>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Daman, Diu & DNH</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">The coastal areas (Daman and Diu) have a tropical maritime climate — warm year-round with distinct monsoon and winter seasons. October to March is ideal — pleasant temperatures (20–30°C), calm seas and clear skies. Dadra & Nagar Haveli's forest is most beautiful in October-November after the monsoon rains. Avoid June-September (heavy monsoon, rough seas) for beach tourism.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 3 Districts</span>
+  <h2 class="sec-title" id="distTitle">Three Worlds — <em>One Union Territory</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">The three districts of this UT are geographically separated and culturally distinct — Daman (Portuguese coastal port), Diu (luminous island fortress) and Dadra & Nagar Haveli (tribal forest enclave). Each offers a completely different experience.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Forts, Churches, Beaches &amp; Forest</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Daman, Diu & DNH</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Portuguese Heritage, Tribal Arts &amp; Crafts</span>
+  <h2 class="sec-title" id="artsTitle">Creative Soul of <em>Daman, Diu & DNH</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Cultural Life</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Daman, Diu & DNH</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Daman, Diu & DNH</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">⚓</span>
+  <div class="ft" id="footerT">JAI HIND — DAMAN, DIU & DADRA NAGAR HAVELI</div>
+  <div class="fs" id="footerS">Union Territory &middot; Capital: Daman &middot; Merged January 26, 2020 &middot; Portuguese Colony 1535–1961</div>
+</footer>
+
+<audio id="bgm" loop preload="auto"></audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(4,15,8);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(8,25,40);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(20,12,4);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/%3E%3Ccircle cx=%22160%22 cy=%22190%22 r=%22270%22 fill=%22rgba(26,92,58,0.32)%22/%3E%3Ccircle cx=%221050%22 cy=%22320%22 r=%22290%22 fill=%22rgba(26,74,122,0.25)%22/%3E%3Ccircle cx=%22580%22 cy=%22680%22 r=%22220%22 fill=%22rgba(200,150,10,0.15)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+  {
+    name:"Daman District",region:"Arabian Sea Coast — Southern Gujarat border",
+    known:"Portuguese fort, Moti Daman, Nani Daman, Devka Beach, churches",
+    heritage:["Moti Daman Fort (1559) — finest Portuguese fort in India","Chapel of Our Lady of Rosary (1607)","Church of Bom Jesus (16th century)","Nani Daman Fort (Fort of São Jeronimo)","Devka Beach & Jampore Beach","Damanganga Tourist Complex"],
+    languages:["Gujarati","Hindi","Konkani","Portuguese (community)"],
+    bestMonths:"Oct-Mar",avgTemp:"20-34°C"
+  },
+  {
+    name:"Diu District",region:"Island — Southern tip of Kathiawar Peninsula",
+    known:"Diu Fort, St. Paul's Church, Nagoa Beach, silence and light",
+    heritage:["Diu Fort (1535) — Portuguese sea fortress","St. Paul's Church — finest baroque church outside Goa","St. Thomas Church (now museum)","Naida Caves — Portuguese-era quarry","Gangeshwar Temple — 5 Shiva lingas in the sea","Nagoa Beach (7km — finest beach)","INS Khukri Memorial"],
+    languages:["Gujarati","Hindi","Konkani"],
+    bestMonths:"Oct-Mar",avgTemp:"22-34°C"
+  },
+  {
+    name:"Dadra & Nagar Haveli District",region:"Inland — surrounded by Gujarat & Maharashtra",
+    known:"Tribal culture, Varli art, Satmaliya deer park, Vanganga lake",
+    heritage:["Vanganga Lake & Island Garden","Satmaliya Deer Park","Tribal Museum — Varli, Kokana, Dhodia cultures","Silvassa — capital, on Daman Ganga River","Hirwa Van Gardens","Tribal Craft Centre"],
+    languages:["Gujarati","Hindi","Varli","Kokani","Dhodia"],
+    bestMonths:"Oct-Feb",avgTemp:"18-38°C"
+  },
+];
+
+const placesData=[
+  {
+    emoji:"🏰",name:"Diu Fort",
+    location:"Diu Island — Portuguese, 1535",
+    desc:"The greatest surviving Portuguese fortification in India — Diu Fort was built in 1535 after the Battle of Diu, when the Portuguese defeated the combined fleet of the Gujarat Sultanate and the Ottoman Empire to establish dominance over Indian Ocean trade. The fort occupies the entire eastern tip of Diu Island, surrounded on three sides by the sea. Its massive bastions, cannons still pointing seaward, lighthouses, tunnels and the inner residential quarters are remarkably well preserved. The view from the ramparts — the Arabian Sea on one side, the tranquil Diu lagoon on the other — is extraordinary.",
+    fee:["Free"]
+  },
+  {
+    emoji:"⛪",name:"St. Paul's Church, Diu",
+    location:"Diu Town",
+    desc:"The finest example of Portuguese baroque architecture in India outside Goa — the Church of St. Paul (built by the Jesuits in 1610, rebuilt 1807) has a facade of elaborate carved stonework in the Manueline Gothic style that rivals the great churches of Goa. The interior is a masterpiece of carved wood and gilded altars. Unusually, the church is still actively maintained and services are held. The church's setting in Diu's quiet colonial town — flanked by yellow-ochre Portuguese villas, with the fort visible at the end of the street — is one of the most perfectly preserved colonial townscapes in India.",
+    fee:["Free — respectful dress required"]
+  },
+  {
+    emoji:"🏖️",name:"Nagoa Beach, Diu",
+    location:"Diu Island — 7km from town",
+    desc:"The finest beach in this UT — Nagoa Beach is a 7-kilometre arc of pale sand fringed with centuries-old hoka palm trees (a rare species found almost exclusively in Diu), with calm clear water excellent for swimming. Unlike most Indian beaches, Nagoa has consistent conditions year-round (outside monsoon) — the island's geography shelters it from rough seas. The beach is never as crowded as Goa's famous beaches and has retained a tranquil character. The hoka palms — their feathery fronds casting dappled shade — are among the most beautiful natural features of any Indian beach.",
+    fee:["Free"]
+  },
+  {
+    emoji:"🏰",name:"Moti Daman Fort",
+    location:"Daman — Portuguese, 1559",
+    desc:"The Moti Daman (Great Daman) Fort is one of the largest Portuguese forts in India — its massive laterite walls enclose an entire colonial township: the Government House, the Church of Bom Jesus (1603), the Chapel of Our Lady of Rosary (1607) with extraordinary carved stonework, administrative buildings and residential streets. Walking inside Moti Daman Fort is like entering a preserved Portuguese village — the yellow-washed walls, the terracotta tiles, the carved doorways and the sound of church bells create a time-capsule atmosphere that Goa's old quarters have largely lost to commercialisation.",
+    fee:["Free"]
+  },
+  {
+    emoji:"🕌",name:"Naida Caves, Diu",
+    location:"Diu Island — near Fort",
+    desc:"The Naida Caves are not natural caves but the abandoned quarries where the Portuguese cut the limestone blocks used to build Diu's fort, churches and houses. Over 450 years, the quarry shafts and passages have become an extraordinary underground labyrinth — the play of light through shafts and cracks in the limestone roof creates constantly changing patterns of illumination in the chambers below. The caves contain enormous fig tree roots descending from above, natural rock arches and the peaceful sound of dripping water. One of the most unexpectedly atmospheric sites in western India.",
+    fee:["Free"]
+  },
+  {
+    emoji:"🛕",name:"Gangeshwar Temple, Diu",
+    location:"Diu Island — Fudam village",
+    desc:"One of the most unusually situated temples in India — the Gangeshwar Temple contains five ancient Shiva lingas of different sizes, set directly in the rock at the sea's edge, washed by the waves at high tide. The largest linga is said to have been established by the Pandavas. The temple has no roof or walls — it is open to the sky and the sea, the salt spray of the Arabian Sea permanently anointing the lingas. The combination of Hindu devotion, ancient stone and the dramatic Diu coastline at this spot is extraordinary.",
+    fee:["Free"]
+  },
+  {
+    emoji:"🌿",name:"Vanganga Lake & Island Garden",
+    location:"Silvassa, Dadra & Nagar Haveli",
+    desc:"The most attractive leisure destination in Dadra & Nagar Haveli — Vanganga Lake Island Garden in Silvassa is a beautifully landscaped island in the Daman Ganga River connected to the mainland by a bridge. The garden contains tribal art installations, water features, manicured lawns and a children's park — a peaceful green space that showcases the potential of the region's forest landscape. The garden is most beautiful in October-November when the monsoon rains have washed the landscape clean and the river runs full.",
+    fee:["Rs.10"]
+  },
+  {
+    emoji:"🦌",name:"Satmaliya Deer Park & Tribal Forest",
+    location:"Dadra & Nagar Haveli",
+    desc:"The tribal forest landscape of Dadra & Nagar Haveli is one of western India's least-known green corridors — dense tropical forest covering the hills between Gujarat and Maharashtra. The Satmaliya Deer Park is a small wildlife sanctuary with spotted deer, crocodiles in the Daman Ganga River and a wide variety of birds. The tribal villages of the Varli, Kokana and Dhodia communities in the surrounding forest maintain agricultural and craft traditions thousands of years old. The region receives significantly more rainfall than coastal Daman and Diu, creating lush forest that contrasts dramatically with the coast.",
+    fee:["Rs.20"]
+  },
+];
+
+const artsData=[
+  {
+    emoji:"🎨",name:"Varli Tribal Art",
+    location:"Dadra & Nagar Haveli — tribal villages",
+    desc:"The Varli tribe of Dadra & Nagar Haveli practice one of India's most distinctive folk art traditions — Varli painting, created in white pigment (made from rice paste) on a dark red-brown background (made from cow dung and clay). The paintings depict daily life, rituals, the cycle of seasons and mythological scenes in a distinctive linear style using simple geometric forms — triangles for human bodies, circles for faces, dots and lines for the natural world. Varli art has become internationally recognised and is sold in galleries worldwide, but its most authentic form is still found on the walls of Varli homes in the DNH forests."
+  },
+  {
+    emoji:"⛪",name:"Portuguese-Indo Architecture",
+    location:"Daman & Diu",
+    desc:"The colonial architecture of Daman and Diu represents a distinctive fusion of Portuguese baroque and Gujarati vernacular traditions — the carved doorways use Portuguese stonework motifs (crosses, floral scrolls, armillary spheres) alongside Gujarati geometric patterns; the church facades combine Manueline Gothic pointed arches with local limestone carving techniques; and the domestic architecture blends Portuguese verandahs, terracotta roof tiles and thick walls with Gujarati courtyard planning. This Indo-Portuguese fusion style is unique to these enclaves and has been documented by architectural historians as a significant chapter of syncretic Indian architecture."
+  },
+  {
+    emoji:"🪘",name:"Dhodia & Kokana Tribal Music",
+    location:"Dadra & Nagar Haveli — tribal areas",
+    desc:"The tribal communities of Dadra & Nagar Haveli — Varli, Kokana, Dhodia and Naikda — each maintain distinctive musical traditions performed at agricultural festivals, weddings and religious ceremonies. The Kokana community's tarpa (a wind instrument made from a hollow gourd, played with circular breathing to produce a continuous drone) is the most distinctive tribal instrument of the region. Group dances around the tarpa player — with men and women in traditional dress circling the musician — are the most visually and acoustically striking cultural events of the tribal communities."
+  },
+  {
+    emoji:"🧵",name:"Warli Craft & Embroidery",
+    location:"DNH tribal villages & Daman markets",
+    desc:"Beyond painting, the Varli and Kokana communities produce a wide range of craft objects — embroidered textiles with geometric patterns, bamboo and grass weaving, traditional jewellery using silver and beads, and carved wood objects. The craft centre in Silvassa (the DNH capital) and the tribal market sell authentic tribal crafts directly from the producing communities. The embroidery traditions of the Dhodia community — using mirror work and geometric patterns on dark fabric — are particularly distinctive and related to the broader Gujarati embroidery tradition but with a specifically tribal aesthetic."
+  },
+  {
+    emoji:"🎭",name:"Fugdi & Dhalo — Goan-Portuguese Dance Heritage",
+    location:"Daman coastal community",
+    desc:"The coastal communities of Daman — who trace their heritage to Goa's Catholic fishing communities and the local Konkani-speaking population — maintain the Fugdi and Dhalo folk dance traditions shared with Goa. Fugdi is a women's dance performed in circles with rhythmic clapping; Dhalo is a winter festival dance performed by women in December and January. These traditions, maintained by the Catholic community of Daman, are one of the clearest surviving connections to the Portuguese cultural legacy — continuing in the same fishing village communities that existed when the Portuguese arrived in 1531."
+  },
+  {
+    emoji:"⚓",name:"Maritime Heritage — Operation Vijay",
+    location:"Diu — INS Khukri Memorial",
+    desc:"The INS Khukri Memorial in Diu commemorates one of the most significant events in Indian naval history — the sinking of INS Khukri by a Pakistani submarine during the 1971 war. The memorial includes the ship's propeller, a model of the vessel and a tribute to the 18 officers and 176 sailors who went down with the ship. The combination of the 1961 Liberation (ending Portuguese rule) and the 1971 war memorial makes Diu one of India's most historically layered small towns — ancient Hindu temple, Portuguese baroque church, Indian liberation monument and naval war memorial all within a few hundred metres."
+  },
+];
+
+const traditionsData=[
+  {
+    emoji:"🎉",name:"Liberation Day — December 19",
+    location:"Daman, Diu & DNH — December 19",
+    desc:"Liberation Day (December 19, 1961) is the most important civic celebration of the UT — the day Indian forces completed Operation Vijay and ended 451 years of Portuguese rule. Celebrations take place at all three locations with flag hoisting, cultural programmes, parades and the recounting of the liberation story. The event is celebrated with particular feeling in Diu, where the Portuguese Fort — now flying the Indian tricolour from its highest tower — becomes the backdrop for the main ceremony. The liberation story is taught in every school in the UT and remembered by elderly residents who witnessed it."
+  },
+  {
+    emoji:"🎊",name:"Carnival — Daman & Diu",
+    location:"Daman & Diu — February/March",
+    desc:"The Portuguese carnival tradition — celebrated in Goa with great fanfare — is also maintained in Daman and Diu, reflecting the Catholic community's connection to the Portuguese cultural legacy. The Daman Carnival features street parades, floats, music and dancing in the streets of the old town for three days before Lent. It is a much smaller, more intimate affair than Goa's carnival but retains an authentic character — the participation of the local Catholic fishing community gives it a genuine grassroots quality that larger carnival celebrations sometimes lack."
+  },
+  {
+    emoji:"🌺",name:"Holi & Navratri — Gujarati Festivals",
+    location:"Throughout the UT",
+    desc:"The predominantly Hindu and Gujarati-speaking population of all three districts celebrates the full calendar of Gujarati festivals with great energy. Navratri — nine nights of garba dancing — is celebrated with particular exuberance in Silvassa and Daman, where the garba circles continue through the night. Holi transforms the coastal towns into celebrations of colour. Diwali lights up the Portuguese-era buildings of Moti Daman Fort in a combination of Indian festival light and colonial architecture that is uniquely beautiful."
+  },
+  {
+    emoji:"🥁",name:"Tarpa Festival — Tribal Celebrations",
+    location:"Dadra & Nagar Haveli — post-harvest",
+    desc:"The Tarpa Festival of Dadra & Nagar Haveli is the most important tribal cultural event of the region — held after the harvest season when the Varli, Kokana and Dhodia communities come together to celebrate with music, dance and communal feasting. The tarpa player stands at the centre of a circle of dancers who move in spiralling patterns to the gourd-horn's continuous drone. The festival embodies the tribal communities' deep connection to the agricultural cycle and their communal social structure — everyone participates, there is no audience, only community."
+  },
+  {
+    emoji:"⛵",name:"Fishing Festival & Boat Racing",
+    location:"Daman & Diu — coast",
+    desc:"The fishing communities of Daman and Diu celebrate the opening and closing of the fishing season with rituals and festivities that blend Hindu and Portuguese-influenced Catholic traditions. The blessing of the fishing boats before the season opener — the priests of both communities sometimes participating — is one of the most syncretic religious traditions in India. Traditional boat races in the Daman harbour and along the Diu coast during local festivals draw participants and spectators from across the coastal community."
+  },
+  {
+    emoji:"🌊",name:"Christmas & New Year — Daman & Diu",
+    location:"Daman & Diu — December",
+    desc:"The Catholic communities of Daman and Diu celebrate Christmas with traditions directly descended from the Portuguese colonial period — midnight mass at the Church of Bom Jesus (Daman) and St. Paul's Church (Diu), decorated streets, community feasting and carol singing. The combination of Christmas celebrations in Portuguese colonial churches, with fishing community families in traditional dress and the backdrop of the Arabian Sea, creates one of the most distinctive Christmas atmospheres in India — entirely different from northern India's commercialised versions and connected to a 450-year-old tradition."
+  },
+];
+
+const cuisinesData=[
+  {
+    emoji:"🦐",name:"Daman Seafood — The Arabian Sea's Finest",
+    location:"Daman fishing community restaurants",
+    desc:"Daman's proximity to the productive fishing grounds of the Arabian Sea means its seafood is among the freshest and most varied in India — prawns, crabs, lobster, pomfret, surmai (kingfish), rawas (Indian salmon), and dozens of other species landed daily. The Daman prawn curry — large tiger prawns cooked in a coconut-tomato gravy with local spices — is the defining dish of the coast. The fish thali at the local restaurants near Jampore Beach — fresh fish fried or curried, rice, dal and pickle — is one of the most satisfying and affordable seafood meals on the western coast."
+  },
+  {
+    emoji:"🍲",name:"Diu Fish Curry — The Island Way",
+    location:"Diu restaurants & homes",
+    desc:"Diu fish curry differs from Daman's version in its use of kokum (a sour fruit, also called Malabar tamarind) as the souring agent rather than tomato — the kokum gives the curry a distinctive deep purple colour and a fruity-tart flavour. Fresh pomfret and surmai are the preferred fish. The Diu version is drier and more concentrated than the Goan fish curry and is eaten with steamed rice or the local bread. The seafood restaurants of Diu's main town — small family operations serving whatever the morning boats brought in — are among the most reliably delicious simple restaurants in western India."
+  },
+  {
+    emoji:"🥬",name:"Varli Tribal Cuisine — Forest Food",
+    location:"Dadra & Nagar Haveli tribal villages",
+    desc:"The tribal communities of Dadra & Nagar Haveli have developed a cuisine of extraordinary ingenuity from forest and agricultural ingredients — ragi (finger millet) and nagli flatbreads; bamboo shoot curries; dried and fresh fish from the Daman Ganga River; wild mushrooms from the monsoon forest; mahua flower preparations (the mahua tree is the tribal communities' most sacred plant, used for food, oil, medicine and the fermented mahua liquor that is the traditional celebratory drink). This forest-to-table cuisine, entirely self-sufficient and deeply connected to the seasonal cycle, is one of India's least-known but most fascinating regional food traditions."
+  },
+  {
+    emoji:"🍷",name:"Palm Feni & Local Drinks",
+    location:"Daman & Diu — liquor shops",
+    desc:"Daman and Diu have the most liberal alcohol licensing in India outside Goa — a legacy of Portuguese rule that normalised alcohol consumption. The local specialty is feni — a spirit distilled from either cashew apple juice or coconut palm sap, the same drink made famous in Goa. Daman feni is distilled in small batches by local producers and has a distinctive fiery character. The coconut toddy (nira when fresh, toddy when fermented) from the DNH coconut palms is the more traditional drink. Local cashew fruit season (March-May) when the cashew feni is freshly distilled is the best time to taste it."
+  },
+  {
+    emoji:"🍞",name:"Portuguese-Influenced Bread & Sweets",
+    location:"Daman & Diu bakeries",
+    desc:"The Catholic community bakeries of Daman and Diu maintain Portuguese-era bread and sweet traditions — the pão (crusty bread roll, direct descendant of the Portuguese pão), bolinhas (coconut cookies), bebinca (layered coconut and egg pudding), nevri (deep-fried sweet pastry filled with coconut and jaggery) and dodol (a dense coconut-jaggery sweet). These sweets, identical to those made in Goa's Catholic community kitchens, are prepared for Christmas, Easter and weddings. The combination of Portuguese technique and local coconut and jaggery ingredients creates sweets unlike any in mainland India."
+  },
+  {
+    emoji:"🥘",name:"Gujarati Influence — Dhokla, Fafda & More",
+    location:"Throughout the UT — especially DNH",
+    desc:"The majority population of all three districts is Gujarati-speaking and Hindu, meaning the everyday food culture is deeply Gujarati — dhokla, fafda, handvo, muthiya, undhiyu and the full range of Gujarati snacks and meals are available everywhere. The Gujarati thali — a complete vegetarian meal of dal, shaak (vegetable), roti, rice, kadhi, papad and pickle, served on a steel plate with free refills — is the most common everyday meal in Silvassa and the inland areas. The contrast between the coastal seafood restaurants (Portuguese-influenced) and the inland Gujarati thali establishments (entirely vegetarian) perfectly captures the UT's cultural duality."
+  },
+];
+
+const weatherData=[
+  {month:"January",avgTemp:"18-30°C",weather:"Peak Season",details:"Best weather across all three districts. Diu beach at its finest — calm sea, cool breeze, perfect swimming. Moti Daman Fort and St Paul's Church beautiful in winter light. DNH forest pleasant.",best:true},
+  {month:"February",avgTemp:"20-32°C",weather:"Excellent",details:"Carnival in Daman and Diu — Portuguese heritage celebrations. Diu's hoka palms rustling in the sea breeze. Nagoa Beach uncrowded and beautiful. All outdoor activities ideal.",best:true},
+  {month:"March",avgTemp:"22-35°C",weather:"Warm & Good",details:"Holi celebrations. Warming up but still very pleasant. Cashew trees beginning to fruit in DNH — fresh cashew feni season approaching. Beach tourism still excellent.",best:true},
+  {month:"April",avgTemp:"26-38°C",weather:"Warming",details:"Cashew fruit season in DNH. Heat increasing on the coast. Early mornings and evenings still pleasant. Pre-monsoon sea conditions can be rough on some days."},
+  {month:"May",avgTemp:"28-40°C",weather:"Hot",details:"Very hot. Pre-monsoon humidity. Fishing boats returning to harbour as sea roughens. Beach tourism winding down. Not recommended for outdoor tourism."},
+  {month:"June",avgTemp:"27-35°C",weather:"SW Monsoon",details:"Monsoon arrives — heavy rain, very rough sea. Fishing season closes. Daman and Diu beaches closed. DNH forest transforms to brilliant green. Not for beach tourism."},
+  {month:"July",avgTemp:"26-32°C",weather:"Heavy Monsoon",details:"Peak monsoon. All three districts receive significant rainfall. DNH forest at its most beautiful and biodiversity richest. Daman Ganga River running full. Avoid coastal tourism."},
+  {month:"August",avgTemp:"26-31°C",weather:"Monsoon",details:"Monsoon continues. Independence Day celebrations. DNH tribal forest landscape spectacular. Some adventurous tourists visit for monsoon forest experiences."},
+  {month:"September",avgTemp:"26-33°C",weather:"Late Monsoon",details:"Rain easing. Seas calming in late September. DNH forest at peak beauty post-monsoon. Pre-season in Daman and Diu. First tourists beginning to arrive."},
+  {month:"October",avgTemp:"24-34°C",weather:"Season Opening",details:"Navratri garba — nine nights of dancing in Silvassa and Daman. Seas calming rapidly. Diu beach becoming accessible. DNH fresh and green. Excellent month.",best:true},
+  {month:"November",avgTemp:"22-32°C",weather:"Good Season",details:"Diwali — Portuguese-era buildings of Moti Daman Fort lit with diyas. Season in full swing. Diu beach excellent. All heritage sites at their most photogenic.",best:true},
+  {month:"December",avgTemp:"18-28°C",weather:"Peak Season",details:"Liberation Day (Dec 19) — major celebrations. Christmas in colonial churches. Sea calm and clear. All three districts at their best. Book accommodation well in advance.",best:true},
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreigner')||f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('')}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Visit Dec–Feb — perfect weather all 3 districts</li><li>Hire a cycle in Diu — best way to see the island</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Visit Jun–Sep for beaches — monsoon rough seas</li><li>Miss Naida Caves — most underrated site in India</li></ul></div>
+    </div>
+  </div></div>`;
+});
+
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location}</span></div>
+    </div>`;
+  });
+});
+
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play().catch(()=>{});b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Dadra &amp; Nagar Haveli<br>and Daman &amp; Diu",heroNative:"દાદરા અને નગર હવેલી અને દમણ અને દીવ",heroTag:"Portugal's Last Indian Embrace — Forts, Beaches, Forests & a Portuguese Soul",scrollLbl:"SCROLL TO EXPLORE",lAbout:"About This Union Territory",aboutTitle:"Portugal's Last Footprint in India",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Daman, Diu & DNH",lDist:"All 3 Districts",distTitle:"Three Worlds — One Union Territory",lPlaces:"Forts, Churches, Beaches & Forest",placesTitle:"Wonders of Daman, Diu & DNH",lArts:"Portuguese Heritage, Tribal Arts & Crafts",artsTitle:"Creative Soul of Daman, Diu & DNH",lTrad:"Festivals & Cultural Life",tradTitle:"Soul of Daman, Diu & DNH",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Daman, Diu & DNH",footerT:"JAI HIND — DAMAN, DIU & DADRA NAGAR HAVELI"},
+  hi:{heroName:"दादरा और नगर हवेली<br>तथा दमण और दीव",heroNative:"दादरा और नगर हवेली और दमण और दीव",heroTag:"पुर्तगाल का अंतिम भारतीय आलिंगन — किले, समुद्र तट, जंगल और पुर्तगाली आत्मा",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",lAbout:"इस केंद्र शासित प्रदेश के बारे में",aboutTitle:"भारत में पुर्तगाल की अंतिम छाप",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"दमण, दीव और DNH कब जाएं",lDist:"सभी 3 जिले",distTitle:"तीन दुनिया — एक केंद्र शासित प्रदेश",lPlaces:"किले, चर्च, समुद्र तट और जंगल",placesTitle:"दमण, दीव और DNH के चमत्कार",lArts:"पुर्तगाली विरासत, जनजातीय कलाएं और शिल्प",artsTitle:"दमण, दीव और DNH की रचनात्मक आत्मा",lTrad:"त्योहार और सांस्कृतिक जीवन",tradTitle:"दमण, दीव और DNH की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"दमण, दीव और DNH का स्वाद",footerT:"जय हिन्द — दमण, दीव और दादरा नगर हवेली"},
+  gu:{heroName:"દાદરા અને નગર હવેલી<br>અને દમણ અને દીવ",heroNative:"દાદરા અને નગર હવેલી અને દમણ અને દીવ",heroTag:"પોર્ટુગલનો છેલ્લો ભારતીય આલિંગન — કિલ્લા, દરિયાકિનારા, જંગલ અને પોર્ટુગીઝ આત્મા",scrollLbl:"અન્વેષણ માટે સ્ક્રોલ કરો",lAbout:"આ કેન્દ્ર શાસિત પ્રદેશ વિશે",aboutTitle:"ભારતમાં પોર્ટુગલની છેલ્લી છાપ",lWeather:"આબોહવા અને શ્રેષ્ઠ સમય",weatherTitle:"દમણ, દીવ અને DNH ક્યારે જવું",lDist:"બધા 3 જિલ્લા",distTitle:"ત્રણ દુનિયા — એક કેન્દ્ર શાસિત પ્રદેશ",lPlaces:"કિલ્લા, ચર્ચ, દરિયાકિનારા અને જંગલ",placesTitle:"દમણ, દીવ અને DNH ના અજૂબા",lArts:"પોર્ટુગીઝ વારસો, આદિવાસી કળા અને હસ્તકળા",artsTitle:"દમણ, દીવ અને DNH ની સર્જનાત્મક આત્મા",lTrad:"તહેવારો અને સાંસ્કૃતિક જીવન",tradTitle:"દમણ, દીવ અને DNH ની આત્મા",lCuisines:"રાંધણ વારસો",cuisinesTitle:"દમણ, દીવ અને DNH ના સ્વાદ",footerT:"જય હિન્દ — દમણ, દીવ અને દાદરા નગર હવેલી"},
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  const ids=['heroName','heroNative','heroTag','scrollLbl','lAbout','aboutTitle','lWeather','weatherTitle','lDist','distTitle','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT'];
+  ids.forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.innerHTML=t[k];});
+  document.getElementById('distSearch').placeholder=lang==='hi'?'जिले खोजें...':lang==='gu'?'જિલ્લો શોધો...':'Search districts...';
+}
+</script>
+</body>
+</html>
