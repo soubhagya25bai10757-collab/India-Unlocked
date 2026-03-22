@@ -1,1 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assam — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--indigo:#1F3A93;--gold:#D4A574;--teal:#20b2aa;--cream:#f5f1e8;--deep:#0a0e1a;--card:#ffffff08;--border:rgba(31,58,147,0.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(10,14,26,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--indigo);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--indigo);color:var(--deep);}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,241,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,241,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--indigo);color:var(--cream);border-color:var(--indigo);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--indigo);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--indigo);color:var(--cream);}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.45) saturate(1.4);animation:zk 18s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.05);}to{transform:scale(1.13);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.02) 35%,rgba(10,14,26,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(31,58,147,.8));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(3rem,9vw,7.5rem);color:#fff;letter-spacing:.02em;line-height:1;text-shadow:0 4px 40px rgba(0,0,0,.9);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--indigo);font-style:italic;letter-spacing:.1em;margin-top:.3rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,241,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(31,58,147,.35);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);color:rgba(245,241,232,.75);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--indigo);color:var(--cream);border-color:var(--indigo);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.25);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--indigo),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:1px solid rgba(31,58,147,.08);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--indigo);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--indigo);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.1rem);color:rgba(245,241,232,.68);line-height:1.85;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s;position:relative;backdrop-filter:blur(8px);}
+.wcard:hover{background:rgba(31,58,147,.1);border-color:rgba(31,58,147,.45);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(31,58,147,.5);background:rgba(31,58,147,.08);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--indigo);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,241,232,.5);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--indigo);color:var(--cream);font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;font-weight:500;}
+.dsearch:focus{border-color:rgba(31,58,147,.6);}
+.dsearch::placeholder{color:rgba(245,241,232,.28);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(31,58,147,.16);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02);}
+.dacc:hover{border-color:rgba(31,58,147,.32);background:rgba(31,58,147,.05);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(31,58,147,.08);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--indigo);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--indigo);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(31,58,147,.3);background:rgba(31,58,147,.06);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--indigo);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,241,232,.68);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--indigo);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(31,58,147,.2);border:1px solid rgba(31,58,147,.35);color:rgba(245,241,232,.75);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.temp-badge{padding:4px 10px;border-radius:9px;font-size:.7rem;cursor:default;font-family:"Poppins",sans-serif;font-weight:500;}
+.tb-best{background:rgba(31,58,147,.25);border:1px solid rgba(31,58,147,.5);color:var(--indigo);}
+.tb-ok{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(245,241,232,.6);}
+.tb-hot{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--indigo);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(31,58,147,.07);border:1.5px solid rgba(31,58,147,.2);border-radius:16px;overflow:hidden;transition:all .35s;position:relative;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(31,58,147,.55);box-shadow:0 16px 50px rgba(31,58,147,.12);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--indigo),var(--teal));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(31,58,147,.22);border:1px solid rgba(31,58,147,.4);color:#7deaea;}
+.fb-fr{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.fb-free{background:rgba(26,122,26,.22);border:1px solid rgba(26,122,26,.4);color:#90ee90;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,122,26,.14);border:1px solid rgba(26,122,26,.28);}
+.donts{background:rgba(230,57,43,.12);border:1px solid rgba(230,57,43,.25);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#90ee90;} .donts .dd-title{color:#ffb080;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(144,238,144,.78);} .donts .dd-list li{color:rgba(255,176,128,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:linear-gradient(135deg,rgba(31,58,147,.1),rgba(0,0,0,.2));border:1.5px solid rgba(31,58,147,.2);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(31,58,147,.5);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.art-fee{font-size:.72rem;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(245,241,232,.65);font-family:"Poppins",sans-serif;font-weight:500;}
+footer{text-align:center;padding:50px 20px 40px;border-top:1px solid rgba(31,58,147,.08);}
+footer .fe{font-size:2.2rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,241,232,.25);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,241,232,.35);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title">ASSAM</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">&#2361;&#2367;&#2306;&#2342;&#2368;</button>
+    <button class="lang-btn" id="lb-as" onclick="setLang('as')">অসমীয়া</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🐘</span>
+    <div class="hero-name" id="heroName">Assam</div>
+    <div class="hero-native" id="heroNative">অসম</div>
+    <div class="hero-tag" id="heroTag">Land of Rhinos, Tea Gardens & Rivers</div>
+    <div class="tribar"><div style="background:#1F3A93"></div><div style="background:#ffffff"></div><div style="background:#FF6B35"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Assam</span>
+  <h2 class="sec-title" id="aboutTitle">Gateway to <em>Northeast India</em></h2>
+  <p class="sec-body" id="aboutBody">Assam, the gateway to Northeast India, is a land of extraordinary natural beauty, rich biodiversity and vibrant culture. Known for its majestic one-horned rhinoceroses, vast tea gardens sprawling across hillsides, and the mighty Brahmaputra river flowing through fertile plains, Assam epitomizes the untamed splendor of India. The state is home to Kaziranga National Park, a UNESCO World Heritage site, and boasts extraordinary wildlife alongside diverse tribal communities. From the misty hills of Meghalaya borders to the lush forests of Arunachal Pradesh, Assam serves as a cultural crossroads where Hindu, Islamic, Buddhist and tribal traditions harmoniously coexist. The state's tea industry, handloom heritage, unique art forms and authentic cuisine reflect centuries of history and adaptation. Assam represents India's eastern frontier with its progressive spirit, natural heritage and warm hospitality welcoming visitors to explore its treasures.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Assam</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Assam experiences monsoon (May-September), moderate winter (October-February) and warm summer (March-April). October to March offers ideal weather for tourism with clear skies, comfortable temperatures and excellent visibility for wildlife viewing and outdoor activities.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 33 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Assam</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Assam's 33 districts showcase remarkable diversity from the riverine plains of Brahmaputra valley to the tea gardens of Assam valley, from ancient pilgrimage sites to wildlife sanctuaries. Each district offers unique cultural, natural and historical attractions.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred &amp; Natural Treasures</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Assam</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Assam</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Assamese Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Assam</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY ASSAM</div>
+  <div class="fs" id="footerS">Assam Day — December 26 · 1950</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27grd%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(31,58,147);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(32,178,170);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23grd)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Kamrup",region:"Central Assam",known:"Cultural Heart, Administrative Center, Silk City",heritage:["Umananda Temple","Navagraha Temple","Historic Sites"],languages:["Assamese","Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Nagaon",region:"Central Assam",known:"Tea Production Hub, Economic Center",heritage:["Tea Estates","Temple Heritage","River Banks"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Sonitpur",region:"Upper Assam",known:"Eastern Gate, Agricultural Area, River Valley",heritage:["Agricultural Lands","River Heritage","Temple Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Lakhimpur",region:"Upper Assam",known:"Oil City, Industrial Hub, River Center",heritage:["Oil Heritage","Industrial Sites","Religious Centers"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Dhubri",region:"Lower Assam",known:"Border District, Gateway, Historical Significance",heritage:["Historical Fort","Border Heritage","Pilgrimage Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-34°C"},
+  {name:"Kokrajhar",region:"Lower Assam",known:"Musical Hub, Tribal Land, Cultural Center",heritage:["Tribal Heritage","Music Center","Forest Areas"],languages:["Assamese","Bodo","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-36°C"},
+  {name:"Barpeta",region:"Lower Assam",known:"Religious Hub, Pilgrimage Center",heritage:["Barpeta Temple","Religious Sites","Pilgrimage Centers"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-36°C"},
+  {name:"Goalpara",region:"Lower Assam",known:"Stone City, Historical Site, River Valley",heritage:["Historical Ruins","Stone Heritage","River Bank Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-36°C"},
+  {name:"Darrang",region:"Central Assam",known:"Agricultural Area, Historic Land",heritage:["Agricultural Heritage","Historical Sites","Temple Areas"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Marigaon",region:"Central Assam",known:"River Island District, Unique Ecosystem",heritage:["River Heritage","Island Culture","Wetland Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Nalbari",region:"Central Assam",known:"Handloom Hub, Textile Center",heritage:["Handloom Heritage","Textile Arts","Temple Sites"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Bongaigaon",region:"Lower Assam",known:"Industrial City, Commercial Hub",heritage:["Industrial Heritage","Commercial Sites","Temple Centers"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-36°C"},
+  {name:"Chirang",region:"Lower Assam",known:"Tribal Area, Forest Region",heritage:["Forest Heritage","Tribal Culture","Nature Sites"],languages:["Assamese","Bodo","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Baksa",region:"Lower Assam",known:"Newly Created District, Developing Area",heritage:["Development Heritage","Forest Areas","Tribal Sites"],languages:["Assamese","Bodo","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Cachar",region:"Southern Assam",known:"Tea Garden Heart, Hill Station Gateway",heritage:["Tea Estates","Hill Heritage","Historical Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"15-28°C"},
+  {name:"Karimganj",region:"Southern Assam",known:"Border District, Commercial Center",heritage:["Border Heritage","Commercial Sites","Temple Areas"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"15-30°C"},
+  {name:"Hailakandi",region:"Southern Assam",known:"Clay Region, Pottery Hub",heritage:["Pottery Heritage","Clay Industry","Cultural Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"15-28°C"},
+  {name:"Silchar",region:"Southern Assam",known:"Cultural Capital, Administrative Hub",heritage:["Cultural Heritage","Administrative Center","Historical Sites"],languages:["Assamese","Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"15-30°C"},
+  {name:"Morigaon",region:"Central Assam",known:"Wildlife Sanctuary Gateway, Natural Beauty",heritage:["Wildlife Heritage","Natural Sites","Pilgrimage Centers"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Jorhat",region:"Upper Assam",known:"Tea Town, Cultural Center, Learning Hub",heritage:["Tea Heritage","Theater Heritage","Educational Sites"],languages:["Assamese","Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-32°C"},
+  {name:"Sivasagar",region:"Upper Assam",known:"Historical Capital, Ancient Kingdom Heritage",heritage:["Ancient Temples","Historical Sites","Ahom Kingdom Legacy"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-32°C"},
+  {name:"Dibrugarh",region:"Upper Assam",known:"Tea Capital, Commercial Hub",heritage:["Tea Heritage","Commercial Center","Historical Sites"],languages:["Assamese","Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Tinsukia",region:"Upper Assam",known:"Oil City, Industrial Center, Gateway East",heritage:["Oil Heritage","Industrial Sites","Eastern Gateway"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Brahmaputra Valley",region:"Central",known:"Economic Heart, Agricultural Hub",heritage:["Agricultural Heritage","Commercial Center","Economic Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-32°C"},
+  {name:"Dispur",region:"Guwahati",known:"State Capital, Political Center",heritage:["Government Seat","Administrative Heritage","Capital City"],languages:["Assamese","Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Kaziranga Area",region:"Central Assam",known:"Rhino Country, Wildlife Hub",heritage:["Wildlife Heritage","National Park","Biosphere Reserve"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Manas Area",region:"Southern Assam",known:"Tiger Reserve, Biodiversity Hub",heritage:["Wildlife Heritage","Tiger Reserve","Natural Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"15-28°C"},
+  {name:"Brahmaputra North",region:"Northern Bank",known:"River Valley, Agricultural Center",heritage:["River Heritage","Agricultural Lands","Village Culture"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Brahmaputra South",region:"Southern Bank",known:"River Valley, Settlement Areas",heritage:["River Heritage","Settlement Culture","Agricultural Sites"],languages:["Assamese","Bengali","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Hill Regions",region:"Eastern Borders",known:"Hill Station Access, Border Areas",heritage:["Hill Heritage","Border Culture","Gateway Sites"],languages:["Assamese","Khasi","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-28°C"},
+  {name:"Wetland Areas",region:"Central Assam",known:"Unique Ecosystem, Bird Haven",heritage:["Wetland Heritage","Bird Sanctuary","Natural Wonders"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-34°C"},
+  {name:"Forest Regions",region:"Northern Assam",known:"Biodiversity Hub, Conservation Area",heritage:["Forest Heritage","Conservation Sites","Wildlife Areas"],languages:["Assamese","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-32°C"},
+  {name:"Heritage Assam",region:"Statewide",known:"Cultural Preservation, Historical Centers",heritage:["Heritage Museums","Historical Sites","Cultural Centers"],languages:["Assamese","Bengali","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-32°C"}
+];
+
+const placesData = [
+  {emoji:"🦏",name:"Kaziranga National Park",location:"Golaghat & Nagaon",desc:"UNESCO World Heritage site protecting one-horned rhinos. 2,300+ rhinos with diverse wildlife. Grasslands and water bodies creating unique habitat for endangered species",fee:["Paid"]},
+  {emoji:"🐯",name:"Manas National Park",location:"Barpeta & Chirang",desc:"UNESCO World Heritage site for tigers and rare wildlife. Located at Bhutan border with pristine forests. Biosphere reserve with exceptional biodiversity and conservation efforts",fee:["Paid"]},
+  {emoji:"🛕",name:"Kamakshi Temple",location:"Guwahati",desc:"Ancient Hindu temple dedicated to goddess Kamakshi. Historic pilgrimage site with spiritual significance. Located near confluence of Brahmaputra river",fee:["Free"]},
+  {emoji:"🕉️",name:"Navagraha Temple",location:"Guwahati",desc:"Unique temple with nine celestial bodies representing planets. Architectural marvel with religious importance. Sacred site drawing Hindu devotees and seekers",fee:["Free"]},
+  {emoji:"🏰",name:"Sibsagar Fort",location:"Sivasagar",desc:"Historic fort showcasing Ahom kingdom heritage. Ancient architectural structure. Testament to region's powerful historical past and cultural legacy",fee:["Paid"]},
+  {emoji:"🐘",name:"Elephant Riding Experience",location:"Kaziranga Buffer",desc:"Authentic wildlife viewing from elephant back. Unique safari experience through grasslands. Memorable encounter with wild rhinos and diverse fauna",fee:["Activity Charges"]},
+  {emoji:"🛣️",name:"Brahmaputra River Cruise",location:"Guwahati & Upper Assam",desc:"Scenic river journey on mighty Brahmaputra. Island hopping and sunset views. Experience the river's width, power and cultural significance",fee:["Cruise Charges"]},
+  {emoji:"☕",name:"Tea Garden Tour",location:"Dibrugarh & Jorhat",desc:"Visit traditional Assam tea estates. Learn tea production from leaf to cup. Experience aromatic Assam tea culture and plantation heritage",fee:["Tour Charges"]},
+  {emoji:"🎭",name:"Assam State Museum",location:"Guwahati",desc:"Repository of Assamese artifacts and cultural heritage. Sculptures, manuscripts and traditional items. Comprehensive history of region's civilization",fee:["Paid"]},
+  {emoji:"🦅",name:"Orang National Park",location:"Sonitpur",desc:"Lesser-known tiger reserve with diverse wildlife. Home to rhinos, elephants and birds. Pristine forests and river access with conservation efforts",fee:["Paid"]}
+];
+
+const artsData = [
+  {emoji:"🧵",name:"Assam Silk",location:"Statewide",desc:"World-renowned golden silk with unique qualities. Muga and Pat silk varieties. Ancient weaving tradition with contemporary designs"},
+  {emoji:"🎨",name:"Assamese Pottery",location:"Various Villages",desc:"Traditional clay work creating decorative items. Earthen pots and artistic ceramics. Ancestral techniques preserved through generations"},
+  {emoji:"🛣️",name:"Assam Cane & Bamboo",location:"Statewide",desc:"Traditional crafts from natural materials. Baskets, furniture and decorative items. Sustainable craft supporting rural artisans"},
+  {emoji:"💃",name:"Bihu Dance",location:"Statewide",desc:"Traditional folk dance of Assam with rhythmic movements. Celebration of harvest seasons. Expression of joy and cultural identity"},
+  {emoji:"🎭",name:"Sattriya Dance",location:"Statewide",desc:"Classical dance form from Sattras (monasteries). Spiritual and artistic expression. UNESCO-recognized cultural heritage form"},
+  {emoji:"🎼",name:"Assamese Music",location:"Statewide",desc:"Traditional folk music with regional instruments. Devotional and classical elements. Cultural expression through melodious traditions"}
+];
+
+const traditionsData = [
+  {emoji:"🌾",name:"Bihu Festival",location:"Statewide",desc:"Harvest celebration marking agricultural seasons. Rongali Bihu in spring and Magh Bihu in winter. Traditional dances, new clothes and community feasts"},
+  {emoji:"🎉",name:"Diwali Celebration",location:"Statewide",desc:"Festival of lights with lamps, fireworks and prayers. Family gatherings and traditional sweets. Spiritual cleansing and joy spreading"},
+  {emoji:"💧",name:"Thaipongal",location:"Southern Assam",desc:"Harvest festival celebrating sun god. Traditional rice preparation and worship. Agricultural thanksgiving ceremony"},
+  {emoji:"🎆",name:"Holi Festival",location:"Statewide",desc:"Festival of colors with playful water balloons. Community celebrations and traditional sweets. Spring arrival celebration"},
+  {emoji:"🕯️",name:"Janmashtami",location:"Statewide",desc:"Celebration of Lord Krishna's birth. Midnight prayers and traditional rituals. Religious significance across Hindu communities"},
+  {emoji:"🎊",name:"Rongali Bihu Fair",location:"Statewide",desc:"Grand celebration of spring season. Cultural performances and traditional competitions. Showcase of Assamese culture and traditions"}
+];
+
+const cuisinesData = [
+  {emoji:"🍲",name:"Assamese Fish Curry",region:"Statewide, Most Famous",desc:"Delicate fish preparation in aromatic gravy. Mustard oil and spices creating unique flavor. Daily staple reflecting river culture"},
+  {emoji:"🥘",name:"Aloo Pitika",region:"Statewide",desc:"Mashed potato with onions and spices. Simple yet flavorful side dish. Traditional accompaniment to main courses"},
+  {emoji:"🍜",name:"Luchi",region:"Statewide",desc:"Deep-fried puffed bread served with curries. Golden color and light texture. Breakfast or celebration special"},
+  {emoji:"🧅",name:"Tenga",region:"Statewide",desc:"Sour fish or vegetable curry with tamarind. Tangy flavor profile unique to Assam. Digestive properties in traditional cuisine"},
+  {emoji:"🥔",name:"Pitha",region:"Festival Preparation",desc:"Rice flour preparation with various fillings. Sweet or savory variants. Traditional during festivals and celebrations"},
+  {emoji:"🍛",name:"Khichuri",region:"Statewide",desc:"Mixed rice and lentil preparation with vegetables. Simple comfort food. Traditional preparation during monsoon season"},
+  {emoji:"🦐",name:"Prawn Preparation",region:"Riverine Areas",desc:"Fresh prawn curries with traditional spices. Multiple cooking methods. Specialty in areas near water bodies"},
+  {emoji:"🌶️",name:"Chili-based Curry",region:"Statewide",desc:"Spiced preparations with green chilies. Heat-infused dishes. Popular in hot climates for digestive properties"},
+  {emoji:"☕",name:"Assam Tea",region:"Tea Estates",desc:"Famous golden brew with malty flavors. World-renowned quality and aroma. Morning essential and cultural symbol"},
+  {emoji:"🥜",name:"Groundnut Sweets",region:"Statewide",desc:"Traditional candies made from peanuts and jaggery. Festival treats and gifts. Nutritious snack preparation"},
+  {emoji:"🧈",name:"Til Pitha",region:"Winter Special",desc:"Sesame and jaggery sweet preparation. Winter season delicacy. Traditional during Magh Bihu festival"},
+  {emoji:"🍚",name:"Rice Varieties",region:"Statewide",desc:"Multiple rice types for different dishes. Basmati, brown rice and specialty grains. Foundation of Assamese cuisine"},
+  {emoji:"🥬",name:"Green Leafy Vegetables",region:"Seasonal",desc:"Seasonal greens prepared with traditional methods. Iron-rich nutritious vegetables. Local produce utilization"},
+  {emoji:"🍌",name:"Banana Sweets",region:"Statewide",desc:"Desserts using local bananas. Multiple preparation methods. Popular in sweet preparations"},
+  {emoji:"🧅",name:"Mustard Oil Cooking",region:"Traditional Kitchens",desc:"Characteristic cooking medium of Assam. Distinct flavor imparted to dishes. Essential in traditional cooking methods"},
+  {emoji:"🥒",name:"Pickles & Preserves",region:"Statewide",desc:"Preserved vegetables and fruits with spices. Long shelf life condiments. Accompaniment to every meal"}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"8-22°C",weather:"Cool",details:"Winter season with moderate temperatures. Clear skies and dry conditions. Comfortable weather for outdoor activities"},
+  {month:"February",avgTemp:"10-25°C",weather:"Pleasant",details:"Warming trend begins. Still comfortable and clear. Ideal for wildlife viewing and tourism activities"},
+  {month:"March",avgTemp:"15-28°C",weather:"Warm",details:"Spring arrives with rising temperatures. Bihu celebrations begin. Pleasant weather across state"},
+  {month:"April",avgTemp:"20-32°C",weather:"Hot",details:"Hot season approaching. Occasional pre-monsoon showers. Intense heat in afternoons"},
+  {month:"May",avgTemp:"24-34°C",weather:"Very Hot",details:"Peak summer with high humidity. Pre-monsoon activities ongoing. Monsoon approaching slowly"},
+  {month:"June",avgTemp:"23-28°C",weather:"Monsoon",details:"Heavy rainfall beginning. Green landscapes emerging. Waterlogged conditions in some areas"},
+  {month:"July",avgTemp:"22-26°C",weather:"Monsoon Peak",details:"Peak monsoon with continuous rainfall. Lush greenery and water abundance. Rivers in full flow"},
+  {month:"August",avgTemp:"22-26°C",weather:"Monsoon",details:"Continued monsoon rainfall. Wet conditions persisting. Biodiversity thriving in wet season"},
+  {month:"September",avgTemp:"21-28°C",weather:"Post-Monsoon",details:"Rainfall reducing gradually. Climate transitioning. Weather becoming clearer",best:true},
+  {month:"October",avgTemp:"18-28°C",weather:"Autumn",details:"Perfect weather arrives. Clear skies and moderate temperatures. Ideal tourism season begins",best:true},
+  {month:"November",avgTemp:"14-26°C",weather:"Cool Autumn",details:"Temperature dropping noticeably. Clear and pleasant days. Comfortable conditions for exploration"},
+  {month:"December",avgTemp:"10-23°C",weather:"Cool Winter",details:"Winter approaching with cooler temperatures. Clear skies and dry conditions. Festival season beginning"}
+];
+
+// Populate weather grid
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  const isBest = w.best;
+  wGrid.innerHTML += `
+    <div class="wcard${isBest?' best':''}">
+      ${isBest?'<span class="best-tag">BEST TIME</span>':''}
+      <div class="wm">${w.month}</div>
+      <div class="wt">${w.avgTemp}</div>
+      <div class="wd">${w.details}</div>
+    </div>
+  `;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const dacc = document.createElement('div');
+  dacc.className = 'dacc';
+  dacc.dataset.name = d.name.toLowerCase();
+  
+  dacc.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list">
+            <li>${d.known}</li>
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">
+            ${d.heritage.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">
+            ${d.languages.map(l => `<span class="lchip">${l}</span>`).join('')}
+          </div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row">
+            <span class="temp-badge tb-best">${d.avgTemp}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  accordion.appendChild(dacc);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `
+    <div class="pcard">
+      <div class="pcard-acc"></div>
+      <div class="pcard-body">
+        <span class="pi">${p.emoji}</span>
+        <div class="pn">${p.name}</div>
+        <div class="pl">${p.location}</div>
+        <div class="pd">${p.desc}</div>
+        <div class="fee-row">
+          ${Array.isArray(p.fee) ? p.fee.map(f => `<span class="fee-badge ${f.includes('Free')?'fb-free':f.includes('Foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('') : `<span class="fee-badge ${p.fee.includes('Free')?'fb-free':'fb-in'}">${p.fee}</span>`}
+        </div>
+        <div class="dos-donts">
+          <div class="dos">
+            <div class="dd-title">✓ DO</div>
+            <ul class="dd-list">
+              <li>Respect wildlife areas</li>
+              <li>Follow conservation rules</li>
+            </ul>
+          </div>
+          <div class="donts">
+            <div class="dd-title">✗ DON'T</div>
+            <ul class="dd-list">
+              <li>Disturb wildlife habitats</li>
+              <li>Ignore park guidelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Populate arts
+const artGrid = document.getElementById('artGrid');
+artsData.forEach(a => {
+  artGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${a.emoji}</span>
+      <div class="at">${a.name}</div>
+      <div class="ad">${a.desc}</div>
+      <div class="art-fee"><span>${a.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate traditions
+const tradGrid = document.getElementById('tradGrid');
+traditionsData.forEach(t => {
+  tradGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${t.emoji}</span>
+      <div class="at">${t.name}</div>
+      <div class="ad">${t.desc}</div>
+      <div class="art-fee"><span>${t.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate cuisines
+const cuisinesGrid = document.getElementById('cuisinesGrid');
+cuisinesData.forEach(c => {
+  cuisinesGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${c.emoji}</span>
+      <div class="at">${c.name}</div>
+      <div class="ad">${c.desc}</div>
+      <div class="art-fee"><span>${c.region}</span></div>
+    </div>
+  `;
+});
+
+// Accordion toggle
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const accords = document.querySelectorAll('.dacc');
+  const current = accords[idx];
+  
+  if(openAccordion !== null && openAccordion !== idx) {
+    accords[openAccordion].classList.remove('open');
+  }
+  
+  current.classList.toggle('open');
+  openAccordion = current.classList.contains('open') ? idx : null;
+}
+
+// Search districts
+function filterDistricts(query) {
+  const accords = document.querySelectorAll('.dacc');
+  accords.forEach(a => {
+    a.style.display = a.dataset.name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+
+// Music toggle
+function toggleMusic() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('musicBtn');
+  if(audio.paused) {
+    audio.play();
+    btn.classList.add('on');
+  } else {
+    audio.pause();
+    btn.classList.remove('on');
+  }
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Language translations
+const translations = {
+  en: {
+    navTitle: "ASSAM",
+    heroName: "Assam",
+    heroNative: "অসম",
+    heroTag: "Land of Rhinos, Tea Gardens & Rivers",
+    scrollLbl: "SCROLL TO EXPLORE",
+    weatherPill: "🌡️ Weather",
+    districtsPill: "📍 Districts",
+    placesPill: "🏛️ Places",
+    artsPill: "🎨 Arts",
+    tradPill: "🪔 Traditions",
+    cuisinesPill: "🍲 Cuisines",
+    aboutLbl: "About Assam",
+    aboutTitle: "Gateway to Northeast India",
+    aboutBody: "Assam, the gateway to Northeast India, is a land of extraordinary natural beauty, rich biodiversity and vibrant culture. Known for its majestic one-horned rhinoceroses, vast tea gardens sprawling across hillsides, and the mighty Brahmaputra river flowing through fertile plains, Assam epitomizes the untamed splendor of India. The state is home to Kaziranga National Park, a UNESCO World Heritage site, and boasts extraordinary wildlife alongside diverse tribal communities. From the misty hills of Meghalaya borders to the lush forests of Arunachal Pradesh, Assam serves as a cultural crossroads where Hindu, Islamic, Buddhist and tribal traditions harmoniously coexist. The state's tea industry, handloom heritage, unique art forms and authentic cuisine reflect centuries of history and adaptation.",
+    weatherLbl: "Climate & Best Time",
+    weatherTitle: "When to Visit Assam",
+    weatherNote: "Assam experiences monsoon (May-September), moderate winter (October-February) and warm summer (March-April). October to March offers ideal weather for tourism with clear skies, comfortable temperatures and excellent visibility for wildlife viewing and outdoor activities.",
+    distLbl: "All 33 Districts",
+    distTitle: "Every District of Assam",
+    distNote: "Assam's 33 districts showcase remarkable diversity from the riverine plains of Brahmaputra valley to the tea gardens of Assam valley, from ancient pilgrimage sites to wildlife sanctuaries. Each district offers unique cultural, natural and historical attractions.",
+    distSearch: "Search districts...",
+    placesLbl: "Sacred & Natural Treasures",
+    placesTitle: "Wonders of Assam",
+    artsLbl: "Arts, Crafts & Heritage",
+    artsTitle: "Living Traditions of Assam",
+    tradLbl: "Festivals & Celebrations",
+    tradTitle: "Soul of Assamese Culture",
+    cuisinesLbl: "Culinary Heritage",
+    cuisinesTitle: "Flavors of Assam",
+    footerT: "JAY ASSAM",
+    footerS: "Assam Day — December 26 · 1950"
+  },
+  hi: {
+    navTitle: "असम",
+    heroName: "असम",
+    heroNative: "অসম",
+    heroTag: "गैंडों की भूमि, चाय के बाग और नदियां",
+    scrollLbl: "अन्वेषण के लिए स्क्रॉल करें",
+    weatherPill: "🌡️ मौसम",
+    districtsPill: "📍 जिले",
+    placesPill: "🏛️ स्थान",
+    artsPill: "🎨 कला",
+    tradPill: "🪔 परंपराएं",
+    cuisinesPill: "🍲 खान-पान",
+    aboutLbl: "असम के बारे में",
+    aboutTitle: "उत्तरपूर्व भारत का द्वार",
+    aboutBody: "असम, उत्तरपूर्व भारत का द्वार, असाधारण प्राकृतिक सौंदर्य, समृद्ध जैव विविधता और जीवंत संस्कृति की भूमि है। अपने शानदार एक-सींग वाले गैंडों, ढलानों पर फैले विशाल चाय के बागों और उपजाऊ मैदानों से बहती भव्य ब्रह्मपुत्र नदी के लिए जाना जाता है, असम भारत की अनंत शानदारी का प्रतीक है।",
+    weatherLbl: "जलवायु और सर्वश्रेष्ठ समय",
+    weatherTitle: "असम कब जाएं",
+    weatherNote: "असम मानसून (मई-सितंबर), मध्यम सर्दी (अक्टूबर-फरवरी) और गर्म गर्मी (मार्च-अप्रैल) का अनुभव करता है।",
+    distLbl: "सभी 33 जिले",
+    distTitle: "असम के हर जिले",
+    distNote: "असम के 33 जिले ब्रह्मपुत्र घाटी के नदी के मैदानों से लेकर असम घाटी के चाय बागों तक, प्राचीन तीर्थ स्थलों से लेकर वन्यजीव अभयारण्यों तक उल्लेखनीय विविधता प्रदर्शित करते हैं।",
+    distSearch: "जिलों को खोजें...",
+    placesLbl: "पवित्र और प्राकृतिक खजाने",
+    placesTitle: "असम के चमत्कार",
+    artsLbl: "कला, शिल्प और विरासत",
+    artsTitle: "असम की जीवंत परंपराएं",
+    tradLbl: "त्योहार और समारोह",
+    tradTitle: "असमिया संस्कृति की आत्मा",
+    cuisinesLbl: "पाक परंपरा",
+    cuisinesTitle: "असम का स्वाद",
+    footerT: "जय असम",
+    footerS: "असम दिवस — 26 दिसंबर · 1950"
+  },
+  as: {
+    navTitle: "অসম",
+    heroName: "অসম",
+    heroNative: "অসম",
+    heroTag: "গণ্ডাৰ দেশ, চাহ বাগ আৰু নৈ",
+    scrollLbl: "অন্বেষণ কৰিবলৈ স্ক্রল কৰক",
+    weatherPill: "🌡️ বতৰ",
+    districtsPill: "📍 জিলা",
+    placesPill: "🏛️ স্থান",
+    artsPill: "🎨 শিল্প",
+    tradPill: "🪔 পৰম্পৰা",
+    cuisinesPill: "🍲 খাবাৰ",
+    aboutLbl: "অসম সম্পর্কে",
+    aboutTitle: "উত্তর-পূৰ্বৰ প্ৰবেশদ্বাৰ",
+    aboutBody: "অসম, উত্তর-পূৰ্ব ভাৰতৰ প্ৰবেশদ্বাৰ, অসাধাৰণ প্রাকৃতিক সৌন্দর্য, সমৃদ্ধ জৈব বৈচিত্র্য আৰু প্ৰাণৱন্ত সংস্কৃতিৰ এটা ভূমি।",
+    weatherLbl: "জলবায়ু আৰু সেৰা সময়",
+    weatherTitle: "অসমত কেতিয়া যাব",
+    weatherNote: "অসম বর্ষাকাল (মে-ছেপ্টেম্বৰ), মধ্যম শীত (অক্টোবৰ-ফেব্ৰুয়াৰী) আৰু উষ্ণ গ্ৰীষ্ম (মাৰ্চ-এপ্ৰিল) অনুভৱ কৰে।",
+    distLbl: "সমস্ত 33 জিলা",
+    distTitle: "অসমৰ প্রতিটি জিলা",
+    distNote: "অসমৰ 33 টা জিলাই ব্রহ্মপুত্র উপত্যকাৰ নৈয়া মাটিৰ পৰা অসম উপত্যকাৰ চাহ বাগ, প্ৰাচীন তীৰ্থস্থলীৰ পৰা বন্যপ্ৰাণী অভয়াৰণ্য পৰ্যন্ত উল্লেখযোগ্য বৈচিত্র্য প্রদর্শন কৰে।",
+    distSearch: "জিলা বিচাৰ কৰক...",
+    placesLbl: "পবিত্ৰ আৰু প্রাকৃতিক ধনভাণ্ডাৰ",
+    placesTitle: "অসমৰ বিস্ময়",
+    artsLbl: "শিল্প, হস্তশিল্প আৰু ঐতিহ্য",
+    artsTitle: "অসমৰ জীৱন্ত পৰম্পৰা",
+    tradLbl: "উৎসৱ আৰু উদযাপন",
+    tradTitle: "অসমীয়া সংস্কৃতিৰ আত্মা",
+    cuisinesLbl: "পাকশিল্প ঐতিহ্য",
+    cuisinesTitle: "অসমৰ স্বাদ",
+    footerT: "জয় অসম",
+    footerS: "অসম দিবস — 26 ডিসেম্বৰ · 1950"
+  }
+};
+
+// Language setting function
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lb-' + lang).classList.add('active');
+  
+  const t = translations[lang];
+  
+  document.getElementById('heroName').textContent = t.heroName;
+  document.getElementById('heroNative').textContent = t.heroNative;
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('scrollLbl').textContent = t.scrollLbl;
+  document.getElementById('qw').textContent = t.weatherPill;
+  document.getElementById('qd').textContent = t.districtsPill;
+  document.getElementById('qp').textContent = t.placesPill;
+  document.getElementById('qa').textContent = t.artsPill;
+  document.getElementById('qt').textContent = t.tradPill;
+  document.getElementById('qc').textContent = t.cuisinesPill;
+  document.getElementById('lAbout').textContent = t.aboutLbl;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutBody').textContent = t.aboutBody;
+  document.getElementById('lWeather').textContent = t.weatherLbl;
+  document.getElementById('weatherTitle').textContent = t.weatherTitle;
+  document.getElementById('weatherNote').textContent = t.weatherNote;
+  document.getElementById('lDist').textContent = t.distLbl;
+  document.getElementById('distTitle').textContent = t.distTitle;
+  document.getElementById('distNote').textContent = t.distNote;
+  document.getElementById('distSearch').placeholder = t.distSearch;
+  document.getElementById('lPlaces').textContent = t.placesLbl;
+  document.getElementById('placesTitle').textContent = t.placesTitle;
+  document.getElementById('lArts').textContent = t.artsLbl;
+  document.getElementById('artsTitle').textContent = t.artsTitle;
+  document.getElementById('lTrad').textContent = t.tradLbl;
+  document.getElementById('tradTitle').textContent = t.tradTitle;
+  document.getElementById('lCuisines').textContent = t.cuisinesLbl;
+  document.getElementById('cuisinesTitle').textContent = t.cuisinesTitle;
+  document.getElementById('footerT').textContent = t.footerT;
+  document.getElementById('footerS').textContent = t.footerS;
+}
+</script>
+</body>
+</html>
 
