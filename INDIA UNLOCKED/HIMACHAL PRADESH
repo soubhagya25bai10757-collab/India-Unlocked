@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himachal Pradesh — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B4D3E;--gold:#D4A574;--teal:#20b2aa;--cream:#f5f1e8;--deep:#0a0e1a;--card:#ffffff08;--border:rgba(27,77,62,0.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(10,14,26,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--green);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--green);color:var(--deep);}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,241,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,241,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--green);color:var(--cream);border-color:var(--green);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--green);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--green);color:var(--cream);}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.45) saturate(1.4);animation:zk 18s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.05);}to{transform:scale(1.13);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.02) 35%,rgba(10,14,26,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(27,77,62,.8));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(3rem,9vw,7.5rem);color:#fff;letter-spacing:.02em;line-height:1;text-shadow:0 4px 40px rgba(0,0,0,.9);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--green);font-style:italic;letter-spacing:.1em;margin-top:.3rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,241,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(27,77,62,.35);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);color:rgba(245,241,232,.75);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--green);color:var(--cream);border-color:var(--green);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.25);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--green),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:1px solid rgba(27,77,62,.08);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--green);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--green);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.1rem);color:rgba(245,241,232,.68);line-height:1.85;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s;position:relative;backdrop-filter:blur(8px);}
+.wcard:hover{background:rgba(27,77,62,.1);border-color:rgba(27,77,62,.45);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(27,77,62,.5);background:rgba(27,77,62,.08);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--green);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,241,232,.5);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--green);color:var(--cream);font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;font-weight:500;}
+.dsearch:focus{border-color:rgba(27,77,62,.6);}
+.dsearch::placeholder{color:rgba(245,241,232,.28);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(27,77,62,.16);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02);}
+.dacc:hover{border-color:rgba(27,77,62,.32);background:rgba(27,77,62,.05);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(27,77,62,.08);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--green);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--green);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(27,77,62,.3);background:rgba(27,77,62,.06);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,241,232,.68);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--green);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(27,77,62,.2);border:1px solid rgba(27,77,62,.35);color:rgba(245,241,232,.75);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.temp-badge{padding:4px 10px;border-radius:9px;font-size:.7rem;cursor:default;font-family:"Poppins",sans-serif;font-weight:500;}
+.tb-best{background:rgba(27,77,62,.25);border:1px solid rgba(27,77,62,.5);color:var(--green);}
+.tb-ok{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(245,241,232,.6);}
+.tb-hot{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--green);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(27,77,62,.07);border:1.5px solid rgba(27,77,62,.2);border-radius:16px;overflow:hidden;transition:all .35s;position:relative;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(27,77,62,.55);box-shadow:0 16px 50px rgba(27,77,62,.12);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--green),var(--teal));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(27,77,62,.22);border:1px solid rgba(27,77,62,.4);color:#7deaea;}
+.fb-fr{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.fb-free{background:rgba(26,122,26,.22);border:1px solid rgba(26,122,26,.4);color:#90ee90;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,122,26,.14);border:1px solid rgba(26,122,26,.28);}
+.donts{background:rgba(230,57,43,.12);border:1px solid rgba(230,57,43,.25);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#90ee90;} .donts .dd-title{color:#ffb080;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(144,238,144,.78);} .donts .dd-list li{color:rgba(255,176,128,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:linear-gradient(135deg,rgba(27,77,62,.1),rgba(0,0,0,.2));border:1.5px solid rgba(27,77,62,.2);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(27,77,62,.5);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.art-fee{font-size:.72rem;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(245,241,232,.65);font-family:"Poppins",sans-serif;font-weight:500;}
+footer{text-align:center;padding:50px 20px 40px;border-top:1px solid rgba(27,77,62,.08);}
+footer .fe{font-size:2.2rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,241,232,.25);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,241,232,.35);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title">HIMACHAL PRADESH</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">&#2361;&#2367;&#2306;&#2342;&#2368;</button>
+    <button class="lang-btn" id="lb-pa" onclick="setLang('pa')">ਪੰਜਾਬੀ</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">🏔️</span>
+    <div class="hero-name" id="heroName">Himachal Pradesh</div>
+    <div class="hero-native" id="heroNative">हिमाचल प्रदेश</div>
+    <div class="hero-tag" id="heroTag">Land of Gods, Mountains & Mystique</div>
+    <div class="tribar"><div style="background:#1B4D3E"></div><div style="background:#ffffff"></div><div style="background:#FF6B35"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Himachal Pradesh</span>
+  <h2 class="sec-title" id="aboutTitle">Gateway to <em>Mountain Paradise</em></h2>
+  <p class="sec-body" id="aboutBody">Himachal Pradesh, the "Land of Gods," is a breathtaking hill state nestled in the lap of the Himalayas. Known for its misty mountains, cascading waterfalls, alpine meadows and pristine forests, Himachal Pradesh represents nature's most enchanting masterpiece. A destination for adventure seekers and spiritual pilgrims alike, it boasts ancient temples, monasteries and shrines perched on mountain slopes. From the snow-capped peaks of Kinnaur to the apple orchards of Himachal, from the adventure capital Manali to the sacred temples of Chamba, from meditation centers in Dharamshala to the cultural richness of Kullu, Himachal Pradesh offers transformative experiences. The state's harmony with nature, traditional handicrafts, delicious cuisine and warm hospitality make it a sanctuary for those seeking solace in mountains. Adventure sports, trekking, paragliding and skiing attract thrill-seekers, while spiritual seekers find peace in its monasteries and temples.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Himachal Pradesh</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Himachal Pradesh experiences diverse climates across regions. Summer (April-June) brings pleasant weather with clear skies. Monsoon (July-September) brings lush greenery and occasional rainfall. Autumn (October-November) offers crisp air and panoramic views. Winter (December-March) brings snowfall in high altitude areas, creating a winter wonderland perfect for snow sports.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 12 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Himachal Pradesh</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Himachal Pradesh's 12 districts showcase remarkable diversity from the adventure hub Manali to the spiritual center Dharamshala, from Shimla's colonial charm to Kinnaur's pristine peaks. Each district offers unique attractions and experiences.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Sacred &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Treasures of <em>Himachal Pradesh</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Himachal Pradesh</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Himachali Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Himachal Pradesh</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY HIMACHAL</div>
+  <div class="fs" id="footerS">Himachal Pradesh Day — January 25 · 1971</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Indian_flute_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27grd%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(27,77,62);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(32,178,170);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23grd)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Shimla",region:"Central",known:"Summer Capital, Colonial Hill Station, Apple Region",heritage:["Kalka-Shimla Railway","Christ Church","Jakhoo Temple","Lakkar Bazaar"],languages:["Pahari","Hindi","English","Punjabi"],bestMonths:"Mar-Jun,Sep-Nov",avgTemp:"5-28°C"},
+  {name:"Mandi",region:"Central",known:"Town of 81 Temples, Cultural Hub",heritage:["Ancient Temples","Cultural Heritage","Pandoh Dam"],languages:["Pahari","Hindi","English"],bestMonths:"Sep-Nov,Mar-May",avgTemp:"8-32°C"},
+  {name:"Kullu",region:"Central",known:"Valley of Gods, Adventure Capital",heritage:["Rajasingh Temple","Dussehra Festival","Adventure Sports"],languages:["Pahari","Hindi","English"],bestMonths:"Mar-Jun,Sep-Nov",avgTemp:"5-28°C"},
+  {name:"Manali",region:"Northern",known:"Adventure Hub, Tourism Destination, Snow Beauty",heritage:["Hadimba Temple","Solang Valley","Tibetan Culture"],languages:["Pahari","Hindi","English"],bestMonths:"Mar-May,Sep-Oct",avgTemp:"-5-25°C"},
+  {name:"Chamba",region:"Northern",known:"Temple City, Handicraft Hub, Historical Significance",heritage:["Ancient Temples","Handicraft Heritage","Chamba Rumal"],languages:["Pahari","Hindi","English"],bestMonths:"Apr-Jun,Sep-Oct",avgTemp:"8-30°C"},
+  {name:"Kangra",region:"Northern",known:"Valley Beauty, Tea Gardens, Historical Sites",heritage:["Kangra Fort","Tea Plantations","Nagini Temple"],languages:["Pahari","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"8-35°C"},
+  {name:"Dharamshala",region:"Northern",known:"Spiritual Hub, Tibetan Center, Adventure Gateway",heritage:["Dalai Lama Temple","Tibetan Monasteries","Cricket Ground"],languages:["Pahari","Hindi","English","Tibetan"],bestMonths:"Mar-Jun,Sep-Nov",avgTemp:"6-28°C"},
+  {name:"Solan",region:"Southern",known:"Brewery Town, Fruit Region, Hill Station",heritage:["Breweries","Fruit Orchards","Hill Temples"],languages:["Pahari","Hindi","English"],bestMonths:"Sep-Oct,Mar-May",avgTemp:"8-32°C"},
+  {name:"Bilaspur",region:"Southern",known:"Agricultural Hub, Water Resources",heritage:["Lake Heritage","Agricultural Areas","Religious Sites"],languages:["Pahari","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-38°C"},
+  {name:"Hamirpur",region:"Southern",known:"Historical Significance, Agricultural Center",heritage:["Historical Ruins","Agricultural Lands","Temple Heritage"],languages:["Pahari","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"10-36°C"},
+  {name:"Una",region:"Southern",known:"Agricultural District, Rising Industrial Hub",heritage:["Agricultural Lands","Industrial Sites","Historical Sites"],languages:["Punjabi","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"12-38°C"},
+  {name:"Kinnaur",region:"Eastern",known:"Pristine Peaks, Kailash Views, Apple Orchards",heritage:["Kinnaur Kailash","Apple Orchards","Mountain Monasteries"],languages:["Kinnauri","Hindi","English"],bestMonths:"Jun-Sep",avgTemp:"-10-25°C"}
+];
+
+const placesData = [
+  {emoji:"🏔️",name:"Hadimba Devi Temple",location:"Manali",desc:"Ancient temple carved from stone surrounded by cedar forests. Dedicated to goddess Hadimba. Architecture reflects Himalayan temple style with spiritual atmosphere",fee:["Free"]},
+  {emoji:"⛰️",name:"Solang Valley",location:"Manali",desc:"Adventure hub famous for paragliding, skiing and cable car rides. Panoramic mountain views with recreational activities. Popular tourist destination with adventure sports",fee:["Activity Charges"]},
+  {emoji:"🕉️",name:"Kangra Fort",location:"Kangra",desc:"Ancient fort with historical significance dating back centuries. Massive stone structure showcasing medieval architecture. Museum displaying artifacts from Kangra history",fee:["Paid"]},
+  {emoji:"🧘",name:"Dalai Lama Temple",location:"Dharamshala",desc:"Sacred Buddhist temple attracting spiritual seekers from worldwide. Serene gardens and peaceful atmosphere. Center of Tibetan Buddhist culture in India",fee:["Free"]},
+  {emoji:"🚃",name:"Kalka-Shimla Railway",location:"Shimla",desc:"UNESCO World Heritage railway through 806 curves and 103 tunnels. Journey through scenic mountains. Historic narrow-gauge railway built in British era",fee:["Train Charges"]},
+  {emoji:"🏛️",name:"Christ Church",location:"Shimla",desc:"Victorian-era church with stunning architecture. One of oldest churches in northern India. Gothic style with beautiful interior design",fee:["Free"]},
+  {emoji:"🌲",name:"Khirganga Trek",location:"Kullu",desc:"Challenging mountain trek with natural hot springs at destination. Alpine meadows and pristine forests. Spiritual and adventure combined experience",fee:["Free Trekking"]},
+  {emoji:"🏰",name:"Jakhoo Temple",location:"Shimla",desc:"Hilltop temple with panoramic city views. Sacred shrine dedicated to Lord Hanuman. Accessible by ropeway or trek with scenic surroundings",fee:["Free"]},
+  {emoji:"🧵",name:"Chamba Rumal Weaving",location:"Chamba",desc:"Traditional handicraft center showcasing embroidery on silk. Ancient weaving techniques preserved. Artisans creating intricate designs with natural dyes",fee:["Free Viewing"]},
+  {emoji:"🌸",name:"Shimla Ridge Walk",location:"Shimla",desc:"Scenic walking path through alpine meadows and pine forests. Historic colonial architecture mixed with nature. Peaceful retreat in hill station atmosphere",fee:["Free"]}
+];
+
+const artsData = [
+  {emoji:"🧵",name:"Chamba Rumal",location:"Chamba",desc:"Handwoven silk with intricate embroidery depicting mythological scenes. Traditional craft passed through generations. Symbol of Himachali artistic excellence"},
+  {emoji:"🎨",name:"Pahari Painting",location:"Statewide",desc:"Traditional art form depicting religious and mythological themes. Miniature paintings with vibrant colors. Reflects Himalayan artistic tradition and culture"},
+  {emoji:"🧣",name:"Himachali Shawls",location:"Statewide",desc:"Handwoven woolen shawls with traditional patterns. Fine craftsmanship using natural fibers. Worn during traditional ceremonies and celebrations"},
+  {emoji:"🎭",name:"Nati Dance",location:"Statewide",desc:"Traditional folk dance of Himachal performed during festivals. Circular movements with rhythmic footwork. Expression of joy and cultural pride in communities"},
+  {emoji:"🏺",name:"Wood Carving",location:"Statewide",desc:"Traditional craft creating decorative items from wood. Intricate designs reflecting mountain culture. Ancestral techniques preserved through artisans"},
+  {emoji:"🎼",name:"Traditional Music",location:"Statewide",desc:"Folk music tradition with local instruments and devotional songs. Regional variations across districts. Cultural expression through music and rhythm"}
+];
+
+const traditionsData = [
+  {emoji:"🎉",name:"Dussehra Festival",location:"Kullu Valley",desc:"Grand celebration lasting two weeks with processions, music and cultural performances. Ancient tradition marking harvest season and victory of good over evil"},
+  {emoji:"🌾",name:"Losar Festival",location:"Statewide, Tibetan Areas",desc:"Tibetan New Year celebration with prayers, feasting and community gatherings. Spiritual significance in Buddhist communities. Cultural display of Tibetan heritage"},
+  {emoji:"🎆",name:"Holi Festival",location:"Statewide",desc:"Festival of colors celebrated with traditional games, bonfires and community meals. Spring celebration with colorful powder and water balloons. Family gatherings"},
+  {emoji:"💧",name:"Kullu Dussehra",location:"Kullu",desc:"Unique Himalayan celebration starting after Diwali. Goddess worship with cultural processions. Sacred traditions preserved through generations"},
+  {emoji:"🕯️",name:"Diwali Celebration",location:"Statewide",desc:"Festival of lights with oil lamps, firecrackers and family traditions. Traditional sweets and new clothes. Spiritual cleansing and joy across communities"},
+  {emoji:"🎊",name:"Summer Carnival",location:"Shimla",desc:"Colonial-era festival celebration with music, theater and cultural events. International participation showcasing art forms. Blend of tradition and modernity"}
+];
+
+const cuisinesData = [
+  {emoji:"🥔",name:"Kullu Trout",region:"Kullu Valley, Most Famous",desc:"Fresh river fish grilled or cooked with spices. Delicacy of mountain streams. Tender fish with aromatic preparation. Signature Kullu dish"},
+  {emoji:"🥘",name:"Chikhalwali",region:"Statewide",desc:"Traditional meat preparation cooked in slow fire. Rich gravy with aromatic spices. Ancient cooking technique preserving flavor"},
+  {emoji:"🍜",name:"Dham",region:"Statewide, Festival Special",desc:"Traditional feast of rice, pulses and ghee prepared for celebrations. Cooked in traditional earthen pots. Ceremonial meal at weddings and festivals"},
+  {emoji:"🧅",name:"Mittha",region:"Statewide",desc:"Sweet rice pudding with milk and dry fruits. Festival preparation requiring skill. Rich dessert with aromatic spices"},
+  {emoji:"🥞",name:"Bhey",region:"Northern Districts",desc:"Buckwheat pancakes served with ghee and jaggery. Nutritious breakfast staple. Winter special preparation"},
+  {emoji:"🧈",name:"Aktori",region:"Chamba Region",desc:"Traditional sweets made with flour and ghee. Festival treats with nutmeg flavor. Handmade preparation preserving ancient recipe"},
+  {emoji:"🥬",name:"Siddu",region:"Kinnaur Region",desc:"Steamed bread filled with vegetable mixture. Mountain staple food. Nutritious preparation suited for high altitude"},
+  {emoji:"☕",name:"Himachali Tea",region:"Kangra Valley",desc:"Aromatic tea with local spices and milk. Famous Kangra tea tradition. Morning beverage with cultural significance"},
+  {emoji:"🧅",name:"Madra",region:"Statewide",desc:"Traditional yogurt-based preparation with legumes. Served with rice as main course. Ancient recipe with nutritious value"},
+  {emoji:"🍞",name:"Roti & Dal",region:"Statewide",desc:"Whole wheat bread with lentil curry preparation. Daily staple across families. Simple yet nourishing traditional meal"},
+  {emoji:"🥜",name:"Dried Fruits",region:"Kangra & Kinnaur",desc:"Almonds, walnuts and apricots from mountain valleys. Natural snacks with nutritional value. Premium quality from orchards"},
+  {emoji:"🌽",name:"Corn Preparation",region:"Statewide",desc:"Roasted or boiled corn with spices. Street food and festival special. Sweet corn in summer season"},
+  {emoji:"🧄",name:"Garlic Chutney",region:"Statewide",desc:"Spiced garlic paste served with meals. Flavor enhancer for traditional dishes. Medicinal properties in traditional cuisine"},
+  {emoji:"🍌",name:"Apple Sweets",region:"Himachal Orchards",desc:"Desserts made from local apples. Festival specialty. Culinary use of local produce"},
+  {emoji:"🥛",name:"Lassi",region:"Statewide",desc:"Yogurt-based refreshing beverage. Summer cooler with spices. Traditional cooling drink"},
+  {emoji:"🍖",name:"Minced Meat",region:"Statewide",desc:"Spiced meat preparation cooked with aromatics. Special occasion dish. Rich flavor with traditional spices"}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"-5 to 10°C",weather:"Freezing",details:"Snow at high altitudes. Very cold at higher elevations. Lower plains cooler but not freezing"},
+  {month:"February",avgTemp:"-2 to 15°C",weather:"Cold",details:"Gradual warming begins. Some snow melt starting. Clear days in lower elevations"},
+  {month:"March",avgTemp:"2 to 20°C",weather:"Cool",details:"Spring arrives slowly. Rhododendrons start blooming. Temperature rising steadily"},
+  {month:"April",avgTemp:"8 to 26°C",weather:"Spring",details:"Pleasant weather emerges. Spring flowers in full bloom. Perfect conditions for outdoor activities"},
+  {month:"May",avgTemp:"12 to 30°C",weather:"Excellent",details:"Warm days and cool nights. Clear skies most days. Ideal tourism season beginning",best:true},
+  {month:"June",avgTemp:"15 to 32°C",weather:"Warm & Pleasant",details:"Monsoon approaching slowly. Still pleasant in most regions. Peak season continues"},
+  {month:"July",avgTemp:"12 to 25°C",weather:"Monsoon",details:"Heavy rainfall in lower elevations. Snow at high altitude. Landslide risks increase"},
+  {month:"August",avgTemp:"12 to 24°C",weather:"Monsoon",details:"Continued rainfall pattern. Green landscapes everywhere. Adventure sports possible in clear spells"},
+  {month:"September",avgTemp:"10 to 26°C",weather:"Post-Monsoon",details:"Rainfall reducing. Clear skies increasing. Temperature moderate and pleasant"},
+  {month:"October",avgTemp:"6 to 24°C",weather:"Autumn",details:"Perfect weather arrives. Clear panoramic views. Autumn colors in foliage",best:true},
+  {month:"November",avgTemp:"2 to 18°C",weather:"Cool Autumn",details:"Temperature dropping. First snow possible at higher elevations. Clear cold days"},
+  {month:"December",avgTemp:"-3 to 12°C",weather:"Winter",details:"Winter arrives fully. Snow at high altitudes. Cold but beautiful season"}
+];
+
+// Populate weather grid
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  const isBest = w.best;
+  wGrid.innerHTML += `
+    <div class="wcard${isBest?' best':''}">
+      ${isBest?'<span class="best-tag">BEST TIME</span>':''}
+      <div class="wm">${w.month}</div>
+      <div class="wt">${w.avgTemp}</div>
+      <div class="wd">${w.details}</div>
+    </div>
+  `;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const dacc = document.createElement('div');
+  dacc.className = 'dacc';
+  dacc.dataset.name = d.name.toLowerCase();
+  
+  dacc.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list">
+            <li>${d.known}</li>
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">
+            ${d.heritage.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">
+            ${d.languages.map(l => `<span class="lchip">${l}</span>`).join('')}
+          </div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row">
+            <span class="temp-badge tb-best">${d.avgTemp}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  accordion.appendChild(dacc);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `
+    <div class="pcard">
+      <div class="pcard-acc"></div>
+      <div class="pcard-body">
+        <span class="pi">${p.emoji}</span>
+        <div class="pn">${p.name}</div>
+        <div class="pl">${p.location}</div>
+        <div class="pd">${p.desc}</div>
+        <div class="fee-row">
+          ${Array.isArray(p.fee) ? p.fee.map(f => `<span class="fee-badge ${f.includes('Free')?'fb-free':f.includes('Foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('') : `<span class="fee-badge ${p.fee.includes('Free')?'fb-free':'fb-in'}">${p.fee}</span>`}
+        </div>
+        <div class="dos-donts">
+          <div class="dos">
+            <div class="dd-title">✓ DO</div>
+            <ul class="dd-list">
+              <li>Respect natural sites</li>
+              <li>Follow mountain safety</li>
+            </ul>
+          </div>
+          <div class="donts">
+            <div class="dd-title">✗ DON'T</div>
+            <ul class="dd-list">
+              <li>Damage ecosystems</li>
+              <li>Ignore altitude warnings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Populate arts
+const artGrid = document.getElementById('artGrid');
+artsData.forEach(a => {
+  artGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${a.emoji}</span>
+      <div class="at">${a.name}</div>
+      <div class="ad">${a.desc}</div>
+      <div class="art-fee"><span>${a.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate traditions
+const tradGrid = document.getElementById('tradGrid');
+traditionsData.forEach(t => {
+  tradGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${t.emoji}</span>
+      <div class="at">${t.name}</div>
+      <div class="ad">${t.desc}</div>
+      <div class="art-fee"><span>${t.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate cuisines
+const cuisinesGrid = document.getElementById('cuisinesGrid');
+cuisinesData.forEach(c => {
+  cuisinesGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${c.emoji}</span>
+      <div class="at">${c.name}</div>
+      <div class="ad">${c.desc}</div>
+      <div class="art-fee"><span>${c.region}</span></div>
+    </div>
+  `;
+});
+
+// Accordion toggle
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const accords = document.querySelectorAll('.dacc');
+  const current = accords[idx];
+  
+  if(openAccordion !== null && openAccordion !== idx) {
+    accords[openAccordion].classList.remove('open');
+  }
+  
+  current.classList.toggle('open');
+  openAccordion = current.classList.contains('open') ? idx : null;
+}
+
+// Search districts
+function filterDistricts(query) {
+  const accords = document.querySelectorAll('.dacc');
+  accords.forEach(a => {
+    a.style.display = a.dataset.name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+
+// Music toggle
+function toggleMusic() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('musicBtn');
+  if(audio.paused) {
+    audio.play();
+    btn.classList.add('on');
+  } else {
+    audio.pause();
+    btn.classList.remove('on');
+  }
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Language translations
+const translations = {
+  en: {
+    navTitle: "HIMACHAL PRADESH",
+    heroName: "Himachal Pradesh",
+    heroNative: "हिमाचल प्रदेश",
+    heroTag: "Land of Gods, Mountains & Mystique",
+    scrollLbl: "SCROLL TO EXPLORE",
+    weatherPill: "🌡️ Weather",
+    districtsPill: "📍 Districts",
+    placesPill: "🏛️ Places",
+    artsPill: "🎨 Arts",
+    tradPill: "🪔 Traditions",
+    cuisinesPill: "🍲 Cuisines",
+    aboutLbl: "About Himachal Pradesh",
+    aboutTitle: "Gateway to Mountain Paradise",
+    aboutBody: "Himachal Pradesh, the \"Land of Gods,\" is a breathtaking hill state nestled in the lap of the Himalayas. Known for its misty mountains, cascading waterfalls, alpine meadows and pristine forests, Himachal Pradesh represents nature's most enchanting masterpiece. A destination for adventure seekers and spiritual pilgrims alike, it boasts ancient temples, monasteries and shrines perched on mountain slopes. From the snow-capped peaks of Kinnaur to the apple orchards of Himachal, from the adventure capital Manali to the sacred temples of Chamba, from meditation centers in Dharamshala to the cultural richness of Kullu, Himachal Pradesh offers transformative experiences. The state's harmony with nature, traditional handicrafts, delicious cuisine and warm hospitality make it a sanctuary for those seeking solace in mountains.",
+    weatherLbl: "Climate & Best Time",
+    weatherTitle: "When to Visit Himachal Pradesh",
+    weatherNote: "Himachal Pradesh experiences diverse climates across regions. Summer (April-June) brings pleasant weather with clear skies. Monsoon (July-September) brings lush greenery and occasional rainfall. Autumn (October-November) offers crisp air and panoramic views. Winter (December-March) brings snowfall in high altitude areas, creating a winter wonderland perfect for snow sports.",
+    distLbl: "All 12 Districts",
+    distTitle: "Every District of Himachal Pradesh",
+    distNote: "Himachal Pradesh's 12 districts showcase remarkable diversity from the adventure hub Manali to the spiritual center Dharamshala, from Shimla's colonial charm to Kinnaur's pristine peaks. Each district offers unique attractions and experiences.",
+    distSearch: "Search districts...",
+    placesLbl: "Sacred & Natural Wonders",
+    placesTitle: "Treasures of Himachal Pradesh",
+    artsLbl: "Arts, Crafts & Heritage",
+    artsTitle: "Living Traditions of Himachal Pradesh",
+    tradLbl: "Festivals & Celebrations",
+    tradTitle: "Soul of Himachali Culture",
+    cuisinesLbl: "Culinary Heritage",
+    cuisinesTitle: "Flavors of Himachal Pradesh",
+    footerT: "JAY HIMACHAL",
+    footerS: "Himachal Pradesh Day — January 25 · 1971"
+  },
+  hi: {
+    navTitle: "हिमाचल प्रदेश",
+    heroName: "हिमाचल प्रदेश",
+    heroNative: "हिमाचल प्रदेश",
+    heroTag: "देवताओं की भूमि, पहाड़ों का रहस्य",
+    scrollLbl: "अन्वेषण के लिए स्क्रॉल करें",
+    weatherPill: "🌡️ मौसम",
+    districtsPill: "📍 जिले",
+    placesPill: "🏛️ स्थान",
+    artsPill: "🎨 कला",
+    tradPill: "🪔 परंपराएं",
+    cuisinesPill: "🍲 खान-पान",
+    aboutLbl: "हिमाचल प्रदेश के बारे में",
+    aboutTitle: "पर्वत स्वर्ग का द्वार",
+    aboutBody: "हिमाचल प्रदेश, 'देवताओं की भूमि', हिमालय की गोद में बसा एक मनोरम पहाड़ी राज्य है। अपने धुंधले पहाड़ों, गिरते झरनों, अल्पाइन घास के मैदानों और कुंवारी जंगलों के लिए जाना जाता है, हिमाचल प्रदेश प्रकृति की सबसे मनोरम कृति का प्रतिनिधित्व करता है। साहस के तलाशी और आध्यात्मिक तीर्थयात्रियों के लिए एक गंतव्य, यह पहाड़ी ढलानों पर बने प्राचीन मंदिरों, मठों और मंदिरों को समेटे हुए है।",
+    weatherLbl: "जलवायु और सर्वश्रेष्ठ समय",
+    weatherTitle: "हिमाचल प्रदेश कब जाएं",
+    weatherNote: "हिमाचल प्रदेश पूरे क्षेत्र में विविध जलवायु का अनुभव करता है। गर्मी (अप्रैल-जून) साफ आकाश के साथ सुखद मौसम लाती है। मानसून (जुलाई-सितंबर) हरी-भरी हरियाली और कभी-कभी बारिश लाता है।",
+    distLbl: "सभी 12 जिले",
+    distTitle: "हिमाचल प्रदेश के हर जिले",
+    distNote: "हिमाचल प्रदेश के 12 जिले साहस के हब मनाली से लेकर आध्यात्मिक केंद्र धर्मशाला, शिमला की औपनिवेशिक आकर्षण से लेकर किन्नौर की प्राचीन चोटियों तक उल्लेखनीय विविधता प्रदर्शित करते हैं।",
+    distSearch: "जिलों को खोजें...",
+    placesLbl: "पवित्र और प्राकृतिक चमत्कार",
+    placesTitle: "हिमाचल प्रदेश के खजाने",
+    artsLbl: "कला, शिल्प और विरासत",
+    artsTitle: "हिमाचल प्रदेश की जीवंत परंपराएं",
+    tradLbl: "त्योहार और समारोह",
+    tradTitle: "हिमाचली संस्कृति की आत्मा",
+    cuisinesLbl: "पाक परंपरा",
+    cuisinesTitle: "हिमाचल प्रदेश का स्वाद",
+    footerT: "जय हिमाचल",
+    footerS: "हिमाचल प्रदेश दिवस — 25 जनवरी · 1971"
+  },
+  pa: {
+    navTitle: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼",
+    heroName: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼",
+    heroNative: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼",
+    heroTag: "ਦੇਵਤਾਵਾਂ ਦੀ ਭੂਮੀ, ਪਰਬਤਾਂ ਦਾ ਭੇਤ",
+    scrollLbl: "ਖੋਜ ਲਈ ਸਕ੍ਰਾਲ ਕਰੋ",
+    weatherPill: "🌡️ ਮੌਸਮ",
+    districtsPill: "📍 ਜ਼ਿਲ੍ਹੇ",
+    placesPill: "🏛️ ਸਥਾਨ",
+    artsPill: "🎨 ਕਲਾ",
+    tradPill: "🪔 ਪਰਿਪਾਟੀਆਂ",
+    cuisinesPill: "🍲 ਖਾਣਾ",
+    aboutLbl: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਬਾਰੇ",
+    aboutTitle: "ਪਰਬਤ ਸਵਰਗ ਦਾ ਦਰਵਾਜ਼ਾ",
+    aboutBody: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼, 'ਦੇਵਤਾਵਾਂ ਦੀ ਭੂਮੀ', ਹਿਮਾਲਾਇ ਦੀ ਗੋਦ ਵਿਚ ਵਸਿਆ ਹੋਇਆ ਸੁੰਦਰ ਪਹਾੜੀ ਸੂਬਾ ਹੈ। ਆਪਣੇ ਅਹਾਟ ਪਹਾੜਾਂ, ਝਰਨਿਆਂ ਅਤੇ ਸ਼ੁੱਧ ਜੰਗਲਾਂ ਲਈ ਜਾਣਿਆ ਜਾਂਦਾ ਹੈ।",
+    weatherLbl: "ਮੌਸਮ ਅਤੇ ਸਭ ਤੋਂ ਵਧੀਆ ਸਮਾਂ",
+    weatherTitle: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਕਦੋਂ ਜਾਣਾ",
+    weatherNote: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਪੂਰੇ ਖੇਤਰ ਵਿਚ ਵੱਖ-ਵੱਖ ਜਲਵਾਯੂ ਦਾ ਅਨੁਭਵ ਕਰਦਾ ਹੈ।",
+    distLbl: "ਸਾਰੇ 12 ਜ਼ਿਲ੍ਹੇ",
+    distTitle: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਦਾ ਹਰ ਜ਼ਿਲ੍ਹਾ",
+    distNote: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਦੇ 12 ਜ਼ਿਲ੍ਹੇ ਰੋਮਾਂਚ ਦੀ ਹੱਬ ਮਨਾਲੀ ਤੋਂ ਲੈ ਕੇ ਆਧਿਆਤਮਕ ਕੇਂਦਰ ਧਰਮਸ਼ਾਲਾ ਤੱਕ ਬਹੁਤ ਵੈਰੀਅਟੀ ਦਿਖਾਉਂਦੇ ਹਨ।",
+    distSearch: "ਜ਼ਿਲ੍ਹੇ ਖੋਜੋ...",
+    placesLbl: "ਪਵਿੱਤਰ ਅਤੇ ਕੁਦਰਤੀ ਅਜੂਬੇ",
+    placesTitle: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਦੇ ਖਜ਼ਾਨੇ",
+    artsLbl: "ਕਲਾ, ਹਸਤਕਲਾ ਅਤੇ ਵਿਰਾਸਤ",
+    artsTitle: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਦੀ ਜੀਵਂਤ ਪਰਿਪਾਟੀ",
+    tradLbl: "ਤਿਉਹਾਰ ਅਤੇ ਸਮਾਰੋਹ",
+    tradTitle: "ਹਿਮਾਚਲੀ ਸਭਿਅਤਾ ਦੀ ਆਤਮਾ",
+    cuisinesLbl: "ਪਾਕ ਪਰਿਪਾਟੀ",
+    cuisinesTitle: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਦਾ ਸੁਆਦ",
+    footerT: "ਜੈ ਹਿਮਾਚਲ",
+    footerS: "ਹਿਮਾਚਲ ਪ੍ਰਦੇਸ਼ ਦਿਹਾੜੀ — 25 ਜਨਵਰੀ · 1971"
+  }
+};
+
+// Language setting function
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lb-' + lang).classList.add('active');
+  
+  const t = translations[lang];
+  
+  document.getElementById('heroName').textContent = t.heroName;
+  document.getElementById('heroNative').textContent = t.heroNative;
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('scrollLbl').textContent = t.scrollLbl;
+  document.getElementById('qw').textContent = t.weatherPill;
+  document.getElementById('qd').textContent = t.districtsPill;
+  document.getElementById('qp').textContent = t.placesPill;
+  document.getElementById('qa').textContent = t.artsPill;
+  document.getElementById('qt').textContent = t.tradPill;
+  document.getElementById('qc').textContent = t.cuisinesPill;
+  document.getElementById('lAbout').textContent = t.aboutLbl;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutBody').textContent = t.aboutBody;
+  document.getElementById('lWeather').textContent = t.weatherLbl;
+  document.getElementById('weatherTitle').textContent = t.weatherTitle;
+  document.getElementById('weatherNote').textContent = t.weatherNote;
+  document.getElementById('lDist').textContent = t.distLbl;
+  document.getElementById('distTitle').textContent = t.distTitle;
+  document.getElementById('distNote').textContent = t.distNote;
+  document.getElementById('distSearch').placeholder = t.distSearch;
+  document.getElementById('lPlaces').textContent = t.placesLbl;
+  document.getElementById('placesTitle').textContent = t.placesTitle;
+  document.getElementById('lArts').textContent = t.artsLbl;
+  document.getElementById('artsTitle').textContent = t.artsTitle;
+  document.getElementById('lTrad').textContent = t.tradLbl;
+  document.getElementById('tradTitle').textContent = t.tradTitle;
+  document.getElementById('lCuisines').textContent = t.cuisinesLbl;
+  document.getElementById('cuisinesTitle').textContent = t.cuisinesTitle;
+  document.getElementById('footerT').textContent = t.footerT;
+  document.getElementById('footerS').textContent = t.footerS;
+}
+</script>
+</body>
+</html>
