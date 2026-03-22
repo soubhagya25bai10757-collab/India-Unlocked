@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telangana — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--nizam:#8B1A1A;--teal:#00838F;--gold:#D4A017;--pink:#C2185B;--cream:#fdf4e7;--deep:#080508;--card:#ffffff0d;--border:rgba(139,26,26,0.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(8,5,8,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--nizam);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,244,231,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,244,231,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--nizam);color:#fff;border-color:var(--nizam);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--nizam);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,5,8,.18) 0%,rgba(8,5,8,.04) 38%,rgba(8,5,8,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(212,160,23,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.4rem,8vw,7.5rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,244,231,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(139,26,26,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,244,231,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--nizam);color:#fff;border-color:var(--nizam);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(139,26,26,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,244,231,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(139,26,26,.12);border:1px solid rgba(139,26,26,.3);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(139,26,26,.2);border-color:rgba(139,26,26,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(212,160,23,.55);background:rgba(212,160,23,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,244,231,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--nizam);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(139,26,26,.65);}
+.dsearch::placeholder{color:rgba(253,244,231,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(139,26,26,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(139,26,26,.08);}
+.dacc:hover{border-color:rgba(139,26,26,.42);background:rgba(139,26,26,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(139,26,26,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(139,26,26,.35);background:rgba(139,26,26,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,244,231,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--nizam);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(139,26,26,.2);border:1px solid rgba(139,26,26,.38);color:rgba(253,244,231,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(212,160,23,.2);border:1px solid rgba(212,160,23,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(139,26,26,.09);border:1.5px solid rgba(139,26,26,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(139,26,26,.55);box-shadow:0 18px 54px rgba(139,26,26,.16);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--nizam),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,244,231,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(139,26,26,.22);border:1px solid rgba(139,26,26,.42);color:#ffb8a0;}
+.fb-fr{background:rgba(0,131,143,.2);border:1px solid rgba(0,131,143,.38);color:#80f0ff;}
+.fb-free{background:rgba(212,160,23,.18);border:1px solid rgba(212,160,23,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(0,131,143,.14);border:1px solid rgba(0,131,143,.3);}
+.donts{background:rgba(139,26,26,.12);border:1px solid rgba(139,26,26,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#80f0ff;}.donts .dd-title{color:#ffb8a0;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(128,240,255,.78);}.donts .dd-list li{color:rgba(255,184,160,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(139,26,26,.1);border:1.5px solid rgba(139,26,26,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(139,26,26,.52);background:rgba(139,26,26,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,244,231,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,244,231,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(139,26,26,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,244,231,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,244,231,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">TELANGANA</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-te" onclick="setLang('te')">తెలుగు</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">💎</span>
+    <div class="hero-name" id="heroName">Telangana</div>
+    <div class="hero-native" id="heroNative">తెలంగాణ</div>
+    <div class="hero-tag" id="heroTag">Land of Nizams, Diamonds, Biryani & Telangana Thalli</div>
+    <div class="tribar">
+      <div style="background:#8B1A1A"></div>
+      <div style="background:#D4A017"></div>
+      <div style="background:#00838F"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🥁 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap">
+    <span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span>
+    <div class="sarrow"></div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Telangana</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Kohinoor of Deccan</em></h2>
+  <p class="sec-body" id="aboutBody">Telangana — India's youngest state, born on June 2, 2014 after a decades-long people's movement — is one of the subcontinent's most layered and magnificent civilizations. Its capital Hyderabad, the City of Pearls, was once the richest city in the world under the Nizam of Hyderabad — whose personal wealth in the 1940s was estimated at 2% of US GDP, making him the wealthiest person on earth. The Golconda Fort was the source of the world's most legendary diamonds — the Kohinoor, the Hope Diamond, the Regent and the Nassak all came from its mines. Telangana sits on the ancient Deccan Plateau — a billion-year-old volcanic landscape of granite boulders, stepwells, reservoirs (tanks) and black cotton soil. The Kakatiyas — one of India's greatest dynasties — ruled from Warangal between the 12th and 14th centuries, building the magnificent Warangal Fort, the Thousand Pillar Temple and the extraordinary Ramappa Temple, now a UNESCO World Heritage Site. Telangana's culture is a magnificent fusion: Telugu literary tradition stretching 1,000 years, Urdu Nawabi refinement, Deccani cuisine that blends Persian, Turkish and Telugu flavors, folk art traditions of extraordinary vitality and the Bathukamma festival — an ocean of flowers celebrated by Telangana's women with a fervor found nowhere else. Hyderabad today is India's tech capital, the home of HITEC City, Genome Valley and global campuses — a city that holds antiquity and modernity in glittering tension. Telangana is the pearl — lustrous, layered, and irreducibly its own.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Telangana</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Telangana has three seasons: hot summer (March–May), monsoon (June–September) and a pleasant winter (October–February). October to February is ideal — Hyderabad glitters in clear winter light, the Ramappa Temple and Warangal Fort are best explored in cool weather and Bathukamma fills October with flowers.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 33 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Telangana</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Telangana's 33 districts span the Deccan Plateau from the Krishna-Godavari river systems to the Nallamala and Kawal forests. Each district holds layers of Kakatiya, Nizam and folk heritage unique to the Telangana ethos.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Historical, Sacred &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Telangana</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Telangana</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Telangana's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Telangana</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAI TELANGANA — JAI TELANGANA THALLI</div>
+  <div class="fs" id="footerS">Telangana Formation Day — June 2 · 2014</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+// Deep crimson Nizam red + gold — the colors of Hyderabad's heritage
+document.getElementById('heroBg').style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(70,10,10);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(50,20,5);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(0,55,65);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%27200%27 cy=%27200%27 r=%27280%27 fill=%27rgba(139,26,26,0.25)%27/%3E%3Ccircle cx=%271000%27 cy=%27320%27 r=%27320%27 fill=%27rgba(0,131,143,0.18)%27/%3E%3Ccircle cx=%27580%27 cy=%27700%27 r=%27200%27 fill=%27rgba(212,160,23,0.16)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Hyderabad",region:"Telangana Core",known:"City of Pearls, Charminar, IT Capital of India",heritage:["Charminar","Golconda Fort","Hussain Sagar","Salar Jung Museum","Chowmahalla Palace"],languages:["Telugu","Urdu","Hindi","English"],bestMonths:"Oct-Feb",avgTemp:"12-42°C"},
+  {name:"Rangareddy",region:"Telangana Core",known:"HITEC City, Outer Hyderabad, Osman Sagar",heritage:["Osman Sagar Lake","Shamirpet Lake","Chilkur Balaji Temple"],languages:["Telugu","Urdu","Hindi","English"],bestMonths:"Oct-Feb",avgTemp:"12-42°C"},
+  {name:"Medchal-Malkajgiri",region:"Telangana Core",known:"Genome Valley, Pharmaceutical Hub, Medchal Fort",heritage:["Medchal Fort","Shamirpet Lake","Pharmaceutical City Heritage"],languages:["Telugu","Hindi","English"],bestMonths:"Oct-Feb",avgTemp:"12-42°C"},
+  {name:"Warangal Urban",region:"North Telangana",known:"Kakatiya Capital, Warangal Fort, Thousand Pillar Temple",heritage:["Warangal Fort","Thousand Pillar Temple","Bhadrakali Temple","Kakatiya Heritage"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Warangal Rural",region:"North Telangana",known:"Kakatiya Villages, Agricultural Belt, Tanks",heritage:["Kakatiya Tank Heritage","Rural Temple Clusters","Agricultural Landscape"],languages:["Telugu"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Hanamkonda",region:"North Telangana",known:"Twin of Warangal, Cultural Hub, Bhadrakali",heritage:["Bhadrakali Temple","Hanamkonda Heritage","Cultural Centers"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Karimnagar",region:"North Telangana",known:"Silver Filigree, Kakatiya Region, Elgandal Fort",heritage:["Elgandal Fort","Kondagattu Temple","Ramagiri Fort","Sri Raja Rajeswara Temple"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Peddapalli",region:"North Telangana",known:"Coal Belt, Ramagundam, Industrial City",heritage:["Ramagundam Heritage","Godavari River Sites","Temple Clusters"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Mancherial",region:"North Telangana",known:"Godavari River, Kawal Tiger Reserve Gateway",heritage:["Godavari Gorges","Kawal Wildlife Sanctuary","Mahadeva Temple"],languages:["Telugu","Hindi"],bestMonths:"Nov-Mar",avgTemp:"10-44°C"},
+  {name:"Nirmal",region:"North Telangana",known:"Nirmal Paintings, Kubeer Art, Wooden Toys",heritage:["Nirmal Painting Heritage","Pochampally Weaving","Kubeer Art Craft"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Adilabad",region:"North Telangana",known:"Kawal Tiger Reserve, Tribal Heritage, Godavari",heritage:["Kawal Tiger Reserve","Babukonda Waterfall","Kuntala Falls","Sahyadri Hills"],languages:["Telugu","Hindi","Gondi","Kolami"],bestMonths:"Nov-Mar",avgTemp:"8-44°C"},
+  {name:"Kumuram Bheem Asifabad",region:"North Telangana",known:"Tribal Hero Heritage, Jannaram Sanctuary",heritage:["Kumuram Bheem Memorial","Jannaram Wildlife Sanctuary","Godavari Tributaries"],languages:["Telugu","Hindi","Gondi"],bestMonths:"Nov-Mar",avgTemp:"8-44°C"},
+  {name:"Nizamabad",region:"North Telangana",known:"Nizam Heritage, Dichpally Sugar, Turmeric City",heritage:["Nizamabad Fort","Alisagar Lake","Domakonda Fort","Nizam Sagar Dam"],languages:["Telugu","Urdu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Kamareddy",region:"North Telangana",known:"Pochampally Silk Region, Agriculture",heritage:["Pochampally Area Weaving","Banswada Temple","Yellareddy Fort"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Sangareddy",region:"Telangana Core",known:"Pharmaceutical Hub, Sangareddy Fort",heritage:["Sangareddy Fort","Narasimha Temple","Andole Temple"],languages:["Telugu","Urdu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Medak",region:"Telangana Core",known:"Medak Cathedral, Medak Fort, Edula Basavanna",heritage:["Medak Cathedral (largest in Asia)","Medak Fort","Shankarpally","Edulabad Fort"],languages:["Telugu","Urdu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Siddipet",region:"Telangana Core",known:"Kaleshwaram Lift Irrigation, Kondapochamma",heritage:["Kondapochamma Temple","Kaleshwaram Project","Siddipet Fort"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Yadadri-Bhongir",region:"Telangana Core",known:"Yadadri Lakshmi Narasimha Temple, Bhongir Fort",heritage:["Yadadri Temple (Yadagirigutta)","Bhongir Fort","Raigir Fort"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+  {name:"Nalgonda",region:"South Telangana",known:"Nagarjunasagar Dam, Krishna River, Uranium",heritage:["Nagarjunasagar Dam","Nagarjunakonda Buddhist Site","Aler Temple","Devarkonda Fort"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+  {name:"Suryapet",region:"South Telangana",known:"Krishna River, Halia Dam, Cotton Cultivation",heritage:["Halia Dam","Nagarjunasagar Canal","Munagala Fort"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+  {name:"Khammam",region:"South Telangana",known:"Kothagudem Coal, Kinnerasani Sanctuary, Bhadrachalam",heritage:["Bhadrachalam Temple","Kinnerasani Wildlife Sanctuary","Khammam Fort"],languages:["Telugu","Hindi","Koya"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+  {name:"Bhadradri Kothagudem",region:"South Telangana",known:"Bhadrachalam Ram Temple, Godavari, Tribal Heritage",heritage:["Sri Sita Ramachandra Swamy Temple","Papikondalu (Godavari Gorge)","Kinnerasani Sanctuary"],languages:["Telugu","Hindi","Koya","Konda Reddi"],bestMonths:"Oct-Mar",avgTemp:"12-44°C"},
+  {name:"Mahabubabad",region:"South Telangana",known:"Tribal Heritage, Mulugu Region, Sammakka-Sarakka",heritage:["Sammakka Sarakka Jatara Site","Tribal Villages","Godavari Tributaries"],languages:["Telugu","Hindi","Koya"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Mulugu",region:"North Telangana",known:"Ramappa Temple (UNESCO), Laknavaram Lake",heritage:["Ramappa Temple — UNESCO WHS","Laknavaram Suspension Bridge Lake","Medaram Jatara Site"],languages:["Telugu","Hindi","Koya"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Jayashankar Bhupalpally",region:"North Telangana",known:"Godavari Valley, Tribal Land, Palimela",heritage:["Godavari River Valley","Palimela Waterfalls","Dense Forest Reserves"],languages:["Telugu","Hindi","Gondi"],bestMonths:"Oct-Mar",avgTemp:"10-42°C"},
+  {name:"Mahbubnagar",region:"South Telangana",known:"Krishna River, Jadcherla, Alampur Temples",heritage:["Alampur Navabrahma Temples","Jurala Dam","Pillalamari Ficus Tree"],languages:["Telugu","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Nagarkurnool",region:"South Telangana",known:"Amrabad Tiger Reserve, Srisailam Area, Pillalamarri",heritage:["Amrabad Tiger Reserve","Srisailam Hydroelectric Project","Pillalamarri Heritage Tree"],languages:["Telugu","Hindi","Chenchu"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Wanaparthy",region:"South Telangana",known:"Wanaparthy Palace, Ghanpur Temples",heritage:["Wanaparthy Palace Museum","Ghanpur Temple Complex","Atmakur Fort"],languages:["Telugu","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Jogulamba Gadwal",region:"South Telangana",known:"Jogulamba Temple, Gadwal Fort, Srisailam Edge",heritage:["Jogulamba Devi Temple","Gadwal Fort","Somasila Dam"],languages:["Telugu","Hindi","Kannada"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Vikarabad",region:"Telangana Core",known:"Ananthagiri Hills, Mrugavani National Park",heritage:["Ananthagiri Hills","Mrugavani National Park","Kotepally Reservoir"],languages:["Telugu","Hindi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-38°C"},
+  {name:"Narayanpet",region:"South Telangana",known:"Narayanpet Sarees, Border District",heritage:["Narayanpet Handloom Sarees","Narayan Reddy Fort","Border Culture Heritage"],languages:["Telugu","Hindi","Kannada","Urdu"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Jangaon",region:"North Telangana",known:"Palampet Temple, Pochampally Silk Region",heritage:["Palampet Ramappa Region","Pochampally Silk Villages","Bheemunipatnam Area"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"},
+  {name:"Rajanna Sircilla",region:"North Telangana",known:"Karimnagar Silk, Vemulawada Temple",heritage:["Vemulawada Rajanna Temple","Karimnagar Silk Industry","Sircilla Textile Hub"],languages:["Telugu","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-44°C"}
+];
+
+const placesData = [
+  {emoji:"🕌",name:"Charminar & Old City",location:"Hyderabad",desc:"The 1591 monument that is Hyderabad's eternal symbol — four grand minarets rising 56 meters over the oldest bazaars of the Deccan. Built by Sultan Muhammad Quli Qutb Shah to commemorate the end of a plague. The surrounding Laad Bazaar (bangle market), Pathergatti book market and Mecca Masjid form an incomparable historic quarter of bustling Nawabi life.",fee:["₹25 Indians","₹300 Foreigners"]},
+  {emoji:"🏰",name:"Golconda Fort",location:"Hyderabad",desc:"The source of the world's most legendary diamonds — the Kohinoor, Hope Diamond and Nassak — all emerged from Golconda's mines. The fort itself is a masterpiece of Qutb Shahi military architecture, 400 acres of palaces, mosques, water systems and pavilions on a granite hill. The acoustic engineering of the entrance is extraordinary — a clap at the base is audible 1 km away at the top.",fee:["₹15 Indians","₹200 Foreigners"]},
+  {emoji:"🏛️",name:"Ramappa Temple",location:"Mulugu District",desc:"UNESCO World Heritage Site (2021) — one of India's finest medieval temples, built by Kakatiya general Recharla Rudra in 1213 AD. Named after its architect Ramappa, it floats on a 'sandbox foundation' that has absorbed 800 years of earthquakes without damage. The bracket figures (madanika) are considered the finest examples of Kakatiya sculptural art.",fee:["₹50 Indians","₹600 Foreigners"]},
+  {emoji:"🗿",name:"Warangal Fort & Thousand Pillar Temple",location:"Warangal",desc:"The Kakatiya capital — a 12th-century fort of extraordinary power whose ceremonial gateways (Kakatiya Kala Thoranam) are now the symbol of Telangana. The adjacent Thousand Pillar Temple (1163 AD) is a masterpiece of star-shaped Kakatiya architecture with exquisite stone carving. The fort's granite boulders, tanks and temple ruins extend across kilometers.",fee:["₹15 Indians","₹200 Foreigners"]},
+  {emoji:"🦁",name:"Nagarjunasagar & Buddhist Heritage",location:"Nalgonda District",desc:"Asia's largest masonry dam creates a vast reservoir that submerged the ancient Buddhist site of Nagarjunakonda — an island museum now preserves the rescued monuments. The site dates to the 3rd century BC and was a major centre of Theravada Buddhism. Remarkable sculptures of the Buddha and early Buddhist narratives are housed in the island's remarkable museum.",fee:["Paid (Boat + Entry)"]},
+  {emoji:"💐",name:"Hussain Sagar & Tank Bund",location:"Hyderabad",desc:"A vast 16th-century lake built by Ibrahim Quli Qutb Shah — 5.7 sq km — at the heart of Hyderabad. A 17-meter monolithic Buddha statue rises from its center. The Tank Bund promenade is lined with statues of Telangana's great historical figures. At sunset and during Ganesh Chaturthi (when massive idols are immersed), the lake is mesmerizing.",fee:["Free (Boat rides paid)"]},
+  {emoji:"🐅",name:"Amrabad Tiger Reserve",location:"Nagarkurnool District",desc:"One of India's largest tiger reserves — 2,611 sq km of scrub forest, granite hillscape and deep ravines in the Nallamala range. Home to tigers, leopards, sloth bears, wild dogs, wolves and the rare Chenchu tribal communities who have lived in these forests for centuries. The landscape of black granite boulders and dry forest is hauntingly beautiful.",fee:["Paid"]},
+  {emoji:"🕍",name:"Medak Cathedral",location:"Medak District",desc:"One of the largest Christian churches in Asia — a magnificent Gothic Revival structure built by British missionaries between 1914 and 1924. The cathedral's 175-foot tower dominates the Deccan skyline for miles. Its stained glass windows — 34 panels depicting the life of Christ — were made in England. An extraordinary monument in an unexpected location.",fee:["Free"]},
+  {emoji:"🌊",name:"Papikondalu — Godavari Gorge",location:"Bhadradri Kothagudem",desc:"The Godavari river cuts through the Eastern Ghats creating a spectacular 80-km gorge of forested hills, waterfalls and tribal villages accessible only by boat. The boat journey from Bhadrachalam through Papikondalu is one of South India's most dramatic river experiences. Tribal Koya and Konda Reddi communities live along these banks in age-old ways.",fee:["Boat Charges"]},
+  {emoji:"🪬",name:"Sammakka Sarakka Jatara",location:"Medaram, Mulugu",desc:"The world's largest tribal festival — held every two years at Medaram in Mulugu district. Over 100 million pilgrims gather at the jungle shrine of Sammakka and her daughter Sarakka over four days — surpassing even the Kumbh Mela in single-event attendance. The festival honors two Koya tribal warrior goddesses who died fighting the Kakatiya kingdom in the 13th century.",fee:["Free"]}
+];
+
+const artsData = [
+  {emoji:"🧵",name:"Pochampally Ikat Weaving",location:"Pochampally, Bhoodan Pochampally",desc:"India's most celebrated ikat silk weaving — a UNESCO Geographical Indication product. The technique of resist-dyeing threads before weaving creates geometric patterns of extraordinary precision. The village of Pochampally (now Bhoodan Pochampally) is a living museum of the craft, with hundreds of looms in every home producing silk sarees of dazzling complexity."},
+  {emoji:"🎨",name:"Nirmal Paintings & Lacquerware",location:"Nirmal, Adilabad",desc:"Distinctive folk painting tradition from Nirmal town — figures with elongated eyes, rich jewel colors and Persian-influenced floral borders painted on wooden panels and furniture. The lacquerware tradition uses natural dyes applied to light-wood toys and household items. GI-tagged craft with 200-year history, revived by Telangana government craft initiatives."},
+  {emoji:"🪘",name:"Perini Shivatandavam",location:"Statewide",desc:"The ancient warrior dance of the Kakatiya kingdom — performed by men before battle in worship of Lord Shiva. Characterized by vigorous footwork, leaping and energetic movement, Perini was performed at Ramappa Temple and Warangal Fort. Extinct for 700 years after the Kakatiya fall, it was revived in the 1970s by dancer Nataraja Ramakrishna from temple sculptures."},
+  {emoji:"💍",name:"Hyderabad Pearls & Bidriware",location:"Hyderabad",desc:"Hyderabad is the pearl capital of the world — processing 90% of global pearl trade in the lanes of Patherghatti and Charminar. The pearl setting (jad) technique developed under Nizam patronage. Bidriware — black zinc alloy inlaid with silver in floral Persian patterns — is another Hyderabadi craft of extraordinary refinement, developed in the Bahmani courts."},
+  {emoji:"🏺",name:"Pembarthi Metal Craft",location:"Pembarth, Jangaon",desc:"A 400-year-old tradition of brass and copper repoussé work from Pembarth village — artisans beat thin sheets of metal over wooden molds to create intricate relief panels of deities, animals and mythological scenes. The craft has GI protection and is used to create temple doors, lamps and decorative panels of extraordinary detail."},
+  {emoji:"🪆",name:"Cheriyal Scroll Painting",location:"Cheriyal, Siddipet",desc:"Narrative scroll paintings used by the Nakashi community to tell stories of Hindu mythology to village audiences. Bold red-ground paintings with stylized figures in bright primary colors, each scroll up to 40 feet long. The Nakashi storyteller (katha) tradition has ancient roots; the paintings are now internationally recognized as a major folk art form."}
+];
+
+const traditionsData = [
+  {emoji:"🌸",name:"Bathukamma Festival",location:"Statewide — Durga Ashtami to Durgashtami",desc:"Telangana's defining festival — a nine-day flower festival celebrated exclusively by women. Concentric rings of seasonal flowers (gomphrena, marigold, chrysanthemum and more) are stacked into a conical tower around a turmeric idol of Gauri. Women carry these to lakes and rivers, singing Bathukamma songs of extraordinary beauty, then immerse the flowers. An ocean of color, song and sisterhood."},
+  {emoji:"🏛️",name:"Bonalu",location:"Hyderabad & Secunderabad — Monsoon",desc:"Telangana's greatest urban festival — celebrated over two Sundays in the monsoon months. Women carry sacred pots (bonam) of food on their heads to goddess temples — Ujjaini Mahankali, Secunderabad Mahankali — in massive processions. The 'Rangam' prophecy by a possessed woman at the Ujjaini temple draws enormous crowds. Raw, powerful and entirely Telangana."},
+  {emoji:"🪬",name:"Sammakka Sarakka Jatara",location:"Medaram, Mulugu (Biennial)",desc:"The world's largest tribal gathering — over 100 million pilgrims descend on the jungle shrine of Medaram every two years. The story of Sammakka — a Koya tribal queen who fought and died resisting the Kakatiya king's tax demands — is sung in mournful Gondi songs. Devotees offer jaggery equal to their own weight as offering. Nothing else in India resembles it."},
+  {emoji:"🎭",name:"Telangana Bonalu Processions",location:"Hyderabad Old City",desc:"The Secunderabad Bonalu procession is one of India's most spectacular urban religious events — thousands of women in silk sarees carrying decorated pots on their heads, men on horseback, drummers and dancers moving through the old city's lanes to the main temples. The 'Ghata' (sacred pot) carried by a man possessed by the goddess leads the procession."},
+  {emoji:"🌙",name:"Eid ul-Fitr in Hyderabad",location:"Hyderabad Old City",desc:"Hyderabad's Muslim heritage makes Eid one of the city's grandest celebrations. The lanes around Charminar fill with millions of worshippers for early morning namaz at Mecca Masjid. The Old City's haleem shops open their season; the city's legendary non-stop haleem cooking fires begin. Hyderabad's Eid is a cultural event as much as a religious one."},
+  {emoji:"🎊",name:"Telangana Formation Day",location:"Statewide — June 2",desc:"Celebrated annually with enormous public fervor since 2014 — the newest state in India marks its birthday with cultural programs, the Telangana Thalli image carried in processions and tributes to the thousands of young people who died in the Telangana movement. A celebration suffused with hard-won pride and the memory of a generation's sacrifice."}
+];
+
+const cuisinesData = [
+  {emoji:"🍛",name:"Hyderabadi Dum Biryani",region:"Hyderabad — Global Icon",desc:"The most celebrated biryani in the world — marinated meat and aged Basmati rice slow-cooked together in a sealed pot (dum) with saffron, fried onions (birista), rose water, kewra and whole spices. The Hyderabadi kacchi biryani cooks raw marinated meat and rice together — a technique demanding extraordinary precision. Served with mirchi ka salan and raita. Hyderabad's most exported cultural ambassador."},
+  {emoji:"🥘",name:"Haleem",location:"Hyderabad — Ramadan Special",desc:"Slow-cooked mutton, wheat, barley and lentils pounded to a silky hash with Hyderabadi spices — cooked for 8–12 hours. A GI-tagged product unique to Hyderabad. Eaten throughout Ramadan. The best haleem is still made by Pista House and Shah Ghouse — ladled from enormous copper vessels. Topped with fried onions, ginger julienne, lime and fresh coriander."},
+  {emoji:"🍢",name:"Pathar ka Gosht",location:"Hyderabad",desc:"Meat marinated in raw papaya paste, spices and saffron, then grilled on a flat granite stone (pathar) heated on charcoal. The stone conducts heat evenly at a lower temperature than iron, cooking the meat to extraordinary tenderness without charring. A distinctly Hyderabadi technique born in the Nizam's kitchen. Still available at Old City specialty restaurants."},
+  {emoji:"🌶️",name:"Mirchi ka Salan",location:"Hyderabad",desc:"The essential partner of Hyderabadi biryani — long green chilies (Bhavnagri) cooked in a rich gravy of roasted peanuts, sesame seeds, coconut and tamarind, tempered with mustard and curry leaves. The heat of the chili is balanced by the nutty sourness of the gravy. A dish of extraordinary complexity from very humble ingredients."},
+  {emoji:"🍮",name:"Double ka Meetha",location:"Hyderabad",desc:"Hyderabad's signature dessert — fried bread slices (double roti/bread) layered with thickened sweetened milk (rabri), saffron and dry fruits. The textures of crispy fried bread and rich creamy milk create something far greater than the sum of parts. Served at every Hyderabadi feast and celebration. The name comes from the double fermentation of the bread."},
+  {emoji:"🥗",name:"Sarva Pindi & Telangana Roti",location:"Telangana — Rural Heartland",desc:"Sarva Pindi — a crispy rice flour pancake studded with chana dal, sesame seeds, chili and curry leaves, slow-cooked on a heavy iron pan. The definitive Telangana breakfast. Village Telangana also makes jowar roti (jolada roti) and ragi sankati (a stiff porridge eaten with spicy chutneys) — ancient grain foods that sustained the Deccan plateau's agricultural civilization."},
+  {emoji:"🍲",name:"Gongura Mutton",location:"Statewide",desc:"Gongura (sorrel/kenaf leaves) is Telangana's most beloved souring ingredient — a tangy, iron-rich leaf with a sour punch unmatched in Indian cooking. Slow-cooked with mutton, the gongura creates a curry of intense depth. Also made with chicken, prawns and paneer. The state's most distinctive flavor — tart, earthy, irreplaceable."},
+  {emoji:"🥬",name:"Pesarattu & Upma",location:"Statewide",desc:"Telangana's beloved breakfast combination — whole green moong dal ground and fermented into crispy crepes (pesarattu), served with a mound of upma stuffed inside and coconut chutney alongside. The pesarattu is protein-rich, tangy and satisfying. Eaten at tiffin centers from dawn, washed down with filter coffee or ginger chai."},
+  {emoji:"🍬",name:"Qubani ka Meetha",location:"Hyderabad",desc:"A Nizam-era dessert of extraordinary elegance — dried apricots (qubani) slow-cooked with sugar and water until jammy, served with a blanket of thick clotted cream. The apricots were sourced from Afghanistan via the Nizam's trade routes. At the Hyderabad residency, it was served at every royal banquet. Still the non-negotiable final note of any Hyderabadi feast."},
+  {emoji:"🧆",name:"Osmania Biscuit & Irani Chai",location:"Hyderabad Irani Cafes",desc:"The Irani cafes of Hyderabad — established by Iranian immigrants in the 1900s — serve a culture of their own. Irani chai: strong tea brewed in milk with a separate kettle of water, poured together at the moment of serving. Osmania biscuit: a slightly sweet, slightly salty butter biscuit designed specifically for dunking. Hundreds of Irani cafes still operate in the Old City."},
+  {emoji:"🫕",name:"Chakna & Paya",location:"Hyderabad Old City",desc:"Chakna — a rich offal curry made from goat organs slow-cooked with whole spices in a thick masala — is the ultimate Old City early morning food, eaten with kulcha or naan. Paya — goat trotter soup — is another Hyderabadi early morning specialty, the collagen-rich broth believed to strengthen joints and warm the body in winter."}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"12-28°C",weather:"Pleasant Winter",details:"Best month for Hyderabad — clear blue skies, cool evenings. Golconda Fort sound-and-light show at its most atmospheric. Explore the Old City by day, dine in the lane restaurants by night.",best:true},
+  {month:"February",avgTemp:"14-32°C",weather:"Warm",details:"Ramappa Temple and Warangal best visited now. Flowers beginning to bloom across the Deccan. Bathukamma flower preparations in village markets. Excellent wildlife at Amrabad.",best:true},
+  {month:"March",avgTemp:"18-36°C",weather:"Warm Spring",details:"Holi celebrated. Heritage sites still comfortable in the mornings. Hyderabad's gardens in bloom. Last good month before summer heat becomes intense. Pesarattu season at tiffin centers."},
+  {month:"April",avgTemp:"22-40°C",weather:"Hot",details:"Summer arriving sharply. Hyderabad's granite city heats up fast. Indoor heritage — museums, palaces, the Salar Jung — recommended. Avoid midday outdoors. Cool Irani cafes a refuge."},
+  {month:"May",avgTemp:"26-44°C",weather:"Very Hot",details:"Peak summer. Temperatures cross 44°C in northern Telangana. Husain Sagar evaporates at edges. Not recommended for outdoor tourism. Mangoes arrive — Hyderabad's mango season begins."},
+  {month:"June",avgTemp:"24-38°C",weather:"Monsoon Arrives",details:"Monsoon breaks dramatically. Telangana Formation Day celebrated June 2. Bonalu festival season begins. The Deccan plateau, starved for rain, turns green almost overnight."},
+  {month:"July",avgTemp:"22-30°C",weather:"Monsoon",details:"Heavy rains. Hussain Sagar fills. Bonalu processions at Ujjaini Mahankali and Secunderabad temples are spectacular in the rain. Waterfalls at Kuntala and Babukonda in full roar.",best:true},
+  {month:"August",avgTemp:"22-30°C",weather:"Deep Monsoon",details:"Ganesh Chaturthi celebrated with extraordinary fervor — massive clay Ganesh idols immersed in Hussain Sagar. The lake celebrations are spectacular. Forests in full emerald green."},
+  {month:"September",avgTemp:"22-32°C",weather:"Late Monsoon",details:"Bathukamma season begins — the flower festival building through the month. Seasonal flowers arrive in markets. Ramadan preparations in the Old City if the lunar calendar aligns."},
+  {month:"October",avgTemp:"18-32°C",weather:"Post-Monsoon",details:"Bathukamma festival at its peak — flower towers immersed in every lake and river. Dussehra. Biryani festival season in Hyderabad. Ideal weather, lush landscape. Excellent month.",best:true},
+  {month:"November",avgTemp:"14-28°C",weather:"Early Winter",details:"Perfect weather across Telangana. Ramappa Temple and Warangal in post-monsoon green with cool air. Pearl shopping in Hyderabad's Patherghatti. Medaram Jatara in alternate years.",best:true},
+  {month:"December",avgTemp:"12-26°C",weather:"Winter",details:"Cool and clear. Hyderabad's outdoor restaurants at their finest. Golconda Fort in winter light is extraordinary. New Year celebrations in HITEC City and Old City both spectacular.",best:true}
+];
+
+// Populate weather
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  wGrid.innerHTML += `<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div>
+    <div class="wt">${w.avgTemp}</div>
+    <div class="wd">${w.details}</div>
+  </div>`;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const el = document.createElement('div');
+  el.className = 'dacc';
+  el.dataset.name = d.name.toLowerCase();
+  el.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list"><li>${d.known}</li></ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+        </div>
+      </div>
+    </div>`;
+  accordion.appendChild(el);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `<div class="pcard">
+    <div class="pcard-acc"></div>
+    <div class="pcard-body">
+      <span class="pi">${p.emoji}</span>
+      <div class="pn">${p.name}</div>
+      <div class="pl">${p.location}</div>
+      <div class="pd">${p.desc}</div>
+      <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+      <div class="dos-donts">
+        <div class="dos"><div class="dd-title">✓ DO</div><ul class="dd-list"><li>Try Irani chai at Old City cafes</li><li>Book biryani restaurants in advance</li></ul></div>
+        <div class="donts"><div class="dd-title">✗ DON'T</div><ul class="dd-list"><li>Miss the Golconda light show</li><li>Bargain disrespectfully for pearls</li></ul></div>
+      </div>
+    </div>
+  </div>`;
+});
+
+// Populate arts, traditions, cuisines
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId, i) => {
+  const datasets = [artsData, traditionsData, cuisinesData];
+  const grid = document.getElementById(gridId);
+  datasets[i].forEach(item => {
+    grid.innerHTML += `<div class="acard">
+      <span class="ae">${item.emoji}</span>
+      <div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+
+// Accordion
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const all = document.querySelectorAll('.dacc');
+  if(openAccordion !== null && openAccordion !== idx) all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion = all[idx].classList.contains('open') ? idx : null;
+}
+function filterDistricts(q) {
+  document.querySelectorAll('.dacc').forEach(a => {
+    a.style.display = a.dataset.name.includes(q.toLowerCase()) ? '' : 'none';
+  });
+}
+function toggleMusic() {
+  const a = document.getElementById('bgm'), b = document.getElementById('musicBtn');
+  if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  en:{
+    heroName:"Telangana", heroNative:"తెలంగాణ",
+    heroTag:"Land of Nizams, Diamonds, Biryani & Telangana Thalli",
+    scrollLbl:"SCROLL TO EXPLORE",
+    qw:"🌡️ Weather",qd:"📍 Districts",qp:"🏛️ Places",qa:"🎨 Arts",qt:"🥁 Traditions",qc:"🍲 Cuisines",
+    lAbout:"About Telangana", aboutTitle:"The Kohinoor of Deccan",
+    aboutBody:"Telangana — India's youngest state, born on June 2, 2014 — is one of the subcontinent's most layered civilizations. Its capital Hyderabad, the City of Pearls, was once the world's richest city under the Nizam. The Golconda Fort was the source of the world's most legendary diamonds. The Ramappa Temple is a UNESCO World Heritage Site. Telangana's Bathukamma festival, Pochampally ikat weaving, Hyderabadi biryani and the extraordinary Sammakka Sarakka Jatara make it one of India's most culturally rich states.",
+    lWeather:"Climate & Best Time", weatherTitle:"When to Visit Telangana",
+    weatherNote:"Telangana has three seasons: hot summer (March–May), monsoon (June–September) and a pleasant winter (October–February). October to February is ideal — Hyderabad glitters in clear winter light and Bathukamma fills October with flowers.",
+    lDist:"All 33 Districts", distTitle:"Every District of Telangana",
+    distNote:"Telangana's 33 districts span the Deccan Plateau from the Krishna-Godavari river systems to the Nallamala and Kawal forests, each holding layers of Kakatiya, Nizam and folk heritage.",
+    distSearch:"Search districts...",
+    lPlaces:"Historical, Sacred & Natural Wonders", placesTitle:"Wonders of Telangana",
+    lArts:"Arts, Crafts & Heritage", artsTitle:"Living Traditions of Telangana",
+    lTrad:"Festivals & Celebrations", tradTitle:"Soul of Telangana's Culture",
+    lCuisines:"Culinary Heritage", cuisinesTitle:"Flavors of Telangana",
+    footerT:"JAI TELANGANA — JAI TELANGANA THALLI", footerS:"Telangana Formation Day — June 2 · 2014"
+  },
+  hi:{
+    heroName:"तेलंगाना", heroNative:"తెలంగాణ",
+    heroTag:"निज़ाम, हीरों, बिरयानी और तेलंगाना थल्ली की भूमि",
+    scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",
+    qw:"🌡️ मौसम",qd:"📍 जिले",qp:"🏛️ स्थल",qa:"🎨 कलाएं",qt:"🥁 परंपराएं",qc:"🍲 व्यंजन",
+    lAbout:"तेलंगाना के बारे में", aboutTitle:"दक्कन का कोहिनूर",
+    aboutBody:"तेलंगाना — भारत का सबसे नया राज्य, 2 जून 2014 को जन्मा — उपमहाद्वीप की सबसे समृद्ध सभ्यताओं में से एक है। इसकी राजधानी हैदराबाद, मोतियों का शहर, कभी दुनिया का सबसे अमीर शहर था। गोलकुंडा किला दुनिया के सबसे प्रसिद्ध हीरों का स्रोत था — कोहिनूर, होप डायमंड। रामप्पा मंदिर यूनेस्को विश्व धरोहर स्थल है। बाथुकम्मा उत्सव, पोचमपल्ली इकत बुनाई और हैदराबादी बिरयानी इसे भारत के सबसे सांस्कृतिक रूप से समृद्ध राज्यों में से एक बनाते हैं।",
+    lWeather:"जलवायु और सर्वोत्तम समय", weatherTitle:"तेलंगाना कब जाएं",
+    weatherNote:"तेलंगाना में तीन मौसम हैं: गर्म गर्मी (मार्च-मई), मानसून (जून-सितंबर) और सुखद सर्दी (अक्टूबर-फरवरी)। अक्टूबर से फरवरी आदर्श है।",
+    lDist:"सभी 33 जिले", distTitle:"तेलंगाना के हर जिले",
+    distNote:"तेलंगाना के 33 जिले कृष्णा-गोदावरी नदी तंत्र से नल्लामला और कवाल जंगलों तक दक्कन पठार पर फैले हैं।",
+    distSearch:"जिले खोजें...",
+    lPlaces:"ऐतिहासिक, पवित्र और प्राकृतिक चमत्कार", placesTitle:"तेलंगाना के चमत्कार",
+    lArts:"कला, शिल्प और विरासत", artsTitle:"तेलंगाना की जीवंत परंपराएं",
+    lTrad:"त्योहार और उत्सव", tradTitle:"तेलंगाना की संस्कृति की आत्मा",
+    lCuisines:"पाक विरासत", cuisinesTitle:"तेलंगाना का स्वाद",
+    footerT:"जय तेलंगाना — जय तेलंगाना थल्ली", footerS:"तेलंगाना स्थापना दिवस — 2 जून · 2014"
+  },
+  te:{
+    heroName:"తెలంగాణ", heroNative:"తెలంగాణ",
+    heroTag:"నిజాంల నేల, వజ్రాలు, బిర్యానీ & తెలంగాణ తల్లి",
+    scrollLbl:"అన్వేషించడానికి స్క్రోల్ చేయండి",
+    qw:"🌡️ వాతావరణం",qd:"📍 జిల్లాలు",qp:"🏛️ స్థలాలు",qa:"🎨 కళలు",qt:"🥁 సంప్రదాయాలు",qc:"🍲 వంటకాలు",
+    lAbout:"తెలంగాణ గురించి", aboutTitle:"దక్కన్ యొక్క కోహినూర్",
+    aboutBody:"తెలంగాణ — భారతదేశపు అతిపిన్న రాష్ట్రం, 2 జూన్ 2014న స్థాపించబడింది — ఉపఖండంలోని అత్యంత పొరలుగల నాగరికతలలో ఒకటి. దాని రాజధాని హైదరాబాద్, ముత్యాల నగరం, నిజాం పాలనలో ఒకప్పుడు ప్రపంచంలోనే అత్యంత ధనవంతమైన నగరం. గోల్కొండ కోట ప్రపంచంలోని అత్యంత ప్రసిద్ధ వజ్రాల మూలం. రామప్ప ఆలయం యూనెస్కో ప్రపంచ వారసత్వ స్థలం. బతుకమ్మ పండుగ, పోచంపల్లి ఇకత్ నేత మరియు హైదరాబాదీ బిర్యానీ దీన్ని భారతదేశంలోని అత్యంత సాంస్కృతికంగా సంపన్నమైన రాష్ట్రాలలో ఒకటిగా చేస్తాయి.",
+    lWeather:"వాతావరణం & అత్యుత్తమ సమయం", weatherTitle:"తెలంగాణకు ఎప్పుడు వెళ్లాలి",
+    weatherNote:"తెలంగాణలో మూడు కాలాలు ఉంటాయి: వేసవి (మార్చి-మే), వర్షాకాలం (జూన్-సెప్టెంబర్) మరియు శీతాకాలం (అక్టోబర్-ఫిబ్రవరి). అక్టోబర్ నుండి ఫిబ్రవరి అత్యుత్తమ సమయం.",
+    lDist:"అన్ని 33 జిల్లాలు", distTitle:"తెలంగాణలోని ప్రతి జిల్లా",
+    distNote:"తెలంగాణలోని 33 జిల్లాలు కృష్ణా-గోదావరి నది వ్యవస్థల నుండి నల్లమల మరియు కావల్ అడవుల వరకు విస్తరించి ఉన్నాయి.",
+    distSearch:"జిల్లాలను వెతకండి...",
+    lPlaces:"చారిత్రక, పవిత్ర & ప్రకృతి అద్భుతాలు", placesTitle:"తెలంగాణ అద్భుతాలు",
+    lArts:"కళలు, చేతివృత్తులు & వారసత్వం", artsTitle:"తెలంగాణ జీవంత సంప్రదాయాలు",
+    lTrad:"పండుగలు & వేడుకలు", tradTitle:"తెలంగాణ సంస్కృతి ఆత్మ",
+    lCuisines:"వంటకాల వారసత్వం", cuisinesTitle:"తెలంగాణ రుచులు",
+    footerT:"జై తెలంగాణ — జై తెలంగాణ తల్లి", footerS:"తెలంగాణ స్థాపన దినం — జూన్ 2 · 2014"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t = translations[lang];
+  const keys = ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc',
+    'lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote',
+    'lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle',
+    'lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'];
+  keys.forEach(k => {
+    const el = document.getElementById(k);
+    if(el && t[k]) el.textContent = t[k];
+  });
+  document.getElementById('distSearch').placeholder = t.distSearch;
+}
+</script>
+</body>
+</html>
