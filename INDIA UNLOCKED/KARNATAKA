@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karnataka — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#B71C1C;--gold:#C8960A;--green:#1B5E20;--sandal:#D4A860;--cream:#fdf5e2;--deep:#07060a;--border:rgba(183,28,28,0.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(7,6,10,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--red);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,245,226,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,245,226,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--red);color:#fff;border-color:var(--red);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--red);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,10,.18) 0%,rgba(7,6,10,.04) 38%,rgba(7,6,10,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(200,150,10,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(2.4rem,8vw,7.5rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,245,226,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(183,28,28,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,245,226,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--red);color:#fff;border-color:var(--red);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(183,28,28,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,245,226,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(183,28,28,.1);border:1px solid rgba(183,28,28,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(183,28,28,.18);border-color:rgba(183,28,28,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(200,150,10,.55);background:rgba(200,150,10,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,245,226,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--red);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(183,28,28,.65);}
+.dsearch::placeholder{color:rgba(253,245,226,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(183,28,28,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(183,28,28,.08);}
+.dacc:hover{border-color:rgba(183,28,28,.42);background:rgba(183,28,28,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(183,28,28,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(183,28,28,.35);background:rgba(183,28,28,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,245,226,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--red);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(183,28,28,.2);border:1px solid rgba(183,28,28,.38);color:rgba(253,245,226,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(200,150,10,.2);border:1px solid rgba(200,150,10,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(183,28,28,.09);border:1.5px solid rgba(183,28,28,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(183,28,28,.55);box-shadow:0 18px 54px rgba(183,28,28,.14);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--red),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,245,226,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(183,28,28,.22);border:1px solid rgba(183,28,28,.42);color:#ffd4b0;}
+.fb-fr{background:rgba(27,94,32,.2);border:1px solid rgba(27,94,32,.38);color:#a8ffc0;}
+.fb-free{background:rgba(200,150,10,.18);border:1px solid rgba(200,150,10,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(27,94,32,.14);border:1px solid rgba(27,94,32,.3);}
+.donts{background:rgba(183,28,28,.12);border:1px solid rgba(183,28,28,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a8ffc0;}.donts .dd-title{color:#ffd4b0;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(168,255,192,.78);}.donts .dd-list li{color:rgba(255,212,176,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(183,28,28,.1);border:1.5px solid rgba(183,28,28,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(183,28,28,.52);background:rgba(183,28,28,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,245,226,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,245,226,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(183,28,28,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,245,226,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,245,226,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">KARNATAKA</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-kn" onclick="setLang('kn')">ಕನ್ನಡ</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#129433;</span>
+    <div class="hero-name" id="heroName">Karnataka</div>
+    <div class="hero-native" id="heroNative">ಕರ್ನಾಟಕ</div>
+    <div class="hero-tag" id="heroTag">Land of Sandalwood, Silk, Vijayanagara & Coffee Estates</div>
+    <div class="tribar"><div style="background:#B71C1C"></div><div style="background:#C8960A"></div><div style="background:#1B5E20"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Karnataka</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Sandalwood State</em></h2>
+  <p class="sec-body" id="aboutBody">Karnataka — the land of sandalwood, silk and the Carnatic musical tradition — is one of the Indian subcontinent's most historically layered and geographically diverse states. From the Deccan Plateau in the north to the Western Ghats rainforests in the west, from the Coorg coffee estates to the arid Bellary iron-ore country, Karnataka spans extraordinary ecological and cultural range. Its history is measured in dynasties of staggering grandeur: the Hoysalas, whose 12th–13th century temples at Belur, Halebidu and Somnathpur contain the most intricate stone carving on earth; the Vijayanagara Empire, which from its capital at Hampi ruled the largest Hindu kingdom in history and whose ruins — UNESCO World Heritage Site — spread across 26 sq km of bouldered landscape on the Tungabhadra river; the Wadiyar dynasty of Mysore, whose kingdom produced the world's first electric street lights outside North America and whose Dasara procession is India's most spectacular royal pageant. Bengaluru — Silicon Valley of India and the country's fastest-growing city — hosts the world's largest startup ecosystem outside the US. Karnataka produces 80% of India's sandalwood, 70% of India's coffee and 30% of India's silk. The Western Ghats — Karnataka's forested spine — is a UNESCO World Heritage Site and one of only eight biological hotspots on earth, home to tigers, Asian elephants, lions, leopards and thousands of endemic plant and animal species. The Tungabhadra, Cauvery, Krishna and Sharavathi rivers descend from these hills through temple towns, wildlife reserves and hydro-power cascades. Karnataka's music — both Carnatic classical and the folk traditions of Yakshagana — represents some of India's most sophisticated performing arts. The state speaks Kannada — one of the oldest living languages, with a literary tradition of 1,500 years — alongside Tulu, Kodava, Konkani, Beary and dozens of tribal tongues. Karnataka is India thinking ancient thoughts in a modern city, brewing coffee in a rainforest, carving stone with divine patience, and celebrating with the roar of ten thousand elephants at Mysuru Dasara.</p>
+</section>
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Karnataka</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Karnataka has three distinct climate zones: the Western Ghats (heavy monsoon, cool year-round), the Deccan Plateau (hot dry summers, mild winters) and the Coastal belt (hot and humid). October to March is ideal for Hampi, Mysuru and Bengaluru. The Western Ghats are most spectacular during and just after monsoon — July to October. Coorg is beautiful year-round.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 31 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Karnataka</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Karnataka's 31 districts span five geographic regions: the Deccan Plateau (north), Mysuru Plateau (south), Western Ghats (west), Coastal Karnataka and the Maidan. Each carries its own language, cuisine and dynasty.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="ಜಿಲ್ಲೆ ಹುಡುಕಿ / Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">UNESCO Sites, Temples, Wildlife &amp; Natural Wonders</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Karnataka</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Karnataka</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Karnataka's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Karnataka</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+<footer>
+  <span class="fe">&#128591;</span>
+  <div class="ft" id="footerT">JAI KARNATAKA MATA — NAMMA KARNATAKA</div>
+  <div class="fs" id="footerS">Karnataka Rajyotsava — November 1 &middot; 1956</div>
+</footer>
+<audio id="bgm" loop preload="auto"><source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg"></audio>
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(80,12,12);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(50,30,5);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(10,40,15);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23g)%27/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22280%22 fill=%22rgba(183,28,28,0.22)%22/%3E%3Ccircle cx=%221040%22 cy=%22340%22 r=%22300%22 fill=%22rgba(27,94,32,0.2)%22/%3E%3Ccircle cx=%22590%22 cy=%22700%22 r=%22210%22 fill=%22rgba(200,150,10,0.15)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+{name:"Bengaluru Urban",region:"Mysuru Plateau",known:"Silicon Valley of India, IT Capital, Garden City",heritage:["Lalbagh Botanical Garden","Vidhana Soudha","Tipu Sultan's Summer Palace","ISKCON Temple","Cubbon Park"],languages:["Kannada","Tamil","Telugu","Hindi","English"],bestMonths:"Oct-Feb",avgTemp:"14-34°C"},
+{name:"Mysuru",region:"Mysuru Plateau",known:"City of Palaces, Dasara Capital, Mysore Silk & Sandalwood",heritage:["Mysore Palace (Amba Vilas)","Chamundeshwari Temple","Brindavan Gardens","St. Philomena's Church"],languages:["Kannada","Tamil","Urdu"],bestMonths:"Oct-Feb",avgTemp:"14-34°C"},
+{name:"Kodagu (Coorg)",region:"Western Ghats",known:"Scotland of India, Coffee Estates, Kodava Warriors",heritage:["Abbey Falls","Namdroling Monastery Golden Temple","Raja's Seat","Brahmagiri Wildlife Sanctuary"],languages:["Kodava","Kannada","Tamil"],bestMonths:"Oct-Mar",avgTemp:"12-28°C"},
+{name:"Dakshina Kannada (Mangaluru)",region:"Coastal Karnataka",known:"Gateway to Coastal Karnataka, Tulu Culture, Temples",heritage:["Kadri Manjunath Temple","St. Aloysius Chapel","Ullal Beach","Tannirbhavi Beach"],languages:["Tulu","Kannada","Konkani","Beary"],bestMonths:"Oct-Mar",avgTemp:"18-34°C"},
+{name:"Udupi",region:"Coastal Karnataka",known:"Udupi Krishna Temple, Udupi Cuisine Capital",heritage:["Udupi Sri Krishna Temple","Manipal University","Malpe Beach","St. Mary's Island"],languages:["Tulu","Kannada","Konkani"],bestMonths:"Oct-Mar",avgTemp:"18-34°C"},
+{name:"Uttara Kannada (Karwar)",region:"Coastal Karnataka",known:"Karwar Beach, Dandeli Wildlife, Western Ghats Coast",heritage:["Karwar Beach","Dandeli Wilderness Camp","Supa Dam","Murudeshwara Temple"],languages:["Kannada","Konkani","Halakki Okkaliga"],bestMonths:"Oct-Mar",avgTemp:"16-32°C"},
+{name:"Shivamogga",region:"Western Ghats",known:"Gateway to Malnad, Jog Falls, Sahyadri Forest",heritage:["Jog Falls (India's Highest)","Keladi Temple","Tyavarekoppa Lion Safari","Shivappa Nayaka Palace"],languages:["Kannada","Havyaka"],bestMonths:"Oct-Feb",avgTemp:"14-32°C"},
+{name:"Chikkamagaluru",region:"Western Ghats",known:"Coffee Capital of India, Baba Budangiri Hills",heritage:["Baba Budangiri (First Coffee in India)","Mullayanagiri Peak (Highest in Karnataka)","Belur-Halebidu Nearby","Bhadra Wildlife Sanctuary"],languages:["Kannada","Tamil"],bestMonths:"Oct-Mar",avgTemp:"12-30°C"},
+{name:"Hassan",region:"Mysuru Plateau",known:"Hoysala Capital, Belur, Halebidu Temples",heritage:["Belur Chennakeshava Temple","Halebidu Hoysaleshwara Temple","Shravanabelagola Jain Site"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"14-32°C"},
+{name:"Ballari (Bellary)",region:"North Karnataka",known:"Iron Ore Capital, Vijayanagara Gateway",heritage:["Vijayanagara Ruins Gateway","Ballari Fort","Daroji Sloth Bear Sanctuary"],languages:["Kannada","Telugu","Urdu"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Vijayanagara (Hosapete)",region:"North Karnataka",known:"Hampi — UNESCO World Heritage, Vijayanagara Empire",heritage:["Hampi UNESCO Ruins","Virupaksha Temple","Vittala Temple Stone Chariot","Tungabhadra Dam"],languages:["Kannada","Telugu"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Raichur",region:"North Karnataka",known:"Tungabhadra-Krishna Confluence, Ancient Heritage",heritage:["Raichur Fort","Mudgal Fort","Tungabhadra-Krishna Confluence","Ancient Inscriptions"],languages:["Kannada","Urdu","Telugu"],bestMonths:"Oct-Mar",avgTemp:"18-44°C"},
+{name:"Kalaburagi (Gulbarga)",region:"North Karnataka",known:"Bahmani Sultanate Capital, Sharanabasaveshwara",heritage:["Gulbarga Fort","Jama Masjid","Sharanabasaveshwara Temple","Khwaja Bande Nawaz Dargah"],languages:["Kannada","Urdu","Telugu"],bestMonths:"Oct-Mar",avgTemp:"14-42°C"},
+{name:"Bidar",region:"North Karnataka",known:"Bidriware Craft, Bahmani Tombs, Bidar Fort",heritage:["Bidar Fort","Bahmani Tombs","Bidriware Craft Workshops","Papnash Lake"],languages:["Kannada","Urdu","Marathi"],bestMonths:"Oct-Mar",avgTemp:"12-40°C"},
+{name:"Yadgir",region:"North Karnataka",known:"Gurmatkal Fort, Krishna River",heritage:["Yadgir Fort","Krishna River Ghats","Gurmatkal Heritage"],languages:["Kannada","Urdu","Telugu"],bestMonths:"Oct-Mar",avgTemp:"16-44°C"},
+{name:"Dharwad",region:"North Karnataka",known:"Dharwad Peda, Classical Music Heritage, Education",heritage:["Nur-ud-din Dargah","Karnataka University","Dharwad Peda Heritage"],languages:["Kannada","Urdu"],bestMonths:"Oct-Mar",avgTemp:"14-36°C"},
+{name:"Gadag",region:"North Karnataka",known:"Gadag-Betgeri Twin Cities, Hoysala-Chalukya Temples",heritage:["Trikuteshwara Temple Complex","Veeranarayana Temple","Gadag Textile Heritage"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"14-38°C"},
+{name:"Haveri",region:"North Karnataka",known:"Bankapur Fort, Chalgeri Peacock Sanctuary",heritage:["Bankapur Fort","Chalgeri Peafowl Sanctuary","Cotton Heritage"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"14-38°C"},
+{name:"Belagavi (Belgaum)",region:"North Karnataka",known:"Fort Belgaum, Tribal Heritage, Border District",heritage:["Belgaum Fort","Kamal Basti Jain Temple","Gokak Falls","Navalgund Durries"],languages:["Kannada","Marathi","Urdu"],bestMonths:"Oct-Mar",avgTemp:"14-36°C"},
+{name:"Vijayapura (Bijapur)",region:"North Karnataka",known:"Gol Gumbaz, Adil Shah Sultanate, Islamic Heritage",heritage:["Gol Gumbaz","Ibrahim Rauza","Bijapur Fort","Asar Mahal"],languages:["Kannada","Urdu","Marathi"],bestMonths:"Oct-Mar",avgTemp:"14-40°C"},
+{name:"Bagalkot",region:"North Karnataka",known:"Badami Cave Temples, Aihole, Pattadakal UNESCO",heritage:["Badami Cave Temples","Pattadakal (UNESCO)","Aihole Heritage","Almatti Dam"],languages:["Kannada","Urdu"],bestMonths:"Oct-Mar",avgTemp:"16-40°C"},
+{name:"Koppal",region:"North Karnataka",known:"Pampa Sarovar, Kuknoor Temples, Hampi Gateway",heritage:["Kuknoor Temples","Pampa Sarovar (Hampi Area)","Hampi Buffer Zone"],languages:["Kannada","Telugu"],bestMonths:"Oct-Mar",avgTemp:"16-42°C"},
+{name:"Tumakuru",region:"Mysuru Plateau",known:"Siddaganga Math, Coconut City, Madhugiri Fort",heritage:["Siddaganga Math","Goravanahalli Lakshmi Temple","Madhugiri Fort","Devarayanadurga"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"16-36°C"},
+{name:"Chitradurga",region:"Mysuru Plateau",known:"Chitradurga Fort — Fort of Seven Rounds",heritage:["Chitradurga Fort","Murugharajendra Math","Vedavathi River"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"16-38°C"},
+{name:"Davangere",region:"Mysuru Plateau",known:"Benne Dose, Cotton City, Nityagrama",heritage:["Bathi Gudda","Kondajji Basavanna Temple","Nityagrama Dance Village"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"16-38°C"},
+{name:"Chamarajanagar",region:"Mysuru Plateau",known:"Nagarhole, Bandipur, MM Hills Tribals",heritage:["Nagarhole Tiger Reserve","Bandipur Tiger Reserve Buffer","Male Mahadeshwara Hills"],languages:["Kannada","Tamil"],bestMonths:"Oct-Jun",avgTemp:"14-36°C"},
+{name:"Mandya",region:"Mysuru Plateau",known:"Sugar District, Srirangapatna, Cauvery Heritage",heritage:["Srirangapatna — Tipu Sultan's Capital","Ranganathaswamy Temple","KRS Dam Brindavan Gardens","Melukote Cheluvanarayana Temple"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"16-36°C"},
+{name:"Ramanagara",region:"Mysuru Plateau",known:"Silk City, Ramnagara Boulders, Cauvery Wildlife",heritage:["Ramnagara Rock Boulders (Sholay Location)","Cauvery Wildlife Sanctuary","Raw Silk Heritage"],languages:["Kannada"],bestMonths:"Oct-Mar",avgTemp:"16-34°C"},
+{name:"Bengaluru Rural",region:"Mysuru Plateau",known:"Channapatna Toys, Devanahalli Fort",heritage:["Channapatna Toy Craft","Devanahalli Fort (Tipu Sultan Birthplace)","Nandi Hills"],languages:["Kannada","Tamil"],bestMonths:"Oct-Mar",avgTemp:"14-34°C"},
+{name:"Kolar",region:"Mysuru Plateau",known:"KGF Gold Mines, Kolaramma Temple",heritage:["Kolar Gold Fields (KGF) Heritage","Kolaramma Temple","Someshwara Temple"],languages:["Kannada","Tamil","Telugu"],bestMonths:"Oct-Mar",avgTemp:"16-34°C"},
+{name:"Chikkaballapur",region:"Mysuru Plateau",known:"Nandi Hills, Bhoga Nandeeshwara Temple, Silk",heritage:["Nandi Hills (Ananthashayana)","Bhoga Nandeeshwara Temple","Gudibande Fort"],languages:["Kannada","Telugu"],bestMonths:"Oct-Mar",avgTemp:"14-34°C"}
+];
+
+const placesData=[
+{emoji:"🏛️",name:"Hampi — Vijayanagara Empire Ruins",location:"Vijayanagara District",desc:"UNESCO World Heritage Site — the ruins of one of the largest pre-colonial cities in the world, capital of the Vijayanagara Empire that ruled most of South India from 1336 to 1565 AD. Spread across 26 sq km of extraordinary boulder-strewn landscape on the Tungabhadra river. The Vittala Temple's stone chariot, the Virupaksha Temple still in active worship, the Royal Enclosure and the Lotus Mahal create a city that time has made more beautiful.",fee:["Rs.40 Indians","Rs.600 Foreigners"]},
+{emoji:"🛕",name:"Hoysala Temples — Belur & Halebidu",location:"Hassan District",desc:"The most intricately carved temples on earth — built by the Hoysala dynasty in the 12th–13th centuries. The Chennakeshava Temple at Belur and the Hoysaleshwara Temple at Halebidu have exterior walls covered in hundreds of horizontal friezes of elephants, horses, scrolling foliage, mythological scenes and exquisitely detailed deity figures. UNESCO World Heritage Site. Sculptors worked for over 100 years on each temple.",fee:["Rs.25 Indians","Rs.300 Foreigners"]},
+{emoji:"🏰",name:"Mysore Palace (Amba Vilas)",location:"Mysuru",desc:"One of the most visited buildings in India — the Indo-Saracenic palace of the Wadiyar dynasty, built 1912, illuminated by 100,000 light bulbs every Sunday evening and during Dasara. The Durbar Hall's painted ceiling and carved teak doors, the golden howdah (elephant throne), the marriage pavilion and the sheer grandeur of its 14 domes make this one of India's supreme royal monuments.",fee:["Rs.70 Indians","Rs.200 Foreigners"]},
+{emoji:"🗿",name:"Badami Cave Temples & Pattadakal",location:"Bagalkot District",desc:"Badami contains four cave temples carved directly into the red sandstone cliffs — including an extraordinary 6th-century Vishnu temple with a cosmic vision of Vishnu reclining on Shesha (the cosmic serpent). Nearby Pattadakal is a UNESCO World Heritage Site — a cluster of 8th-century Chalukya temples representing a fusion of northern and southern architectural styles at the precise moment of their convergence.",fee:["Rs.25 Indians","Rs.300 Foreigners"]},
+{emoji:"🐘",name:"Mysuru Dasara — Royal Elephant Procession",location:"Mysuru",desc:"India's most spectacular royal festival — 10 days culminating on Vijayadashami with a procession of 12 caparisoned elephants carrying the golden howdah through Mysuru's streets, followed by torchlight cavalry and a tableau of Karnataka's culture. Watched by one million people lining the route. Karnataka's own symbol of itself — simultaneously ancient ritual and living pageant.",fee:["Free (procession)"]},
+{emoji:"🌊",name:"Jog Falls",location:"Shivamogga District",desc:"India's highest untiered waterfall — the Sharavathi river plunges 253 meters in four distinct cascades: Raja, Rani, Rover and Rocket. Most spectacular July–September when the monsoon fills the river. The sheer face of the Western Ghats cliff and the roar of the falls create an experience of raw natural power. The viewpoints above and below give completely different perspectives.",fee:["Free"]},
+{emoji:"🐯",name:"Nagarhole & Bandipur Tiger Reserves",location:"Chamarajanagar-Kodagu",desc:"Two of India's finest tiger reserves sharing a border — together forming one of the most biodiverse wildlife corridors in Asia. Nagarhole's dense teak and rosewood forests shelter tigers, leopards, wild dogs, gaur and over 250 bird species. Bandipur is the most visited tiger reserve in South India. The evening safaris as light fades over the Deccan plateau are extraordinary.",fee:["Zone-wise charges"]},
+{emoji:"🕉️",name:"Shravanabelagola — Gommateshwara Statue",location:"Hassan District",desc:"The world's largest monolithic statue — a 17.7-meter granite figure of the Jain saint Bahubali, carved in 981 AD on a bare hilltop. Every 12 years, the Mahamastakabhisheka festival anoints the statue with coconut milk, saffron, turmeric, gold coins and flowers from enormous scaffolding — one of Jainism's grandest events. The statue's serene face is visible from 25 km.",fee:["Free"]},
+{emoji:"🌿",name:"Coorg — Scotland of India",location:"Kodagu District",desc:"A high-altitude plateau at 900–1,800 meters — blanketed in coffee and cardamom estates, misty peaks and rushing streams. The Kodava warrior community has its own language, cuisine and martial tradition. Abbey Falls, Brahmagiri Peak, Raja's Seat viewpoint and the Tibetan Golden Temple at Bylakuppe create a landscape of extraordinary beauty. The aroma of coffee blossom in March fills the entire district.",fee:["Free (estate visits charged)"]},
+{emoji:"🏯",name:"Gol Gumbaz, Bijapur",location:"Vijayapura",desc:"The largest dome in India and one of the largest in the world — the mausoleum of Adil Shah II (1656) has a dome 44 meters in diameter. The Whispering Gallery just below the dome's rim transmits even the faintest sound across the entire circumference — a whisper is audible 36 meters away. The Islamic architecture of Bijapur rivals anything in the Mughal world for scale and ambition.",fee:["Rs.25 Indians","Rs.300 Foreigners"]}
+];
+
+const artsData=[
+{emoji:"🎭",name:"Yakshagana",location:"Coastal Karnataka and Malnad",desc:"Karnataka's supreme folk theatre — an all-night performance combining dance, music, elaborate costumes and improvised dialogue to narrate stories from the Mahabharata and Ramayana. The performers wear towering headdresses (kireethas), vivid face paint and costumes of extraordinary complexity. Yakshagana troupes tour coastal Karnataka and the Malnad region from October to May. It is simultaneously theatre, music, dance and ritual."},
+{emoji:"🔔",name:"Bidriware",location:"Bidar",desc:"A 14th-century metal craft unique to Bidar — zinc alloy articles inlaid with pure silver in geometric floral patterns, then darkened with a special soil paste to create the signature black-and-silver contrast. Developed in the Bahmani Sultanate under Persian influence, Bidriware — GI-tagged — produces vases, hookah bases, jewelry boxes and decorative items of extraordinary refinement. Named for the soil of Bidar's fort that alone produces the right blackening."},
+{emoji:"🧵",name:"Mysore Silk & Channapatna Toys",location:"Mysuru and Ramanagara",desc:"Mysore silk — woven on handlooms with pure gold zari (silk-wrapped gold thread) — is among India's most prestigious textiles. The Government Silk Weaving Factory established by Krishnaraja Wadiyar IV in 1912 still operates in Mysuru. Channapatna's lacquered wooden toys — GI-tagged — are made from ivory wood coated in natural lac in brilliant colors. Both are UNESCO-recognized craft traditions."},
+{emoji:"🎵",name:"Carnatic Classical Music & Bharatanatyam",location:"Bengaluru, Mysuru, Dharwad",desc:"Karnataka is the heartland of South Indian classical music — the Carnatic tradition. Purandaradasa (1484–1564), born in Karnataka, systematized the entire Carnatic classical canon and is revered as the Pitamaha (grandfather) of Carnatic music. The Dharwad school of Hindustani music (overlapping Karnataka's northern border) and the Mysuru tradition of Bharatanatyam dance together make Karnataka one of India's supreme performing arts states."},
+{emoji:"🖼️",name:"Mysore Painting & Tanjore Style",location:"Mysuru",desc:"Mysore painting — a classical South Indian style developed under Wadiyar patronage — is characterized by delicate detail, rich colors, gold leaf and a restrained elegance distinct from the bolder Tanjore style. Devotional images of Krishna, Rama, Saraswati and Lakshmi rendered in Mysore style have a luminous quality unique to the tradition. The Chitrakala Parishath in Bengaluru is the premier center for Karnataka's visual arts."},
+{emoji:"🥁",name:"Dollu Kunitha & Veeragase",location:"Statewide — Folk Traditions",desc:"Dollu Kunitha — a vigorous drum dance where performers play enormous barrel drums while dancing in synchronized formations — is one of Karnataka's most energetic folk traditions. Veeragase — the fierce dance of Veerabhadra's devotees — features acrobatic leaping and extreme physical endurance. Both are performed at village festivals, Rajyotsava and Dasara processions, embodying Karnataka's folk vitality."}
+];
+
+const traditionsData=[
+{emoji:"🐘",name:"Mysuru Dasara",location:"Mysuru — October",desc:"India's most spectacular state festival — 10 days of celebration culminating on Vijayadashami. The Mysore Palace is illuminated by 100,000 bulbs every evening; the procession on the 10th day brings 12 decorated elephants bearing the golden howdah through city streets watched by one million people. Torchlight parade, cultural programs, wrestling competitions and the symbolic burning of Ravana. The Nada Habba of Karnataka."},
+{emoji:"🌟",name:"Karnataka Rajyotsava",location:"Statewide — November 1",desc:"Karnataka's formation day — November 1, 1956, when Kannada-speaking territories were unified. Celebrated with the Rajyotsava Award (Karnataka's highest civilian honor), massive cultural programs, the unfurling of the red-and-yellow Karnataka flag, and Kannada songs played at every corner. More than a state holiday — a declaration of Kannada identity and pride."},
+{emoji:"🎊",name:"Ugadi — Kannada New Year",location:"Statewide — March/April",desc:"The Kannada and Telugu New Year — celebrated with the preparation of Ugadi Pachadi, a dish mixing six tastes (sweet, sour, bitter, salty, pungent and astringent) to represent life's full spectrum of experiences. New clothes, temple visits, mango leaf toranas at every door and the reading of Panchanga (almanac) predictions for the year. The most personally important festival in every Kannadiga household."},
+{emoji:"🪔",name:"Hampi Utsav",location:"Hampi, Vijayanagara — November",desc:"A three-day cultural festival at the ruins of Hampi — classical and folk performances on the stone stages of the Vijayanagara ruins, lit by torchlight at night. Dancers perform against the Vittala Temple backdrop; Yakshagana troupes perform through the night; musicians from across South India gather. The combination of ancient ruins and living performance creates an experience of extraordinary power."},
+{emoji:"🌸",name:"Kambala — Buffalo Racing",location:"Coastal Karnataka — November to March",desc:"The legendary traditional buffalo race of Tulu Nadu — pairs of buffaloes race through paddy field tracks while a jockey rides behind on a board. The speeds achieved (world record: 100 meters in 9.55 seconds in 2017) rival Olympic sprinters. An ancient agricultural festival, Kambala is both a competitive sport and a ritual of thanksgiving to the land. Accompanied by Tulunad folk music and community feasting."},
+{emoji:"🎭",name:"Pattadakal Dance Festival",location:"Pattadakal, Bagalkot — January",desc:"Classical dance performances staged against the UNESCO World Heritage backdrop of the 8th-century Chalukya temples of Pattadakal. Bharatanatyam, Odissi, Kathakali and Kuchipudi performers from across India present their art in front of temples that were built as platforms for exactly this purpose. One of India's most historically resonant dance festivals."}
+];
+
+const cuisinesData=[
+{emoji:"🍚",name:"Bisi Bele Bath",region:"Mysuru-Karnataka Heartland",desc:"Karnataka's most iconic comfort food — a one-pot preparation of rice, lentils, vegetables and a complex spice powder (bisi bele bath powder) cooked together with tamarind, jaggery and ghee until they become a unified whole. Served hot (bisi = hot, bele = lentil, bath = rice) with ghee poured on top, papad and pickle. A complete nutritious meal in a single vessel that embodies Karnataka's culinary philosophy."},
+{emoji:"🫓",name:"Akki Roti & Ragi Mudde",region:"Statewide",desc:"Two Karnataka staples that define the state's food identity. Akki Roti — a thick, crispy rice flour flatbread mixed with onion, chili, curry leaves and coriander, cooked on a hot pan — is eaten across Karnataka for breakfast. Ragi Mudde — a heavy ball of finger millet (ragi) cooked until stiff — is the rural Karnataka staple, eaten with sambar or saaru. Both are nutrition-dense ancient grains prepared simply."},
+{emoji:"☕",name:"Filter Coffee — South Indian Tradition",region:"Coorg, Chikkamagaluru, Bengaluru",desc:"Karnataka grows 70% of India's coffee in the mist-covered estates of Coorg and Chikkamagaluru. South Indian filter coffee — decoction brewed through a metal filter, mixed with hot milk and sugar, tumbled between tumbler and dabarah to create froth — is a ritual as much as a beverage. The Brahmin hotels (Darshinis) of Bengaluru and Mysuru have elevated the morning coffee to a cultural institution."},
+{emoji:"🌿",name:"Udupi Cuisine",region:"Udupi-Coastal Karnataka",desc:"The purest vegetarian cuisine tradition in India — developed in and around the Krishna Temple at Udupi and spread across India by Udupi restaurants. Masala dosa (the crisp rice and lentil crepe with spiced potato filling — invented here), sambar, rasam, avial, coconut-based curries and banana flower preparations. Udupi cooking uses no onion or garlic — its complexity from spices, coconut and tamarind alone is extraordinary."},
+{emoji:"🍛",name:"Kodava (Coorgi) Cuisine",region:"Kodagu",desc:"The distinctive cuisine of the Kodava warrior community — centered on pandi curry (pork with kachampuli, a tangy Coorg vinegar), kadambuttu (steamed rice dumplings), akki otti (rice flatbread) and payasam. Pandi curry — slow-cooked with black pepper, coriander, and the sour fermented kokum liquid — has a depth unique to Coorg. The Kodava community's love of pork and game reflects their warrior and hunter heritage."},
+{emoji:"🍲",name:"North Karnataka Cuisine",region:"Dharwad, Belagavi, Bidar",desc:"North Karnataka's food is distinct from the south — jowar roti (thick sorghum flatbread) with enne gai (spiced eggplant in sesame oil), shengdana chutney (peanut chutney), zunka (dry chickpea flour preparation) and the famous Dharwad peda (a caramelized milk sweet — GI tagged). Influenced by Marathi and North Indian traditions, North Karnataka cuisine is bolder, heavier and entirely different from Mysuru or Udupi cooking."},
+{emoji:"🥘",name:"Mangalorean Seafood",region:"Dakshina Kannada-Udupi Coast",desc:"Among India's finest coastal cuisines — Mangalorean fish curry (with coconut, red chilies and kudampuli), prawn ghee roast (prawns charred in ghee with Mangalorean masala until caramelized), Kane (ladyfish) fry in semolina, and Kori Rotti (chicken curry with crispy rice wafers). The specific Byadagi chili of Karnataka's coast — less hot but more red — gives Mangalorean food its distinctive deep-red color."},
+{emoji:"🍬",name:"Mysore Pak & Karnataka Sweets",region:"Mysuru",desc:"Mysore Pak — created in the Mysore Palace kitchen, a dense golden cube of chickpea flour, ghee and sugar — is one of India's most beloved sweets. The palace version uses an extraordinary ratio of ghee that makes it crumble at the touch. Dharwad Peda (GI-tagged caramelized milk sweet), Belgaum Kunda (a milk sweet), and Karjikai (sweet fried pastry) round out Karnataka's remarkable sweet-making tradition."},
+{emoji:"🫕",name:"Saaru & Huli",region:"Statewide",desc:"The two essential Karnataka gravies. Saaru (rasam) — a thin, peppery, tamarind-based soup poured over rice and drunk between courses — is both a digestive and a flavor palate cleanser. Huli (sambar) — thicker, with vegetables and a coconut-based spice blend — is the heartier accompaniment. The specific Karnataka saaru uses more pepper and less toor dal than Tamil Nadu rasam — subtle but completely different in character."},
+{emoji:"🌽",name:"Benne Dose & Darshini Culture",region:"Davangere and Bengaluru",desc:"The Benne (butter) Dose of Davangere — a thick, crispy, generously buttered variant of the dosa served with a distinctive coconut chutney and potato palya — has become one of Karnataka's most beloved street foods. The Darshini culture of Bengaluru (standing-counter vegetarian restaurants serving idli, vada, dosa and coffee at extraordinary speed) is a unique urban food institution that feeds millions every morning."}
+];
+
+const weatherData=[
+{month:"January",avgTemp:"14-28°C",weather:"Cool Winter",details:"Perfect across Karnataka. Mysuru Dasara afterglow. Hampi and Badami temples in golden morning light. Coorg misty and romantic. Nagarhole and Bandipur excellent for wildlife. Bengaluru at its most pleasant.",best:true},
+{month:"February",avgTemp:"16-30°C",weather:"Pleasant",details:"Pattadakal Dance Festival. Coffee estates in Coorg in full bloom — intoxicating fragrance. Hampi Utsav typically held this month. Kambala buffalo races peak season. Wildflowers across the Western Ghats.",best:true},
+{month:"March",avgTemp:"20-34°C",weather:"Warm",details:"Ugadi — Kannada New Year. Last comfortable month before summer heat. Holi celebrated. Summer mangoes beginning in Karnataka's orchards. Good for heritage travel before heat intensifies."},
+{month:"April",avgTemp:"22-36°C",weather:"Hot",details:"Summer arrives. Bengaluru still pleasant due to altitude. Western Ghats cooler. Pre-monsoon heat in northern Karnataka. Avoid midday outdoors at Hampi and Bijapur. Coorg and Chikkamagaluru comfortable."},
+{month:"May",avgTemp:"24-38°C",weather:"Hot",details:"Karnataka summer peak. Pre-monsoon thunderstorms begin especially in Bengaluru. Mangoes at peak. Coastal Karnataka building humidity. Not recommended for extensive outdoor heritage travel."},
+{month:"June",avgTemp:"22-30°C",weather:"Monsoon Arrives",details:"Southwest monsoon breaks over the Western Ghats — one of the most dramatic natural events in India. Jog Falls begins to wake. Coffee estates turn vivid green. Coastal Karnataka receives heaviest rainfall in India.",best:true},
+{month:"July",avgTemp:"20-28°C",weather:"Monsoon",details:"Jog Falls at maximum power. Western Ghats waterfalls emerge everywhere. The Ghats forest is impossibly lush. Hampi and Deccan plateau receive moderate rain. Coorg dramatic. Excellent if you love rain.",best:true},
+{month:"August",avgTemp:"20-28°C",weather:"Deep Monsoon",details:"Heavy rains in Western Ghats. Coastal Karnataka at maximum rainfall. Bengaluru green and misty. The Cauvery river in spate. Kodava harvest season. Not recommended for most heritage sites."},
+{month:"September",avgTemp:"20-30°C",weather:"Late Monsoon",details:"Rains easing. Nagarhole and Bandipur wildlife sanctuaries approaching reopening. Western Ghats still lush. Hampi accessible again. Pre-Dasara preparations begin in Mysuru. Transitional month of beauty."},
+{month:"October",avgTemp:"18-30°C",weather:"Autumn",details:"Mysuru Dasara — Karnataka's greatest festival. Wildlife sanctuaries reopen. Hampi in post-monsoon green. Karnataka Rajyotsava approaching. Perfect weather statewide. The most culturally rich month.",best:true},
+{month:"November",avgTemp:"16-28°C",weather:"Early Winter",details:"Karnataka Rajyotsava on November 1. Hampi Utsav. Kambala season begins. Excellent wildlife at Nagarhole. Coorg's autumn red-berry coffee harvest. Bengaluru's cultural season in full swing.",best:true},
+{month:"December",avgTemp:"14-26°C",weather:"Winter",details:"Cool and clear. Mysore Palace at its most magnificent in winter light. Jog Falls still running. Heritage circuit ideal — Badami, Aihole, Pattadakal in cool air. Coorg fog and coffee. Best overall conditions.",best:true}
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Visit Hampi at sunrise from Matanga Hill</li><li>Try filter coffee in a Darshini</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Miss the Mysore Palace illumination</li><li>Skip Hoysala temples for speed</li></ul></div>
+    </div>
+  </div></div>`;
+});
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Karnataka",heroNative:"ಕರ್ನಾಟಕ",heroTag:"Land of Sandalwood, Silk, Vijayanagara & Coffee Estates",scrollLbl:"SCROLL TO EXPLORE",qw:"&#127777; Weather",qd:"&#128205; Districts",qp:"&#127963; Places",qa:"&#127912; Arts",qt:"&#129345; Traditions",qc:"&#127374; Cuisines",lAbout:"About Karnataka",aboutTitle:"The Sandalwood State",aboutBody:"Karnataka — land of sandalwood, silk and the Carnatic musical tradition — is one of India's most layered states. The Hoysala temples at Belur and Halebidu contain the most intricate stone carving on earth. The Vijayanagara Empire ruins at Hampi are a UNESCO World Heritage Site spread across 26 sq km. Mysore Palace illuminated by 100,000 bulbs is one of India's supreme royal sights. Bengaluru is the Silicon Valley of India. The Western Ghats is a UNESCO World Heritage Site and biological hotspot. Karnataka produces 80% of India's sandalwood, 70% of its coffee and 30% of its silk.",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Karnataka",weatherNote:"October to March is ideal for Hampi, Mysuru and Bengaluru. The Western Ghats are spectacular during and after monsoon. Coorg is beautiful year-round.",lDist:"All 31 Districts",distTitle:"Every District of Karnataka",distNote:"Karnataka's 31 districts span five regions: the Deccan Plateau, Mysuru Plateau, Western Ghats, Coastal Karnataka and the Maidan.",distSearch:"Search districts...",lPlaces:"UNESCO Sites, Temples, Wildlife & Natural Wonders",placesTitle:"Wonders of Karnataka",lArts:"Arts, Crafts & Heritage",artsTitle:"Living Traditions of Karnataka",lTrad:"Festivals & Celebrations",tradTitle:"Soul of Karnataka's Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Karnataka",footerT:"JAI KARNATAKA MATA — NAMMA KARNATAKA",footerS:"Karnataka Rajyotsava — November 1 · 1956"},
+  hi:{heroName:"कर्नाटक",heroNative:"ಕರ್ನಾಟಕ",heroTag:"चंदन, रेशम, विजयनगर और कॉफी बागानों की भूमि",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",qw:"&#127777; मौसम",qd:"&#128205; जिले",qp:"&#127963; स्थल",qa:"&#127912; कलाएं",qt:"&#129345; परंपराएं",qc:"&#127374; व्यंजन",lAbout:"कर्नाटक के बारे में",aboutTitle:"चंदन की भूमि",aboutBody:"कर्नाटक — चंदन, रेशम और कर्नाटक संगीत परंपरा की भूमि — भारत के सबसे समृद्ध राज्यों में से एक है। बेलूर और हालेबीदु के होयसला मंदिर पृथ्वी पर सबसे जटिल पत्थर की नक्काशी वाले हैं। हम्पी के विजयनगर साम्राज्य के खंडहर यूनेस्को विश्व धरोहर स्थल हैं। मैसूर महल 1 लाख बल्बों से जगमगाता है। बेंगलुरु भारत की सिलिकॉन वैली है।",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"कर्नाटक कब जाएं",weatherNote:"अक्टूबर से मार्च हम्पी, मैसूरु और बेंगलुरु के लिए आदर्श है। पश्चिमी घाट मानसून के दौरान और बाद में शानदार है।",lDist:"सभी 31 जिले",distTitle:"कर्नाटक के हर जिले",distNote:"कर्नाटक के 31 जिले पाँच क्षेत्रों में फैले हैं: दक्कन पठार, मैसूरु पठार, पश्चिमी घाट, तटीय कर्नाटक और मैदान।",distSearch:"जिले खोजें...",lPlaces:"यूनेस्को स्थल, मंदिर, वन्यजीव और प्राकृतिक चमत्कार",placesTitle:"कर्नाटक के चमत्कार",lArts:"कला, शिल्प और विरासत",artsTitle:"कर्नाटक की जीवंत परंपराएं",lTrad:"त्योहार और उत्सव",tradTitle:"कर्नाटक की संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"कर्नाटक का स्वाद",footerT:"ಜೈ ಕರ್ನಾಟಕ ಮಾತಾ — ನಮ್ಮ ಕರ್ನಾಟಕ",footerS:"ಕರ್ನಾಟಕ ರಾಜ್ಯೋತ್ಸವ — ನವೆಂಬರ್ 1 · 1956"},
+  kn:{heroName:"ಕರ್ನಾಟಕ",heroNative:"ಕರ್ನಾಟಕ",heroTag:"ಶ್ರೀಗಂಧ, ರೇಷ್ಮೆ, ವಿಜಯನಗರ ಮತ್ತು ಕಾಫಿ ತೋಟಗಳ ನಾಡು",scrollLbl:"ಅನ್ವೇಷಿಸಲು ಸ್ಕ್ರೋಲ್ ಮಾಡಿ",qw:"&#127777; ಹವಾಮಾನ",qd:"&#128205; ಜಿಲ್ಲೆಗಳು",qp:"&#127963; ಸ್ಥಳಗಳು",qa:"&#127912; ಕಲೆಗಳು",qt:"&#129345; ಸಂಪ್ರದಾಯಗಳು",qc:"&#127374; ಅಡುಗೆ",lAbout:"ಕರ್ನಾಟಕದ ಬಗ್ಗೆ",aboutTitle:"ಶ್ರೀಗಂಧದ ನಾಡು",aboutBody:"ಕರ್ನಾಟಕ — ಶ್ರೀಗಂಧ, ರೇಷ್ಮೆ ಮತ್ತು ಕರ್ನಾಟಕ ಸಂಗೀತ ಸಂಪ್ರದಾಯದ ನಾಡು — ಭಾರತದ ಅತ್ಯಂತ ಶ್ರೀಮಂತ ರಾಜ್ಯಗಳಲ್ಲಿ ಒಂದು. ಬೇಲೂರು ಮತ್ತು ಹಾಳೇಬೀಡಿನ ಹೊಯ್ಸಳ ದೇವಾಲಯಗಳು ಭೂಮಿಯ ಮೇಲಿನ ಅತ್ಯಂತ ಸೂಕ್ಷ್ಮ ಕಲ್ಲಿನ ಕೆತ್ತನೆಯನ್ನು ಹೊಂದಿವೆ. ಹಂಪಿಯ ವಿಜಯನಗರ ಸಾಮ್ರಾಜ್ಯದ ಅವಶೇಷಗಳು ಯುನೆಸ್ಕೋ ವಿಶ್ವ ಪರಂಪರೆ ತಾಣ. ಮೈಸೂರು ಅರಮನೆ ೧ ಲಕ್ಷ ಬಲ್ಬುಗಳಿಂದ ಬೆಳಗುತ್ತದೆ. ಬೆಂಗಳೂರು ಭಾರತದ ಸಿಲಿಕಾನ್ ವ್ಯಾಲಿ.",lWeather:"ಹವಾಮಾನ ಮತ್ತು ಉತ್ತಮ ಸಮಯ",weatherTitle:"ಕರ್ನಾಟಕಕ್ಕೆ ಯಾವಾಗ ಹೋಗಬೇಕು",weatherNote:"ಅಕ್ಟೋಬರ್ ನಿಂದ ಮಾರ್ಚ್ ತನಕ ಹಂಪಿ, ಮೈಸೂರು ಮತ್ತು ಬೆಂಗಳೂರಿಗೆ ಆದರ್ಶ ಸಮಯ. ಪಶ್ಚಿಮ ಘಟ್ಟಗಳು ಮಳೆಗಾಲದಲ್ಲಿ ಅದ್ಭುತವಾಗಿರುತ್ತವೆ.",lDist:"ಎಲ್ಲಾ 31 ಜಿಲ್ಲೆಗಳು",distTitle:"ಕರ್ನಾಟಕದ ಪ್ರತಿ ಜಿಲ್ಲೆ",distNote:"ಕರ್ನಾಟಕದ 31 ಜಿಲ್ಲೆಗಳು ಐದು ಪ್ರದೇಶಗಳಲ್ಲಿ ಹರಡಿವೆ: ದಕ್ಕನ್ ಪ್ರಸ್ಥಭೂಮಿ, ಮೈಸೂರು ಪ್ರಸ್ಥಭೂಮಿ, ಪಶ್ಚಿಮ ಘಟ್ಟಗಳು, ಕರಾವಳಿ ಕರ್ನಾಟಕ ಮತ್ತು ಮೈದಾನ.",distSearch:"ಜಿಲ್ಲೆ ಹುಡುಕಿ...",lPlaces:"ಯುನೆಸ್ಕೋ ತಾಣಗಳು, ದೇವಾಲಯಗಳು, ವನ್ಯಜೀವಿ ಮತ್ತು ಪ್ರಕೃತಿ ಅದ್ಭುತಗಳು",placesTitle:"ಕರ್ನಾಟಕದ ಅದ್ಭುತಗಳು",lArts:"ಕಲೆಗಳು, ಕರಕುಶಲ ಮತ್ತು ಪರಂಪರೆ",artsTitle:"ಕರ್ನಾಟಕದ ಜೀವಂತ ಸಂಪ್ರದಾಯಗಳು",lTrad:"ಹಬ್ಬಗಳು ಮತ್ತು ಆಚರಣೆಗಳು",tradTitle:"ಕರ್ನಾಟಕ ಸಂಸ್ಕೃತಿಯ ಆತ್ಮ",lCuisines:"ಪಾಕ ಪರಂಪರೆ",cuisinesTitle:"ಕರ್ನಾಟಕದ ರುಚಿಗಳು",footerT:"ಜೈ ಕರ್ನಾಟಕ ಮಾತಾ — ನಮ್ಮ ಕರ್ನಾಟಕ",footerS:"ಕರ್ನಾಟಕ ರಾಜ್ಯೋತ್ಸವ — ನವೆಂಬರ್ 1 · 1956"}
+};
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc','lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote','lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'].forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.textContent=t[k];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
