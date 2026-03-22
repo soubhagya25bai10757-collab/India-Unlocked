@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manipur — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--emerald:#228B22;--gold:#D4A574;--teal:#20b2aa;--cream:#f5f1e8;--deep:#0a0e1a;--card:#ffffff08;--border:rgba(34,139,34,0.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(10,14,26,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--emerald);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--emerald);color:var(--deep);}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(245,241,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(245,241,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--emerald);color:var(--cream);border-color:var(--emerald);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--emerald);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--emerald);color:var(--cream);}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.45) saturate(1.4);animation:zk 18s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.05);}to{transform:scale(1.13);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.02) 35%,rgba(10,14,26,.95) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.2rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 28px rgba(34,139,34,.8));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(3rem,9vw,7.5rem);color:#fff;letter-spacing:.02em;line-height:1;text-shadow:0 4px 40px rgba(0,0,0,.9);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--emerald);font-style:italic;letter-spacing:.1em;margin-top:.3rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(245,241,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.8rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(34,139,34,.35);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);color:rgba(245,241,232,.75);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--emerald);color:var(--cream);border-color:var(--emerald);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.25);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--emerald),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:60px 5vw 44px;border-top:1px solid rgba(34,139,34,.08);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--emerald);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--emerald);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.1rem);color:rgba(245,241,232,.68);line-height:1.85;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s;position:relative;backdrop-filter:blur(8px);}
+.wcard:hover{background:rgba(34,139,34,.1);border-color:rgba(34,139,34,.45);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(34,139,34,.5);background:rgba(34,139,34,.08);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--emerald);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(245,241,232,.5);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--emerald);color:var(--cream);font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;font-weight:500;}
+.dsearch:focus{border-color:rgba(34,139,34,.6);}
+.dsearch::placeholder{color:rgba(245,241,232,.28);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(34,139,34,.16);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02);}
+.dacc:hover{border-color:rgba(34,139,34,.32);background:rgba(34,139,34,.05);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(34,139,34,.08);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--emerald);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--emerald);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(34,139,34,.3);background:rgba(34,139,34,.06);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--emerald);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(245,241,232,.68);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--emerald);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(34,139,34,.2);border:1px solid rgba(34,139,34,.35);color:rgba(245,241,232,.75);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.temp-badge{padding:4px 10px;border-radius:9px;font-size:.7rem;cursor:default;font-family:"Poppins",sans-serif;font-weight:500;}
+.tb-best{background:rgba(34,139,34,.25);border:1px solid rgba(34,139,34,.5);color:var(--emerald);}
+.tb-ok{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(245,241,232,.6);}
+.tb-hot{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--emerald);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(34,139,34,.07);border:1.5px solid rgba(34,139,34,.2);border-radius:16px;overflow:hidden;transition:all .35s;position:relative;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(34,139,34,.55);box-shadow:0 16px 50px rgba(34,139,34,.12);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--emerald),var(--teal));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(34,139,34,.22);border:1px solid rgba(34,139,34,.4);color:#7deaea;}
+.fb-fr{background:rgba(230,57,43,.2);border:1px solid rgba(230,57,43,.35);color:#ffb080;}
+.fb-free{background:rgba(26,122,26,.22);border:1px solid rgba(26,122,26,.4);color:#90ee90;}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(26,122,26,.14);border:1px solid rgba(26,122,26,.28);}
+.donts{background:rgba(230,57,43,.12);border:1px solid rgba(230,57,43,.25);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#90ee90;} .donts .dd-title{color:#ffb080;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(144,238,144,.78);} .donts .dd-list li{color:rgba(255,176,128,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:linear-gradient(135deg,rgba(34,139,34,.1),rgba(0,0,0,.2));border:1.5px solid rgba(34,139,34,.2);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(34,139,34,.5);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(245,241,232,.5);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.art-fee{font-size:.72rem;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(245,241,232,.65);font-family:"Poppins",sans-serif;font-weight:500;}
+footer{text-align:center;padding:50px 20px 40px;border-top:1px solid rgba(34,139,34,.08);}
+footer .fe{font-size:2.2rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(245,241,232,.25);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(245,241,232,.35);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title">MANIPUR</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">&#2361;&#2367;&#2306;&#2342;&#2368;</button>
+    <button class="lang-btn" id="lb-mn" onclick="setLang('mn')">Manipuri</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">💃</span>
+    <div class="hero-name" id="heroName">Manipur</div>
+    <div class="hero-native" id="heroNative">मणिपुर</div>
+    <div class="hero-tag" id="heroTag">Jewel of India, Land of Dance & Lakes</div>
+    <div class="tribar"><div style="background:#228B22"></div><div style="background:#ffffff"></div><div style="background:#FF6B35"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">🌡️ Weather</a>
+    <a class="qpill" href="#districts" id="qd">📍 Districts</a>
+    <a class="qpill" href="#places" id="qp">🏛️ Places</a>
+    <a class="qpill" href="#arts" id="qa">🎨 Arts</a>
+    <a class="qpill" href="#tradition" id="qt">🪔 Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">🍲 Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Manipur</span>
+  <h2 class="sec-title" id="aboutTitle">The <em>Jewel of India</em></h2>
+  <p class="sec-body" id="aboutBody">Manipur, the "Jewel of India," is a northeastern state renowned for its breathtaking natural beauty, vibrant culture and classical performing arts. Nestled in verdant valleys surrounded by majestic hills, Manipur captivates with serene lakes, pristine rivers and lush forests. Known as the "Land of Dance," Manipur is the birthplace of the world-famous Manipuri dance, a UNESCO-recognized art form expressing grace and spirituality. From the magnificent Loktak Lake with its floating islands to the sacred Shri Govardhan Temple, from bustling Imphal city to tranquil villages, Manipur offers diverse experiences. The state's rich martial arts traditions, intricate handicrafts, colorful festivals and authentic cuisine showcase Northeast India's cultural wealth. Manipur's commitment to preserving its heritage while embracing modern development creates a unique destination where ancient traditions thrive alongside contemporary life.</p>
+</section>
+
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Manipur</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Manipur experiences monsoon (May-September), pleasant autumn (October-November), cool winter (December-February) and warm spring (March-April). October to March offers ideal weather with clear skies, comfortable temperatures and excellent visibility for exploring natural sites and attending festivals.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 16 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Manipur</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Manipur's 16 districts showcase remarkable diversity from the urban capital Imphal to remote mountainous regions, from sacred pilgrimage sites to adventure destinations. Each district offers unique cultural, natural and historical attractions.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Lakes &amp; Temples</span>
+  <h2 class="sec-title" id="placesTitle">Treasures of <em>Manipur</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Manipur</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Manipuri Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Manipur</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+
+<footer>
+  <span class="fe">🙏</span>
+  <div class="ft" id="footerT">JAY MANIPUR</div>
+  <div class="fs" id="footerS">Manipur Day — March 21 · 1972</div>
+</footer>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/4/44/Indian_classical_dance_music_sample.ogg" type="audio/ogg">
+</audio>
+
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27grd%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(34,139,34);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(32,178,170);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27800%27 fill=%27url(%23grd)%27/%3E%3C/svg%3E")';
+
+const districtData = [
+  {name:"Imphal East",region:"Central",known:"Capital Zone, Urban Hub, Cultural Center",heritage:["Govardhan Temple","Kangla Fort","City Palace"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-28°C"},
+  {name:"Imphal West",region:"Central",known:"Cultural Heart, Sports Center, Tourism Gateway",heritage:["Sports Complex","Cultural Museums","City Heritage"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-28°C"},
+  {name:"Bishnupur",region:"Southern",known:"Agricultural Hub, Rural Heritage",heritage:["Temple Sites","Agricultural Heritage","Village Culture"],languages:["Manipuri","Hindi","English"],bestMonths:"Oct-Mar",avgTemp:"14-30°C"},
+  {name:"Thoubal",region:"Central",known:"Wetland Region, Loktak Gateway",heritage:["Loktak Lake","Wetland Sites","Sanctuary Areas"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"14-30°C"},
+  {name:"Ukhrul",region:"Eastern Hills",known:"Hill Station, Tribal Area, Adventure Hub",heritage:["Hill Stations","Tribal Villages","Forest Areas"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"8-24°C"},
+  {name:"Senapati",region:"Northern Hills",known:"Mountain Region, Remote Area",heritage:["Mountain Heritage","Remote Villages","Forest Sites"],languages:["Manipuri","English"],bestMonths:"Oct-Mar",avgTemp:"8-22°C"},
+  {name:"Tamenglong",region:"Northern Hills",known:"Hill Town, Adventure Destination",heritage:["Hill Attractions","Adventure Sites","Valley Views"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-25°C"},
+  {name:"Churachandpur",region:"Southern Hills",known:"Hill Station, Cultural Stronghold",heritage:["Hill Features","Tribal Culture","Nature Sites"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-26°C"},
+  {name:"Kakching",region:"Southern",known:"Rural District, Agricultural Center",heritage:["Agricultural Sites","Rural Villages","Temple Heritage"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"14-30°C"},
+  {name:"Jiribam",region:"Southern",known:"Border District, Gateway Area",heritage:["Border Heritage","Gateway Sites","Rural Culture"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"16-32°C"},
+  {name:"Noney",region:"Eastern",known:"Newly Created, Emerging Area",heritage:["Development Heritage","Natural Sites","Rural Areas"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-26°C"},
+  {name:"Kamjong",region:"Eastern Hills",known:"Hill Region, Remote Location",heritage:["Mountain Sites","Village Heritage","Nature Areas"],languages:["Manipuri","English"],bestMonths:"Oct-Mar",avgTemp:"8-22°C"},
+  {name:"Pherzawl",region:"Eastern Hills",known:"Hill District, Scenic Area",heritage:["Hill Features","Village Sites","Natural Beauty"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-24°C"},
+  {name:"Chandel",region:"Eastern",known:"Border Area, Historical Significance",heritage:["Border Heritage","Historical Sites","Village Culture"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"12-28°C"},
+  {name:"Tengnoupal",region:"Eastern Hills",known:"Hill Station, Border Gateway",heritage:["Hill Attractions","Border Sites","Gateway Areas"],languages:["Manipuri","English"],bestMonths:"Oct-Mar",avgTemp:"8-24°C"},
+  {name:"Kinguthong",region:"Eastern Hills",known:"Hill Area, Development Zone",heritage:["Hill Heritage","Natural Sites","Rural Villages"],languages:["Manipuri","English","Hindi"],bestMonths:"Oct-Mar",avgTemp:"10-25°C"}
+];
+
+const placesData = [
+  {emoji:"💧",name:"Loktak Lake",location:"Thoubal District",desc:"Unique floating ecosystem with water hyacinth islands. Second largest freshwater lake in Northeast. Home to endangered Sangai deer and rich biodiversity",fee:["Entry Charges"]},
+  {emoji:"🛕",name:"Govardhan Temple",location:"Imphal",desc:"Ancient Hindu temple with religious significance. Sacred site of pilgrimage. Architectural beauty reflecting Manipuri temple design",fee:["Free"]},
+  {emoji:"🏰",name:"Kangla Fort",location:"Imphal",desc:"Historic royal palace and fortress of Manipur rulers. Majestic structure with historical importance. Museum displaying royal artifacts",fee:["Paid"]},
+  {emoji:"🌄",name:"Ukhrul Hill Station",location:"Ukhrul",desc:"Scenic hill station with panoramic valley views. Cool mountain climate with natural beauty. Adventure destination for trekking and exploration",fee:["Free Trekking"]},
+  {emoji:"🎭",name:"Palace Complex",location:"Imphal",desc:"Royal heritage site encompassing multiple structures. Architectural showcasing traditional and modern styles. Cultural and historical significance",fee:["Restricted"]},
+  {emoji:"🌳",name:"Manipur Zoological Park",location:"Imphal",desc:"Wildlife conservation center showcasing native species. Educational facility on state's fauna. Well-maintained sanctuary for various animals",fee:["Paid"]},
+  {emoji:"🛕",name:"Shri Govardhan Temple",location:"Central Imphal",desc:"Sacred Hindu shrine with spiritual importance. Religious and cultural significance for devotees. Traditional temple architecture preserved",fee:["Free"]},
+  {emoji:"💧",name:"Lokak Sanctuary",location:"Thoubal",desc:"Protected wetland area with rare ecosystem. Floating vegetation creating unique landscape. Home to endangered species and migratory birds",fee:["Paid"]},
+  {emoji:"🎪",name:"Manipur Sports Stadium",location:"Imphal",desc:"Modern sports complex hosting international events. State-of-the-art facilities for various sports. Venue for cultural and sports celebrations",fee:["Event Entry"]},
+  {emoji:"🌲",name:"Khongjom War Memorial",location:"Bishnupur",desc:"Historical site commemorating warriors of 1891. Monument and museum honoring fallen soldiers. Sacred place for remembrance and history",fee:["Free"]}
+];
+
+const artsData = [
+  {emoji:"💃",name:"Manipuri Dance",location:"Statewide",desc:"Classical dance form with grace and spirituality. UNESCO-recognized art form. Ancient tradition preserved through generations"},
+  {emoji:"🎨",name:"Meitei Painting",location:"Art Centers",desc:"Traditional painting style with cultural themes. Vibrant colors reflecting mythology and nature. Artistic expression of Manipuri culture"},
+  {emoji:"🧵",name:"Manipur Textiles",location:"Villages",desc:"Handwoven traditional fabrics with intricate patterns. Unique designs reflecting tribal and Meitei heritage. Traditional looms producing colorful cloths"},
+  {emoji:"💃",name:"Thang Ta Dance",location:"Cultural Centers",desc:"Martial dance form with swords and spears. Ancient warrior tradition transformed into art. Expression of combat skills through movement"},
+  {emoji:"🏺",name:"Pottery & Ceramics",location:"Rural Areas",desc:"Traditional pottery using age-old techniques. Functional and decorative ceramic items. Artisan-made products with cultural significance"},
+  {emoji:"🎭",name:"Ras Leela Performance",location:"Temples & Stages",desc:"Dramatic enactment of Krishna's divine play. Religious and cultural performance tradition. Sacred performance during festival seasons"}
+];
+
+const traditionsData = [
+  {emoji:"🎉",name:"Yaoshang Festival",location:"Statewide, Spring",desc:"Spring celebration with bonfires and festivities. Joy and merriment in communities. Traditional games and cultural performances"},
+  {emoji:"🌾",name:"Cheiraoba",location:"Statewide, April",desc:"Meitei New Year celebration marking spring. Fresh harvest ceremonies and family gatherings. Cultural renewal and new beginnings"},
+  {emoji:"🎆",name:"Manipur Day",location:"Statewide, March 21",desc:"Celebration of state's formation as union territory. Parades and cultural programs showcasing heritage. National pride and state identity"},
+  {emoji:"💧",name:"Diwali Celebration",location:"Statewide",desc:"Festival of lights with traditional observances. Family gatherings and spiritual significance. Lights and celebrations across communities"},
+  {emoji:"🏹",name:"Heikru Hidongba",location:"Manipur Valley",desc:"Traditional dance celebrating martial prowess. Warrior spirit and cultural pride expressed. Ancient tradition preserved through performances"},
+  {emoji:"🎊",name:"Ras Festival",location:"Temple Grounds",desc:"Krishna worship festival with dramatic performances. Religious significance and cultural display. Sacred performances during autumn season"}
+];
+
+const cuisinesData = [
+  {emoji:"🍲",name:"Eromba",region:"Statewide, Most Famous",desc:"Smashed vegetables with fish or meat. Traditional comfort food. Simple yet flavorful traditional preparation"},
+  {emoji:"🥘",name:"Wari Doi",region:"Statewide",desc:"Fish curry with ginger and turmeric. Tangy flavor profile unique to Manipur. Traditional cooking method preserving flavors"},
+  {emoji:"🍜",name:"Chakhao Voilah",region:"Statewide",desc:"Black rice pudding with jaggery. Sweet dessert delicacy. Traditional preparation during festivals"},
+  {emoji:"🧅",name:"Iromba",region:"Statewide",desc:"Mashed potato with chilis and spices. Spicy side dish. Daily staple accompaniment to meals"},
+  {emoji:"🐟",name:"Fish Preparation",region:"Rivers & Lakes",desc:"Fresh water fish cooked traditionally. Multiple cooking methods and styles. River culture influencing food habits"},
+  {emoji:"🥒",name:"Pickles",region:"Statewide",desc:"Fermented vegetables and fruits. Traditional preservation methods. Tangy accompaniments to meals"},
+  {emoji:"🌶️",name:"Chili Dishes",region:"Statewide",desc:"Spiced preparations with local chilies. Hot flavors suited to climate. Digestive properties in traditional medicine"},
+  {emoji:"🥬",name:"Greens & Vegetables",region:"Seasonal",desc:"Fresh seasonal vegetables in traditional preparation. Nutritious and healthy options. Local produce utilization"},
+  {emoji:"☕",name:"Tea",region:"Statewide",desc:"Traditional tea preparation with spices. Morning ritual and social custom. Aromatic beverage culture"},
+  {emoji:"🧈",name:"Traditional Sweets",region:"Festival Preparation",desc:"Desserts using local ingredients. Festival treats and special occasions. Ancient recipes passed through generations"},
+  {emoji:"🍌",name:"Fruit Dishes",region:"Statewide",desc:"Fresh and preserved fruits in seasonal preparation. Natural sweetness in traditional cuisine. Local produce utilization"},
+  {emoji:"🥛",name:"Milk Products",region:"Dairy Areas",desc:"Fresh milk and dairy in traditional preparation. Nutritious food additions. Small-scale dairy practices"},
+  {emoji:"🌰",name:"Seeds & Nuts",region:"Forest Products",desc:"Nuts and seeds in various preparations. Nutritional supplements. Sustainable gathering practices"},
+  {emoji:"🍚",name:"Rice Dishes",region:"Statewide",desc:"Various rice preparations as foundation. Staple diet base. Agricultural heritage reflected"},
+  {emoji:"🧄",name:"Spice Mix",region:"Traditional Kitchens",desc:"Unique blend of local spices and herbs. Aromatic flavoring for preparations. Traditional knowledge in spice combination"},
+  {emoji:"🐟",name:"Dried Fish",region:"Water Bodies",desc:"Preserved fish products. Long shelf-life condiments. Traditional preservation and cooking methods"}
+];
+
+const weatherData = [
+  {month:"January",avgTemp:"8-22°C",weather:"Cool Winter",details:"Cool season with comfortable temperatures. Clear skies and dry conditions. Ideal weather for tourism"},
+  {month:"February",avgTemp:"10-24°C",weather:"Pleasant",details:"Warming trend begins. Still comfortable and clear. Good visibility for sightseeing"},
+  {month:"March",avgTemp:"14-28°C",weather:"Warm Spring",details:"Spring season with rising temperatures. Festival season begins. Pleasant weather continues"},
+  {month:"April",avgTemp:"18-32°C",weather:"Hot",details:"Temperatures rising considerably. New Year celebrations. Pre-monsoon conditions"},
+  {month:"May",avgTemp:"20-30°C",weather:"Monsoon Arrival",details:"Southwest monsoon begins. Regular rainfall starting. Landscape turning green gradually"},
+  {month:"June",avgTemp:"18-26°C",weather:"Monsoon Peak",details:"Heavy rainfall throughout month. Humid conditions. Roads and activities affected"},
+  {month:"July",avgTemp:"18-25°C",weather:"Monsoon",details:"Continued monsoon rainfall. Waterlogged conditions. Nature thriving with greenery"},
+  {month:"August",avgTemp:"18-26°C",weather:"Monsoon",details:"Monsoon continues with heavy showers. Flooding risks in low areas. Wet season peak"},
+  {month:"September",avgTemp:"16-28°C",weather:"Post-Monsoon",details:"Rainfall reducing gradually. Weather becoming clearer. Transitional season"},
+  {month:"October",avgTemp:"14-26°C",weather:"Autumn",details:"Perfect weather arrives. Clear skies and comfortable temperatures. Peak tourism season",best:true},
+  {month:"November",avgTemp:"10-24°C",weather:"Cool Autumn",details:"Temperature dropping noticeably. Clear visibility excellent. Comfortable conditions",best:true},
+  {month:"December",avgTemp:"8-22°C",weather:"Winter",details:"Winter approaches with cooler temperatures. Clear skies. Festival season begins"}
+];
+
+// Populate weather grid
+const wGrid = document.getElementById('wGrid');
+weatherData.forEach(w => {
+  const isBest = w.best;
+  wGrid.innerHTML += `
+    <div class="wcard${isBest?' best':''}">
+      ${isBest?'<span class="best-tag">BEST TIME</span>':''}
+      <div class="wm">${w.month}</div>
+      <div class="wt">${w.avgTemp}</div>
+      <div class="wd">${w.details}</div>
+    </div>
+  `;
+});
+
+// Populate districts
+const accordion = document.getElementById('distAccordion');
+districtData.forEach((d, idx) => {
+  const dacc = document.createElement('div');
+  dacc.className = 'dacc';
+  dacc.dataset.name = d.name.toLowerCase();
+  
+  dacc.innerHTML = `
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div>
+        <div class="dacc-name">${d.name}</div>
+        <div class="dacc-region">${d.region}</div>
+      </div>
+      <div class="dacc-arrow">⌄</div>
+    </div>
+    <div class="dacc-body">
+      <div class="dacc-inner">
+        <div class="dinfo-card">
+          <div class="dinfo-title">Known For</div>
+          <ul class="dinfo-list">
+            <li>${d.known}</li>
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Heritage Sites</div>
+          <ul class="dinfo-list">
+            ${d.heritage.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="dinfo-card">
+          <div class="dinfo-title">Languages</div>
+          <div class="lang-chips">
+            ${d.languages.map(l => `<span class="lchip">${l}</span>`).join('')}
+          </div>
+          <div class="best-month-tag">Best: ${d.bestMonths}</div>
+          <div class="temp-row">
+            <span class="temp-badge tb-best">${d.avgTemp}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  accordion.appendChild(dacc);
+});
+
+// Populate places
+const pGrid = document.getElementById('pGrid');
+placesData.forEach(p => {
+  pGrid.innerHTML += `
+    <div class="pcard">
+      <div class="pcard-acc"></div>
+      <div class="pcard-body">
+        <span class="pi">${p.emoji}</span>
+        <div class="pn">${p.name}</div>
+        <div class="pl">${p.location}</div>
+        <div class="pd">${p.desc}</div>
+        <div class="fee-row">
+          ${Array.isArray(p.fee) ? p.fee.map(f => `<span class="fee-badge ${f.includes('Free')?'fb-free':f.includes('Foreign')?'fb-fr':'fb-in'}">${f}</span>`).join('') : `<span class="fee-badge ${p.fee.includes('Free')?'fb-free':'fb-in'}">${p.fee}</span>`}
+        </div>
+        <div class="dos-donts">
+          <div class="dos">
+            <div class="dd-title">✓ DO</div>
+            <ul class="dd-list">
+              <li>Respect sacred sites</li>
+              <li>Preserve traditions</li>
+            </ul>
+          </div>
+          <div class="donts">
+            <div class="dd-title">✗ DON'T</div>
+            <ul class="dd-list">
+              <li>Disrupt performances</li>
+              <li>Ignore cultural norms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Populate arts
+const artGrid = document.getElementById('artGrid');
+artsData.forEach(a => {
+  artGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${a.emoji}</span>
+      <div class="at">${a.name}</div>
+      <div class="ad">${a.desc}</div>
+      <div class="art-fee"><span>${a.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate traditions
+const tradGrid = document.getElementById('tradGrid');
+traditionsData.forEach(t => {
+  tradGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${t.emoji}</span>
+      <div class="at">${t.name}</div>
+      <div class="ad">${t.desc}</div>
+      <div class="art-fee"><span>${t.location}</span></div>
+    </div>
+  `;
+});
+
+// Populate cuisines
+const cuisinesGrid = document.getElementById('cuisinesGrid');
+cuisinesData.forEach(c => {
+  cuisinesGrid.innerHTML += `
+    <div class="acard">
+      <span class="ae">${c.emoji}</span>
+      <div class="at">${c.name}</div>
+      <div class="ad">${c.desc}</div>
+      <div class="art-fee"><span>${c.region}</span></div>
+    </div>
+  `;
+});
+
+// Accordion toggle
+let openAccordion = null;
+function toggleAccordion(idx) {
+  const accords = document.querySelectorAll('.dacc');
+  const current = accords[idx];
+  
+  if(openAccordion !== null && openAccordion !== idx) {
+    accords[openAccordion].classList.remove('open');
+  }
+  
+  current.classList.toggle('open');
+  openAccordion = current.classList.contains('open') ? idx : null;
+}
+
+// Search districts
+function filterDistricts(query) {
+  const accords = document.querySelectorAll('.dacc');
+  accords.forEach(a => {
+    a.style.display = a.dataset.name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+
+// Music toggle
+function toggleMusic() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('musicBtn');
+  if(audio.paused) {
+    audio.play();
+    btn.classList.add('on');
+  } else {
+    audio.pause();
+    btn.classList.remove('on');
+  }
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Language translations
+const translations = {
+  en: {
+    navTitle: "MANIPUR",
+    heroName: "Manipur",
+    heroNative: "मणिपुर",
+    heroTag: "Jewel of India, Land of Dance & Lakes",
+    scrollLbl: "SCROLL TO EXPLORE",
+    weatherPill: "🌡️ Weather",
+    districtsPill: "📍 Districts",
+    placesPill: "🏛️ Places",
+    artsPill: "🎨 Arts",
+    tradPill: "🪔 Traditions",
+    cuisinesPill: "🍲 Cuisines",
+    aboutLbl: "About Manipur",
+    aboutTitle: "The Jewel of India",
+    aboutBody: "Manipur, the 'Jewel of India,' is a northeastern state renowned for its breathtaking natural beauty, vibrant culture and classical performing arts. Nestled in verdant valleys surrounded by majestic hills, Manipur captivates with serene lakes, pristine rivers and lush forests. Known as the 'Land of Dance,' Manipur is the birthplace of the world-famous Manipuri dance, a UNESCO-recognized art form expressing grace and spirituality.",
+    weatherLbl: "Climate & Best Time",
+    weatherTitle: "When to Visit Manipur",
+    weatherNote: "Manipur experiences monsoon (May-September), pleasant autumn (October-November), cool winter (December-February) and warm spring (March-April). October to March offers ideal weather with clear skies, comfortable temperatures and excellent visibility for exploring natural sites and attending festivals.",
+    distLbl: "All 16 Districts",
+    distTitle: "Every District of Manipur",
+    distNote: "Manipur's 16 districts showcase remarkable diversity from the urban capital Imphal to remote mountainous regions, from sacred pilgrimage sites to adventure destinations. Each district offers unique cultural, natural and historical attractions.",
+    distSearch: "Search districts...",
+    placesLbl: "Lakes & Temples",
+    placesTitle: "Treasures of Manipur",
+    artsLbl: "Arts, Crafts & Heritage",
+    artsTitle: "Living Traditions of Manipur",
+    tradLbl: "Festivals & Celebrations",
+    tradTitle: "Soul of Manipuri Culture",
+    cuisinesLbl: "Culinary Heritage",
+    cuisinesTitle: "Flavors of Manipur",
+    footerT: "JAY MANIPUR",
+    footerS: "Manipur Day — March 21 · 1972"
+  },
+  hi: {
+    navTitle: "मणिपुर",
+    heroName: "मणिपुर",
+    heroNative: "मणिपुर",
+    heroTag: "भारत का रत्न, नृत्य और झीलों की भूमि",
+    scrollLbl: "अन्वेषण के लिए स्क्रॉल करें",
+    weatherPill: "🌡️ मौसम",
+    districtsPill: "📍 जिले",
+    placesPill: "🏛️ स्थान",
+    artsPill: "🎨 कला",
+    tradPill: "🪔 परंपराएं",
+    cuisinesPill: "🍲 खान-पान",
+    aboutLbl: "मणिपुर के बारे में",
+    aboutTitle: "भारत का रत्न",
+    aboutBody: "मणिपुर, 'भारत का रत्न,' एक उत्तरपूर्वी राज्य है जो अपनी लुभावनी प्राकृतिक सुंदरता, जीवंत संस्कृति और शास्त्रीय प्रदर्शन कलाओं के लिए प्रसिद्ध है। हरी-भरी घाटियों में स्थित महान पहाड़ों से घिरा, मणिपुर शांत झीलों, कुंवारी नदियों और हरी-भरी जंगलों से मुग्ध करता है।",
+    weatherLbl: "जलवायु और सर्वश्रेष्ठ समय",
+    weatherTitle: "मणिपुर कब जाएं",
+    weatherNote: "मणिपुर मानसून (मई-सितंबर), सुखद शरद ऋतु (अक्टूबर-नवंबर), ठंडी सर्दी (दिसंबर-फरवरी) और गर्म बसंत (मार्च-अप्रैल) का अनुभव करता है।",
+    distLbl: "सभी 16 जिले",
+    distTitle: "मणिपुर के हर जिले",
+    distNote: "मणिपुर के 16 जिले शहरी राजधानी इंफाल से लेकर दूरस्थ पर्वतीय क्षेत्रों तक उल्लेखनीय विविधता प्रदर्शित करते हैं।",
+    distSearch: "जिलों को खोजें...",
+    placesLbl: "झीलें और मंदिर",
+    placesTitle: "मणिपुर के खजाने",
+    artsLbl: "कला, शिल्प और विरासत",
+    artsTitle: "मणिपुर की जीवंत परंपराएं",
+    tradLbl: "त्योहार और समारोह",
+    tradTitle: "मणिपुरी संस्कृति की आत्मा",
+    cuisinesLbl: "पाक परंपरा",
+    cuisinesTitle: "मणिपुर का स्वाद",
+    footerT: "जय मणिपुर",
+    footerS: "मणिपुर दिवस — 21 मार्च · 1972"
+  },
+  mn: {
+    navTitle: "MANIPUR",
+    heroName: "Manipur",
+    heroNative: "मणिपुर",
+    heroTag: "India Gem Dance Lakes Land",
+    scrollLbl: "SCROLL EXPLORE",
+    weatherPill: "🌡️ Climate",
+    districtsPill: "📍 Region",
+    placesPill: "🏛️ Place",
+    artsPill: "🎨 Art",
+    tradPill: "🪔 Festival",
+    cuisinesPill: "🍲 Food",
+    aboutLbl: "Manipur About",
+    aboutTitle: "India Jewel",
+    aboutBody: "Manipur India jewel state natural beauty vibrant culture classical dance art. Verdant valley majestic mountain lake pristine river forest. Dance Land Manipuri dance UNESCO recognized art.",
+    weatherLbl: "Climate Best Time",
+    weatherTitle: "Manipur Visit When",
+    weatherNote: "Manipur monsoon pleasant fall cool winter warm spring experience. October March ideal weather clear sky temperature visibility.",
+    distLbl: "Region 16",
+    distTitle: "Manipur Every Region",
+    distNote: "Manipur 16 region urban capital remote mountain pilgrimage adventure destination showing.",
+    distSearch: "Region find...",
+    placesLbl: "Lake Temple",
+    placesTitle: "Manipur Treasure",
+    artsLbl: "Art Craft Heritage",
+    artsTitle: "Manipur Living Tradition",
+    tradLbl: "Festival Celebration",
+    tradTitle: "Manipuri Culture Soul",
+    cuisinesLbl: "Food Heritage",
+    cuisinesTitle: "Manipur Flavor",
+    footerT: "JAY MANIPUR",
+    footerS: "Manipur Day — March 21 · 1972"
+  }
+};
+
+// Language setting function
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lb-' + lang).classList.add('active');
+  
+  const t = translations[lang];
+  
+  document.getElementById('heroName').textContent = t.heroName;
+  document.getElementById('heroNative').textContent = t.heroNative;
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('scrollLbl').textContent = t.scrollLbl;
+  document.getElementById('qw').textContent = t.weatherPill;
+  document.getElementById('qd').textContent = t.districtsPill;
+  document.getElementById('qp').textContent = t.placesPill;
+  document.getElementById('qa').textContent = t.artsPill;
+  document.getElementById('qt').textContent = t.tradPill;
+  document.getElementById('qc').textContent = t.cuisinesPill;
+  document.getElementById('lAbout').textContent = t.aboutLbl;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutBody').textContent = t.aboutBody;
+  document.getElementById('lWeather').textContent = t.weatherLbl;
+  document.getElementById('weatherTitle').textContent = t.weatherTitle;
+  document.getElementById('weatherNote').textContent = t.weatherNote;
+  document.getElementById('lDist').textContent = t.distLbl;
+  document.getElementById('distTitle').textContent = t.distTitle;
+  document.getElementById('distNote').textContent = t.distNote;
+  document.getElementById('distSearch').placeholder = t.distSearch;
+  document.getElementById('lPlaces').textContent = t.placesLbl;
+  document.getElementById('placesTitle').textContent = t.placesTitle;
+  document.getElementById('lArts').textContent = t.artsLbl;
+  document.getElementById('artsTitle').textContent = t.artsTitle;
+  document.getElementById('lTrad').textContent = t.tradLbl;
+  document.getElementById('tradTitle').textContent = t.tradTitle;
+  document.getElementById('lCuisines').textContent = t.cuisinesLbl;
+  document.getElementById('cuisinesTitle').textContent = t.cuisinesTitle;
+  document.getElementById('footerT').textContent = t.footerT;
+  document.getElementById('footerS').textContent = t.footerS;
+}
+</script>
+</body>
+</html>
