@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arunachal Pradesh — Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--dawn:#C87320;--pine:#1B5E35;--sky:#1A4A7A;--gold:#D4A010;--cream:#fdf5e8;--deep:#060809;--border:rgba(27,94,53,0.24);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:"Crimson Text",serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;height:54px;background:rgba(6,8,9,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.back-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.back-btn:hover{background:var(--pine);color:#fff;}
+.nav-title{font-family:"Poppins",sans-serif;font-size:.75rem;letter-spacing:.15em;color:rgba(253,245,232,.7);font-weight:600;}
+.lang-bar{display:flex;gap:5px;}
+.lang-btn{padding:5px 14px;border-radius:18px;border:1px solid var(--border);background:transparent;color:rgba(253,245,232,.6);font-family:"Poppins",sans-serif;font-size:.54rem;letter-spacing:.07em;cursor:pointer;transition:all .3s;font-weight:500;}
+.lang-btn.active,.lang-btn:hover{background:var(--pine);color:#fff;border-color:var(--pine);}
+.music-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.music-btn.on,.music-btn:hover{background:var(--pine);color:#fff;}
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:zk 22s ease-in-out infinite alternate;}
+@keyframes zk{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,9,.18) 0%,rgba(6,8,9,.04) 38%,rgba(6,8,9,.94) 100%);}
+.hero-c{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.hero-emoji{font-size:clamp(2rem,4vw,3.4rem);display:block;margin-bottom:.3rem;filter:drop-shadow(0 0 30px rgba(200,115,32,.9));}
+.hero-name{font-family:"Poppins",sans-serif;font-size:clamp(1.8rem,6.5vw,6rem);color:#fff;letter-spacing:.01em;line-height:1;text-shadow:0 4px 48px rgba(0,0,0,.88);font-weight:700;}
+.hero-native{font-size:clamp(1.1rem,2.8vw,2rem);color:var(--gold);font-style:italic;letter-spacing:.08em;margin-top:.4rem;font-weight:500;}
+.hero-tag{font-size:clamp(.8rem,1.6vw,1.05rem);color:rgba(253,245,232,.65);font-style:italic;letter-spacing:.1em;margin-top:.9rem;}
+.tribar{display:flex;width:180px;height:5px;border-radius:2px;overflow:hidden;margin:1rem auto 0;gap:3px;}
+.tribar div{flex:1;border-radius:2px;}
+.qnav{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;z-index:2;}
+.qpill{padding:6px 16px;border-radius:20px;border:1.5px solid rgba(27,94,53,.38);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);color:rgba(253,245,232,.78);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:all .3s;text-decoration:none;font-family:"Poppins",sans-serif;font-weight:500;}
+.qpill:hover{background:var(--pine);color:#fff;border-color:var(--pine);}
+.sarrow-wrap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;}
+.sarrow-lbl{font-family:"Poppins",sans-serif;font-size:.44rem;letter-spacing:.4em;color:rgba(255,255,255,.22);font-weight:600;}
+.sarrow{width:2px;height:30px;background:linear-gradient(180deg,var(--gold),transparent);animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:bottom;}}
+section{padding:62px 5vw 46px;border-top:1px solid rgba(27,94,53,.1);}
+.sec-lbl{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem;display:block;font-weight:600;}
+.sec-title{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--cream);margin-bottom:.8rem;line-height:1.1;font-weight:700;}
+.sec-title em{color:var(--gold);font-style:italic;}
+.sec-body{font-size:clamp(.95rem,1.6vw,1.12rem);color:rgba(253,245,232,.7);line-height:1.88;letter-spacing:.02em;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:20px;}
+.wcard{background:rgba(27,94,53,.1);border:1px solid rgba(27,94,53,.28);border-radius:14px;padding:16px;transition:all .3s;position:relative;}
+.wcard:hover{background:rgba(27,94,53,.18);border-color:rgba(27,94,53,.5);transform:translateY(-4px);}
+.wcard.best{border-color:rgba(212,160,16,.55);background:rgba(212,160,16,.1);}
+.wm{font-family:"Poppins",sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;font-weight:600;}
+.wt{font-size:1.5rem;color:var(--cream);font-weight:400;margin-bottom:4px;}
+.wd{font-size:.78rem;color:rgba(253,245,232,.52);font-style:italic;line-height:1.6;}
+.best-tag{position:absolute;top:10px;right:10px;background:var(--dawn);color:#fff;font-family:"Poppins",sans-serif;font-size:.46rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;font-weight:600;}
+.dsearch{width:100%;max-width:420px;padding:11px 18px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:28px;color:var(--cream);font-family:"Crimson Text",serif;font-size:1rem;outline:none;letter-spacing:.02em;margin-bottom:18px;transition:border-color .3s;display:block;}
+.dsearch:focus{border-color:rgba(27,94,53,.65);}
+.dsearch::placeholder{color:rgba(253,245,232,.3);}
+.dist-accordion{display:flex;flex-direction:column;gap:11px;}
+.dacc{border:1px solid rgba(27,94,53,.24);border-radius:16px;overflow:hidden;transition:all .3s;background:rgba(27,94,53,.08);}
+.dacc:hover{border-color:rgba(27,94,53,.42);background:rgba(27,94,53,.14);}
+.dacc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:transparent;transition:all .3s;user-select:none;}
+.dacc-hdr:hover{background:rgba(27,94,53,.1);}
+.dacc-name{font-family:"Poppins",sans-serif;font-size:.88rem;color:var(--cream);letter-spacing:.06em;font-weight:600;}
+.dacc-region{font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin-top:4px;font-weight:500;}
+.dacc-arrow{color:var(--gold);font-size:.85rem;transition:transform .35s;flex-shrink:0;font-weight:600;}
+.dacc.open .dacc-arrow{transform:rotate(180deg);}
+.dacc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.dacc.open .dacc-body{max-height:3500px;}
+.dacc-inner{padding:0 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;}
+.dinfo-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;transition:all .3s;}
+.dinfo-card:hover{border-color:rgba(27,94,53,.35);background:rgba(27,94,53,.1);}
+.dinfo-title{font-family:"Poppins",sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.dinfo-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.dinfo-list li{font-size:.82rem;color:rgba(253,245,232,.7);line-height:1.6;display:flex;align-items:flex-start;gap:7px;}
+.dinfo-list li::before{content:"◆";color:var(--dawn);flex-shrink:0;font-size:.6rem;}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.lchip{padding:4px 12px;border-radius:12px;background:rgba(27,94,53,.2);border:1px solid rgba(27,94,53,.38);color:rgba(253,245,232,.8);font-size:.72rem;font-family:"Poppins",sans-serif;font-weight:500;}
+.temp-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.tb-best{padding:4px 10px;border-radius:9px;font-size:.7rem;font-family:"Poppins",sans-serif;font-weight:500;background:rgba(212,160,16,.2);border:1px solid rgba(212,160,16,.42);color:var(--gold);}
+.best-month-tag{margin-top:11px;font-size:.82rem;color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:20px;}
+.pcard{background:rgba(27,94,53,.09);border:1.5px solid rgba(27,94,53,.24);border-radius:16px;overflow:hidden;transition:all .35s;}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(27,94,53,.55);box-shadow:0 18px 54px rgba(27,94,53,.16);}
+.pcard-acc{height:6px;background:linear-gradient(90deg,var(--pine),var(--gold));}
+.pcard-body{padding:20px;}
+.pi{font-size:2rem;margin-bottom:8px;display:block;}
+.pn{font-family:"Poppins",sans-serif;font-size:.82rem;color:var(--cream);letter-spacing:.05em;margin-bottom:4px;font-weight:600;}
+.pl{font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.pd{font-size:.8rem;color:rgba(253,245,232,.52);line-height:1.72;font-style:italic;margin-bottom:12px;}
+.fee-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.fee-badge{font-size:.7rem;padding:4px 11px;border-radius:9px;font-family:"Poppins",sans-serif;font-weight:500;}
+.fb-in{background:rgba(27,94,53,.22);border:1px solid rgba(27,94,53,.42);color:#a8ffc0;}
+.fb-fr{background:rgba(26,74,122,.2);border:1px solid rgba(26,74,122,.38);color:#a0c8ff;}
+.fb-free{background:rgba(212,160,16,.18);border:1px solid rgba(212,160,16,.38);color:var(--gold);}
+.dos-donts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px;}
+.dos,.donts{border-radius:10px;padding:11px 12px;}
+.dos{background:rgba(27,94,53,.14);border:1px solid rgba(27,94,53,.3);}
+.donts{background:rgba(26,74,122,.12);border:1px solid rgba(26,74,122,.26);}
+.dd-title{font-family:"Poppins",sans-serif;font-size:.58rem;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+.dos .dd-title{color:#a8ffc0;}.donts .dd-title{color:#a0c8ff;}
+.dd-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dd-list li{font-size:.72rem;line-height:1.5;display:flex;gap:6px;}
+.dos .dd-list li{color:rgba(168,255,192,.78);}.donts .dd-list li{color:rgba(160,200,255,.72);}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.acard{background:rgba(27,94,53,.1);border:1.5px solid rgba(27,94,53,.28);border-radius:16px;padding:22px;transition:all .3s;}
+.acard:hover{transform:translateY(-4px);border-color:rgba(27,94,53,.52);background:rgba(27,94,53,.18);}
+.ae{font-size:2rem;display:block;margin-bottom:10px;}
+.at{font-family:"Poppins",sans-serif;font-size:.8rem;color:var(--cream);letter-spacing:.08em;margin-bottom:7px;font-weight:600;}
+.ad{font-size:.78rem;color:rgba(253,245,232,.52);line-height:1.72;font-style:italic;margin-bottom:10px;}
+.art-fee span{padding:3px 11px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(253,245,232,.68);font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;}
+footer{text-align:center;padding:52px 20px 42px;border-top:1px solid rgba(27,94,53,.1);}
+footer .fe{font-size:2.4rem;display:block;margin-bottom:.6rem;}
+footer .ft{font-family:"Poppins",sans-serif;font-size:.62rem;letter-spacing:.4em;color:rgba(253,245,232,.22);font-weight:600;}
+footer .fs{margin-top:11px;font-size:.85rem;color:rgba(253,245,232,.32);font-style:italic;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:600px){section{padding:44px 4vw 32px;}.wgrid{grid-template-columns:repeat(2,1fr);}.dacc-inner{grid-template-columns:1fr;}.qnav{display:none;}.dos-donts{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" onclick="window.location.href='index.html'">&#8592;</button>
+    <span class="nav-title" id="navTitle">ARUNACHAL PRADESH</span>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="lb-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="lb-hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" id="lb-ny" onclick="setLang('ny')">Nyishi</button>
+  </div>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+</nav>
+<div class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <span class="hero-emoji">&#127780;&#65039;</span>
+    <div class="hero-name" id="heroName">Arunachal Pradesh</div>
+    <div class="hero-native" id="heroNative">अरुणाचल प्रदेश</div>
+    <div class="hero-tag" id="heroTag">Land of the Dawn-Lit Mountains — Where India Greets the Sun First</div>
+    <div class="tribar"><div style="background:#C87320"></div><div style="background:#D4A010"></div><div style="background:#1B5E35"></div></div>
+  </div>
+  <div class="qnav">
+    <a class="qpill" href="#weather" id="qw">&#127777; Weather</a>
+    <a class="qpill" href="#districts" id="qd">&#128205; Districts</a>
+    <a class="qpill" href="#places" id="qp">&#127963; Places</a>
+    <a class="qpill" href="#arts" id="qa">&#127912; Arts</a>
+    <a class="qpill" href="#tradition" id="qt">&#129345; Traditions</a>
+    <a class="qpill" href="#cuisines" id="qc">&#127374; Cuisines</a>
+  </div>
+  <div class="sarrow-wrap"><span class="sarrow-lbl" id="scrollLbl">SCROLL TO EXPLORE</span><div class="sarrow"></div></div>
+</div>
+<section id="about" class="fade-in">
+  <span class="sec-lbl" id="lAbout">About Arunachal Pradesh</span>
+  <h2 class="sec-title" id="aboutTitle">Where <em>India Sees the First Light</em></h2>
+  <p class="sec-body" id="aboutBody">Arunachal Pradesh — literally "Land of the Dawn-Lit Mountains" (Aruna = dawn, Achal = mountains) — is the easternmost state of India and the first place on the subcontinent to receive the rising sun each morning. This vast, breathtaking frontier covers 83,743 sq km — larger than Austria — and shares borders with China, Bhutan and Myanmar. It is the largest state in Northeast India and one of India's most ecologically and culturally extraordinary places. The Eastern Himalayas here rise from sub-tropical rainforests at 100 meters to alpine meadows at 7,000 meters in a single valley — a biodiversity gradient found nowhere else on earth. Arunachal Pradesh is home to more species of orchid (600+ species) than any other region in the world, more species of rhododendron than anywhere outside the Himalayas, and forests of sal, teak, bamboo and pine that remain largely intact because the state's terrain has never allowed industrialized logging. The Brahmaputra river — called the Siang in Arunachal — enters India here from Tibet through one of the world's deepest gorges, carving the Great Bend of the Himalayas. Arunachal Pradesh is home to over 26 major tribes and more than 100 sub-tribes, each with their own language, religion, dress, dance and architecture. The Adi, Nyishi, Galo, Apatani, Monpa, Wancho, Nocte, Tangsa and dozens of other communities have lived in these mountains and valleys for thousands of years with a relationship to the land and forest that is irreplaceable and deeply sophisticated. The Tawang Monastery — one of the largest Buddhist monasteries in Asia outside Tibet — stands at 10,000 feet, founded in the 17th century, watching over the valley where the 6th Dalai Lama was born. The Ziro Valley — a UNESCO World Heritage nominee — is a breathtaking landscape of pine-forested hills and terraced paddy fields where the Apatani tribe's agriculture is a masterpiece of sustainable farming. The Namdapha National Park in the east is one of the world's most biodiverse protected areas — the only park in the world with four big cat species (tiger, leopard, snow leopard and clouded leopard). This is Arunachal: ancient, misty, alive and the first dawn in India.</p>
+</section>
+<section id="weather" class="fade-in">
+  <span class="sec-lbl" id="lWeather">Climate &amp; Best Time</span>
+  <h2 class="sec-title" id="weatherTitle">When to Visit <em>Arunachal Pradesh</em></h2>
+  <p class="sec-body" id="weatherNote" style="margin-bottom:0">Arunachal has extreme climate variation — tropical lowlands, temperate valleys and alpine highlands. October to April is ideal for most areas: Tawang is spectacular in October-November (after monsoon) and March-April (spring flowers); Ziro is beautiful year-round; Namdapha is best November-April. All visitors require an Inner Line Permit (ILP) before entering.</p>
+  <div class="wgrid" id="wGrid"></div>
+</section>
+<section id="districts" class="fade-in">
+  <span class="sec-lbl" id="lDist">All 26 Districts</span>
+  <h2 class="sec-title" id="distTitle">Every District of <em>Arunachal Pradesh</em></h2>
+  <p class="sec-body" id="distNote" style="margin-bottom:18px">Arunachal's 26 districts span the full sweep of the Eastern Himalayas — from the Buddhist Monpa heartland of Tawang in the northwest to the Wancho tribal territory of Longding in the east. Each district is a self-contained world of language, culture and ecology.</p>
+  <input class="dsearch" type="text" id="distSearch" placeholder="Search districts..." oninput="filterDistricts(this.value)">
+  <div class="dist-accordion" id="distAccordion"></div>
+</section>
+<section id="places" class="fade-in">
+  <span class="sec-lbl" id="lPlaces">Monasteries, Valleys, Wildlife &amp; High Passes</span>
+  <h2 class="sec-title" id="placesTitle">Wonders of <em>Arunachal Pradesh</em></h2>
+  <div class="pgrid" id="pGrid"></div>
+</section>
+<section id="arts" class="fade-in">
+  <span class="sec-lbl" id="lArts">Tribal Arts, Crafts &amp; Heritage</span>
+  <h2 class="sec-title" id="artsTitle">Living Traditions of <em>Arunachal Pradesh</em></h2>
+  <div class="agrid" id="artGrid"></div>
+</section>
+<section id="tradition" class="fade-in">
+  <span class="sec-lbl" id="lTrad">Festivals &amp; Tribal Celebrations</span>
+  <h2 class="sec-title" id="tradTitle">Soul of <em>Arunachal's Culture</em></h2>
+  <div class="agrid" id="tradGrid"></div>
+</section>
+<section id="cuisines" class="fade-in">
+  <span class="sec-lbl" id="lCuisines">Culinary Heritage</span>
+  <h2 class="sec-title" id="cuisinesTitle">Flavors of <em>Arunachal Pradesh</em></h2>
+  <div class="agrid" id="cuisinesGrid"></div>
+</section>
+<footer>
+  <span class="fe">&#128591;</span>
+  <div class="ft" id="footerT">JAI ARUNACHAL — LAND OF THE RISING SUN</div>
+  <div class="fs" id="footerS">Arunachal Pradesh Statehood Day — February 20 &middot; 1987</div>
+</footer>
+<audio id="bgm" loop preload="auto"><source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Northeast_India_traditional_music_sample.ogg" type="audio/ogg"></audio>
+<script>
+document.getElementById('heroBg').style.backgroundImage='url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 800%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:rgb(60,30,8);stop-opacity:1%27/%3E%3Cstop offset=%2748%25%27 style=%27stop-color:rgb(15,45,22);stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:rgb(10,28,55);stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/%3E%3Ccircle cx=%22180%22 cy=%22180%22 r=%22250%22 fill=%22rgba(200,115,32,0.28)%22/%3E%3Ccircle cx=%221040%22 cy=%22320%22 r=%22280%22 fill=%22rgba(27,94,53,0.22)%22/%3E%3Ccircle cx=%22600%22 cy=%22700%22 r=%22200%22 fill=%22rgba(26,74,122,0.18)%22/%3E%3C/svg%3E")';
+
+const districtData=[
+{name:"Tawang",region:"Western Arunachal",known:"Tawang Monastery, Sela Pass, Birthplace of 6th Dalai Lama",heritage:["Tawang Monastery (400 years old)","Sela Pass (13,700 ft)","Nuranang-Jaswant Garh Waterfall","Madhuri Lake (Shonga-tser Lake)","Bumla Pass — India-China Border"],languages:["Monpa","Sherdukpen","Hindi"],bestMonths:"Mar-May, Oct-Nov",avgTemp:"-8 to 15°C"},
+{name:"West Kameng",region:"Western Arunachal",known:"Eaglenest Wildlife — Rarest Birds, Dirang Valley",heritage:["Eaglenest Wildlife Sanctuary","Dirang Dzong Fort","Sangti Valley — Black-necked Crane Winter","Bomdila Monastery"],languages:["Sherdukpen","Bugun","Miji","Hindi"],bestMonths:"Oct-Apr",avgTemp:"-5 to 22°C"},
+{name:"East Kameng",region:"Central Arunachal",known:"Pakke Tiger Reserve, Nyishi Tribal Heartland",heritage:["Pakke Tiger Reserve (UNESCO WHS tentative)","Nyishi Cultural Sites","Bichom River Valley"],languages:["Nyishi","Miji","Hindi"],bestMonths:"Nov-Mar",avgTemp:"5-32°C"},
+{name:"Papum Pare",region:"Central Arunachal",known:"Itanagar Capital, Ita Fort, State Capital Region",heritage:["Ita Fort (15th century)","Itanagar Buddhist Temple","Ganga Lake (Gekar Sinyi)"],languages:["Nyishi","Hindi","English"],bestMonths:"Oct-Apr",avgTemp:"10-30°C"},
+{name:"Kurung Kumey",region:"Central Arunachal",known:"Remote Valleys, Nyishi Heritage, Bhimsar Kund",heritage:["Bhimsar Kund Sacred Lake","Parsi-Parlo Tribal Areas","Remote Valley Trails"],languages:["Nyishi","Tagin"],bestMonths:"Oct-Apr",avgTemp:"5-28°C"},
+{name:"Kra Daadi",region:"Central Arunachal",known:"New District, Hill Miri Culture, Remote Terrain",heritage:["Hill Miri Tribal Villages","Kamla River","Dense Forest Terrain"],languages:["Hill Miri","Nyishi"],bestMonths:"Oct-Apr",avgTemp:"5-28°C"},
+{name:"Lower Subansiri",region:"Central Arunachal",known:"Ziro Valley UNESCO Nominee, Apatani Tribe",heritage:["Ziro Valley (UNESCO WHS Nominee)","Apatani Terraced Paddy Fields","Talley Valley Wildlife Sanctuary","Hong Village"],languages:["Apatani","Nyishi","Hindi"],bestMonths:"Sep-Dec, Mar-May",avgTemp:"8-28°C"},
+{name:"Upper Subansiri",region:"Central Arunachal",known:"Daporijo, Tagin Tribe, Subansiri River Gorges",heritage:["Subansiri River Gorges","Tagin Tribal Villages","Remote Highland Trails"],languages:["Tagin","Nyishi"],bestMonths:"Oct-Apr",avgTemp:"5-28°C"},
+{name:"West Siang",region:"Eastern Arunachal",known:"Aalo (Along), Adi Culture, Siang River",heritage:["Mechuka Valley — Hidden Shangri-La","Siang River Gorge","Kane Village Adi Heritage"],languages:["Adi","Galo","Hindi"],bestMonths:"Oct-Apr",avgTemp:"8-30°C"},
+{name:"East Siang",region:"Eastern Arunachal",known:"Pasighat — Oldest Town AP, Siang Valley",heritage:["D'Ering Wildlife Sanctuary","Siang River","Kekar Monying Falls","Pasighat Heritage"],languages:["Adi","Mishing","Hindi"],bestMonths:"Oct-Apr",avgTemp:"10-32°C"},
+{name:"Siang",region:"Eastern Arunachal",known:"Boleng, Siang River, Adi Heritage",heritage:["Siang River Heritage","Adi Tribal Villages","Kebang Traditional Council"],languages:["Adi"],bestMonths:"Oct-Apr",avgTemp:"10-32°C"},
+{name:"Upper Siang",region:"Eastern Arunachal",known:"Yingkiong, Adi Tribe, High Altitude Valleys",heritage:["Yargyap Chu Valley","Adi Tribal Heritage","High Altitude Landscape"],languages:["Adi"],bestMonths:"Oct-Apr",avgTemp:"5-28°C"},
+{name:"Shi Yomi",region:"Eastern Arunachal",known:"New District, Adi Heritage, Remote Mountains",heritage:["Remote Mountain Valleys","Adi Cultural Sites","Dense Himalayan Forest"],languages:["Adi"],bestMonths:"Oct-Apr",avgTemp:"5-28°C"},
+{name:"Lower Siang",region:"Eastern Arunachal",known:"New District, Likabali, Agricultural Zone",heritage:["Likabali Heritage","Agricultural Landscapes","Tribal Cultural Sites"],languages:["Adi","Mishing"],bestMonths:"Oct-Apr",avgTemp:"10-32°C"},
+{name:"Kamle",region:"Central Arunachal",known:"New District, Nyishi Heritage, Potin Village",heritage:["Nyishi Cultural Villages","Subansiri Tributary Valleys","Forest Heritage"],languages:["Nyishi"],bestMonths:"Oct-Apr",avgTemp:"8-28°C"},
+{name:"Lower Dibang Valley",region:"Eastern Arunachal",known:"Roing, Mishmi Hills, Mehao Wildlife",heritage:["Mehao Wildlife Sanctuary","Mishmi Hills","Bhishmaknagar Fort (7th century)","Roing Heritage"],languages:["Mishmi (Idu)","Mishing","Hindi"],bestMonths:"Oct-Apr",avgTemp:"8-30°C"},
+{name:"Dibang Valley",region:"Eastern Arunachal",known:"Anini, Most Remote District India, Idu Mishmi",heritage:["Dibang Valley — Most Remote","Idu Mishmi Tribal Heritage","High-altitude Wilderness"],languages:["Idu Mishmi"],bestMonths:"Oct-Apr",avgTemp:"0-22°C"},
+{name:"Anjaw",region:"Eastern Arunachal",known:"Hayuliang, Lohit Valley, Myanmar Border",heritage:["Kibithoo — Easternmost Town India","Parasuram Kund — Lohit River","Lohit Valley Heritage"],languages:["Meyor","Digaru Mishmi","Hindi"],bestMonths:"Oct-Apr",avgTemp:"5-28°C"},
+{name:"Lohit",region:"Eastern Arunachal",known:"Parasuram Kund, Lohit River, Tezu Town",heritage:["Parasuram Kund (Sacred)","Lohit River","Golden Pagoda Namsai Nearby"],languages:["Digaru Mishmi","Kaman (Miju Mishmi)","Hindi"],bestMonths:"Oct-Apr",avgTemp:"10-32°C"},
+{name:"Namsai",region:"Eastern Arunachal",known:"Golden Pagoda, Theravada Buddhism, Tai Khamti",heritage:["Golden Pagoda Namsai","Tai Khamti Cultural Sites","Tengapani River"],languages:["Tai Khamti","Singpho","Hindi"],bestMonths:"Oct-Apr",avgTemp:"12-34°C"},
+{name:"Changlang",region:"Eastern Arunachal",known:"Namdapha — Most Biodiverse Park India, Nocte, Tangsa",heritage:["Namdapha National Park","Nocte Tribal Villages","Tangsa Cultural Heritage","Miao Wildlife Range"],languages:["Nocte","Tangsa","Singpho","Hindi"],bestMonths:"Nov-Apr",avgTemp:"10-32°C"},
+{name:"Tirap",region:"Eastern Arunachal",known:"Wancho Tribe, Khonsa, Namdapha Buffer",heritage:["Wancho Tribal Heritage","Khonsa Cultural Center","Dense Forest Wilderness"],languages:["Wancho","Nocte","Hindi"],bestMonths:"Oct-Apr",avgTemp:"10-30°C"},
+{name:"Longding",region:"Eastern Arunachal",known:"Wancho Heartland, Myanmar Border, Remote",heritage:["Wancho Villages","Myanmar Border Heritage","Forest Tribal Culture"],languages:["Wancho"],bestMonths:"Oct-Apr",avgTemp:"12-30°C"},
+{name:"Itanagar (Capital Complex)",region:"Central Arunachal",known:"State Capital, Government Hub",heritage:["Ita Fort","State Museum","Botanical Garden","Buddhist Temple"],languages:["Nyishi","Hindi","English"],bestMonths:"Oct-Apr",avgTemp:"10-30°C"},
+{name:"Lepa Rada",region:"Central Arunachal",known:"New District, Along Region, Galo Heritage",heritage:["Galo Tribal Sites","Kena River","Dense Forest"],languages:["Galo","Adi"],bestMonths:"Oct-Apr",avgTemp:"10-30°C"},
+{name:"Pakke Kessang",region:"Central Arunachal",known:"New District, Pakke Tiger Reserve Region",heritage:["Pakke Tiger Reserve Buffer","Nyishi Cultural Sites","Kameng River"],languages:["Nyishi"],bestMonths:"Nov-Mar",avgTemp:"8-32°C"}
+];
+
+const placesData=[
+{emoji:"🏔️",name:"Tawang Monastery",location:"Tawang District",desc:"The second-largest Buddhist monastery in Asia after the Potala Palace in Lhasa — founded in the 17th century at 10,000 feet in the Tawang Valley, birthplace of the 6th Dalai Lama. The 400-year-old monastery houses 500 monks, an extraordinary library of ancient scriptures and sacred Buddhist relics. The view of the monastery rising from mountain mist above the Tawang river valley, surrounded by Himalayan peaks, is one of India's most spectacular sights.",fee:["Rs.50 camera fee"]},
+{emoji:"🌾",name:"Ziro Valley",location:"Lower Subansiri District",desc:"A UNESCO World Heritage Site nominee — a breathtaking valley of pine-forested hills and terraced paddy fields inhabited by the Apatani tribe. The Apatani practice one of India's most sophisticated and sustainable agricultural systems — growing rice and fish simultaneously in the same paddy fields at 5,500 feet, creating a living tradition 2,000 years old. The winter Ziro Music Festival brings indie music to this extraordinary Himalayan landscape.",fee:["ILP required"]},
+{emoji:"🐅",name:"Namdapha National Park",location:"Changlang District",desc:"The most biodiverse national park in India — 1,985 sq km ranging from 200 to 4,500 meters, the only park in the world sheltering four big cat species: Bengal tiger, leopard, snow leopard and clouded leopard. Also home to red pandas, gibbons, sun bears, Asian elephants and over 1,000 plant species. The Namdapha flying squirrel — found nowhere else — was only discovered in 1981. The park remains almost entirely unexplored.",fee:["Paid"]},
+{emoji:"🦅",name:"Eaglenest Wildlife Sanctuary",location:"West Kameng District",desc:"The finest birdwatching site in the Indian subcontinent — a gradient forest from 100 to 3,000 meters sheltering over 450 bird species including 8 globally threatened species. The Bugun liocichla — a new bird species discovered here in 2006 — was found by amateur birdwatcher Ramana Athreya and is one of the rarest birds on earth. Eaglenest consistently tops national birding surveys as the single best birdwatching site in India.",fee:["Paid + ILP required"]},
+{emoji:"🌸",name:"Mechuka Valley",location:"West Siang District",desc:"An extraordinarily remote valley at 6,000 feet near the China border — surrounded by snow-capped peaks, with the Yargyap river flowing through meadows of wildflowers. The medieval Samten Yungdrung Monastery sits above the valley. Called the 'Hidden Shangri-La', Mechuka was only accessible by road in 2008. The Adi and Memba communities here maintain living traditions of remarkable depth. April brings rhododendron blooms across every hillside.",fee:["ILP + permits required"]},
+{emoji:"🏔️",name:"Sela Pass",location:"Tawang District",desc:"A high mountain pass at 13,700 feet on the road to Tawang — one of the highest passes in the world that remains open year-round. The Sela Lake at the pass turns a vivid deep blue under the Himalayan sky. In winter, the pass is thick with snow; in October, the surrounding mountains are ablaze with autumn color. The drive up through cloud forest to reach the pass, then down into the Tawang valley, is one of India's great mountain road journeys.",fee:["Free — ILP required for beyond"]},
+{emoji:"🙏",name:"Parasuram Kund",location:"Lohit District",desc:"One of Hinduism's most sacred pilgrimage sites in Northeast India — a natural kund (pool) in the Lohit river gorge where sage Parasuram is said to have washed away the sin of killing his mother. On Makar Sankranti (January), thousands of pilgrims descend from across India to bathe. The site's setting — the Lohit river thundering through a forested gorge with the Eastern Himalayas above — is of extraordinary natural beauty.",fee:["Free — ILP required"]},
+{emoji:"🌸",name:"Sangti Valley — Black-Necked Cranes",location:"West Kameng District",desc:"A serene valley at 6,500 feet that hosts the rare black-necked crane (Grus nigricollis) every winter — one of only two sites in India where these sacred birds overwinter. The cranes are revered by the Monpa tribe as divine messengers. The valley of apple orchards, prayer flags and mountain backdrop creates a landscape that feels closer to Tibet than India. The arrival of the cranes in November is an event of profound local significance.",fee:["ILP required"]},
+{emoji:"🏞️",name:"Anini — Dibang Valley",location:"Dibang Valley District",desc:"The most remote district headquarters in India — Anini in the Dibang Valley can only be reached by a dramatic mountain road or helicopter. The Idu Mishmi tribal community here maintains one of India's most isolated and sophisticated cultures — their oral literature, shamanic traditions and knowledge of forest medicine are extraordinary. The surrounding Dibang Valley wilderness is one of the last truly wild landscapes in India.",fee:["ILP + restricted area permit"]},
+{emoji:"⛩️",name:"Golden Pagoda, Namsai",location:"Namsai District",desc:"The largest Buddhist pagoda in Northeast India — the Kongmu Kham temple complex at Namsai was built by the Theravada Buddhist Tai Khamti community in 2010. The gilded structure rising from a flat landscape near the Myanmar border is a stunning visual surprise. The Tai Khamti community's Buddhist traditions, distinct from the Tibetan Buddhism of Tawang, represent the southeastern Buddhist influence that entered Arunachal from Burma.",fee:["Free"]}
+];
+
+const artsData=[
+{emoji:"🧵",name:"Adi Weaving & Tribal Textiles",location:"East and West Siang Districts",desc:"The Adi tribe produces extraordinary handwoven textiles on back-strap looms — bold geometric patterns in black, red and white using both cotton and wild silk threads. The gale (shoulder cloth) and the traditional dress are entirely woven at home. Each tribal community has distinct weaving patterns that serve as markers of identity — the Apatani, Nyishi, Galo, Monpa and Wancho textiles are each completely different in motif and palette."},
+{emoji:"🪘",name:"Tribal Mask Carving & Wood Craft",location:"Wancho (Longding), Nocte (Tirap)",desc:"The Wancho and Nocte tribes of eastern Arunachal create some of India's most powerful carved wooden objects — ancestor posts (morang), log drums, warrior shields and ceremonial masks painted with geometric patterns. The morang (bachelor dormitory) is decorated with carvings that record the village's history. Wancho mask-making is practiced by community specialists and the masks are used in ceremonies connecting the living and the dead."},
+{emoji:"🎵",name:"Tribal Music — Flutes, Drums and Song",location:"Statewide",desc:"Arunachal's tribal music cultures are among India's most diverse. The Adi's ponung dance with its characteristic wailing melodic chorus; the Monpa's dungchen (long Buddhist horns) and cymbals in monastery ceremonies; the Nyishi's bamboo flute traditions; the Wancho's log drum communication — each is a distinct musical universe. The instruments are almost entirely made from forest materials: bamboo, hide, bone and wood."},
+{emoji:"🏺",name:"Apatani Crafts & Agriculture Heritage",location:"Ziro Valley, Lower Subansiri",desc:"The Apatani tribe is famous not only for its remarkable terraced paddy-fish farming system but for its distinctive crafts: bamboo baskets of extraordinary precision (used for storing everything from grain to sacred objects), cane work, traditional costumes with blue tattoos (now discontinued) and the distinctive noshi nose plugs worn by older women. The Apatani's agricultural knowledge — documented by UNESCO — is a living library of sustainable mountain farming."},
+{emoji:"🎭",name:"Monpa Thangka Painting",location:"Tawang District",desc:"The Monpa people of Tawang are master Thangka painters — creating intricately detailed Buddhist scroll paintings on cotton cloth with natural mineral pigments. Each Thangka depicts deities, mandalas, or scenes from Buddhist scripture in a style that combines Tibetan influence with distinctly Arunachali sensibilities. The monastery schools of Tawang train young monks in this tradition. Authentic Tawang Thangkas are among the finest in the Buddhist world."},
+{emoji:"🌿",name:"Cane & Bamboo Craft",location:"Statewide — Every Tribal District",desc:"Bamboo is the primary material of everyday life in Arunachal Pradesh — every tribe has its own bamboo craft vocabulary. Chang houses (bamboo stilted homes), fishing traps, carrying baskets (zurung), water containers, cooking vessels, musical instruments, bridges and sleeping mats are all made from bamboo. The precision of Arunachali bamboo weaving — some baskets are watertight — represents accumulated knowledge of extraordinary depth."}
+];
+
+const traditionsData=[
+{emoji:"🌸",name:"Losar Festival — Monpa New Year",location:"Tawang — February/March",desc:"The Tibetan-influenced New Year festival of the Monpa tribe — celebrated with masked dances (Cham), butter lamp offerings, traditional chang (millet beer) and music at Tawang Monastery and in every Monpa village. The Cham dances — costumed monks performing elaborate masked choreography to defeat evil forces — are among the most visually spectacular religious performances in Northeast India."},
+{emoji:"🥁",name:"Ponung — Adi Harvest Dance",location:"East and West Siang — Post Harvest",desc:"The Adi tribe's most important festival — Ponung is a community dance performed by women in a circle, led by a miri (priest) who chants the tribe's oral history and mythology. The dance can last all night and involves intricate synchronized arm and body movements. It is simultaneously an agricultural thanksgiving, a history lesson and a community binding ritual. Each verse of the chant is unique to each miri — the tradition is oral and unrepeatable."},
+{emoji:"🎉",name:"Nyokum Festival — Nyishi",location:"Nyishi Areas — February",desc:"The most important festival of the Nyishi tribe — a thanksgiving to the earth deity Nyokum for the blessings of harvest, health and prosperity. Performed at a ritually constructed altar (yullo) where the priest (nyibu) invokes the spirits with chants and offerings. The festival includes community feasting, traditional dancing and the slaughter of mithun (a semi-wild bovine sacred to Arunachali tribes). The nyibu's chanted prayers are complex oral literature."},
+{emoji:"🌿",name:"Solung — Adi Agricultural Festival",location:"East Siang — September",desc:"The Adi tribe's most important agricultural festival — a five-day celebration at the end of the planting season with elaborate rituals, community feasting, mithun sacrifice and the mopun (collective) dances. The festival invokes Doiing and Uie — the ancestral spirits — for a bountiful harvest. Young men demonstrate their prowess through mock battles (mithun battles symbolically enacted) and the community re-affirms its bonds through collective labor and eating."},
+{emoji:"🎵",name:"Ziro Music Festival",location:"Ziro Valley — September",desc:"India's most uniquely located music festival — an outdoor celebration of independent and folk music staged in the Ziro Valley's extraordinary landscape of pine trees, paddy fields and Apatani villages. Founded in 2012, it draws indie bands from across India and Southeast Asia alongside performances of traditional Apatani music. Camping in the valley, eating local food and listening to music under Himalayan stars is a distinctly extraordinary experience."},
+{emoji:"🙏",name:"Losar at Tawang Monastery",location:"Tawang — December/January",desc:"The grandest Buddhist celebration in Arunachal — Losar (Tibetan New Year) at Tawang Monastery brings hundreds of monks together for Cham masked dances, butter sculpture offerings, prayer flag renewal and community celebration. Pilgrims arrive from across the Monpa valleys and from Tibet. The monastery illuminated with butter lamps at night, the sound of dungchen horns echoing across the valley and the monks in their ceremonial robes create a profound atmosphere."}
+];
+
+const cuisinesData=[
+{emoji:"🎋",name:"Bamboo Shoot Preparations",location:"Statewide — All Tribal Kitchens",desc:"Bamboo shoot is the defining ingredient of Arunachali cuisine — fresh shoots eaten as vegetable, fermented shoots used as a souring agent (replacing tamarind in lowland Indian cooking), dried shoots stored for year-round use. Every tribe prepares bamboo shoot differently: the Adi ferments it in bamboo tubes for months to create a pungent, deeply flavored condiment; the Monpa uses it in soups with yak meat; the Apatani adds it to fish preparations."},
+{emoji:"🍖",name:"Smoked Meat — Pork & Mithun",location:"Statewide",desc:"Smoking over a wood fire is the primary preservation technique across Arunachal's tribal kitchens — pork, wild boar, chicken, dried fish and the prized mithun (the semi-wild Bos frontalis, sacred to Arunachali tribes) are all smoked to extraordinary depth of flavor. The smoke imparts a complex earthiness impossible to replicate. Smoked pork with bamboo shoot and dried chilies is the quintessential Adi and Nyishi dish — robust, ancient and deeply satisfying."},
+{emoji:"🫗",name:"Apong — Rice Beer",location:"Statewide",desc:"Apong (Adi), chi (Monpa) and poka (Nyishi) — rice beer brewed in bamboo tubes or clay pots with yeast derived from forest plants — is central to every tribal ceremony, festival and act of hospitality in Arunachal Pradesh. Offering apong to a guest is the highest expression of welcome. The flavor varies from sweet and mild (freshly brewed) to sour and complex (fermented for weeks). Refusing apong is considered deeply impolite."},
+{emoji:"🍜",name:"Thukpa & Tibetan-Influenced Dishes",location:"Tawang — Monpa Region",desc:"The Monpa cuisine of Tawang is strongly Tibetan-influenced — thukpa (noodle soup with meat and vegetables), tsampa (roasted barley flour eaten with yak butter tea), tingmo (steamed bread), momos (dumplings filled with yak meat or vegetables) and the butter tea (po cha) itself — a blend of strong black tea, yak butter and salt that takes considerable getting used to but is a lifeline at 10,000 feet in bitter cold."},
+{emoji:"🌿",name:"Pika Pila — Fermented Fish",location:"Lower Subansiri, Ziro Valley",desc:"The Apatani tribe's most distinctive ingredient — fish fermented with mustard leaves and salt, then stored in bamboo containers for months. The resulting pika pila has an intensely sour, fermented flavor that transforms every dish it touches. Combined with bamboo shoot and dried chilies, it creates a curry of extraordinary complexity. The Apatani's fish-rice farming system means fresh fish is always available — fermented fish is the way to preserve the surplus through seasons."},
+{emoji:"🥣",name:"Marua — Millet Preparations",location:"Higher Elevation Districts",desc:"Finger millet (marua) is a staple grain at higher elevations — ground into flour and made into thick porridge, flatbread or fermented into the millet beer chi drunk in Monpa and Sherdukpen areas. Marua contains more calcium and iron than rice and is perfectly adapted to the cold growing conditions of high-altitude Arunachal. The grain is stored in elevated wooden granaries that are architectural features in themselves."},
+{emoji:"🍲",name:"Kholam — Rice Cooked in Bamboo",location:"Adi Areas, East Siang",desc:"Rice cooked inside a bamboo tube over an open fire — the bamboo imparts a subtle woody fragrance to the rice and the cooking method is ingeniously simple. Kholam is festival food for the Adi tribe — prepared for community gatherings and ceremonies. The sealed bamboo tube steams the rice perfectly; when split open at the table, the aroma of bamboo-scented rice is extraordinary. A technique 2,000 years old, now recognized by food anthropologists worldwide."},
+{emoji:"🌶️",name:"Zan — Millet Mash",location:"Arunachal Tribal Communities",desc:"Zan is the fundamental everyday food of many Arunachali tribes — a thick stiff mash of millet or maize flour cooked with water until dense, eaten with pickled bamboo shoot, smoked meat or dried fish. Filling, nutritious and requiring no elaborate preparation, zan has sustained mountain farmers and hunters for generations. Each tribe has its own version — some incorporate leafy forest greens directly into the mash."}
+];
+
+const weatherData=[
+{month:"January",avgTemp:"-5 to 18°C",weather:"Deep Winter",details:"Tawang covered in snow — beautiful and accessible with the right gear. Parasuram Kund pilgrimage during Makar Sankranti draws thousands. Ziro Valley cold but clear. Namdapha lowlands pleasant for wildlife.",best:true},
+{month:"February",avgTemp:"-3 to 20°C",weather:"Late Winter",details:"Nyokum Festival (Nyishi) and Losar preparations (Monpa). First signs of spring in lower valleys. Eaglenest at its finest for birdwatching — winter resident species still present alongside early arrivals.",best:true},
+{month:"March",avgTemp:"2 to 24°C",weather:"Spring",details:"Rhododendrons begin to bloom across Himalayan slopes — by late March the hillsides are extraordinary. Mechuka valley accessible. Tawang mountain views crystal clear. One of the most beautiful months.",best:true},
+{month:"April",avgTemp:"8 to 26°C",weather:"Spring Peak",details:"Peak rhododendron season — the mountains are covered in red, pink, white and purple. Ziro Music Festival preparations. Migratory birds arriving at Eaglenest and Namdapha. Perfect trekking weather across the state.",best:true},
+{month:"May",avgTemp:"12 to 28°C",weather:"Pre-Monsoon",details:"Warming. Last good month before monsoon arrives. Namdapha excellent. Pre-monsoon rains begin in May — roads can be challenging. Mountain passes still accessible. Early monsoon flora beginning."},
+{month:"June",avgTemp:"16 to 28°C",weather:"Monsoon Arrives",details:"Southwest monsoon breaks — Arunachal receives one of India's heaviest rainfalls. Rivers in spate. Landslides on mountain roads. Not recommended for travel except Tawang (rain shadow) and prepared trekkers."},
+{month:"July",avgTemp:"18 to 28°C",weather:"Heavy Monsoon",details:"Peak rainfall across most of the state. Leeches on forest trails. Rivers dangerous for crossing. Only the most experienced travelers visit. Tawang relatively drier. Cultural life continues in villages."},
+{month:"August",avgTemp:"18 to 28°C",weather:"Monsoon",details:"Monsoon continues. The state is vivid green — forests extraordinary. Ziro Music Festival held this month or September — the festival in monsoon-green surroundings has its own beauty. Roads often blocked."},
+{month:"September",avgTemp:"14 to 26°C",weather:"Late Monsoon",details:"Ziro Music Festival (late September). Rains easing. Rivers beginning to recede. Post-monsoon green is spectacular. Solung festival of the Adi tribe. Mountains beginning to clear.",best:true},
+{month:"October",avgTemp:"8 to 22°C",weather:"Autumn",details:"One of the finest months — clear skies, spectacular autumn colors on deciduous slopes, mountain views at their sharpest. All tribal festivals ramping up. Tawang at its most beautiful. Eaglenest birding excellent.",best:true},
+{month:"November",avgTemp:"2 to 18°C",weather:"Early Winter",details:"Sangti Valley black-necked cranes arrive. Tawang clear and cold. Namdapha at its finest. Losar preparations beginning. High passes may close with first snowfall. All lowland and mid-altitude areas perfect.",best:true},
+{month:"December",avgTemp:"-5 to 15°C",weather:"Winter",details:"Losar at Tawang Monastery — butter lamps, Cham dances, winter ceremony. High passes and Tawang in snow. Lower valleys comfortable. The monastery in snowfall is one of India's most beautiful winter sights.",best:true}
+];
+
+const wGrid=document.getElementById('wGrid');
+weatherData.forEach(w=>{
+  wGrid.innerHTML+=`<div class="wcard${w.best?' best':''}">
+    ${w.best?'<span class="best-tag">BEST TIME</span>':''}
+    <div class="wm">${w.month}</div><div class="wt">${w.avgTemp}</div><div class="wd">${w.details}</div>
+  </div>`;
+});
+const accordion=document.getElementById('distAccordion');
+districtData.forEach((d,idx)=>{
+  const el=document.createElement('div');
+  el.className='dacc';el.dataset.name=d.name.toLowerCase();
+  el.innerHTML=`
+    <div class="dacc-hdr" onclick="toggleAccordion(${idx})">
+      <div><div class="dacc-name">${d.name}</div><div class="dacc-region">${d.region}</div></div>
+      <div class="dacc-arrow">&#8964;</div>
+    </div>
+    <div class="dacc-body"><div class="dacc-inner">
+      <div class="dinfo-card"><div class="dinfo-title">Known For</div><ul class="dinfo-list"><li>${d.known}</li></ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Heritage Sites</div><ul class="dinfo-list">${d.heritage.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div class="dinfo-card"><div class="dinfo-title">Languages</div>
+        <div class="lang-chips">${d.languages.map(l=>`<span class="lchip">${l}</span>`).join('')}</div>
+        <div class="best-month-tag">Best: ${d.bestMonths}</div>
+        <div class="temp-row"><span class="tb-best">${d.avgTemp}</span></div>
+      </div>
+    </div></div>`;
+  accordion.appendChild(el);
+});
+const pGrid=document.getElementById('pGrid');
+placesData.forEach(p=>{
+  pGrid.innerHTML+=`<div class="pcard"><div class="pcard-acc"></div><div class="pcard-body">
+    <span class="pi">${p.emoji}</span><div class="pn">${p.name}</div><div class="pl">${p.location}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="fee-row">${Array.isArray(p.fee)?p.fee.map(f=>`<span class="fee-badge ${f.toLowerCase().includes('free')?'fb-free':f.toLowerCase().includes('foreign')?'fb-fr':'fb-in'}">${f}</span>`).join(''):`<span class="fee-badge fb-in">${p.fee}</span>`}</div>
+    <div class="dos-donts">
+      <div class="dos"><div class="dd-title">&#10003; DO</div><ul class="dd-list"><li>Obtain ILP before entering the state</li><li>Accept apong when offered — it is hospitality</li></ul></div>
+      <div class="donts"><div class="dd-title">&#10007; DON'T</div><ul class="dd-list"><li>Enter restricted areas without permits</li><li>Photograph tribal people without consent</li></ul></div>
+    </div>
+  </div></div>`;
+});
+['artGrid','tradGrid','cuisinesGrid'].forEach((gridId,i)=>{
+  const datasets=[artsData,traditionsData,cuisinesData];
+  const grid=document.getElementById(gridId);
+  datasets[i].forEach(item=>{
+    grid.innerHTML+=`<div class="acard">
+      <span class="ae">${item.emoji}</span><div class="at">${item.name}</div>
+      <div class="ad">${item.desc}</div>
+      <div class="art-fee"><span>${item.location||item.region}</span></div>
+    </div>`;
+  });
+});
+let openAccordion=null;
+function toggleAccordion(idx){
+  const all=document.querySelectorAll('.dacc');
+  if(openAccordion!==null&&openAccordion!==idx)all[openAccordion].classList.remove('open');
+  all[idx].classList.toggle('open');
+  openAccordion=all[idx].classList.contains('open')?idx:null;
+}
+function filterDistricts(q){document.querySelectorAll('.dacc').forEach(a=>{a.style.display=a.dataset.name.includes(q.toLowerCase())?'':'none';});}
+function toggleMusic(){const a=document.getElementById('bgm'),b=document.getElementById('musicBtn');if(a.paused){a.play();b.classList.add('on');}else{a.pause();b.classList.remove('on');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+const translations={
+  en:{heroName:"Arunachal Pradesh",heroNative:"अरुणाचल प्रदेश",heroTag:"Land of the Dawn-Lit Mountains — Where India Greets the Sun First",scrollLbl:"SCROLL TO EXPLORE",qw:"&#127777; Weather",qd:"&#128205; Districts",qp:"&#127963; Places",qa:"&#127912; Arts",qt:"&#129345; Traditions",qc:"&#127374; Cuisines",lAbout:"About Arunachal Pradesh",aboutTitle:"Where India Sees the First Light",aboutBody:"Arunachal Pradesh — Land of Dawn-Lit Mountains — is India's easternmost state and the first place on the subcontinent to see the sunrise. It has over 600 orchid species (more than anywhere on earth), the world's only park with four big cat species (Namdapha) and the Tawang Monastery — one of the largest Buddhist monasteries in Asia. The Ziro Valley is a UNESCO WHS nominee. Over 26 major tribes, including the Apatani, Adi, Nyishi, Monpa and Wancho, maintain living cultures of extraordinary depth. All visitors require an Inner Line Permit (ILP).",lWeather:"Climate & Best Time",weatherTitle:"When to Visit Arunachal Pradesh",weatherNote:"October to April is ideal for most areas. Tawang is spectacular in October-November and March-April. Namdapha is best November-April. All visitors require an Inner Line Permit (ILP) before entering.",lDist:"All 26 Districts",distTitle:"Every District of Arunachal Pradesh",distNote:"Arunachal's 26 districts span the full sweep of the Eastern Himalayas — from the Buddhist Monpa heartland of Tawang to the Wancho tribal territory of Longding.",distSearch:"Search districts...",lPlaces:"Monasteries, Valleys, Wildlife & High Passes",placesTitle:"Wonders of Arunachal Pradesh",lArts:"Tribal Arts, Crafts & Heritage",artsTitle:"Living Traditions of Arunachal Pradesh",lTrad:"Festivals & Tribal Celebrations",tradTitle:"Soul of Arunachal's Culture",lCuisines:"Culinary Heritage",cuisinesTitle:"Flavors of Arunachal Pradesh",footerT:"JAI ARUNACHAL — LAND OF THE RISING SUN",footerS:"Arunachal Pradesh Statehood Day — February 20 · 1987"},
+  hi:{heroName:"अरुणाचल प्रदेश",heroNative:"अरुणाचल प्रदेश",heroTag:"भोर की रोशन पहाड़ियों की भूमि — जहाँ भारत सूर्य का पहला स्वागत करता है",scrollLbl:"अन्वेषण के लिए स्क्रॉल करें",qw:"&#127777; मौसम",qd:"&#128205; जिले",qp:"&#127963; स्थल",qa:"&#127912; कलाएं",qt:"&#129345; परंपराएं",qc:"&#127374; व्यंजन",lAbout:"अरुणाचल प्रदेश के बारे में",aboutTitle:"जहाँ भारत पहली सुबह देखता है",aboutBody:"अरुणाचल प्रदेश — भोर की पहाड़ियों की भूमि — भारत का सबसे पूर्वी राज्य है और उपमहाद्वीप पर पहला स्थान जहाँ सूर्योदय होता है। इसमें 600+ ऑर्किड प्रजातियां हैं (पृथ्वी पर सबसे अधिक), नामदाफा — दुनिया का एकमात्र पार्क जहाँ चार बड़ी बिल्ली प्रजातियां हैं — और तवांग मठ, एशिया के सबसे बड़े बौद्ध मठों में से एक। 26 से अधिक प्रमुख जनजातियां अपनी अनमोल सांस्कृतिक परंपराओं को जीवित रखती हैं। सभी आगंतुकों को इनर लाइन परमिट (ILP) की आवश्यकता है।",lWeather:"जलवायु और सर्वोत्तम समय",weatherTitle:"अरुणाचल प्रदेश कब जाएं",weatherNote:"अक्टूबर से अप्रैल अधिकांश क्षेत्रों के लिए आदर्श है। तवांग अक्टूबर-नवंबर और मार्च-अप्रैल में सबसे शानदार है। सभी आगंतुकों को इनर लाइन परमिट (ILP) की आवश्यकता है।",lDist:"सभी 26 जिले",distTitle:"अरुणाचल प्रदेश के हर जिले",distNote:"अरुणाचल के 26 जिले पूर्वी हिमालय की पूरी विस्तार में फैले हैं — तवांग के बौद्ध मोनपा क्षेत्र से लेकर लोंगडिंग के वांचो आदिवासी क्षेत्र तक।",distSearch:"जिले खोजें...",lPlaces:"मठ, घाटियाँ, वन्यजीव और ऊँचे दर्रे",placesTitle:"अरुणाचल प्रदेश के चमत्कार",lArts:"जनजातीय कला, शिल्प और विरासत",artsTitle:"अरुणाचल प्रदेश की जीवंत परंपराएं",lTrad:"त्योहार और जनजातीय उत्सव",tradTitle:"अरुणाचल की संस्कृति की आत्मा",lCuisines:"पाक विरासत",cuisinesTitle:"अरुणाचल प्रदेश का स्वाद",footerT:"जय अरुणाचल — उगते सूरज की भूमि",footerS:"अरुणाचल प्रदेश राज्यत्व दिवस — 20 फरवरी · 1987"},
+  ny:{heroName:"Arunachal Pradesh",heroNative:"अरुणाचल प्रदेश",heroTag:"Peba Pii Dungkhang — Ui Taang Khoyen Ape India",scrollLbl:"Peben Kho Scroll Kori",qw:"&#127777; Peba",qd:"&#128205; District",qp:"&#127963; Taang",qa:"&#127912; Kela",qt:"&#129345; Tihar",qc:"&#127374; Khana",lAbout:"Arunachal Pradesh Babe",aboutTitle:"Ui India Peba Pii Dungkhang",aboutBody:"Arunachal Pradesh — India ro sab se purbi state — jahan India mein sab se pehle suraj utha hai. Tawang Monastery — Asia ke sab se bade Buddhist monastery mein se ek. Namdapha — duniya ka ek hi park jahan char bade billi ki prajaatiyaan hain. Ziro Valley UNESCO WHS nominee. 26 se jyada pramukh janajaatiyaan — Nyishi, Adi, Apatani, Monpa, Wancho. Sabhi aagantuko ko Inner Line Permit (ILP) chahiye.",lWeather:"Peba haa Accha Samay",weatherTitle:"Arunachal Pradesh kab jao",weatherNote:"October se April sabse achha samay hai. Tawang October-November aur March-April mein bahut sundar hai. Sabhi ko ILP chahiye.",lDist:"Sabhi 26 District",distTitle:"Arunachal Pradesh ka Har District",distNote:"Arunachal ke 26 district purvi Himalaya mein failey hain — Tawang se Longding tak.",distSearch:"District Khojo...",lPlaces:"Monastery, Ghati, Jungle aur Pahad",placesTitle:"Arunachal Pradesh ke Ajube",lArts:"Janjati Kela, Shilp aur Virasat",artsTitle:"Arunachal Pradesh ki Jivant Parampara",lTrad:"Tihar aur Janjati Utsav",tradTitle:"Arunachal Sanskriti ki Jaan",lCuisines:"Khana ki Virasat",cuisinesTitle:"Arunachal Pradesh ka Swaad",footerT:"JAI ARUNACHAL — LAND OF THE RISING SUN",footerS:"Arunachal Pradesh Statehood Day — February 20 · 1987"}
+};
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lb-'+lang).classList.add('active');
+  const t=translations[lang];
+  ['heroName','heroNative','heroTag','scrollLbl','qw','qd','qp','qa','qt','qc','lAbout','aboutTitle','aboutBody','lWeather','weatherTitle','weatherNote','lDist','distTitle','distNote','lPlaces','placesTitle','lArts','artsTitle','lTrad','tradTitle','lCuisines','cuisinesTitle','footerT','footerS'].forEach(k=>{const el=document.getElementById(k);if(el&&t[k])el.textContent=t[k];});
+  document.getElementById('distSearch').placeholder=t.distSearch;
+}
+</script>
+</body>
+</html>
